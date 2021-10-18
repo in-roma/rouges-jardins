@@ -1,9 +1,11 @@
-import styles from '../styles/Home.module.css';
+// Components
+import Layout from '../components/Layout';
+import styles from '../styles/Blog.module.css';
 
 export default function Blog() {
 	return (
-		<div>
+		<Layout>
 			<h3>Chroniques</h3>
-		</div>
+		</Layout>
 	);
 }

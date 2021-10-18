@@ -1,9 +1,11 @@
-import styles from '../styles/Home.module.css';
+// Components
+import Layout from '../components/Layout';
+import styles from '../styles/About.module.css';
 
 export default function About() {
 	return (
-		<div>
+		<Layout>
 			<h3>About</h3>
-		</div>
+		</Layout>
 	);
 }

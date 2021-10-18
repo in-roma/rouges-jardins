@@ -1,9 +1,11 @@
+// Components
 import styles from '../styles/Publications.module.css';
+import Layout from '../components/Layout';
 
 export default function Publications() {
 	return (
-		<div>
+		<Layout>
 			<h3>Publications</h3>
-		</div>
+		</Layout>
 	);
 }
