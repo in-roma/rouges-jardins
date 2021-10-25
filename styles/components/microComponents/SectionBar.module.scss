@@ -1,0 +1,22 @@
+.sectionBar {
+    width: 100%;
+    height: 7.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 0.1rem solid #EFEFEF;
+    border-bottom: 0.1rem solid #EFEFEF;
+}
+
+.titleSectionBar {
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+}
+
+.linkSectionBar {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: black;
+    text-decoration: underline;
+}

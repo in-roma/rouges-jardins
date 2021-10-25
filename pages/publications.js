@@ -1,5 +1,5 @@
 // Components
-import styles from '../styles/Publications.module.css';
+import styles from '../styles/Publications.module.scss';
 import Layout from '../components/Layout';
 
 export default function Publications() {

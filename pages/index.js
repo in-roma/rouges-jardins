@@ -4,7 +4,10 @@ import { GraphQLClient } from 'graphql-request';
 
 // Components
 import Layout from '../components/Layout';
-import styles from '../styles/Home.module.css';
+import SectionBar from '../components/microComponents/sectionBar';
+
+// Styling
+import styles from '../styles/Home.module.scss';
 
 export default function Home({ posts }) {
 	// Options to format html tags from wordpress
@@ -27,6 +30,11 @@ export default function Home({ posts }) {
 	};
 	return (
 		<Layout>
+			<SectionBar
+				sectionTitle="Chroniques"
+				slug={'/blog'}
+				text="Toutes les chroniques"
+			/>
 			{posts.edges.map((el) => (
 				<div key={'div' + el.node.id}>
 					<h3 key={'title' + el.node.id}>{el.node.title}</h3>
@@ -36,7 +44,7 @@ export default function Home({ posts }) {
 					{/* <div key={'content' + el.node.id}>
 						{parse(el.node.content, options)}
 					</div> */}
-
+					<p>{el.node.date}</p>
 					{el.node.featuredImage !== null && (
 						<img src={`${el.node.featuredImage.node.sourceUrl}`} />
 					)}
@@ -50,7 +58,7 @@ export async function getStaticProps() {
 
 	const { posts } = await graphcms.request(
 		`{
-			posts {
+			posts( first: 1000 ) {
 				edges {
 				  node {
 					id
@@ -70,7 +78,7 @@ export async function getStaticProps() {
 			
 	  }`
 	);
-	console.log('data fetched:', posts.edges);
+	// console.log('data fetched:', posts.edges);
 	return {
 		props: { posts },
 	};

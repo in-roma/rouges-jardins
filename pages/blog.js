@@ -1,6 +1,6 @@
 // Components
 import Layout from '../components/Layout';
-import styles from '../styles/Blog.module.css';
+import styles from '../styles/Blog.module.scss';
 
 export default function Blog() {
 	return (
