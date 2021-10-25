@@ -6,6 +6,7 @@ import { GraphQLClient } from 'graphql-request';
 import Layout from '../components/Layout';
 import SectionBar from '../components/microComponents/sectionBar';
 import CardLarge from '../components/microComponents/cardLarge';
+import CardSmall from '../components/microComponents/cardSmall';
 
 // Styling
 import styles from '../styles/Home.module.scss';
@@ -49,23 +50,23 @@ export default function Home({ posts }) {
 				imageUrl={posts.edges[0].node.featuredImage.node.sourceUrl}
 				imageAltText={'test'}
 				date={posts.edges[0].node.date}
+				category={posts.edges[0].node.categories.nodes[0].name}
 			/>
-
-			{/* {posts.edges.map((el) => (
-				<div key={'div' + el.node.id}>
-					<h3 key={'title' + el.node.id}>{el.node.title}</h3>
-					<div key={'excerpt' + el.node.id}>
-						{parse(el.node.excerpt, options)}
-					</div> */}
-			{/* <div key={'content' + el.node.id}>
-						{parse(el.node.content, options)}
-					</div> */}
-			{/* <p>{el.node.date}</p>
-					{el.node.featuredImage !== null && (
-						<img src={`${el.node.featuredImage.node.sourceUrl}`} />
-					)}
-				</div>
-			))} */}
+			{posts.edges.slice(1, 5).map((el) => (
+				<CardSmall
+					key={'smallCard' + el.node.id}
+					title={el.node.title}
+					imageUrl={el.node.featuredImage.node.sourceUrl}
+					imageAltText={'test'}
+					date={el.node.date}
+					category={el.node.categories.nodes[0].name}
+				/>
+			))}
+			<SectionBar
+				sectionTitle="Podcasts"
+				slug={'/podcasts'}
+				text="Toutes les podcasts"
+			/>
 		</Layout>
 	);
 }
@@ -74,7 +75,7 @@ export async function getStaticProps() {
 
 	const { posts } = await graphcms.request(
 		`{
-			posts( first: 1000 ) {
+			posts(first: 1000) {
 				edges {
 				  node {
 					id
@@ -88,10 +89,14 @@ export async function getStaticProps() {
 						sourceUrl
 					  }
 					}
+										categories {
+									nodes {
+									  name
+									}
+								  }
 				  }
 				}
 			  }
-			
 	  }`
 	);
 	// console.log('data fetched:', posts.edges);

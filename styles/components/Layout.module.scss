@@ -3,10 +3,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .layout {
+
     width: 118.8rem;
     height: auto;
-    margin-top: 7.2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    justify-content: space-between;  
+    align-content: start;    
+    grid-auto-flow: row dense;
+
 }

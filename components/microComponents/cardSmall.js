@@ -6,9 +6,9 @@ import Tag from './tag';
 import DateCard from './dateCard';
 
 // Styling
-import styles from '../../styles/components/microComponents/CardLarge.module.scss';
+import styles from '../../styles/components/microComponents/CardSmall.module.scss';
 
-export default function CardLarge({
+export default function CardSmall({
 	title,
 	text,
 	imageUrl,
@@ -17,20 +17,19 @@ export default function CardLarge({
 	category,
 }) {
 	return (
-		<div className={styles.cardLarge}>
+		<div className={styles.cardSmall}>
 			<Tag text={category} color="#F6EEDF" />
 			<div
 				style={{
 					backgroundImage: `url(${imageUrl})`,
 					backgroundPosition: 'center',
 					backgroundSize: 'cover',
-					width: '58.2rem',
-					height: '35.2rem',
+					width: '28rem',
+					height: '16.8rem',
 					borderRadius: '0.6rem',
 				}}
 			></div>
-			<div className={styles.titleCardLarge}>{title}</div>
-			<div className={styles.textCardLarge}>{text}</div>
+			<div className={styles.titleCardSmall}>{title}</div>
 			<DateCard date={date} />
 		</div>
 	);
