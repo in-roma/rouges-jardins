@@ -14,6 +14,7 @@
     "graphql-request": "^3.6.1",
     "html-react-parser": "^1.4.0",
     "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
     "next": "11.1.2",
     "normalise": "^10.0.0",
     "normalize.css": "^8.0.1",

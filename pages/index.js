@@ -5,6 +5,7 @@ import { GraphQLClient } from 'graphql-request';
 // Components
 import Layout from '../components/Layout';
 import SectionBar from '../components/microComponents/sectionBar';
+import CardLarge from '../components/microComponents/cardLarge';
 
 // Styling
 import styles from '../styles/Home.module.scss';
@@ -35,21 +36,36 @@ export default function Home({ posts }) {
 				slug={'/blog'}
 				text="Toutes les chroniques"
 			/>
-			{posts.edges.map((el) => (
+			<CardLarge
+				title={parse(posts.edges[0].node.title)}
+				text={
+					posts.edges[0].node.excerpt.length > 288
+						? parse(
+								posts.edges[0].node.excerpt.slice(0, 288) +
+									'...'
+						  )
+						: parse(posts.edges[0].node.excerpt)
+				}
+				imageUrl={posts.edges[0].node.featuredImage.node.sourceUrl}
+				imageAltText={'test'}
+				date={posts.edges[0].node.date}
+			/>
+
+			{/* {posts.edges.map((el) => (
 				<div key={'div' + el.node.id}>
 					<h3 key={'title' + el.node.id}>{el.node.title}</h3>
 					<div key={'excerpt' + el.node.id}>
 						{parse(el.node.excerpt, options)}
-					</div>
-					{/* <div key={'content' + el.node.id}>
+					</div> */}
+			{/* <div key={'content' + el.node.id}>
 						{parse(el.node.content, options)}
 					</div> */}
-					<p>{el.node.date}</p>
+			{/* <p>{el.node.date}</p>
 					{el.node.featuredImage !== null && (
 						<img src={`${el.node.featuredImage.node.sourceUrl}`} />
 					)}
 				</div>
-			))}
+			))} */}
 		</Layout>
 	);
 }
