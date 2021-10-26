@@ -1,0 +1,59 @@
+.footer {
+    width: 100%;
+    height: 14.4rem;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+
+    margin-top: 5.8rem;
+}
+
+.footerContent {
+    width: 118.8rem;
+    display: flex;
+    flex-grow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerLogo {
+    color: white;
+    font-size: 1.5rem;  
+    font-weight: 600;
+    letter-spacing: 0%;
+}
+
+.footerBy {
+    font-size: 1.2rem;
+    font-weight: 400;  
+    color: #ADADAD;
+    margin-left: 1.2rem;
+}
+
+.footerNav {
+
+
+}
+
+.footerNavItem {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 4.8rem;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.footerRights {
+width: 25.2rem;
+height: 3.2rem;
+display: flex;
+flex-direction: column;
+}
+
+.footerRights span {
+color: white;
+font-size: 1.1rem;
+font-weight: 500;
+}
