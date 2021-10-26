@@ -6,6 +6,7 @@ import { GraphQLClient } from 'graphql-request';
 import Layout from '../components/Layout';
 import SectionBar from '../components/microComponents/sectionBar';
 import CardLarge from '../components/microComponents/cardLarge';
+import CardMedium from '../components/microComponents/cardMedium';
 import CardSmall from '../components/microComponents/cardSmall';
 
 // Styling
@@ -30,6 +31,21 @@ export default function Home({ posts }) {
 			}
 		},
 	};
+
+	const chroniques = posts.edges.filter(
+		(el) =>
+			el.node.categories.nodes[0].name !== 'Podcast' &&
+			el.node.categories.nodes[0].name !== 'Publication'
+	);
+
+	const podcasts = posts.edges.filter(
+		(el) => el.node.categories.nodes[0].name === 'Podcast'
+	);
+
+	const publications = posts.edges.filter(
+		(el) => el.node.categories.nodes[0].name === 'Publication'
+	);
+
 	return (
 		<Layout>
 			<SectionBar
@@ -38,21 +54,22 @@ export default function Home({ posts }) {
 				text="Toutes les chroniques"
 			/>
 			<CardLarge
-				title={parse(posts.edges[0].node.title)}
+				grid={{ gridRow: '2/4' }}
+				colorTag="#F6EEDF"
+				title={parse(chroniques[0].node.title)}
 				text={
-					posts.edges[0].node.excerpt.length > 288
+					chroniques[0].node.excerpt.length > 288
 						? parse(
-								posts.edges[0].node.excerpt.slice(0, 288) +
-									'...'
+								chroniques[0].node.excerpt.slice(0, 288) + '...'
 						  )
-						: parse(posts.edges[0].node.excerpt)
+						: parse(chroniques[0].node.excerpt)
 				}
-				imageUrl={posts.edges[0].node.featuredImage.node.sourceUrl}
+				imageUrl={chroniques[0].node.featuredImage.node.sourceUrl}
 				imageAltText={'test'}
-				date={posts.edges[0].node.date}
-				category={posts.edges[0].node.categories.nodes[0].name}
+				date={chroniques[0].node.date}
+				category={chroniques[0].node.categories.nodes[0].name}
 			/>
-			{posts.edges.slice(1, 5).map((el) => (
+			{chroniques.slice(1, 5).map((el) => (
 				<CardSmall
 					key={'smallCard' + el.node.id}
 					title={el.node.title}
@@ -67,6 +84,33 @@ export default function Home({ posts }) {
 				slug={'/podcasts'}
 				text="Toutes les podcasts"
 			/>
+			<CardLarge
+				grid={{ gridRow: '6/8' }}
+				colorTag="#D63447"
+				textColor="white"
+				title={parse(podcasts[0].node.title)}
+				text={
+					podcasts[0].node.excerpt.length > 288
+						? parse(podcasts[0].node.excerpt.slice(0, 288) + '...')
+						: parse(podcasts[0].node.excerpt)
+				}
+				imageUrl={podcasts[0].node.featuredImage.node.sourceUrl}
+				imageAltText={'test'}
+				date={podcasts[0].node.date}
+				category={podcasts[0].node.categories.nodes[0].name}
+			/>
+			{podcasts.slice(1, 4).map((el) => (
+				<CardMedium
+					colorTag="#D63447"
+					textColor="white"
+					key={'smallCard' + el.node.id}
+					title={el.node.title}
+					imageUrl={el.node.featuredImage.node.sourceUrl}
+					imageAltText={'test'}
+					date={el.node.date}
+					category={el.node.categories.nodes[0].name}
+				/>
+			))}
 		</Layout>
 	);
 }

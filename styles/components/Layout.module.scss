@@ -12,9 +12,9 @@
     height: auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-
+    margin-top: 3.6rem;
     justify-content: space-between;  
-    align-content: start;    
-    grid-auto-flow: row dense;
+    align-content: space-between;  
+    // grid-auto-flow: row dense;
 
 }

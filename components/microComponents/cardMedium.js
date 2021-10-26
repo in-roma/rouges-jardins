@@ -6,35 +6,34 @@ import Tag from './tag';
 import DateCard from './dateCard';
 
 // Styling
-import styles from '../../styles/components/microComponents/CardLarge.module.scss';
+import styles from '../../styles/components/microComponents/CardMedium.module.scss';
 
-export default function CardLarge({
+export default function CardMedium({
 	title,
 	text,
 	imageUrl,
 	imageAltText,
 	date,
 	category,
-	grid,
 	colorTag,
 	textColor,
 }) {
 	return (
-		<div className={styles.cardLarge} style={grid}>
+		<div className={styles.cardMedium}>
 			<Tag text={category} color={colorTag} textColor={textColor} />
 			<div
 				style={{
 					backgroundImage: `url(${imageUrl})`,
 					backgroundPosition: 'center',
 					backgroundSize: 'cover',
-					width: '58.2rem',
-					height: '35.2rem',
+					width: '29.1rem',
+					height: '16.8rem',
 					borderRadius: '0.6rem',
 				}}
 			></div>
-			<div className={styles.titleCardLarge}>{title}</div>
-			<div className={styles.textCardLarge}>{text}</div>
-			<DateCard date={date} />
+			<div className={styles.titleCardMedium}>
+				{title} <DateCard date={date} />
+			</div>
 		</div>
 	);
 }
