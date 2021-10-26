@@ -21,7 +21,11 @@ export default function CardMedium({
 	return (
 		<div className={styles.cardMedium}>
 			<Tag text={category} color={colorTag} textColor={textColor} />
-			<div
+			<div className={styles.cardMediumPicture}>
+				<img src={imageUrl}></img>
+			</div>
+
+			{/* <div
 				style={{
 					backgroundImage: `url(${imageUrl})`,
 					backgroundPosition: 'center',
@@ -30,7 +34,7 @@ export default function CardMedium({
 					height: '16.8rem',
 					borderRadius: '0.6rem',
 				}}
-			></div>
+			></div> */}
 			<div className={styles.titleCardMedium}>
 				{title} <DateCard date={date} />
 			</div>

@@ -5,14 +5,12 @@ export default function Footer() {
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.footerContent}>
-				<Link href="/">
-					<a className={styles.footerLogo}>
-						Rouges jardins
-						<span className={styles.footerBy}>
-							par Guy Grandjean
-						</span>
-					</a>
-				</Link>
+				<div className={styles.footerLogoContainer}>
+					<Link href="/">
+						<a className={styles.footerLogo}>Rouges jardins</a>
+					</Link>
+					<span className={styles.footerBy}>par Guy Grandjean</span>
+				</div>
 				<nav className={styles.footerNav}>
 					<Link href="/blog">
 						<a className={styles.footerNavItem}>Chroniques</a>
@@ -27,11 +25,9 @@ export default function Footer() {
 						<a className={styles.footerNavItem}>À propos</a>
 					</Link>
 				</nav>
-				<div className="footerRights">
-					<span>
-						Tous droits réservés - Rouges Jardins Site hébergé chez
-					</span>
-					<span>Digital Ocean et O2Switch</span>
+				<div className={styles.footerMentions}>
+					<span>Tous droits réservés - Rouges Jardins</span>
+					<span>Site hébergé chez Digital Ocean et O2Switch</span>
 				</div>
 			</div>
 		</footer>

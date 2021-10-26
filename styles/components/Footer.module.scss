@@ -4,7 +4,6 @@
     background-color: black;
     display: flex;
     justify-content: center;
-
     margin-top: 5.8rem;
 }
 
@@ -12,10 +11,16 @@
     width: 118.8rem;
     display: flex;
     flex-grow: row nowrap;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
 }
 
+.footerLogoContainer {
+    display: flex;
+    flex-direction: column;
+    margin-right: 9.6rem;
+
+}
 .footerLogo {
     color: white;
     font-size: 1.5rem;  
@@ -27,33 +32,33 @@
     font-size: 1.2rem;
     font-weight: 400;  
     color: #ADADAD;
-    margin-left: 1.2rem;
+ 
 }
 
 .footerNav {
 
-
+    margin-right: 19.6rem;
 }
 
 .footerNavItem {
-    color: white;
+    color: #ADADAD;
     font-size: 1rem;
     font-weight: 500;
-    margin-left: 4.8rem;
+    margin-right: 4.8rem;
     &:hover{
         text-decoration: underline;
     }
 }
 
-.footerRights {
+.footerMentions {
 width: 25.2rem;
 height: 3.2rem;
 display: flex;
 flex-direction: column;
-}
 
-.footerRights span {
-color: white;
+span{
+color: #ADADAD;
 font-size: 1.1rem;
-font-weight: 500;
+font-weight: 400;
+}
 }
