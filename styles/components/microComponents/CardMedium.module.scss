@@ -1,14 +1,16 @@
 .cardMedium{
  position: relative;   
  width: 58.2rem;
- height: 24.8rem;
+ height: 16.8rem;
+ grid-column: 3/5;
 justify-self: center;
 display: flex;
 flex-flow: row nowrap;
+justify-self: end;
 }
 
 .titleCardMedium {
-    width: auto;
+
     height: 3.2rem;
     font-family: 'lora', serif;
     font-size: 2rem;
@@ -17,6 +19,6 @@ flex-flow: row nowrap;
     margin-top: 1.2rem;
     line-height: 2.4rem;
     margin-left: 2.0rem;
-    padding-right: 0.8rem;
+
 }
 

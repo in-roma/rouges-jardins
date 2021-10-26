@@ -7,7 +7,7 @@ export default function Header() {
 			<div className={styles.headerContent}>
 				<Link href="/">
 					<a className={styles.logo}>
-						Rouges jardins{' '}
+						Rouges jardins
 						<span className={styles.by}>par Guy Grandjean</span>
 					</a>
 				</Link>

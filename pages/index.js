@@ -8,6 +8,7 @@ import SectionBar from '../components/microComponents/sectionBar';
 import CardLarge from '../components/microComponents/cardLarge';
 import CardMedium from '../components/microComponents/cardMedium';
 import CardSmall from '../components/microComponents/cardSmall';
+import CardSmallVertical from '../components/microComponents/cardSmallVertical';
 
 // Styling
 import styles from '../styles/Home.module.scss';
@@ -82,10 +83,10 @@ export default function Home({ posts }) {
 			<SectionBar
 				sectionTitle="Podcasts"
 				slug={'/podcasts'}
-				text="Toutes les podcasts"
+				text="Tous les podcasts"
 			/>
 			<CardLarge
-				grid={{ gridRow: '6/8' }}
+				grid={{ gridRow: '5/8' }}
 				colorTag="#D63447"
 				textColor="white"
 				title={parse(podcasts[0].node.title)}
@@ -103,6 +104,23 @@ export default function Home({ posts }) {
 				<CardMedium
 					colorTag="#D63447"
 					textColor="white"
+					key={'smallCard' + el.node.id}
+					title={el.node.title}
+					imageUrl={el.node.featuredImage.node.sourceUrl}
+					imageAltText={'test'}
+					date={el.node.date}
+					category={el.node.categories.nodes[0].name}
+				/>
+			))}
+			<SectionBar
+				sectionTitle="Publications"
+				slug={'/publications'}
+				text="Toutes les publications"
+			/>
+
+			{publications.slice(0, 5).map((el) => (
+				<CardSmallVertical
+					colorTag="#FFD31D"
 					key={'smallCard' + el.node.id}
 					title={el.node.title}
 					imageUrl={el.node.featuredImage.node.sourceUrl}

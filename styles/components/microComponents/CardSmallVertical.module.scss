@@ -1,19 +1,19 @@
-.cardSmall{
+.cardSmallVertical{
  position: relative;   
  width: 28rem;
- height: 24.8rem;
- grid-column: auto / auto;
- justify-self: end;
+ height: 36.8rem;
+
 }
 
-.titleCardSmall {
+.titleCardSmallVertical {
     width: 100%;
     height: 3.2rem;
     font-family: 'lora', serif;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 600;
     color: black;
     margin-top: 1.2rem;
     line-height: 2.4rem;
+    padding-right: 1.2rem;
 }
 
