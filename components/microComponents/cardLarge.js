@@ -29,13 +29,9 @@ export default function CardLarge({
 		>
 			<Tag text={category} color={colorTag} textColor={textColor} />
 			<div
+				className={styles.cardLargePicture}
 				style={{
 					backgroundImage: `url(${imageUrl})`,
-					backgroundPosition: 'center',
-					backgroundSize: 'cover',
-					width: '58.2rem',
-					height: '35.2rem',
-					borderRadius: '0.6rem',
 				}}
 			></div>
 			<div className={styles.titleCardLarge}>{title}</div>

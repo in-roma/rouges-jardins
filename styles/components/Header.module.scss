@@ -43,7 +43,7 @@
 .nav {
     display: flex;
     flex-flow: row nowrap;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .searchButton {
@@ -106,4 +106,13 @@ animation-iteration-count: 1;
         margin-left: 0;
     }
 
+}
+
+@media screen and (max-width: 1040px) {
+    .headerContent {
+        width: 62.2rem;;
+    }
+    .navItem {
+        margin-left: 1.6rem;
+    }
 }

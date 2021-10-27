@@ -68,7 +68,7 @@ font-weight: 400;
         width: 88.6rem;
     }
     .footerLogoContainer {
-        margin-right: 3.6rem;
+        margin-right: 4.4rem;
     }
     .footerLogo {
         font-size: 1.3rem; 
@@ -78,7 +78,7 @@ font-weight: 400;
     }
     .footerNav {
 
-        margin-right: 9.3rem;
+        margin-right: 11rem;
     }
     .footerMentions {
         width: 22.2rem;
@@ -91,4 +91,23 @@ font-weight: 400;
         }
         }
     
+}
+
+@media screen and (max-width: 1040px) {
+    .footerContent  {
+        width: 62.2rem;
+    }
+
+    .footerNav {
+        display: flex;
+        flex-direction: column;
+    }
+    .footerMentions {
+        width: 18.2rem;
+        span{
+
+            font-size: 0.8rem;
+            font-weight: 400;
+            }
+    }
 }

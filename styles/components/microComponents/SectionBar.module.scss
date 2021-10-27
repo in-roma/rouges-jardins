@@ -30,3 +30,8 @@
     }
 
 }
+@media screen and (max-width: 1040px) {
+    .sectionBar  {
+        grid-column: 1/3;
+    }
+}
