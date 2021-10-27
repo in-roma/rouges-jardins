@@ -23,3 +23,10 @@
     color: black;
     text-decoration: underline;
 }
+
+@media screen and (max-width: 1240px) {
+    .sectionBar  {
+        grid-column: 1/4;
+    }
+
+}

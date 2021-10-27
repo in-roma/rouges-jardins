@@ -1,4 +1,4 @@
-.cardMedium{
+.cardMedium {
  position: relative;   
  width: 58.2rem;
  height: 16.8rem;
@@ -33,3 +33,25 @@ justify-self: end;
     padding-right: 1.8rem;
 }
 
+@media screen and (max-width: 1240px) {
+
+    .cardMedium{
+        width: 28rem;
+        height: 24.8rem;
+        flex-flow: column;
+        align-self: start;
+    }
+    .titleCardMedium {
+        margin-top: 1.6rem;
+        margin-left: 0;
+    }
+    .cardMediumPicture {
+        width: 28rem;
+        height: 16.2rem;
+        img {
+            width: 28rem;
+            height: 16.2rem;
+        }
+    }
+
+}

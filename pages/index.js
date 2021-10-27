@@ -55,7 +55,7 @@ export default function Home({ posts }) {
 				text="Toutes les chroniques"
 			/>
 			<CardLarge
-				grid={{ gridRow: '2/4' }}
+				cardLargeType="cardLargeChroniques"
 				colorTag="#F6EEDF"
 				title={parse(chroniques[0].node.title)}
 				text={
@@ -86,7 +86,7 @@ export default function Home({ posts }) {
 				text="Tous les podcasts"
 			/>
 			<CardLarge
-				grid={{ gridRow: '5/8' }}
+				cardLargeType="cardLargePodcasts"
 				colorTag="#D63447"
 				textColor="white"
 				title={parse(podcasts[0].node.title)}

@@ -15,12 +15,18 @@ export default function CardLarge({
 	imageAltText,
 	date,
 	category,
-	grid,
 	colorTag,
 	textColor,
+	cardLargeType,
 }) {
 	return (
-		<div className={styles.cardLarge} style={grid}>
+		<div
+			className={
+				cardLargeType === 'cardLargeChroniques'
+					? styles.cardLargeChroniques
+					: styles.cardLargePodcasts
+			}
+		>
 			<Tag text={category} color={colorTag} textColor={textColor} />
 			<div
 				style={{

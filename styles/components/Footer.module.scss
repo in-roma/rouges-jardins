@@ -62,3 +62,33 @@ font-size: 1.1rem;
 font-weight: 400;
 }
 }
+
+@media screen and (max-width: 1240px) {
+    .footerContent  {
+        width: 88.6rem;
+    }
+    .footerLogoContainer {
+        margin-right: 3.6rem;
+    }
+    .footerLogo {
+        font-size: 1.3rem; 
+    }
+    .footerBy {
+        font-size: 1.1rem; 
+    }
+    .footerNav {
+
+        margin-right: 9.3rem;
+    }
+    .footerMentions {
+        width: 22.2rem;
+
+        
+        span{
+
+        font-size: 1rem;
+        font-weight: 400;
+        }
+        }
+    
+}
