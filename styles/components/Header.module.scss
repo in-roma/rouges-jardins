@@ -40,6 +40,10 @@
     margin-left: 1.2rem;
 }
 
+.burger {
+    display: none;
+}
+
 .nav {
     display: flex;
     flex-flow: row nowrap;
@@ -66,14 +70,40 @@
 
     input {
         width: 18rem;
-
         outline: none;
         border:none;
         background-color:transparent;
         color: white;
         border-bottom: 1px solid white;
         animation-duration: 1s;
-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+    }
+}
+
+.linksContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.linksContainerMobileInactive{
+    display:none;
+}
+
+.linksContainerMobile {
+    position: fixed;
+    top: 7.2rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+    background-color: black;
+
+    .navItemMobile {
+        color: white;
+        padding: 1.2rem 2.4rem;
+        &:hover {
+            text-decoration: underline;
+
+        }
     }
 }
 
@@ -85,6 +115,11 @@ animation-iteration-count: 1;
     &:hover{
         text-decoration: underline;
     }
+}
+
+.burger {
+
+    display: none;
 }
 
 @media screen and (max-width: 1240px) {
@@ -112,7 +147,10 @@ animation-iteration-count: 1;
     .headerContent {
         width: 62.2rem;;
     }
-    .navItem {
-        margin-left: 1.6rem;
+
+    
+    .burger {
+        display: block;
+        margin-left: 2.4rem;
     }
 }
