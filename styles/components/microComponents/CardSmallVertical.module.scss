@@ -5,6 +5,14 @@
 
 }
 
+.pictureCardVertical {
+    background-position: center;
+    background-size: cover;
+    width: 28rem;
+    height: 28.6rem;
+    border-radius: 0.6rem;
+}
+
 .titleCardSmallVertical {
     width: 100%;
     height: 3.2rem;
@@ -17,3 +25,39 @@
     padding-right: 1.2rem;
 }
 
+
+@media screen and (max-width: 1040px) {
+    .cardSmallVertical{
+        position: relative;   
+        width: 28rem;
+        height: 36.8rem;
+       }
+
+    .pictureCardVertical{
+        width: 28rem;
+        height: 28.5rem;
+    }
+    .titleCardSmallVertical {
+        width: 28rem;
+        height: 28.5rem;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+    .cardSmallVertical{
+        position: relative;   
+        width: 22rem;
+        height: 28.9rem;
+       }
+
+    .pictureCardVertical{
+        width: 22rem;
+        height: 22.47rem;
+    }
+    .titleCardSmallVertical {
+        height: 2.8rem;
+        font-size: 1.5rem;
+    }
+
+}

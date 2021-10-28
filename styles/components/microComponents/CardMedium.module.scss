@@ -41,10 +41,6 @@ justify-self: end;
         flex-flow: column;
         align-self: start;
     }
-    .titleCardMedium {
-        margin-top: 1.6rem;
-        margin-left: 0;
-    }
     .cardMediumPicture {
         width: 28rem;
         height: 16.2rem;
@@ -53,5 +49,57 @@ justify-self: end;
             height: 16.2rem;
         }
     }
+    .titleCardMedium {
+        margin-top: 1.6rem;
+        margin-left: 0;
+    }
 
+}
+
+@media screen and (max-width: 1040px) {
+    .cardMedium{
+        width: 32rem;
+        height: 28.3rem;
+ 
+    }
+    .cardMediumPicture {
+        width: 32rem;
+        height: 18.4rem;
+        img {
+            width: 32rem;
+            height: 18.4rem;
+        }
+    }
+
+    .titleCardMedium {
+        font-size: 1.7rem;
+        margin-top: 1.8rem;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .cardMedium{
+        width: 22rem;
+        height: 19.5rem;
+ 
+    }
+    .cardMediumPicture {
+        width: 22rem;
+        height: 12.7rem;
+        img {
+            width: 22rem;
+            height: 12.7rem;
+        }
+    }
+
+    .titleCardMedium {
+    width: 22rem;
+    height: 2.8rem;
+    font-size: 1.4rem;
+    margin-top: 1.2rem;
+    line-height: 2.4rem;
+    margin-left: 0;
+    padding-right: 0.6rem;
+}
 }

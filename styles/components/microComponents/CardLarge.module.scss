@@ -58,17 +58,47 @@
 
 @media screen and (max-width: 1040px) {
     .cardLargeChroniques {
-        width: 62.2rem;
+        width: 68.2rem;
         height: auto;
         grid-column: 1/2;
         }
         .cardLargePodcasts{
         grid-column: 1/2;
-        width: 62.2rem;
+        width: 68.2rem;
         height: auto;
         }
         .cardLargePicture{
-            width: 62.2rem;
-            height: 37.6rem;  
+        width: 68.2rem;
+        height: 41.2rem;  
+        }
+}
+
+@media screen and (max-width: 740px) {
+    .cardLargeChroniques {
+        width: 58.2rem;
+    }
+    .cardLargePodcasts{
+
+        width: 58.2rem;
+
+        }
+        .cardLargePicture{
+            width: 58.2rem;
+        height: 35.1rem;  
+        }
+}
+
+@media screen and (max-width: 640px) {
+    .cardLargeChroniques {
+        width: 48.2rem;
+    }
+    .cardLargePodcasts{
+
+        width: 48.2rem;
+
+        }
+        .cardLargePicture{
+        width: 48.2rem;
+        height: 29rem;  
         }
 }

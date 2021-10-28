@@ -1,5 +1,6 @@
 import { ClientError } from 'graphql-request';
 import Link from 'next/link';
+import Media from 'react-media';
 
 // Component
 import Tag from './tag';
@@ -20,13 +21,9 @@ export default function CardSmall({
 		<div className={styles.cardSmall}>
 			<Tag text={category} color="#F6EEDF" />
 			<div
+				className={styles.pictureCardSmall}
 				style={{
 					backgroundImage: `url(${imageUrl})`,
-					backgroundPosition: 'center',
-					backgroundSize: 'cover',
-					width: '28rem',
-					height: '16.8rem',
-					borderRadius: '0.6rem',
 				}}
 			></div>
 			<div className={styles.titleCardSmall}>{title}</div>

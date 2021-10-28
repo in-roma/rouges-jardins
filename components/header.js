@@ -8,6 +8,7 @@ import Media from 'react-media';
 import searchPic from '../public/search.svg';
 import crossPic from '../public/cross.svg';
 import burger from '../public/burger.svg';
+import burgerActive from '../public/active-burger.svg';
 
 export default function Header() {
 	const [searchStatus, setSearchStatus] = useState(false);
@@ -16,6 +17,9 @@ export default function Header() {
 	const activateSearch = () => {
 		if (!searchStatus) {
 			setSearchStatus(true);
+		}
+		if (searchStatus) {
+			setSearchStatus(false);
 		}
 	};
 	const deactivateSearch = () => {
@@ -45,32 +49,38 @@ export default function Header() {
 				<nav className={styles.nav}>
 					<div
 						className={styles.searchButton}
-						style={{ width: searchStatus && '24rem' }}
-					>
-						{searchStatus && (
+						style={{ width: searchStatus && '14rem' }}
+					></div>
+					{searchStatus && (
+						<>
+							<Image src={searchPic} alt="cross icon" />
 							<form className={styles.searchInput}>
 								<input autofocus></input>
-								<Image
-									src={crossPic}
-									alt="search icon"
-									onClick={deactivateSearch}
-								/>
 							</form>
+						</>
+					)}
+
+					<div className={styles.searchIcon}>
+						{searchStatus ? (
+							<Image
+								src={crossPic}
+								alt="search icon"
+								onClick={deactivateSearch}
+							/>
+						) : (
+							<Image
+								src={searchPic}
+								alt="cross icon"
+								onClick={activateSearch}
+							/>
 						)}
 					</div>
-					<div className={styles.searchIcon}>
-						<Image
-							src={searchPic}
-							alt="cross icon"
-							onClick={activateSearch}
-						/>
-					</div>
 					<div className={styles.burger} onClick={openBurgerMenu}>
-						<Image
-							src={burger}
-							alt="burger icon"
-							onClick={activateSearch}
-						/>
+						{burgerMenu ? (
+							<Image src={burgerActive} alt="burger icon" />
+						) : (
+							<Image src={burger} alt="burger icon" />
+						)}
 					</div>
 					<Media
 						query="(min-width: 1040px)"
@@ -93,15 +103,36 @@ export default function Header() {
 							</div>
 						)}
 					/>
-					<Media
-						query="(max-width: 1040px)"
-						render={() => (
+				</nav>
+				<Media
+					query="(max-width: 1040px)"
+					render={() =>
+						burgerMenu ? (
+							<div className={styles.linksContainerMobileActive}>
+								<Link href="/blog">
+									<a className={styles.navItemMobile}>
+										Chroniques
+									</a>
+								</Link>
+								<Link href="/podcasts">
+									<a className={styles.navItemMobile}>
+										Podcasts
+									</a>
+								</Link>
+								<Link href="/publications">
+									<a className={styles.navItemMobile}>
+										Publications
+									</a>
+								</Link>
+								<Link href="/about">
+									<a className={styles.navItemMobile}>
+										À propos
+									</a>
+								</Link>
+							</div>
+						) : (
 							<div
-								className={
-									burgerMenu
-										? styles.linksContainerMobile
-										: styles.inksContainerMobileInactive
-								}
+								className={styles.linksContainerMobileInactive}
 							>
 								<Link href="/blog">
 									<a className={styles.navItemMobile}>
@@ -124,9 +155,9 @@ export default function Header() {
 									</a>
 								</Link>
 							</div>
-						)}
-					/>
-				</nav>
+						)
+					}
+				/>
 			</div>
 		</header>
 	);
