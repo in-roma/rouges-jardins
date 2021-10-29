@@ -1,5 +1,4 @@
 .header {
-
     width: 100%;
     height: 7.2rem;
     position: fixed;
@@ -184,6 +183,20 @@
 @media screen and (max-width: 640px) {
     .headerContent {
         width: 48.2rem;
+    }
+
+}
+
+@media screen and (max-width: 540px) {
+    .headerContent {
+        width: 42.2rem;
+    }
+
+}
+
+@media screen and (max-width: 460px) {
+    .headerContent {
+        width: 36rem;
     }
 
 }

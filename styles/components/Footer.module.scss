@@ -139,3 +139,29 @@ font-weight: 400;
         }
         }
 }
+
+@media screen and (max-width: 540px) {    
+    .footerContent  {
+        width: 42.2rem;
+    }
+    .footerLogoContainer {
+        width: 18.2rem;
+    }
+    .footerLogo {
+        font-size: 0.9rem; 
+    }
+    .footerBy {
+        font-size: 0.8rem; 
+    }
+    .footerNav {
+
+        width: 14.2rem;
+    }
+    .footerMentions {
+        width: 20.2rem;
+        span {
+        font-size: 0.7rem;
+        font-weight: 400;
+        }
+        }
+}

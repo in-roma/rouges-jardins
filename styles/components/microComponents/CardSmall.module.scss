@@ -40,9 +40,25 @@
     }
 
     .titleCardSmall {
-        width: 32rem;
-        height: 19.1rem;
-        // margin-top: 1.2rem;
+        font-size: 1.7rem;
+        line-height: 2.4rem;
+    }
+}
+
+@media screen and (max-width: 740px) {
+
+    .cardSmall{
+        width: 27.2rem;
+        height: 25.1rem;
+    }
+
+    .pictureCardSmall {
+        width: 27.2rem;
+        height: 16.2rem;
+    }
+
+    .titleCardSmall {
+        font-size: 1.7rem;
         line-height: 2.4rem;
     }
 }
@@ -61,9 +77,23 @@
     }
 
     .titleCardSmall {
-        height: 2.8rem;
-        font-size: 1.5rem;
-        margin-top: 1.2rem;
-        line-height: 2.4rem;
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 540px) {
+
+    .cardSmall{
+        width: 42.2rem;
+        height: 37.4rem;
+    }
+
+    .pictureCardSmall {
+        width: 42.2rem;
+        height: 25.3rem;
+    }
+
+    .titleCardSmall {
+        font-size: 2.2rem;
     }
 }

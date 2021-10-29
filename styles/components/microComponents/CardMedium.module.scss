@@ -80,6 +80,28 @@ justify-self: end;
 
 @media screen and (max-width: 740px) {
     .cardMedium{
+        width: 27.2rem;
+        height: 25.1rem;
+ 
+    }
+    .cardMediumPicture {
+        width: 27.2rem;
+        height: 16.2rem;
+        img {
+            width: 27.2rem;
+            height: 16.2rem;
+        }
+    }
+
+    .titleCardMedium {
+        font-size: 1.7rem;
+        margin-top: 1.8rem;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .cardMedium{
         width: 22rem;
         height: 19.5rem;
  
@@ -96,10 +118,32 @@ justify-self: end;
     .titleCardMedium {
     width: 22rem;
     height: 2.8rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     margin-top: 1.2rem;
     line-height: 2.4rem;
     margin-left: 0;
     padding-right: 0.6rem;
 }
+}
+
+@media screen and (max-width: 540px) {
+
+    .cardMedium{
+        width: 42.2rem;
+        height: 37.4rem;
+    }
+
+    .cardMediumPicture {
+        width: 42.2rem;
+        height: 24.1rem;
+        img {
+            width: 42.2rem;
+            height: 24.1rem;
+        }
+    }
+
+    .titleCardMedium {
+        width: 42.2rem;
+        font-size: 2.2rem;
+    }
 }

@@ -38,11 +38,30 @@
         height: 28.5rem;
     }
     .titleCardSmallVertical {
-        width: 28rem;
-        height: 28.5rem;
+        height: 3.2rem;
+        font-size: 1.9rem;
     }
 
 }
+
+@media screen and (max-width: 740px) {
+    .cardSmallVertical{
+        position: relative;   
+        width: 27.2rem;
+        height: 35.7rem;
+       }
+
+    .pictureCardVertical{
+        width: 27.2rem;
+        height: 27.7rem;
+    }
+    .titleCardSmallVertical {
+        height: 3.2rem;
+        font-size: 1.9rem;
+    }
+
+}
+
 
 @media screen and (max-width: 640px) {
     .cardSmallVertical{
@@ -56,8 +75,27 @@
         height: 22.47rem;
     }
     .titleCardSmallVertical {
-        height: 2.8rem;
-        font-size: 1.5rem;
+        height: 3.2rem;
+        font-size: 1.6rem;
+    }
+
+}
+
+
+@media screen and (max-width: 540px) {
+    .cardSmallVertical{
+        position: relative;   
+        width: 42.2rem;
+        height: 54.4rem;
+       }
+
+    .pictureCardVertical{
+        width: 42.2rem;
+        height: 43.1rem;
+    }
+    .titleCardSmallVertical {
+        height: 3.2rem;
+        font-size: 2.2rem;
     }
 
 }

@@ -1,5 +1,6 @@
 import { ClientError } from 'graphql-request';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Component
 import Tag from './tag';
@@ -22,7 +23,7 @@ export default function CardMedium({
 		<div className={styles.cardMedium}>
 			<Tag text={category} color={colorTag} textColor={textColor} />
 			<div className={styles.cardMediumPicture}>
-				<img src={imageUrl}></img>
+				<img src={imageUrl} alt={imageAltText} />
 			</div>
 
 			{/* <div

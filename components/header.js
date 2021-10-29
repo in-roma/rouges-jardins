@@ -55,7 +55,7 @@ export default function Header() {
 						<>
 							<Image src={searchPic} alt="cross icon" />
 							<form className={styles.searchInput}>
-								<input autofocus></input>
+								<input></input>
 							</form>
 						</>
 					)}
