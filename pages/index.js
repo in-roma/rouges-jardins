@@ -2,6 +2,9 @@ import Image from 'next/image';
 import parse, { domToReact } from 'html-react-parser';
 import { GraphQLClient } from 'graphql-request';
 
+// Api
+import getData from '../pages/api/data';
+
 // Components
 import Layout from '../components/Layout';
 import SectionBar from '../components/microComponents/sectionBar';
@@ -69,6 +72,7 @@ export default function Home({ posts }) {
 				imageAltText={'test'}
 				date={chroniques[0].node.date}
 				category={chroniques[0].node.categories.nodes[0].name}
+				slug={chroniques[0].node.slug}
 			/>
 			{chroniques.slice(1, 5).map((el) => (
 				<CardSmall
@@ -78,6 +82,7 @@ export default function Home({ posts }) {
 					imageAltText={'test'}
 					date={el.node.date}
 					category={el.node.categories.nodes[0].name}
+					slug={el.node.slug}
 				/>
 			))}
 			<SectionBar
@@ -110,6 +115,7 @@ export default function Home({ posts }) {
 					imageAltText={'test'}
 					date={el.node.date}
 					category={el.node.categories.nodes[0].name}
+					slug={el.node.slug}
 				/>
 			))}
 			<SectionBar
@@ -133,35 +139,7 @@ export default function Home({ posts }) {
 	);
 }
 export async function getStaticProps() {
-	const graphcms = new GraphQLClient(process.env.CMSWP_URL);
-
-	const { posts } = await graphcms.request(
-		`{
-			posts(first: 1000) {
-				edges {
-				  node {
-					id
-					title
-					excerpt
-					date
-					slug
-					featuredImage {
-					  node {
-						altText
-						sourceUrl
-					  }
-					}
-										categories {
-									nodes {
-									  name
-									}
-								  }
-				  }
-				}
-			  }
-	  }`
-	);
-	// console.log('data fetched:', posts.edges);
+	const { posts } = await getData();
 	return {
 		props: { posts },
 	};

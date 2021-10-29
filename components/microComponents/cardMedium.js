@@ -1,6 +1,7 @@
 import { ClientError } from 'graphql-request';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 // Component
 import Tag from './tag';
@@ -18,9 +19,14 @@ export default function CardMedium({
 	category,
 	colorTag,
 	textColor,
+	slug,
 }) {
+	const router = useRouter();
 	return (
-		<div className={styles.cardMedium}>
+		<div
+			className={styles.cardMedium}
+			onClick={() => router.push(`/blog/${slug}`)}
+		>
 			<Tag text={category} color={colorTag} textColor={textColor} />
 			<div className={styles.cardMediumPicture}>
 				<img src={imageUrl} alt={imageAltText} />

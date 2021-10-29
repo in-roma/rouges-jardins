@@ -1,6 +1,7 @@
 import { ClientError } from 'graphql-request';
 import Link from 'next/link';
 import Media from 'react-media';
+import { useRouter } from 'next/router';
 
 // Component
 import Tag from './tag';
@@ -16,9 +17,14 @@ export default function CardSmall({
 	imageAltText,
 	date,
 	category,
+	slug,
 }) {
+	const router = useRouter();
 	return (
-		<div className={styles.cardSmall}>
+		<div
+			className={styles.cardSmall}
+			onClick={() => router.push(`/blog/${slug}`)}
+		>
 			<Tag text={category} color="#F6EEDF" />
 			<div
 				className={styles.pictureCardSmall}

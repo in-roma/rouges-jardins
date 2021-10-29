@@ -1,5 +1,6 @@
 import { ClientError } from 'graphql-request';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 // Component
 import Tag from './tag';
@@ -18,7 +19,9 @@ export default function CardLarge({
 	colorTag,
 	textColor,
 	cardLargeType,
+	slug,
 }) {
+	const router = useRouter();
 	return (
 		<div
 			className={
@@ -26,6 +29,7 @@ export default function CardLarge({
 					? styles.cardLargeChroniques
 					: styles.cardLargePodcasts
 			}
+			onClick={() => router.push(`/blog/${slug}`)}
 		>
 			<Tag text={category} color={colorTag} textColor={textColor} />
 			<div
