@@ -99,3 +99,57 @@
     }
 
 }
+
+@media screen and (max-width: 460px) {
+    .cardSmallVertical{
+        position: relative;   
+        width: 36rem;
+        height: 46.4rem;
+       }
+
+    .pictureCardVertical{
+        width: 36rem;
+        height: 39.5rem;
+    }
+    .titleCardSmallVertical {
+        height: 3.2rem;
+        font-size: 2.2rem;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .cardSmallVertical{
+        position: relative;   
+        width: 30rem;
+        height: 38.6rem;
+       }
+
+    .pictureCardVertical{
+        width: 30rem;
+        height: 32.9rem;
+    }
+    .titleCardSmallVertical {
+        height: 3.2rem;
+        font-size: 1.6rem;
+    }
+
+}
+
+@media screen and (max-width: 340px) {
+    .cardSmallVertical{
+        position: relative;   
+        width: 28rem;
+        height: 36rem;
+       }
+
+    .pictureCardVertical{
+        width: 28rem;
+        height: 30.7rem;
+    }
+    .titleCardSmallVertical {
+        height: 4.2rem;
+        font-size: 1.6rem;
+    }
+
+}

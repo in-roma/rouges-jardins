@@ -147,3 +147,70 @@ justify-self: end;
         font-size: 2.2rem;
     }
 }
+
+
+@media screen and (max-width: 460px) {
+
+    .cardMedium{
+        width: 36rem;
+        height: 31.9rem;
+    }
+
+    .cardMediumPicture {
+        width: 36rem;
+        height: 21.6rem;
+        img {
+            width: 36rem;
+            height: 21.6rem;
+        }
+    }
+
+    .titleCardMedium {
+        width: 36rem;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .cardMedium{
+        width: 30rem;
+        height: 26.5rem;
+    }
+
+    .cardMediumPicture {
+        width: 30rem;
+        height: 18rem;
+        img {
+            width: 30rem;
+            height: 18rem;
+        }
+    }
+
+    .titleCardMedium {
+        width: 30rem;
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 340px) {
+
+    .cardMedium{
+        width: 28rem;
+        height: 24.7rem;
+    }
+
+    .cardMediumPicture {
+        width: 28rem;
+        height: 16.7rem;
+        img {
+            width: 28rem;
+            height: 16.7rem;
+        }
+    }
+
+    .titleCardMedium {
+        width: 30rem;
+        font-size: 1.6rem;
+    }
+}

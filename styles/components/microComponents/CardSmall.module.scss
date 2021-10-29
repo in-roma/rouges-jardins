@@ -97,3 +97,53 @@
         font-size: 2.2rem;
     }
 }
+
+@media screen and (max-width: 460px) {
+
+    .cardSmall{
+        width: 36rem;
+        height: 31.9rem;
+    }
+
+    .pictureCardSmall {
+        width: 36rem;
+        height: 21.6rem;
+    }
+
+    .titleCardSmall {
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 400px) {
+
+    .cardSmall{
+        width: 30rem;
+        height: 26.5rem;
+    }
+
+    .pictureCardSmall {
+        width: 30rem;
+        height: 18rem;
+    }
+
+    .titleCardSmall {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 340px) {
+
+    .cardSmall{
+        width: 28rem;
+        height: 24.7rem;
+    }
+
+    .pictureCardSmall {
+        width: 28rem;
+        height: 16.7rem;
+    }
+
+    .titleCardSmall {
+        font-size: 1.6rem;
+    }
+}

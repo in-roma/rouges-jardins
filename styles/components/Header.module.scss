@@ -200,3 +200,40 @@
     }
 
 }
+
+@media screen and (max-width: 400px) {
+    .headerContent {
+        width: 30rem;
+    }
+    .logo {
+
+        font-size: 1.2rem;  
+        line-height: 1.2rem;
+
+    }
+    .by {
+        font-size: 1.0rem;
+        line-height: 1.2rem;
+
+    }    
+
+}
+
+@media screen and (max-width: 340px) {
+    .headerContent {
+        width: 28rem;
+    }
+    .logo {
+
+        font-size: 1.2rem;  
+        line-height: 1.2rem;
+
+    }
+    .by {
+        font-size: 1.0rem;
+        line-height: 1.2rem;
+
+    }    
+
+}
+
