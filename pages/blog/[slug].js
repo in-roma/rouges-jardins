@@ -1,5 +1,6 @@
 import getData from '../api/data';
 import { useRouter } from 'next/router';
+import parsing from '../../helpers/helpers';
 
 // Components
 import Layout from '../../components/layout';
@@ -10,8 +11,8 @@ export default function PostPage({ post }) {
 		<Layout>
 			<h1>{post[0].node.title}</h1>
 			{/* <img src={post[0].node.featuredImage.node.sourceUrl} /> */}
-			<h3>{post[0].node.excerpt}</h3>
-			<div>post[0].node.content</div>
+			<h3>{parsing(post[0].node.excerpt)}</h3>
+			<div>{parsing(post[0].node.content)}</div>
 		</Layout>
 	);
 }

@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import parse, { domToReact } from 'html-react-parser';
 import { GraphQLClient } from 'graphql-request';
+import parsing from '../helpers/helpers';
 
 // Api
 import getData from '../pages/api/data';
@@ -17,25 +17,6 @@ import CardSmallVertical from '../components/microComponents/cardSmallVertical';
 import styles from '../styles/Home.module.scss';
 
 export default function Home({ posts }) {
-	// Options to format html tags from wordpress
-	const options = {
-		replace: ({ attribs, children }) => {
-			if (!attribs) {
-				return;
-			}
-			if (
-				attribs.class &&
-				attribs.class.includes('sqs-image-shape-container-element')
-			) {
-				return (
-					<div style={{ padding: 0 }}>
-						{domToReact(children, options)}
-					</div>
-				);
-			}
-		},
-	};
-
 	const chroniques = posts.edges.filter(
 		(el) =>
 			el.node.categories.nodes[0].name !== 'Podcast' &&
@@ -60,13 +41,13 @@ export default function Home({ posts }) {
 			<CardLarge
 				cardLargeType="cardLargeChroniques"
 				colorTag="#F6EEDF"
-				title={parse(chroniques[0].node.title)}
+				title={parsing(chroniques[0].node.title)}
 				text={
 					chroniques[0].node.excerpt.length > 288
-						? parse(
+						? parsing(
 								chroniques[0].node.excerpt.slice(0, 288) + '...'
 						  )
-						: parse(chroniques[0].node.excerpt)
+						: parsing(chroniques[0].node.excerpt)
 				}
 				imageUrl={chroniques[0].node.featuredImage.node.sourceUrl}
 				imageAltText={'test'}
@@ -94,11 +75,13 @@ export default function Home({ posts }) {
 				cardLargeType="cardLargePodcasts"
 				colorTag="#D63447"
 				textColor="white"
-				title={parse(podcasts[0].node.title)}
+				title={parsing(podcasts[0].node.title)}
 				text={
 					podcasts[0].node.excerpt.length > 288
-						? parse(podcasts[0].node.excerpt.slice(0, 288) + '...')
-						: parse(podcasts[0].node.excerpt)
+						? parsing(
+								podcasts[0].node.excerpt.slice(0, 288) + '...'
+						  )
+						: parsing(podcasts[0].node.excerpt)
 				}
 				imageUrl={podcasts[0].node.featuredImage.node.sourceUrl}
 				imageAltText={'test'}
