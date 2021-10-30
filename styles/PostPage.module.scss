@@ -1,0 +1,65 @@
+.containerPostPage {
+    position: relative;
+
+    width: 118.8rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+.postPage {
+    position: relative;
+    top: 0rem;
+    width: 72.2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.picturePostPage {
+    width: 72.2rem;
+    height: 43.6rem;
+    background-position: center;
+    background-size: cover;
+    border-radius: 0.6rem;
+
+}
+
+.titlePostPage {
+    width: auto;
+    height:auto;
+    font-family: "Lora", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    margin-top: 2.6rem;
+
+}
+
+.infoPostPage {
+    width: auto;
+    height: 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-self: flex-end;
+}
+
+
+.contentPostPage {
+    width: 72.2rem;
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0.02em;
+    text-align: left;
+
+    p {
+        margin-bottom: 1.8rem;
+
+    }
+}
+

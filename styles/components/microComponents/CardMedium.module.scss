@@ -7,6 +7,7 @@ justify-self: end;
 display: flex;
 flex-flow: row nowrap;
 justify-self: end;
+cursor: pointer;
 }
 
 .cardMediumPicture {
@@ -20,17 +21,24 @@ justify-self: end;
     }
 }
 
-.titleCardMedium {
+.containerTextCardMedium{
+
     width: 29.1rem;
     height: 3.2rem;
+    margin-left: 2.0rem;
+}
+
+.titleCardMedium {
+
     font-family: 'lora', serif;
     font-size: 2rem;
     font-weight: 600;
     color: black;
     margin-top: 1.2rem;
     line-height: 2.4rem;
-    margin-left: 2.0rem;
+
     padding-right: 1.8rem;
+    margin-bottom: 2.8rem;
 }
 
 @media screen and (max-width: 1240px) {

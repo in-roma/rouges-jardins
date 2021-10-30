@@ -4,15 +4,40 @@ import parsing from '../../helpers/helpers';
 
 // Components
 import Layout from '../../components/layout';
+import TagPost from '../../components/microComponents/tagPost';
+import DateCard from '../../components/microComponents/dateCard';
+
+// Layout
+import styles from '../../styles/PostPage.module.scss';
 
 export default function PostPage({ post }) {
 	console.log('this is post', post);
 	return (
 		<Layout>
-			<h1>{post[0].node.title}</h1>
-			{/* <img src={post[0].node.featuredImage.node.sourceUrl} /> */}
-			<h3>{parsing(post[0].node.excerpt)}</h3>
-			<div>{parsing(post[0].node.content)}</div>
+			<div className={styles.containerPostPage}>
+				<div className={styles.postPage}>
+					<div
+						className={styles.picturePostPage}
+						style={{
+							backgroundImage: `url(${post[0].node.featuredImage.node.sourceUrl})`,
+						}}
+					></div>
+					<h1 className={styles.titlePostPage}>
+						{post[0].node.title}
+					</h1>
+					<div className={styles.infoPostPage}>
+						<TagPost
+							text={post[0].node.categories.nodes[0].name}
+							color={'#F6EEDF'}
+							textColor={'black'}
+						/>
+						<DateCard date={post[0].node.date} />
+					</div>
+					<div className={styles.contentPostPage}>
+						{parsing(post[0].node.content)}
+					</div>
+				</div>
+			</div>
 		</Layout>
 	);
 }

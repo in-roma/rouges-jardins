@@ -42,8 +42,9 @@ export default function CardMedium({
 					borderRadius: '0.6rem',
 				}}
 			></div> */}
-			<div className={styles.titleCardMedium}>
-				{title} <DateCard date={date} />
+			<div className={styles.containerTextCardMedium}>
+				<div className={styles.titleCardMedium}>{title}</div>
+				<DateCard date={date} />
 			</div>
 		</div>
 	);
