@@ -37,3 +37,17 @@ a {
   font-style: italic;
 
 }
+.image-block-wrapper div img{
+  max-width: 44rem;
+
+  border-radius: 0.6rem;
+  text-align: center;
+}
+
+.image-block-outer-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}

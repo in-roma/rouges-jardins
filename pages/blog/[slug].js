@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import getData from '../api/data';
 import { useRouter } from 'next/router';
 import parsing from '../../helpers/helpers';
@@ -9,12 +11,29 @@ import DateCard from '../../components/microComponents/dateCard';
 
 // Layout
 import styles from '../../styles/PostPage.module.scss';
+import arrowLeft from '../../public/arrow-left.svg';
 
 export default function PostPage({ post }) {
 	console.log('this is post', post);
+
+	const router = useRouter();
+
 	return (
 		<Layout>
 			<div className={styles.containerPostPage}>
+				<div className={styles.navBarPostPage}>
+					<div
+						className={styles.containerBtnPostPage}
+						onClick={() => router.back()}
+					>
+						{/* <Image
+							src={arrowLeft}
+							alt="search icon"
+							className={styles.iconRetourPostPage}
+						/> */}
+						<span className={styles.btnPostPage}>Retour</span>
+					</div>
+				</div>
 				<div className={styles.postPage}>
 					<div
 						className={styles.picturePostPage}
