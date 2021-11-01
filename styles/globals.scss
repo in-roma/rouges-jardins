@@ -37,9 +37,20 @@ a {
   font-style: italic;
 
 }
+.image-block-wrapper {
+  padding: 0;
+  margin: 0;
+}
+
+.individual-text-animation-none {
+  padding: 0;
+  margin: 0;
+
+}
+
 .image-block-wrapper div img{
   max-width: 44rem;
-
+  margin: 0;
   border-radius: 0.6rem;
   text-align: center;
 }

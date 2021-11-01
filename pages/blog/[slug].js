@@ -21,20 +21,18 @@ export default function PostPage({ post }) {
 	return (
 		<Layout>
 			<div className={styles.containerPostPage}>
-				<div className={styles.navBarPostPage}>
-					<div
-						className={styles.containerBtnPostPage}
-						onClick={() => router.back()}
-					>
-						{/* <Image
-							src={arrowLeft}
-							alt="search icon"
-							className={styles.iconRetourPostPage}
-						/> */}
-						<span className={styles.btnPostPage}>Retour</span>
-					</div>
-				</div>
 				<div className={styles.postPage}>
+					<div className={styles.navBarPostPage}>
+						<div
+							className={styles.containerBtnPostPage}
+							onClick={() => router.back()}
+						>
+							<div className={styles.iconBackPostPage}>
+								<Image src={arrowLeft} alt="search icon" />
+							</div>
+							<span className={styles.btnPostPage}>Retour</span>
+						</div>
+					</div>
 					<div
 						className={styles.picturePostPage}
 						style={{
