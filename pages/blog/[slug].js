@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import getData from '../api/data';
+import { getPost, getAllSlugs } from '../../lib/api';
 import { useRouter } from 'next/router';
 import parsing from '../../helpers/helpers';
 
@@ -13,8 +13,11 @@ import DateCard from '../../components/microComponents/dateCard';
 import styles from '../../styles/PostPage.module.scss';
 import arrowLeft from '../../public/arrow-left.svg';
 
-export default function PostPage({ post }) {
-	console.log('this is post', post);
+export default function PostPage({ data }) {
+	console.log(
+		'data.post.categories.nodes[0].name',
+		data.post.categories.nodes[0].name
+	);
 
 	const router = useRouter();
 
@@ -36,22 +39,22 @@ export default function PostPage({ post }) {
 					<div
 						className={styles.picturePostPage}
 						style={{
-							backgroundImage: `url(${post[0].node.featuredImage.node.sourceUrl})`,
+							backgroundImage: `url(${data.post.featuredImage.node.sourceUrl})`,
 						}}
 					></div>
-					<h1 className={styles.titlePostPage}>
-						{post[0].node.title}
-					</h1>
+					<h1 className={styles.titlePostPage}>{data.post.title}</h1>
 					<div className={styles.infoPostPage}>
-						<TagPost
-							text={post[0].node.categories.nodes[0].name}
-							color={'#F6EEDF'}
-							textColor={'black'}
-						/>
-						<DateCard date={post[0].node.date} />
+						{data.post.categories.nodes[0].name && (
+							<TagPost
+								text={data.post.categories.nodes[0].name}
+								color={'#F6EEDF'}
+								textColor={'black'}
+							/>
+						)}
+						<DateCard date={data.post.date} />
 					</div>
 					<div className={styles.contentPostPage}>
-						{parsing(post[0].node.content)}
+						{parsing(data.post.content)}
 					</div>
 				</div>
 			</div>
@@ -60,8 +63,7 @@ export default function PostPage({ post }) {
 }
 
 export async function getStaticPaths() {
-	const response = await getData();
-
+	const response = await getAllSlugs();
 	const paths = response.posts.edges.map((post) => ({
 		params: {
 			slug: post.node.slug,
@@ -75,11 +77,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: slug }) {
-	const response = await getData();
-	console.log('this is slug:', slug);
-	const post = response.posts.edges.filter(
-		(post) => post.node.slug === slug.slug
-	);
-
-	return { props: { post } };
+	const data = await getPost(slug);
+	return {
+		props: {
+			data,
+		},
+	};
 }

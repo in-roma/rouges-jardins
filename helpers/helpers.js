@@ -11,9 +11,12 @@ const options = {
 			attribs.class.includes('sqs-image-shape-container-element')
 		) {
 			return (
-				<div style={{ padding: 0 }}>
+				<figure
+					className="wp-block-image size-full"
+					style={{ padding: 0, margin: 0 }}
+				>
 					{domToReact(children, options)}
-				</div>
+				</figure>
 			);
 		}
 	},

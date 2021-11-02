@@ -1,4 +1,3 @@
-import { ClientError } from 'graphql-request';
 import Link from 'next/link';
 
 // Component

@@ -1,4 +1,3 @@
-import { ClientError } from 'graphql-request';
 import Link from 'next/link';
 import Media from 'react-media';
 import { useRouter } from 'next/router';

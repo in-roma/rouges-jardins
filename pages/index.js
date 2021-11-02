@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import { GraphQLClient } from 'graphql-request';
+
 import parsing from '../helpers/helpers';
 
 // Api
-import getData from '../pages/api/data';
+import { getAllPosts } from '../lib/api';
 
 // Components
 import Layout from '../components/Layout';
@@ -122,7 +122,7 @@ export default function Home({ posts }) {
 	);
 }
 export async function getStaticProps() {
-	const { posts } = await getData();
+	const { posts } = await getAllPosts();
 	return {
 		props: { posts },
 	};
