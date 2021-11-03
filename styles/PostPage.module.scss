@@ -6,6 +6,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 2.4rem;
+    grid-column: 1/5;
 }
 
 .navBarPostPage {
@@ -98,3 +99,60 @@
     }
 }
 
+
+@media screen and (max-width: 1240px) {
+    .containerPostPage  {
+        width: 88.6rem;
+    }
+
+}
+
+@media screen and (max-width: 1040px) {
+    .containerPostPage  {
+        width: 68.2rem;
+    }
+
+}
+
+@media screen and (max-width: 740px) {
+    .containerPostPage  {
+        width: 58.2rem;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+    .containerPostPage  {
+        width: 48.2rem;
+    }
+
+}
+
+@media screen and (max-width: 540px) {
+    .containerPostPage  {
+        width: 42.2rem;
+    }
+
+}
+
+@media screen and (max-width: 460px) {
+    .containerPostPage  {
+        width: 36rem;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .containerPostPage  {
+        width: 30rem;
+
+    }
+
+}
+
+@media screen and (max-width: 340px) {
+    .containerPostPage  {
+        width: 28rem;
+    }
+
+}

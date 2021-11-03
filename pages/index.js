@@ -37,7 +37,9 @@ export default function Home({ posts }) {
 				sectionTitle="Chroniques"
 				slug={'/blog'}
 				text="Toutes les chroniques"
+				search="true"
 			/>
+
 			<CardLarge
 				cardLargeType="cardLargeChroniques"
 				colorTag="#F6EEDF"

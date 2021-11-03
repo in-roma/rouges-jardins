@@ -1,0 +1,84 @@
+.containerBlog {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: space-between;
+    margin-top: 2.4rem;
+    grid-column: 1/5;
+}
+
+.navBarBlog {
+    position: fixed;
+    width: 118.8rem;;
+    height: 6rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.1rem solid #EFEFEF;
+    background-color: white;
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 1240px) {
+    .navBarBlog   {
+        width: 88.6rem;
+    }
+
+}
+
+@media screen and (max-width: 1040px) {
+    .navBarBlog   {
+        width: 68.2rem;
+    }
+
+}
+
+@media screen and (max-width: 740px) {
+    .navBarBlog   {
+        width: 58.2rem;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+    .navBarBlog   {
+        width: 48.2rem;
+    }
+
+}
+
+@media screen and (max-width: 540px) {
+    .navBarBlog   {
+        width: 42.2rem;
+    }
+
+}
+
+@media screen and (max-width: 460px) {
+    .navBarBlog   {
+        width: 36rem;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .navBarBlog   {
+        width: 30rem;
+        height: 8rem;
+        flex-flow: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+}
+
+
+@media screen and (max-width: 340px) {
+    .navBarBlog   {
+        width: 28rem;
+    }
+
+}

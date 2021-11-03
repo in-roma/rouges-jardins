@@ -1,0 +1,15 @@
+.selectFilter {
+
+    outline: none;
+    border:none;
+    background-color:transparent;
+    margin-left: 1.2rem;
+}
+
+@media screen and (max-width: 460px) {
+    .selectFilter {
+
+        margin-left:0;
+    }
+
+}

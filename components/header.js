@@ -51,30 +51,7 @@ export default function Header() {
 						className={styles.searchButton}
 						style={{ width: searchStatus && '14rem' }}
 					></div>
-					{searchStatus && (
-						<>
-							<Image src={searchPic} alt="cross icon" />
-							<form className={styles.searchInput}>
-								<input></input>
-							</form>
-						</>
-					)}
 
-					<div className={styles.searchIcon}>
-						{searchStatus ? (
-							<Image
-								src={crossPic}
-								alt="search icon"
-								onClick={deactivateSearch}
-							/>
-						) : (
-							<Image
-								src={searchPic}
-								alt="cross icon"
-								onClick={activateSearch}
-							/>
-						)}
-					</div>
 					<div className={styles.burger} onClick={openBurgerMenu}>
 						{burgerMenu ? (
 							<Image src={burgerActive} alt="burger icon" />
