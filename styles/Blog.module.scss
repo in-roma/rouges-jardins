@@ -1,17 +1,17 @@
 .containerBlog {
     width: 100%;
-    min-height: 100vh;
+
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: space-between;
     margin-top: 2.4rem;
-    grid-column: 1/5;
+
 }
 
 .navBarBlog {
     position: fixed;
-    width: 118.8rem;;
+    width: 118.8rem;
     height: 6rem;
     display: flex;
     flex-flow: row nowrap;
@@ -20,11 +20,33 @@
     border-bottom: 0.1rem solid #EFEFEF;
     background-color: white;
     opacity: 0.9;
+    z-index: 5;
 }
+
+.contentBlog {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;    
+    column-gap: 2.2rem;
+    row-gap: 2.4rem;
+    margin-top: 8rem;
+
+}
+
+
+.cardSmallBlog {
+    grid-row:none;
+}
+
 
 @media screen and (max-width: 1240px) {
     .navBarBlog   {
         width: 88.6rem;
+    }
+    .contentBlog{
+        grid-template-columns: repeat(3, 1fr);
     }
 
 }
@@ -32,6 +54,9 @@
 @media screen and (max-width: 1040px) {
     .navBarBlog   {
         width: 68.2rem;
+    }
+    .contentBlog{
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
@@ -53,6 +78,9 @@
 @media screen and (max-width: 540px) {
     .navBarBlog   {
         width: 42.2rem;
+    }
+    .contentBlog{
+        grid-template-columns: 1fr;
     }
 
 }

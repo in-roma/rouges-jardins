@@ -31,7 +31,9 @@ export default function CardSmall({
 					backgroundImage: `url(${imageUrl})`,
 				}}
 			></div>
-			<div className={styles.titleCardSmall}>{title}</div>
+			<div className={styles.titleCardSmall}>
+				{title.length > 60 ? title.slice(0, 60) + '...' : title}
+			</div>
 			<DateCard date={date} />
 		</div>
 	);

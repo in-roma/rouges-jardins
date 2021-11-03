@@ -1,8 +1,11 @@
 .formSearch {
+    height: 2.6rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
+    border-bottom: 0.5px solid #fcfcfcfb;
+    z-index: 5;
 }
 
 .formSearch label {
@@ -10,14 +13,14 @@
 }
 
 .inputSearch {
-    width: 18rem;
+    width: 24rem;
     font-size: 1.4rem;
     outline: none;
     border:none;
     background-color:transparent;
     margin-left: 1.2rem;
     &::placeholder {
-        color: #EFEFEF;
+        color: #EEEEEE;
     }
 }
 
