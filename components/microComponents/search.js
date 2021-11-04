@@ -18,11 +18,11 @@ export default function Search({ value, search, onChange }) {
 				className={styles.inputSearch}
 				placeholder="Entrez votre recherche"
 				autoFocus
-				maxlength="40"
+				maxLength="40"
 				value={value}
 				onChange={onChange}
 			></input>
-			<div className={styles.buttonSearch} onClick={search({ value })}>
+			<div className={styles.buttonSearch} onClick={search}>
 				OK
 			</div>
 		</form>

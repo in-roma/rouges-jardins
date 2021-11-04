@@ -10,16 +10,17 @@ import styles from '../styles/Blog.module.scss';
 import CardSmall from '../components/microComponents/cardSmall';
 
 // Api
-import { getAllPosts } from '../lib/api';
+import { getAllPosts, getAllCategories } from '../lib/api';
 
-export default function Blog({ posts }) {
+export default function Blog({ posts, categories }) {
 	const initialImport = posts.edges.filter(
 		(el) =>
 			el.node.categories.nodes[0].name !== 'Podcast' &&
 			el.node.categories.nodes[0].name !== 'Publication'
 	);
 
-	const [chroniques, setChroniques] = useState(initialImport);
+	const [chroniquesImported, setChroniquesImported] = useState(initialImport);
+	const [chroniques, setChroniques] = useState(chroniquesImported);
 	const [valueSearch, setValueSearch] = useState('');
 
 	// Setting input field
@@ -30,6 +31,20 @@ export default function Blog({ posts }) {
 	// Search function
 	const searchPosts = (text) => {};
 
+	// Filter categories
+	const onChangeCategory = (event) => {
+		let { value } = event.target;
+		if (value !== 'Toutes') {
+			let filtered = chroniquesImported.filter(
+				(el) => el.node.categories.nodes[0].name === value
+			);
+			setChroniques(filtered);
+		}
+		if (value === 'Toutes') {
+			setChroniques(chroniquesImported);
+		}
+	};
+
 	return (
 		<Layout>
 			<div className={styles.containerBlog}>
@@ -39,7 +54,10 @@ export default function Blog({ posts }) {
 						onChange={onChangeInput}
 						search={searchPosts}
 					/>
-					<Filter />
+					<Filter
+						categories={categories}
+						onChangeCategory={onChangeCategory}
+					/>
 				</div>
 
 				<content className={styles.contentBlog}>
@@ -62,7 +80,9 @@ export default function Blog({ posts }) {
 
 export async function getStaticProps() {
 	const { posts } = await getAllPosts();
+	const { categories } = await getAllCategories();
+	console.log(categories);
 	return {
-		props: { posts },
+		props: { posts, categories },
 	};
 }

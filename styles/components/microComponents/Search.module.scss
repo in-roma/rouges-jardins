@@ -5,7 +5,7 @@
     justify-content: flex-start;
     align-items: center;
     border-bottom: 0.5px solid #fcfcfcfb;
-    z-index: 5;
+ 
 }
 
 .formSearch label {
@@ -33,6 +33,9 @@
     padding: 0.2rem 0.4rem;
     border-radius: 0.4rem;
     cursor: pointer;
+    &:hover {
+        font-weight: 800;
+    }
 }
 
 @media screen and (max-width: 640px) {
