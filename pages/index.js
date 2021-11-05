@@ -42,6 +42,7 @@ export default function Home({ posts }) {
 	//  Search Input
 	const handleChangeInput = (event) => {
 		setSearchValueDisplay(event.target.value);
+		changeValue(searchValueDisplay);
 	};
 
 	const router = useRouter();
@@ -52,7 +53,7 @@ export default function Home({ posts }) {
 			router.push('/blog/');
 		}
 	};
-	console.log('this is searchValue:', searchValue);
+	console.log('searchValueDisplay:', searchValueDisplay);
 	return (
 		<Layout>
 			<SectionBar

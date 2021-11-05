@@ -16,6 +16,7 @@ import { getAllPosts, getAllCategories } from '../lib/api';
 import { AppContext } from '../lib/context';
 
 export default function Blog({ posts, categories }) {
+	// Initial import
 	const initialImport = posts.edges.filter(
 		(el) =>
 			el.node.categories.nodes[0].name !== 'Podcast' &&
@@ -112,8 +113,8 @@ export default function Blog({ posts, categories }) {
 			setChroniques(results);
 			setchroniquesSearched(results);
 		}
-	});
-
+	}, [searchValue, searchActive, filtering, chroniquesImported]);
+	console.log('searchValue:', searchValue);
 	return (
 		<Layout>
 			<div className={styles.containerBlog}>

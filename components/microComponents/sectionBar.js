@@ -29,6 +29,7 @@ export default function SectionBar({
 									search={search}
 									onChangeInput={onChangeInput}
 									onSubmitSearch={onSubmitSearch}
+									value={value}
 								/>
 							)}
 						</div>
