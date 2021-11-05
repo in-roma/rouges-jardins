@@ -1,9 +1,13 @@
 import Image from 'next/image';
-
+import { createContext, useState, useContext, useMemo } from 'react';
 import parsing from '../helpers/helpers';
+import { useRouter } from 'next/router';
 
 // Api
 import { getAllPosts } from '../lib/api';
+
+// Context
+import { AppContext } from '../lib/context';
 
 // Components
 import Layout from '../components/Layout';
@@ -31,6 +35,24 @@ export default function Home({ posts }) {
 		(el) => el.node.categories.nodes[0].name === 'Publication'
 	);
 
+	// Search states
+	const { searchValue, changeValue } = useContext(AppContext);
+	const [searchValueDisplay, setSearchValueDisplay] = useState('');
+
+	//  Search Input
+	const handleChangeInput = (event) => {
+		setSearchValueDisplay(event.target.value);
+	};
+
+	const router = useRouter();
+	const searchSubmit = (event) => {
+		event.preventDefault();
+		if (searchValueDisplay.length > 3) {
+			changeValue(searchValueDisplay);
+			router.push('/blog/');
+		}
+	};
+	console.log('this is searchValue:', searchValue);
 	return (
 		<Layout>
 			<SectionBar
@@ -38,6 +60,9 @@ export default function Home({ posts }) {
 				slug={'/blog'}
 				text="Toutes les chroniques"
 				search="true"
+				value={searchValueDisplay}
+				onChangeInput={handleChangeInput}
+				onSubmitSearch={searchSubmit}
 			/>
 
 			<CardLarge

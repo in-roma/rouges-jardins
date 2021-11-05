@@ -1,6 +1,6 @@
 .containerBlog {
     width: 100%;
-
+    min-height: 90vh;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -31,8 +31,41 @@
     justify-content: space-between;    
     column-gap: 2.2rem;
     row-gap: 2.4rem;
-    margin-top: 8rem;
+    margin-top: 6rem;
 
+}
+
+.searchBarBlog {
+    position: fixed;
+    width: 118.8rem;
+    height: 6rem;
+    margin-top: 6rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    opacity: 0.9;
+    z-index: 5;
+
+
+    h2 {
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        font-weight: 500;
+    }
+    button {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        margin-left: 1.2rem;
+        font-weight: 600;
+        text-decoration-line: underline;
+        color: black;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
 }
 
 
@@ -45,6 +78,9 @@
     .navBarBlog   {
         width: 88.6rem;
     }
+    .searchBarBlog {
+        width: 88.6rem;
+    }
     .contentBlog{
         grid-template-columns: repeat(3, 1fr);
     }
@@ -53,6 +89,9 @@
 
 @media screen and (max-width: 1040px) {
     .navBarBlog   {
+        width: 68.2rem;
+    }
+    .searchBarBlog {
         width: 68.2rem;
     }
     .contentBlog{
@@ -65,11 +104,17 @@
     .navBarBlog   {
         width: 58.2rem;
     }
+    .searchBarBlog {
+        width: 58.2rem;
+    }
 
 }
 
 @media screen and (max-width: 640px) {
     .navBarBlog   {
+        width: 48.2rem;
+    }
+    .searchBarBlog {
         width: 48.2rem;
     }
 

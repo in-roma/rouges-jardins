@@ -11,6 +11,9 @@ export default function SectionBar({
 	slug,
 	text,
 	search = false,
+	onSubmitSearch,
+	onChangeInput,
+	value,
 }) {
 	return (
 		<>
@@ -21,7 +24,13 @@ export default function SectionBar({
 							{sectionTitle}
 						</span>
 						<div className={styles.searchSectionBar}>
-							{search && <Search />}
+							{search && (
+								<Search
+									search={search}
+									onChangeInput={onChangeInput}
+									onSubmitSearch={onSubmitSearch}
+								/>
+							)}
 						</div>
 					</div>
 					<Link href={slug}>
@@ -29,7 +38,7 @@ export default function SectionBar({
 					</Link>
 				</div>
 
-				<div className={styles.searchMobile}>
+				<div className={styles.searchMobile} value={value}>
 					<Search />
 				</div>
 			</div>

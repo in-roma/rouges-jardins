@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styles from '../../styles/components/microComponents/Search.module.scss';
 import searchPicBlack from '../../public/searchBlack.svg';
 
-export default function Search({ value, search, onChange }) {
+export default function Search({ value, onSubmitSearch, onChangeInput }) {
 	return (
 		<form className={styles.formSearch}>
 			<label>
@@ -19,12 +19,12 @@ export default function Search({ value, search, onChange }) {
 				placeholder="Entrez votre recherche"
 				autoFocus
 				maxLength="40"
+				onChange={onChangeInput}
 				value={value}
-				onChange={onChange}
 			></input>
-			<div className={styles.buttonSearch} onClick={search}>
+			<button className={styles.buttonSearch} onClick={onSubmitSearch}>
 				OK
-			</div>
+			</button>
 		</form>
 	);
 }
