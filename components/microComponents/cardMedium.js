@@ -24,7 +24,7 @@ export default function CardMedium({
 	return (
 		<div
 			className={styles.cardMedium}
-			onClick={() => router.push(`/blog/${slug}`)}
+			onClick={() => router.push(`/podcasts/${slug}`)}
 		>
 			<Tag text={category} color={colorTag} textColor={textColor} />
 			<div className={styles.cardMediumPicture}>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 // Component
 import Tag from './tag';
@@ -15,9 +16,14 @@ export default function CardSmallVertical({
 	date,
 	category,
 	colorTag,
+	slug,
 }) {
+	const router = useRouter();
 	return (
-		<div className={styles.cardSmallVertical}>
+		<div
+			className={styles.cardSmallVertical}
+			onClick={() => router.push(`/publications/${slug}`)}
+		>
 			<Tag text={category} color={colorTag} />
 			<div
 				className={styles.pictureCardVertical}

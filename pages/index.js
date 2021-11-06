@@ -67,6 +67,7 @@ export default function Home({ posts }) {
 			/>
 
 			<CardLarge
+				type="blog"
 				cardLargeType="cardLargeChroniques"
 				colorTag="#F6EEDF"
 				title={parsing(chroniques[0].node.title)}
@@ -100,6 +101,7 @@ export default function Home({ posts }) {
 				text="Tous les podcasts"
 			/>
 			<CardLarge
+				type="podcasts"
 				cardLargeType="cardLargePodcasts"
 				colorTag="#D63447"
 				textColor="white"
@@ -115,6 +117,7 @@ export default function Home({ posts }) {
 				imageAltText={'test'}
 				date={podcasts[0].node.date}
 				category={podcasts[0].node.categories.nodes[0].name}
+				slug={podcasts[0].node.slug}
 			/>
 			{podcasts.slice(1, 4).map((el) => (
 				<CardMedium
@@ -144,6 +147,7 @@ export default function Home({ posts }) {
 					imageAltText={'test'}
 					date={el.node.date}
 					category={el.node.categories.nodes[0].name}
+					slug={el.node.slug}
 				/>
 			))}
 		</Layout>

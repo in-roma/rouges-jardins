@@ -6,7 +6,7 @@ import Tag from './tag';
 import DateCard from './dateCard';
 
 // Styling
-import styles from '../../styles/components/microComponents/CardLarge.module.scss';
+import styles from '../../styles/components/microComponents/CardPodcast.module.scss';
 
 export default function CardLarge({
 	title,
@@ -25,22 +25,18 @@ export default function CardLarge({
 	return (
 		<div
 			type={type}
-			className={
-				cardLargeType === 'cardLargeChroniques'
-					? styles.cardLargeChroniques
-					: styles.cardLargePodcasts
-			}
+			className={styles.cardPodcast}
 			onClick={() => router.push(`/${type}/${slug}`)}
 		>
 			<Tag text={category} color={colorTag} textColor={textColor} />
 			<div
-				className={styles.cardLargePicture}
+				className={styles.pictureCardPodcast}
 				style={{
 					backgroundImage: `url(${imageUrl})`,
 				}}
 			></div>
-			<div className={styles.titleCardLarge}>{title}</div>
-			<div className={styles.textCardLarge}>{text}</div>
+			<div className={styles.titleCardPodcast}>{title}</div>
+			<div className={styles.textCardPodcast}>{text}</div>
 			<DateCard date={date} />
 		</div>
 	);

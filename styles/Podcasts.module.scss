@@ -1,0 +1,44 @@
+.containerPodcasts {
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: space-between;
+    margin-top: 2.4rem;
+
+}
+
+.contentPodcasts {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;    
+    column-gap: 2.2rem;
+    row-gap: 2.4rem;
+    margin-top: 3rem;
+
+}
+
+
+
+@media screen and (max-width: 1240px) {
+    .contentPodcasts{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    .contentPodcasts{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media screen and (max-width: 540px) {
+    .contentPodcasts{
+        grid-template-columns: 1fr;
+    }
+}
+
