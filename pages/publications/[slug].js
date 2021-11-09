@@ -10,7 +10,7 @@ import TagPost from '../../components/microComponents/tagPost';
 import DateCard from '../../components/microComponents/dateCard';
 
 // Layout
-import styles from '../../styles/PostPage.module.scss';
+import styles from '../../styles/PublicationPage.module.scss';
 import arrowLeft from '../../public/arrow-left.svg';
 
 export default function PostPage({ data }) {
@@ -23,37 +23,42 @@ export default function PostPage({ data }) {
 
 	return (
 		<Layout>
-			<div className={styles.containerPostPage}>
-				<div className={styles.postPage}>
-					<div className={styles.navBarPostPage}>
+			<div className={styles.containerPublicationPage}>
+				<div className={styles.PublicationPage}>
+					<div className={styles.navBarPublicationPage}>
 						<div
-							className={styles.containerBtnPostPage}
+							className={styles.containerBtnPublicationPage}
 							onClick={() => router.back()}
 						>
-							<div className={styles.iconBackPostPage}>
+							<div className={styles.iconBackPublicationPage}>
 								<Image src={arrowLeft} alt="search icon" />
 							</div>
-							<span className={styles.btnPostPage}>Retour</span>
+							<span className={styles.btnPublicationPage}>
+								Retour
+							</span>
 						</div>
 					</div>
 					<div
-						className={styles.picturePostPage}
+						className={styles.picturePublicationPage}
 						style={{
 							backgroundImage: `url(${data.post.featuredImage.node.sourceUrl})`,
 						}}
 					></div>
-					<h1 className={styles.titlePostPage}>{data.post.title}</h1>
-					<div className={styles.infoPostPage}>
+					<h1 className={styles.titlePublicationPage}>
+						{data.post.title}
+					</h1>
+					<div className={styles.infoPublicationPage}>
 						{data.post.categories.nodes[0].name && (
 							<TagPost
 								text={data.post.categories.nodes[0].name}
-								color={'#F6EEDF'}
+								color={'#FFD31D'}
 								textColor={'black'}
 							/>
 						)}
 						<DateCard date={data.post.date} />
 					</div>
-					<div className={styles.contentPostPage}>
+
+					<div className={styles.contentPublicationPage}>
 						{parsing(data.post.content)}
 					</div>
 				</div>
