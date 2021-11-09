@@ -35,9 +35,11 @@ export default function CardLarge({
 					backgroundImage: `url(${imageUrl})`,
 				}}
 			></div>
-			<div className={styles.titleCardPodcast}>{title}</div>
-			<div className={styles.textCardPodcast}>{text}</div>
-			<DateCard date={date} />
+			<div className={styles.textContainerCardPodcast}>
+				<div className={styles.titleCardPodcast}>{title}</div>
+				<div className={styles.textCardPodcast}>{text}</div>
+				<DateCard date={date} />
+			</div>
 		</div>
 	);
 }

@@ -3,36 +3,46 @@
     width: 58.2rem;
     height: auto;
     cursor: pointer;
+    display: flex;
+    flex-flow: row nowrap;
 }
 
 .titleCardPodcast {
     width: 100%;
     height: auto;
     font-family: 'lora', serif;
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     font-weight: 600;
     color: black;
-    margin-top: 1.8rem;
+    // margin-top: 1.2rem;
     line-height: 2.4rem;
 }
 .pictureCardPodcast{
-    width: 58.2rem;
-    height: 35.2rem;
+    width: 28rem;
+    height: 16.8rem;
     background-position: center;
     background-size: cover;
     border-radius: 0.6rem;
     
 }
 
+.textContainerCardPodcast{
+    width: 30rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.8rem;
+} 
+
 .textCardPodcast  {
     width: 100%;
     height: auto;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     line-height: 2.4rem;
     font-weight: 200;
     color: #434343;
-    margin-top: 1.4rem;
-    margin-bottom: 2.8rem;
+    margin-top: 0.6rem;
+    margin-bottom: 1.2rem;
 }
 
 @media screen and (max-width: 1240px) {

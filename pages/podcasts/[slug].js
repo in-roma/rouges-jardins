@@ -10,7 +10,7 @@ import TagPost from '../../components/microComponents/tagPost';
 import DateCard from '../../components/microComponents/dateCard';
 
 // Layout
-import styles from '../../styles/PostPage.module.scss';
+import styles from '../../styles/PodcastPage.module.scss';
 import arrowLeft from '../../public/arrow-left.svg';
 
 export default function PostPage({ data }) {
@@ -23,37 +23,41 @@ export default function PostPage({ data }) {
 
 	return (
 		<Layout>
-			<div className={styles.containerPostPage}>
-				<div className={styles.postPage}>
-					<div className={styles.navBarPostPage}>
+			<div className={styles.containerPodcastPage}>
+				<div className={styles.podcastPage}>
+					<div className={styles.navBarPodcastPage}>
 						<div
-							className={styles.containerBtnPostPage}
+							className={styles.containerBtnPodcastPage}
 							onClick={() => router.back()}
 						>
-							<div className={styles.iconBackPostPage}>
+							<div className={styles.iconBackPodcastPage}>
 								<Image src={arrowLeft} alt="search icon" />
 							</div>
-							<span className={styles.btnPostPage}>Retour</span>
+							<span className={styles.btnPodcastPage}>
+								Retour
+							</span>
 						</div>
 					</div>
-					<div
+					{/* <div
 						className={styles.picturePostPage}
 						style={{
 							backgroundImage: `url(${data.post.featuredImage.node.sourceUrl})`,
 						}}
-					></div>
-					<h1 className={styles.titlePostPage}>{data.post.title}</h1>
-					<div className={styles.infoPostPage}>
+					></div> */}
+					<h1 className={styles.titlePodcastPage}>
+						{data.post.title}
+					</h1>
+					<div className={styles.infoPodcastPage}>
 						{data.post.categories.nodes[0].name && (
 							<TagPost
 								text={data.post.categories.nodes[0].name}
-								color={'#F6EEDF'}
-								textColor={'black'}
+								color={'#D63447'}
+								textColor={'white'}
 							/>
 						)}
 						<DateCard date={data.post.date} />
 					</div>
-					<div className={styles.contentPostPage}>
+					<div className={styles.contentPodcastPage}>
 						{parsing(data.post.content)}
 					</div>
 				</div>

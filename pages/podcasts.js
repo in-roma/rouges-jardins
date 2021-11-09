@@ -3,6 +3,7 @@ import parsing from '../helpers/helpers';
 // Components
 import Layout from '../components/Layout';
 import CardPodcast from '../components/microComponents/cardPodcast';
+import Search from '../components/microComponents/search';
 
 // Styling
 import styles from '../styles/Podcasts.module.scss';
@@ -15,18 +16,34 @@ export default function Podcast({ posts }) {
 	return (
 		<Layout>
 			<div className={styles.containerPodcasts}>
+				<div className={styles.navBarPodcast}>
+					<Search />
+				</div>
+				{/* {searchActive && (
+					<div className={styles.searchBarBlog}>
+						<h2>
+							{`${chroniques.length} résultat${
+								chroniques.length > 1 ? 's' : ''
+							} pour  "${valueSearchActive}" `}
+						</h2>
+						<button onClick={resetSearch}>
+							Annuler la recherche
+						</button>
+					</div>
+				)} */}
 				<div className={styles.contentPodcasts}>
 					{podcasts.map((el) => (
 						<CardPodcast
+							key={'podcasts' + el.node.id}
 							type="podcasts"
 							cardLargeType="cardLargePodcasts"
 							colorTag="#D63447"
 							textColor="white"
 							title={parsing(el.node.title)}
 							text={
-								el.node.excerpt.length > 288
+								el.node.excerpt.length > 128
 									? parsing(
-											el.node.excerpt.slice(0, 288) +
+											el.node.excerpt.slice(0, 128) +
 												'...'
 									  )
 									: parsing(el.node.excerpt)
