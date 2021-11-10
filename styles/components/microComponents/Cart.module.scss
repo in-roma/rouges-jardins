@@ -1,0 +1,43 @@
+
+.buttonCart {
+    color: black;
+    font-weight: 500;
+    font-size: 1.2rem;
+
+    border: none;
+    background: none;
+    padding: 0.2rem 0.0rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    display: flex;
+    flex-grow: row nowrap;
+    align-items: center;
+    justify-self: end;
+    span {
+        // margin-right: 1.2rem;
+            
+    &:hover {
+        text-decoration: underline;
+    }
+    }
+    .productCountCart {
+        color: black;
+        font-size: 1.2rem;
+        font-weight: 600;
+        width: 1.6rem;
+        height: 1.6rem;
+        line-height: 1.6rem;
+        background: "#FFD31D";
+        background-color: "#FFD31D";
+        transform: translateY(-0.6rem);
+        border-radius: 50%;
+            
+    &:hover {
+        text-decoration: none;
+    }
+    }
+
+    justify-self: flex-end;
+}
+
+

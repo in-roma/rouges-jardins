@@ -20,9 +20,11 @@ export default function SectionBar({
 			<div className={styles.containerSectionBar}>
 				<div className={styles.sectionBar}>
 					<div className={styles.containerTitleSearchSectionBar}>
-						<span className={styles.titleSectionBar}>
-							{sectionTitle}
-						</span>
+						{sectionTitle && (
+							<span className={styles.titleSectionBar}>
+								{sectionTitle}
+							</span>
+						)}
 						<div className={styles.searchSectionBar}>
 							{search && (
 								<Search
@@ -34,13 +36,15 @@ export default function SectionBar({
 							)}
 						</div>
 					</div>
-					<Link href={slug}>
-						<a className={styles.linkSectionBar}>{text}</a>
-					</Link>
+					{text && (
+						<Link href={slug}>
+							<a className={styles.linkSectionBar}>{text}</a>
+						</Link>
+					)}
 				</div>
 
 				<div className={styles.searchMobile} value={value}>
-					<Search />
+					{search && <Search />}
 				</div>
 			</div>
 		</>

@@ -1,11 +1,30 @@
 .cardPodcast {
     position: relative;   
-    width: 58.2rem;
+    width: 28rem;
     height: auto;
     cursor: pointer;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: column;
 }
+
+.pictureCardPodcast{
+    width: 28rem;
+    height: 16.8rem;
+    border-radius: 0.6rem;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+.textContainerCardPodcast{
+    width: 28rem;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 1.2rem;
+} 
 
 .titleCardPodcast {
     width: 100%;
@@ -17,33 +36,19 @@
     // margin-top: 1.2rem;
     line-height: 2.4rem;
 }
-.pictureCardPodcast{
-    width: 28rem;
-    height: 16.8rem;
-    background-position: center;
-    background-size: cover;
-    border-radius: 0.6rem;
-    
-}
 
-.textContainerCardPodcast{
-    width: 30rem;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    margin-left: 1.8rem;
-} 
 
-.textCardPodcast  {
-    width: 100%;
-    height: auto;
-    font-size: 1.4rem;
-    line-height: 2.4rem;
-    font-weight: 200;
-    color: #434343;
-    margin-top: 0.6rem;
-    margin-bottom: 1.2rem;
-}
+
+// .textCardPodcast  {
+//     width: 100%;
+//     height: auto;
+//     font-size: 1.4rem;
+//     line-height: 2.4rem;
+//     font-weight: 200;
+//     color: #434343;
+//     margin-top: 0.6rem;
+//     margin-bottom: 1.2rem;
+// }
 
 @media screen and (max-width: 1240px) {
     .cardPodcast {

@@ -39,15 +39,21 @@ export default function Podcast({ posts }) {
 							cardLargeType="cardLargePodcasts"
 							colorTag="#D63447"
 							textColor="white"
-							title={parsing(el.node.title)}
-							text={
-								el.node.excerpt.length > 128
+							title={
+								el.node.title.length > 64
 									? parsing(
-											el.node.excerpt.slice(0, 128) +
-												'...'
+											el.node.title.slice(0, 64) + '...'
 									  )
-									: parsing(el.node.excerpt)
+									: parsing(el.node.title)
 							}
+							// text={
+							// 	el.node.excerpt.length > 128
+							// 		? parsing(
+							// 				el.node.excerpt.slice(0, 128) +
+							// 					'...'
+							// 		  )
+							// 		: parsing(el.node.excerpt)
+							// }
 							imageUrl={el.node.featuredImage.node.sourceUrl}
 							imageAltText={'test'}
 							date={el.node.date}

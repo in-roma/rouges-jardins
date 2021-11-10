@@ -3,6 +3,7 @@ import parsing from '../helpers/helpers';
 // Components
 import Layout from '../components/Layout';
 import CardPublication from '../components/microComponents/cardPublication';
+import Cart from '../components/microComponents/cart';
 
 // Styling
 import styles from '../styles/publications.module.scss';
@@ -15,6 +16,9 @@ export default function Publications({ posts }) {
 	return (
 		<Layout>
 			<div className={styles.containerPublications}>
+				<div className={styles.navBarPublications}>
+					<Cart />
+				</div>
 				<div className={styles.contentPublications}>
 					{publications.map((el) => (
 						<CardPublication

@@ -37,8 +37,8 @@ export default function CardLarge({
 			></div>
 			<div className={styles.textContainerCardPodcast}>
 				<div className={styles.titleCardPodcast}>{title}</div>
-				<div className={styles.textCardPodcast}>{text}</div>
-				<DateCard date={date} />
+				{/* <div className={styles.textCardPodcast}>{text}</div> */}
+				<DateCard date={date} className={styles.dateCardPodcast} />
 			</div>
 		</div>
 	);
