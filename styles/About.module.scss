@@ -1,0 +1,63 @@
+.containerAbout {
+
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    grid-column: 1/5;
+    
+
+}
+
+.contentAbout {
+    width: 62rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 3rem;
+
+}
+
+.titreAbout {
+
+    font-size: 2.8rem;
+    line-height: 2.8rem;
+    font-weight: 600;
+    font-family: 'lora', serif;
+    justify-self: flex-end;
+    margin: 2.4rem 0 2.4rem 0;
+}
+
+.pictureAbout {
+    width: 42rem;
+    height: 25.2rem;
+    background-position: center;
+    background-size: cover;
+    border-radius: 0.6rem;
+    align-self: center;
+    margin: 2.4rem 0  2.8rem 0;
+}
+
+.textAbout {
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    font-weight: 300;
+    font-family: poppins, sans-serif;
+    margin: 1.2rem 0;
+}
+
+.emailTextAbout{
+    font-size: 1.5rem;
+    line-height: 2.4rem;
+    font-weight: 300;
+    font-family: poppins, sans-serif;
+    margin: 1.2rem 0 0rem 0rem;
+}
+
+.emailAbout {
+    text-decoration: underline;
+    font-weight: 500;
+}
