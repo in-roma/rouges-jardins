@@ -3,7 +3,6 @@
     color: black;
     font-weight: 500;
     font-size: 1.2rem;
-
     border: none;
     background: none;
     padding: 0.2rem 0.0rem;
@@ -19,25 +18,30 @@
     &:hover {
         text-decoration: underline;
     }
-    }
-    .productCountCart {
-        color: black;
-        font-size: 1.2rem;
-        font-weight: 600;
-        width: 1.6rem;
-        height: 1.6rem;
-        line-height: 1.6rem;
-        background: "#FFD31D";
-        background-color: "#FFD31D";
-        transform: translateY(-0.6rem);
-        border-radius: 50%;
-            
-    &:hover {
-        text-decoration: none;
-    }
+    
     }
 
     justify-self: flex-end;
 }
 
 
+.productCountCart {
+    width: 1.6rem;
+    height: 1.6rem;
+    color: white;
+    background-color: black;
+    transform: translateY(-0.7rem);
+    border-radius: 50%;
+    opacity: 1;
+    margin-left: 0.2rem;
+    span {
+        font-size: 1.1rem;
+        font-weight: 600;
+        line-height: 1.6rem;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+        
+
+}

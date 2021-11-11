@@ -14,11 +14,15 @@ export default function SectionBar({
 	onSubmitSearch,
 	onChangeInput,
 	value,
+	marginBottom,
 }) {
 	return (
 		<>
 			<div className={styles.containerSectionBar}>
-				<div className={styles.sectionBar}>
+				<div
+					className={styles.sectionBar}
+					style={{ marginBottom: marginBottom }}
+				>
 					<div className={styles.containerTitleSearchSectionBar}>
 						{sectionTitle && (
 							<span className={styles.titleSectionBar}>

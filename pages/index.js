@@ -64,6 +64,7 @@ export default function Home({ posts }) {
 				value={searchValueDisplay}
 				onChangeInput={handleChangeInput}
 				onSubmitSearch={searchSubmit}
+				// marginBottom="0em"
 			/>
 
 			<CardLarge

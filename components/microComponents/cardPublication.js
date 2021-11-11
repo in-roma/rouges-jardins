@@ -25,20 +25,20 @@ export default function CardPublication({
 }) {
 	const router = useRouter();
 	return (
-		<div
-			type={type}
-			className={styles.cardPublication}
-			onClick={() => router.push(`/${type}/${slug}`)}
-		>
+		<div type={type} className={styles.cardPublication}>
 			<Tag text={category} color={colorTag} textColor={textColor} />
 			<div
 				className={styles.pictureCardPublication}
 				style={{
 					backgroundImage: `url(${imageUrl})`,
 				}}
+				onClick={() => router.push(`/${type}/${slug}`)}
 			></div>
 			<div className={styles.textContainerCardPublication}>
-				<div className={styles.textCardPublication}>
+				<div
+					className={styles.textCardPublication}
+					onClick={() => router.push(`/${type}/${slug}`)}
+				>
 					<div className={styles.titleCardPublication}>{title}</div>
 					<DateCard date={date} />
 				</div>

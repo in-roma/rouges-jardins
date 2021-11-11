@@ -12,23 +12,34 @@
 }
 
 .contentAbout {
-    width: 62rem;
+    width: 67.2rem;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: start;
-    margin-top: 3rem;
+    margin-top: 2.4rem;
 
+}
+
+.headerAbout {
+
+    height: 6rem;
+    margin: 2.4rem 0 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: start;
+    align-items: center;
+    
 }
 
 .titreAbout {
 
-    font-size: 2.8rem;
-    line-height: 2.8rem;
+    font-size: 2.6rem;
+    line-height: 2.6rem;
     font-weight: 600;
     font-family: 'lora', serif;
     justify-self: flex-end;
-    margin: 2.4rem 0 2.4rem 0;
+
 }
 
 .pictureAbout {
@@ -38,7 +49,7 @@
     background-size: cover;
     border-radius: 0.6rem;
     align-self: center;
-    margin: 2.4rem 0  2.8rem 0;
+    margin:2.4rem 0 3.2rem 0;
 }
 
 .textAbout {
@@ -47,6 +58,13 @@
     font-weight: 300;
     font-family: poppins, sans-serif;
     margin: 1.2rem 0;
+    strong {
+        font-weight: 400;
+    }
+    a, em {
+        font-weight: 300;
+        text-decoration: underline;
+    }
 }
 
 .emailTextAbout{
@@ -54,7 +72,8 @@
     line-height: 2.4rem;
     font-weight: 300;
     font-family: poppins, sans-serif;
-    margin: 1.2rem 0 0rem 0rem;
+    margin: 5rem 0 0rem 0rem;
+
 }
 
 .emailAbout {

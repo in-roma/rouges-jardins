@@ -5,7 +5,10 @@ import styles from '../../styles/components/microComponents/Button.module.scss';
 
 export default function Button({ text, onClick }) {
 	return (
-		<button className={styles.button} onClick={onClick}>
+		<button
+			className={styles.buttonCart}
+			onClick={console.log('button clicked')}
+		>
 			{text}
 		</button>
 	);

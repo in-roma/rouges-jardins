@@ -1,17 +1,21 @@
 
 .buttonCart {
+    position: relative;
     display: block;
-    color: black;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.2rem;
+    line-height: 1.2rem;
     border: 0.1rem solid black;
-    padding: 0.6rem 1.8rem;
-    border-radius: 0.6rem;
+    padding: 0.9rem 2rem;
+    border-radius: 0.4rem;
     cursor: pointer;
+    color: black;
     background-color: white;
-    background: transparent;
-    &:hover {
+    // z-index: 21;
 
+    &:hover {
+        color: white;
+        background-color: black;
     }
 }
 

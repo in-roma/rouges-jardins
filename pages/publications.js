@@ -6,7 +6,7 @@ import CardPublication from '../components/microComponents/cardPublication';
 import Cart from '../components/microComponents/cart';
 
 // Styling
-import styles from '../styles/publications.module.scss';
+import styles from '../styles/Publications.module.scss';
 
 // api
 import { getAllPublications } from '../lib/api';

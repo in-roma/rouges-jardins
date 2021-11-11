@@ -27,7 +27,7 @@ export default function Footer() {
 				</nav>
 				<div className={styles.footerMentions}>
 					<span>Tous droits réservés - Rouges Jardins</span>
-					<span>Site hébergé chez Digital Ocean et O2Switch</span>
+					<span>Site hébergé chez O2Switch</span>
 				</div>
 			</div>
 		</footer>
