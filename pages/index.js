@@ -70,7 +70,9 @@ export default function Home({ posts }) {
 			<CardLarge
 				type="blog"
 				cardLargeType="cardLargeChroniques"
-				colorTag="#F6EEDF"
+				colorTag="
+				rgba(0, 0, 0, 0.7)"
+				textColor="white"
 				title={parsing(chroniques[0].node.title)}
 				text={
 					chroniques[0].node.excerpt.length > 288
@@ -94,6 +96,9 @@ export default function Home({ posts }) {
 					date={el.node.date}
 					category={el.node.categories.nodes[0].name}
 					slug={el.node.slug}
+					color="
+					rgba(0, 0, 0, 0.7)"
+					textColor="white"
 				/>
 			))}
 			<SectionBar

@@ -8,6 +8,7 @@ import parsing from '../../helpers/helpers';
 import Layout from '../../components/layout';
 import TagPost from '../../components/microComponents/tagPost';
 import DateCard from '../../components/microComponents/dateCard';
+import More from '../../components/microComponents/more';
 
 // Layout
 import styles from '../../styles/PodcastPage.module.scss';
@@ -60,6 +61,16 @@ export default function PostPage({ data }) {
 					<div className={styles.contentPodcastPage}>
 						{parsing(data.post.content)}
 					</div>
+					<More
+						slug={'/podcasts'}
+						linkText="Voir tout"
+						titleCard={data.post.title}
+						imageUrlCard={data.post.featuredImage.node.sourceUrl}
+						dateCard={data.post.date}
+						categoryCard={data.post.categories.nodes[0].name}
+						colorCard="#D63447"
+						textColorCard="white"
+					/>
 				</div>
 			</div>
 		</Layout>

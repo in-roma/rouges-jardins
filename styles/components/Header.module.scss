@@ -31,6 +31,7 @@
     line-height: 1.3rem;
     font-weight: 600;
     letter-spacing: 0%;
+    transform: translateY(-0.1rem);
 }
 
 .by {
@@ -39,6 +40,7 @@
     font-weight: 400;  
     color: #ADADAD;
     margin-left: 1.2rem;
+    // transform: translateY(0.2rem);
 }
 
 .burger {
@@ -51,6 +53,7 @@
     flex-flow: row nowrap;
     align-items: center;
     z-index: 10; 
+
 }
 
 .searchButton {
@@ -144,6 +147,7 @@
     }
     .logo {
         font-size: 1.5rem;  
+        transform: none;
     }
     .by {
         font-size: 1.1rem;

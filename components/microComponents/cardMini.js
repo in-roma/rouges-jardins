@@ -7,9 +7,9 @@ import Tag from './tag';
 import DateCard from './dateCard';
 
 // Styling
-import styles from '../../styles/components/microComponents/CardSmall.module.scss';
+import styles from '../../styles/components/microComponents/CardMini.module.scss';
 
-export default function CardSmall({
+export default function CardMini({
 	title,
 	text,
 	imageUrl,
@@ -23,20 +23,20 @@ export default function CardSmall({
 	const router = useRouter();
 	return (
 		<div
-			className={styles.cardSmall}
+			className={styles.cardMini}
 			onClick={() => router.push(`/blog/${slug}`)}
 		>
 			<Tag text={category} color={color} textColor={textColor} />
 			<div
-				className={styles.pictureCardSmall}
+				className={styles.pictureCardMini}
 				style={{
 					backgroundImage: `url(${imageUrl})`,
 				}}
 			></div>
-			<div className={styles.titleCardSmall}>
+			<div className={styles.titleCardMini}>
 				{title.length > 60 ? title.slice(0, 60) + '...' : title}
 			</div>
-			<DateCard date={date} />
+			{/* <DateCard date={date} /> */}
 		</div>
 	);
 }

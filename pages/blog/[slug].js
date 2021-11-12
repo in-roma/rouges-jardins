@@ -8,6 +8,7 @@ import parsing from '../../helpers/helpers';
 import Layout from '../../components/layout';
 import TagPost from '../../components/microComponents/tagPost';
 import DateCard from '../../components/microComponents/dateCard';
+import More from '../../components/microComponents/more';
 
 // Layout
 import styles from '../../styles/PostPage.module.scss';
@@ -57,6 +58,16 @@ export default function PostPage({ data }) {
 						{parsing(data.post.content)}
 					</div>
 				</div>
+				<More
+					slug={'/blog'}
+					linkText="Voir tout"
+					titleCard={data.post.title}
+					imageUrlCard={data.post.featuredImage.node.sourceUrl}
+					dateCard={data.post.date}
+					categoryCard={data.post.categories.nodes[0].name}
+					colorCard="Black"
+					textColorCard="white"
+				/>
 			</div>
 		</Layout>
 	);

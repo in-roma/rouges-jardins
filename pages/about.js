@@ -11,24 +11,19 @@ export default function About() {
 		<Layout>
 			<div className={styles.containerAbout}>
 				<content className={styles.contentAbout}>
-					<div className={styles.headerAbout}>
+					{/* <div className={styles.headerAbout}>
 						<span className={styles.titreAbout}>À propos</span>
-					</div>
+					</div> */}
+
 					<span className={styles.textAbout}>
 						<strong>
 							Guy est né en 1951 dans la région parisienne.
 						</strong>
-						&nbsp;L’été, il passe ses vacances à Skaer en Bretagne
+						&nbsp;L’été, il passe ses vacances à Scaër en Bretagne
 						où il travaille dans la ferme familiale. C’est au
 						travers de cette confrontation avec une campagne “brute”
 						que naît sa fascination pour la nature.
 					</span>
-					<div
-						className={styles.pictureAbout}
-						style={{
-							backgroundImage: `url("http://www.jcou8054.odns.fr/wp-content/uploads/2021/11/DSC_3695-1.jpeg")`,
-						}}
-					></div>
 
 					<span className={styles.textAbout}>
 						Après un cycle universitaire en biologie, il quitte
@@ -38,14 +33,18 @@ export default function About() {
 						biologie. Il ouvre en 1989 un laboratoire d’analyses
 						médicales dans la commune du Loroux Bottereaux.
 					</span>
-
+					<div
+						className={styles.pictureAbout}
+						style={{
+							backgroundImage: `url("http://www.jcou8054.odns.fr/wp-content/uploads/2021/11/DSC_3695-1.jpeg")`,
+						}}
+					></div>
 					<span className={styles.textAbout}>
 						Il exerce pendant 32 ans. Féru de bactériologie, il
 						essaie tout au long des ces années de faire vivre un
-						laboratoire à l’excellence médicale et où il fait bon de
-						consulter et de travailler. Au quotidien, il affectionne
-						particulièrement les prises de sang, moment de rencontre
-						avec l’autre et de partage.
+						laboratoire à l’excellence médicale. Au quotidien, il
+						affectionne particulièrement les prises de sang, moment
+						de partage.
 					</span>
 					<span className={styles.textAbout}>
 						Parallèlement à ses activités professionnelles, il écrit
@@ -77,8 +76,7 @@ export default function About() {
 					</span>
 					<span className={styles.textAbout}>
 						Aujourd’hui Guy est un jeune retraité, continue à
-						partager ses histoires et espère engager de nouveaux
-						projets et collaborations.
+						partager ses histoires...
 					</span>
 					<span className={styles.emailTextAbout}>
 						Vous pouvez le contacter avec cet&nbsp;
