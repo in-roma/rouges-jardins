@@ -36,7 +36,7 @@ export default function Home({ posts }) {
 	);
 
 	// Search states
-	const { searchValue, changeValue } = useContext(AppContext);
+	const { changeValue } = useContext(AppContext);
 	const [searchValueDisplay, setSearchValueDisplay] = useState('');
 
 	//  Search Input
@@ -53,7 +53,7 @@ export default function Home({ posts }) {
 			router.push('/blog/');
 		}
 	};
-	console.log('searchValueDisplay:', searchValueDisplay);
+
 	return (
 		<Layout>
 			<SectionBar

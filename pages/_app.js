@@ -7,9 +7,17 @@ function MyApp({ Component, pageProps }) {
 	const changeValue = (value) => {
 		setSearchValue(value);
 	};
+	const [postsViewed, setPostsViewed] = useState([]);
+	const changePostsViewed = (post) => {
+		let newArr = postsViewed;
+		newArr.push(post);
+		setPostsViewed(newArr);
+	};
 
 	return (
-		<AppContext.Provider value={{ searchValue, changeValue }}>
+		<AppContext.Provider
+			value={{ searchValue, changeValue, postsViewed, changePostsViewed }}
+		>
 			<Component {...pageProps} />
 		</AppContext.Provider>
 	);

@@ -154,6 +154,9 @@ export default function Blog({ posts, categories }) {
 							date={el.node.date}
 							category={el.node.categories.nodes[0].name}
 							slug={el.node.slug}
+							color="
+							rgba(0, 0, 0, 0.7)"
+							textColor="white"
 						/>
 					))}
 				</content>

@@ -1,8 +1,12 @@
+import { useState, useContext, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getPost, getAllSlugs } from '../../lib/api';
+import { getPost, getAllSlugs, getAllChroniques } from '../../lib/api';
 import { useRouter } from 'next/router';
 import parsing from '../../helpers/helpers';
+
+// Context
+import { AppContext } from '../../lib/context';
 
 // Components
 import Layout from '../../components/layout';
@@ -14,13 +18,15 @@ import More from '../../components/microComponents/more';
 import styles from '../../styles/PostPage.module.scss';
 import arrowLeft from '../../public/arrow-left.svg';
 
-export default function PostPage({ data }) {
-	// console.log(
-	// 	'data.post.categories.nodes[0].name',
-	// 	data.post.categories.nodes[0].name
-	// );
-
+export default function PostPage({ data, posts }) {
+	console.log('Posts fecthed:', posts);
+	// Router
 	const router = useRouter();
+
+	// Context
+	const { postsViewed, changePostsViewed } = useContext(AppContext);
+
+	// Suggestions
 
 	return (
 		<Layout>
@@ -59,12 +65,9 @@ export default function PostPage({ data }) {
 					</div>
 				</div>
 				<More
+					data={posts.edges}
 					slug={'/blog'}
 					linkText="Voir tout"
-					titleCard={data.post.title}
-					imageUrlCard={data.post.featuredImage.node.sourceUrl}
-					dateCard={data.post.date}
-					categoryCard={data.post.categories.nodes[0].name}
 					colorCard="Black"
 					textColorCard="white"
 				/>
@@ -89,9 +92,11 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: slug }) {
 	const data = await getPost(slug);
+	const posts = await getAllChroniques();
 	return {
 		props: {
 			data,
+			posts,
 		},
 	};
 }
