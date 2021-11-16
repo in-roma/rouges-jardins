@@ -19,7 +19,7 @@ import styles from '../../styles/PostPage.module.scss';
 import arrowLeft from '../../public/arrow-left.svg';
 
 export default function PostPage({ data, posts }) {
-	console.log('Posts fecthed:', posts);
+	console.log('Posts fecthed:', posts.posts.edges);
 	// Router
 	const router = useRouter();
 
@@ -54,8 +54,8 @@ export default function PostPage({ data, posts }) {
 						{data.post.categories.nodes[0].name && (
 							<TagPost
 								text={data.post.categories.nodes[0].name}
-								color={'#F6EEDF'}
-								textColor={'black'}
+								color={'black'}
+								textColor={'white'}
 							/>
 						)}
 						<DateCard date={data.post.date} />
@@ -65,7 +65,7 @@ export default function PostPage({ data, posts }) {
 					</div>
 				</div>
 				<More
-					data={posts.edges}
+					dataMore={posts.posts.edges}
 					slug={'/blog'}
 					linkText="Voir tout"
 					colorCard="Black"

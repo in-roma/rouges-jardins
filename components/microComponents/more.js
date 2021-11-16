@@ -7,7 +7,7 @@ import CardMini from '../../components/microComponents/cardMini';
 import styles from '../../styles/components/microComponents/More.module.scss';
 
 export default function More({
-	data,
+	dataMore,
 	slug,
 	linkText,
 	titleCard,
@@ -17,7 +17,7 @@ export default function More({
 	colorCard,
 	textColorCard,
 }) {
-	console.log('this is data (more)', data);
+	// console.log('this is dataMore', dataMore);
 	return (
 		<div className={styles.containerMore}>
 			<div className={styles.headerMore}>
@@ -28,16 +28,17 @@ export default function More({
 			</div>
 
 			<div className={styles.contentMore}>
-				data.map(el =>(
-				<CardMini
-					title={el.node.title}
-					imageUrl={el.node.featuredImage.node.sourceUrl}
-					date={el.node.date}
-					category={el.node.categories.nodes[0].name}
-					color={colorCard}
-					textColor={textColorCard}
-				/>
-				)
+				{dataMore.map((el) => (
+					<CardMini
+						key={el.node.id}
+						color={colorCard}
+						textColor={textColorCard}
+						title={el.node.title}
+						imageUrl={el.node.featuredImage.node.sourceUrl}
+						slug={el.node.slug}
+						category={el.node.categories.nodes[0].name}
+					/>
+				))}
 			</div>
 		</div>
 	);
