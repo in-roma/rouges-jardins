@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getPost, getAllSlugs, getAllChroniques } from '../../lib/api';
+import { getPost, getAllSlugs, getMore } from '../../lib/api';
 import { useRouter } from 'next/router';
 import parsing from '../../helpers/helpers';
 
@@ -92,7 +92,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: slug }) {
 	const data = await getPost(slug);
-	const posts = await getAllChroniques();
+	const posts = await getMore(data.post.date);
 	return {
 		props: {
 			data,
