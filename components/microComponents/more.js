@@ -24,6 +24,7 @@ export default function More({
 	const settings = {
 		cellAlign: 'left',
 		slidesToShow: 3,
+		wrapAround: true,
 	};
 	return (
 		<div className={styles.containerMore}>
