@@ -1,7 +1,7 @@
 // Parser
 import parse, { domToReact } from 'html-react-parser';
 
-const options = {
+const parsingImage = {
 	replace: ({ attribs, children }) => {
 		if (!attribs) {
 			return;
@@ -15,13 +15,21 @@ const options = {
 					className="wp-block-image size-full"
 					style={{ padding: 0, margin: 0 }}
 				>
-					{domToReact(children, options)}
+					{domToReact(children, parsingImage)}
 				</figure>
 			);
 		}
 	},
 };
 
+const regexSpaces = /<p class="" style="white-space:pre-wrap;">&nbsp;<\/p>\\n/gm;
+
 export default function parsing(content) {
-	return parse(content, options);
+	const parsedContentImage = parse(content, parsingImage);
+	// const results = parsedContentImage.replace(
+	// 	'J’ai une mon enfance bercée de dictons',
+	// 	''
+	// );
+
+	return parsedContentImage;
 }

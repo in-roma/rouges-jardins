@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Carousel from 'nuka-carousel';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 // Components
 import CardMini from '../../components/microComponents/cardMini';
@@ -18,13 +19,28 @@ export default function More({
 	imageUrlCard,
 	dateCard,
 	categoryCard,
+	color,
 	colorCard,
 	textColorCard,
 }) {
+	const breakPoint1000 = useMediaQuery('(max-width:950px)');
+	const breakPoint700 = useMediaQuery('(max-width:500px)');
+
+	let SlideToShowNumber = 3;
+	if (breakPoint1000) {
+		SlideToShowNumber = 2;
+	}
+	if (breakPoint700) {
+		SlideToShowNumber = 1;
+	}
+
 	const settings = {
 		cellAlign: 'left',
-		slidesToShow: 3,
+		slidesToShow: SlideToShowNumber,
 		wrapAround: true,
+		cellAlign: 'center',
+		framePadding: '24px',
+		// transitionMode: 'fade',
 	};
 	return (
 		<div className={styles.containerMore}>
@@ -41,6 +57,8 @@ export default function More({
 						prevButtonStyle: {
 							marginRight: '28px',
 						},
+
+						prevButtonClassName: 'iconLeftMore',
 
 						pagingDotsStyle: {
 							display: 'none',

@@ -10,7 +10,7 @@ import styles from '../styles/Blog.module.scss';
 import CardSmall from '../components/microComponents/cardSmall';
 
 // Api
-import { getAllPosts, getAllCategories } from '../lib/api';
+import { getAllChroniques, getAllCategories } from '../lib/api';
 
 // Context
 import { AppContext } from '../lib/context';
@@ -166,7 +166,7 @@ export default function Blog({ posts, categories }) {
 }
 
 export async function getStaticProps() {
-	const { posts } = await getAllPosts();
+	const { posts } = await getAllChroniques();
 	const { categories } = await getAllCategories();
 	console.log(categories);
 	return {
