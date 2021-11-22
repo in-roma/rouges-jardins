@@ -4,7 +4,11 @@ import parsing from '../helpers/helpers';
 import { useRouter } from 'next/router';
 
 // Api
-import { getAllPosts } from '../lib/api';
+import {
+	getChroniquesHome,
+	getPodcastsHome,
+	getAllPublications,
+} from '../lib/api';
 
 // Context
 import { AppContext } from '../lib/context';
@@ -20,20 +24,20 @@ import CardSmallVertical from '../components/microComponents/cardSmallVertical';
 // Styling
 import styles from '../styles/Home.module.scss';
 
-export default function Home({ posts }) {
-	const chroniques = posts.edges.filter(
-		(el) =>
-			el.node.categories.nodes[0].name !== 'Podcast' &&
-			el.node.categories.nodes[0].name !== 'Publication'
-	);
+export default function Home({ posts, podcasts, publications }) {
+	// const chroniques = posts.edges.filter(
+	// 	(el) =>
+	// 		el.node.categories.nodes[0].name !== 'Podcast' &&
+	// 		el.node.categories.nodes[0].name !== 'Publication'
+	// );
 
-	const podcasts = posts.edges.filter(
-		(el) => el.node.categories.nodes[0].name === 'Podcast'
-	);
+	// const podcasts = posts.edges.filter(
+	// 	(el) => el.node.categories.nodes[0].name === 'Podcast'
+	// );
 
-	const publications = posts.edges.filter(
-		(el) => el.node.categories.nodes[0].name === 'Publication'
-	);
+	// const publications = posts.edges.filter(
+	// 	(el) => el.node.categories.nodes[0].name === 'Publication'
+	// );
 
 	// Search states
 	const { changeValue } = useContext(AppContext);
@@ -73,21 +77,22 @@ export default function Home({ posts }) {
 				colorTag="
 				rgba(0, 0, 0, 0.7)"
 				textColor="white"
-				title={parsing(chroniques[0].node.title)}
+				title={parsing(posts.edges[0].node.title)}
 				text={
-					chroniques[0].node.excerpt.length > 288
+					posts.edges[0].node.excerpt.length > 288
 						? parsing(
-								chroniques[0].node.excerpt.slice(0, 288) + '...'
+								posts.edges[0].node.excerpt.slice(0, 288) +
+									'...'
 						  )
-						: parsing(chroniques[0].node.excerpt)
+						: parsing(posts.edges[0].node.excerpt)
 				}
-				imageUrl={chroniques[0].node.featuredImage.node.sourceUrl}
+				imageUrl={posts.edges[0].node.featuredImage.node.sourceUrl}
 				imageAltText={'test'}
-				date={chroniques[0].node.date}
-				category={chroniques[0].node.categories.nodes[0].name}
-				slug={chroniques[0].node.slug}
+				date={posts.edges[0].node.date}
+				category={posts.edges[0].node.categories.nodes[0].name}
+				slug={posts.edges[0].node.slug}
 			/>
-			{chroniques.slice(1, 5).map((el) => (
+			{posts.edges.slice(1, 5).map((el) => (
 				<CardSmall
 					key={'smallCard' + el.node.id}
 					title={el.node.title}
@@ -111,21 +116,26 @@ export default function Home({ posts }) {
 				cardLargeType="cardLargePodcasts"
 				colorTag="#D63447"
 				textColor="white"
-				title={parsing(podcasts[0].node.title)}
+				title={parsing(podcasts.posts.edges[0].node.title)}
 				text={
-					podcasts[0].node.excerpt.length > 288
+					podcasts.posts.edges[0].node.excerpt.length > 288
 						? parsing(
-								podcasts[0].node.excerpt.slice(0, 288) + '...'
+								podcasts.posts.edges[0].node.excerpt.slice(
+									0,
+									288
+								) + '...'
 						  )
-						: parsing(podcasts[0].node.excerpt)
+						: parsing(podcasts.posts.edges[0].node.excerpt)
 				}
-				imageUrl={podcasts[0].node.featuredImage.node.sourceUrl}
+				imageUrl={
+					podcasts.posts.edges[0].node.featuredImage.node.sourceUrl
+				}
 				imageAltText={'test'}
-				date={podcasts[0].node.date}
-				category={podcasts[0].node.categories.nodes[0].name}
-				slug={podcasts[0].node.slug}
+				date={podcasts.posts.edges[0].node.date}
+				category={podcasts.posts.edges[0].node.categories.nodes[0].name}
+				slug={podcasts.posts.edges[0].node.slug}
 			/>
-			{podcasts.slice(1, 4).map((el) => (
+			{podcasts.posts.edges.slice(1, 4).map((el) => (
 				<CardMedium
 					colorTag="#D63447"
 					textColor="white"
@@ -144,7 +154,7 @@ export default function Home({ posts }) {
 				text="Toutes les publications"
 			/>
 
-			{publications.slice(0, 5).map((el) => (
+			{publications.posts.edges.slice(0, 5).map((el) => (
 				<CardSmallVertical
 					colorTag="#FFD31D"
 					key={'smallCard' + el.node.id}
@@ -160,8 +170,11 @@ export default function Home({ posts }) {
 	);
 }
 export async function getStaticProps() {
-	const { posts } = await getAllPosts();
+	const { posts } = await getChroniquesHome();
+	const podcasts = await getPodcastsHome();
+	const publications = await getAllPublications();
+
 	return {
-		props: { posts },
+		props: { posts, podcasts, publications },
 	};
 }

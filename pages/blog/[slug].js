@@ -94,7 +94,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: slug }) {
 	const data = await getPost(slug);
-	const posts = await getMore(data.post.id);
+	const posts = await getMore(data.post.terms.pageInfo.endCursor);
 	return {
 		props: {
 			data,
