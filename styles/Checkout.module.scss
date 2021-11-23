@@ -1,0 +1,168 @@
+.containerCheckout {
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: space-between;
+    margin-top: 2.4rem;
+
+}
+
+.contentCheckout {
+    width: 118.8rem;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;    
+    column-gap: 2.2rem;
+    row-gap: 2.4rem;
+
+}
+
+.navBarCheckout {
+    position: fixed;
+    width: 118.8rem;
+    height: 7.2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.1rem solid #EFEFEF;
+    background-color: white;
+    opacity: 0.9;
+    z-index: 5;
+    h2 {
+        font-size:2rem;
+    }
+    a {
+        font-weight: 500;
+        font-size: 1.2rem;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+
+.searchBarBlog {
+    position: fixed;
+    width: 118.8rem;
+    height: 6rem;
+    margin-top: 6rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    opacity: 0.9;
+    z-index: 5;
+
+
+    h2 {
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        font-weight: 500;
+    }
+    button {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        margin-left: 1.2rem;
+        font-weight: 600;
+        text-decoration-line: underline;
+        color: black;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+}
+
+
+.cardSmallBlog {
+    grid-row:none;
+}
+
+
+@media screen and (max-width: 1240px) {
+    .navBarBlog   {
+        width: 88.6rem;
+    }
+    .searchBarBlog {
+        width: 88.6rem;
+    }
+    .contentBlog{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 1040px) {
+    .navBarBlog   {
+        width: 68.2rem;
+    }
+    .searchBarBlog {
+        width: 68.2rem;
+    }
+    .contentBlog{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 740px) {
+    .navBarBlog   {
+        width: 58.2rem;
+    }
+    .searchBarBlog {
+        width: 58.2rem;
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+    .navBarBlog   {
+        width: 48.2rem;
+    }
+    .searchBarBlog {
+        width: 48.2rem;
+    }
+
+}
+
+@media screen and (max-width: 540px) {
+    .navBarBlog   {
+        width: 42.2rem;
+    }
+    .contentBlog{
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media screen and (max-width: 460px) {
+    .navBarBlog   {
+        width: 36rem;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .navBarBlog   {
+        width: 30rem;
+        height: 8rem;
+        flex-flow: column;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+}
+
+
+@media screen and (max-width: 340px) {
+    .navBarBlog   {
+        width: 28rem;
+    }
+
+}

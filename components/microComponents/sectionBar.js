@@ -15,10 +15,11 @@ export default function SectionBar({
 	onChangeInput,
 	value,
 	marginBottom,
+	style,
 }) {
 	return (
 		<>
-			<div className={styles.containerSectionBar}>
+			<div className={styles.containerSectionBar} style={style}>
 				<div
 					className={styles.sectionBar}
 					style={{ marginBottom: marginBottom }}

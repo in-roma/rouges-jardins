@@ -25,19 +25,6 @@ import CardSmallVertical from '../components/microComponents/cardSmallVertical';
 import styles from '../styles/Home.module.scss';
 
 export default function Home({ posts, podcasts, publications }) {
-	// const chroniques = posts.edges.filter(
-	// 	(el) =>
-	// 		el.node.categories.nodes[0].name !== 'Podcast' &&
-	// 		el.node.categories.nodes[0].name !== 'Publication'
-	// );
-
-	// const podcasts = posts.edges.filter(
-	// 	(el) => el.node.categories.nodes[0].name === 'Podcast'
-	// );
-
-	// const publications = posts.edges.filter(
-	// 	(el) => el.node.categories.nodes[0].name === 'Publication'
-	// );
 
 	// Search states
 	const { changeValue } = useContext(AppContext);
