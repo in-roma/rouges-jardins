@@ -11,32 +11,30 @@
     display: flex;
     flex-grow: row nowrap;
     align-items: center;
-    justify-self: end;
-    span {
-        // margin-right: 1.2rem;
-            
-    &:hover {
-        text-decoration: underline;
-    }
-    
-    }
-
     justify-self: flex-end;
+    a {
+        font-size: 1.2rem;
+        font-weight: 500;
+        line-height: 1.6rem;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 
 .productCountCart {
     width: 1.6rem;
     height: 1.6rem;
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: #FFD31D;
     transform: translateY(-0.7rem);
     border-radius: 50%;
     opacity: 1;
     margin-left: 0.2rem;
     span {
-        font-size: 1.1rem;
-        font-weight: 600;
+        font-size: 1.2rem;
+        font-weight: 700;
         line-height: 1.6rem;
         &:hover {
             text-decoration: none;

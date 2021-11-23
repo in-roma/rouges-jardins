@@ -12,12 +12,15 @@
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
     "@mui/material": "^5.1.1",
+    "@stripe/stripe-js": "^1.21.1",
     "@zeit/next-sass": "^1.0.1",
     "graphql": "^15.6.1",
     "html-react-parser": "^1.4.0",
+    "micro": "^9.3.4",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.33",
     "next": "11.1.2",
+    "next-stripe": "^1.0.0-beta.9",
     "normalise": "^10.0.0",
     "normalize.css": "^8.0.1",
     "nuka-carousel": "^4.8.2",
@@ -27,7 +30,8 @@
     "react-media": "^1.10.0",
     "react-moment": "^1.1.1",
     "sass": "^1.43.3",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "stripe": "^8.191.0"
   },
   "devDependencies": {
     "eslint": "7.32.0",

@@ -5,14 +5,14 @@ import Layout from '../components/Layout';
 import SectionBar from '../components/microComponents/sectionBar';
 
 // Styling
-import styles from '../styles/Checkout.module.scss';
+import styles from '../styles/Cart.module.scss';
 
-export default function Checkout() {
+export default function Cart() {
 	return (
 		<Layout>
-			<div className={styles.containerCheckout}>
-				<div className={styles.contentCheckout}>
-					<div className={styles.navBarCheckout}>
+			<div className={styles.containerCart}>
+				<div className={styles.contentCart}>
+					<div className={styles.navBarCart}>
 						<h2>Panier</h2>
 						<Link href="/publications">
 							<a>Retour</a>
