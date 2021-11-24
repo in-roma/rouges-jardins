@@ -119,6 +119,7 @@ export default function Blog({ posts, categories }) {
 		<Layout>
 			<div className={styles.containerBlog}>
 				<div className={styles.navBarBlog}>
+					<h1>Chroniques</h1>
 					<Search
 						value={searchValueDisplay}
 						onChangeInput={onChangeInput}

@@ -10,11 +10,10 @@ export default function About() {
 	return (
 		<Layout>
 			<div className={styles.containerAbout}>
+				<div className={styles.navBarAbout}>
+					<h1 className={styles.titreAbout}>À propos</h1>
+				</div>
 				<content className={styles.contentAbout}>
-					{/* <div className={styles.headerAbout}>
-						<span className={styles.titreAbout}>À propos</span>
-					</div> */}
-
 					<span className={styles.textAbout}>
 						<strong>
 							Guy est né en 1951 dans la région parisienne.

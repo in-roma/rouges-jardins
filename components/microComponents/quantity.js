@@ -1,14 +1,18 @@
 // Styling
 import styles from '../../styles/components/microComponents/Quantity.module.scss';
 
-export default function Quantity({ substract, quantity = 0, add }) {
+export default function Quantity({ substract, quantity = 0, add, name }) {
 	return (
 		<div className={styles.quantityContainer}>
-			<button className={styles.quantityButton} onClick={substract}>
+			<button
+				className={styles.quantityButton}
+				onClick={substract}
+				name={name}
+			>
 				-
 			</button>
 			<span className={styles.quantityValue}>{quantity}</span>
-			<button className={styles.quantityButton} onClick={add}>
+			<button className={styles.quantityButton} onClick={add} name={name}>
 				+
 			</button>
 		</div>

@@ -16,14 +16,32 @@ import { AppContext } from '../lib/context';
 import { getAllPublications } from '../lib/api';
 
 export default function Publications({ posts }) {
-	const { cartList } = useContext(AppContext);
+	// Context states
+	const { cartLength, cartList, addBook, substractBook } = useContext(
+		AppContext
+	);
+
+	const substractBookQuantity = (e) => {
+		const bookId = e.target.name;
+		substractBook(bookId);
+		console.log('substract bookID:', bookId);
+	};
+	const addBookQuantity = (e) => {
+		const bookId = e.target.name;
+		addBook(bookId);
+		console.log('add bookID:', bookId);
+	};
 
 	const publications = posts.edges;
+
+	console.log('this is CartLength:', cartLength);
+	console.log('this is CartList:', cartList);
 	return (
 		<Layout>
 			<div className={styles.containerPublications}>
 				<div className={styles.navBarPublications}>
-					<CartButton products={cartList.length} />
+					<h1>Publications</h1>
+					<CartButton products={cartLength} />
 				</div>
 				<div className={styles.contentPublications}>
 					{publications.map((el) => (
@@ -38,6 +56,10 @@ export default function Publications({ posts }) {
 							date={el.node.date}
 							category={el.node.categories.nodes[0].name}
 							slug={el.node.slug}
+							name={el.node.apiStripeID}
+							price={el.node.apiStripePrice}
+							addBookQuantity={addBookQuantity}
+							substractBookQuantity={substractBookQuantity}
 						/>
 					))}
 				</div>

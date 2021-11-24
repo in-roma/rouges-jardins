@@ -11,10 +11,8 @@ import Quantity from './quantity.js';
 // Styling
 import styles from '../../styles/components/microComponents/CardPublication.module.scss';
 
-// Context
-import { AppContext } from '../../lib/context';
-
 export default function CardPublication({
+	name,
 	title,
 	text,
 	imageUrl,
@@ -26,20 +24,11 @@ export default function CardPublication({
 	cardLargeType,
 	slug,
 	type,
-	price = '20.00 euros',
-	apiStripeID,
+	price,
+	addBookQuantity,
+	substractBookQuantity,
 }) {
 	const router = useRouter();
-
-	// Context
-	const { addBook, substractBook } = useContext(AppContext);
-
-	const substractBookQuantity = (bookID) => {
-		substractBook(bookID);
-	};
-	const addBookQuantity = (bookID) => {
-		addBook(bookID);
-	};
 
 	return (
 		<div type={type} className={styles.cardPublication}>
@@ -63,16 +52,19 @@ export default function CardPublication({
 				<div className={styles.actionContainerPublication}>
 					<div className={styles.priceQuantityContainerPublication}>
 						<span className={styles.pricePublication}>
-							Prix: {price}
+							Prix: {price} euros
 						</span>
 						<Quantity
-							substract={substractBookQuantity(apiStripeID)}
-							add={addBookQuantity(apiStripeID)}
+							substract={substractBookQuantity}
+							add={addBookQuantity}
+							name={name}
 						/>
 					</div>
 					<Button
 						text="Ajouter au panier"
 						className={styles.buttonCardPublication}
+						onClick={addBookQuantity}
+						name={name}
 					/>
 				</div>
 			</div>

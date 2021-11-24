@@ -17,6 +17,7 @@ export default function Podcast({ posts }) {
 		<Layout>
 			<div className={styles.containerPodcasts}>
 				<div className={styles.navBarPodcast}>
+					<h1>Podcasts</h1>
 					<Search />
 				</div>
 				{/* {searchActive && (

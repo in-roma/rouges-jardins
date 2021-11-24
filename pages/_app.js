@@ -3,20 +3,34 @@ import React, { createContext, useState, useMemo } from 'react';
 import { AppContext } from '../lib/context';
 
 function MyApp({ Component, pageProps }) {
+	// Search value states between home & blog pages
 	const [searchValue, setSearchValue] = useState('');
 	const changeValue = (value) => {
 		setSearchValue(value);
 	};
-	const [postsViewed, setPostsViewed] = useState([]);
-	const changePostsViewed = (post) => {
-		let newArr = postsViewed;
-		newArr.push(post);
-		setPostsViewed(newArr);
-	};
 
+	// Cart states
 	const [cartList, setCartList] = useState([]);
+	const [cartLength, setCartLength] = useState(0);
 
-	const addBook = (bookId) => {};
+	// Add to cart
+	const addBook = (bookId) => {
+		if (!cartList.every((el) => el.id !== bookId)) {
+			setCartList((prevBooks) => [
+				...prevBooks,
+				{ id: bookId, quantity: 1 },
+			]);
+			if (cartList.length > 0) {
+				setCartLength(
+					cartList.reduce(function (prev, cur) {
+						return prev.quantity + cur.quantity;
+					})
+				);
+			}
+			console.log('this is cartLength:', cartLength);
+		}
+	};
+	// Remove from cart
 	const substractBook = (bookId) => {};
 
 	return (
@@ -24,9 +38,8 @@ function MyApp({ Component, pageProps }) {
 			value={{
 				searchValue,
 				changeValue,
-				postsViewed,
-				changePostsViewed,
 				cartList,
+				cartLength,
 				addBook,
 				substractBook,
 			}}
