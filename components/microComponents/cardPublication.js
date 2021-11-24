@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import Tag from './tag';
 import DateCard from './dateCard';
 import Button from '../microComponents/button';
+import Quantity from './quantity.js';
 
 // Styling
 import styles from '../../styles/components/microComponents/CardPublication.module.scss';
@@ -44,9 +45,12 @@ export default function CardPublication({
 				</div>
 
 				<div className={styles.actionContainerPublication}>
-					<span className={styles.pricePublication}>
-						Prix: {price}
-					</span>
+					<div className={styles.priceQuantityContainerPublication}>
+						<span className={styles.pricePublication}>
+							Prix: {price}
+						</span>
+						<Quantity />
+					</div>
 					<Button
 						text="Ajouter au panier"
 						className={styles.buttonCardPublication}

@@ -12,9 +12,9 @@
     height: 26.4rem;
     display: flex;
     flex-direction: column;
-    margin-left: 1.8rem;
-
     justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 1.8rem;
 
 } 
 
@@ -55,18 +55,29 @@
 }
 
 .actionContainerPublication {
-
+    width: 26rem;
     background-color: "red";
     display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 2.4rem;
+
+
+}
+
+.priceQuantityContainerPublication {
+    display: flex;
     flex-flow: column;
-    align-self: start;
-    justify-self: end;
-    margin-bottom: 3.6rem;
+    align-items: flex-start;
+    margin-bottom: 1.2rem;
 }
 
 .pricePublication {
     font-size:1.2rem;
-    margin-bottom: 0.6rem;
+    line-height: 1.2rem;
+    margin-bottom: 0.8rem;
 
 }
 
