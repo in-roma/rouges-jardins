@@ -3,7 +3,7 @@ import Image from 'next/image';
 // Components
 import styles from '../../styles/components/microComponents/Button.module.scss';
 
-export default function Button({ text, onClick, name }) {
+export default function Button({ onClick, text, name }) {
 	return (
 		<button className={styles.buttonCart} onClick={onClick} name={name}>
 			{text}

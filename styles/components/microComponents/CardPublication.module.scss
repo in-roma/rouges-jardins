@@ -55,12 +55,12 @@
 }
 
 .actionContainerPublication {
-    width: 24rem;
+    width: 100%;
     background-color: "red";
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 
     margin-bottom: 2.4rem;
 
@@ -69,15 +69,17 @@
 
 .priceQuantityContainerPublication {
     display: flex;
-    flex-flow: column;
-    align-items: flex-start;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 1.2rem;
 }
 
 .pricePublication {
     font-size:1.2rem;
     line-height: 1.2rem;
-    margin-bottom: 0.8rem;
+    margin-right: 2.4rem;
 
 }
 

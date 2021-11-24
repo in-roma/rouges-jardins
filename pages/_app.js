@@ -11,27 +11,47 @@ function MyApp({ Component, pageProps }) {
 
 	// Cart states
 	const [cartList, setCartList] = useState([]);
-	const [cartLength, setCartLength] = useState(0);
+	const [cartLength, setCartLength] = useState();
+
+	const setQuantity = () => {
+		if (cartList.length > 0) {
+			let newLength = cartList.reduce(function (acc, obj) {
+				return acc + obj.quantity;
+			}, 1);
+			setCartLength(newLength);
+		}
+	};
 
 	// Add to cart
-	const addBook = (bookId) => {
-		if (!cartList.every((el) => el.id !== bookId)) {
+	const addBookContext = (bookId, bookPicture) => {
+		if (cartList.every((el) => el.id !== bookId)) {
 			setCartList((prevBooks) => [
 				...prevBooks,
-				{ id: bookId, quantity: 1 },
+				{ id: bookId, quantity: 1, picture: bookPicture },
 			]);
-			if (cartList.length > 0) {
-				setCartLength(
-					cartList.reduce(function (prev, cur) {
-						return prev.quantity + cur.quantity;
-					})
-				);
-			}
-			console.log('this is cartLength:', cartLength);
+			setQuantity();
+		}
+		if (cartList.some((el) => el.id === bookId)) {
+			let index = cartList.findIndex((el) => el.id === bookId);
+			console.log('this is index', index);
+			let newList = cartList;
+			newList[index].quantity += 1;
+			setCartList(newList);
+			setQuantity();
 		}
 	};
 	// Remove from cart
-	const substractBook = (bookId) => {};
+	const removeBookContext = (bookId) => {
+		let index = cartList.findIndex((el) => el.id === bookId);
+
+		if (cartList[index] && cartList[index].quantity > 0) {
+			console.log('this is index', index);
+			let newList = cartList;
+			newList[index].quantity -= 1;
+			setCartList(newList);
+			setQuantity();
+		}
+	};
 
 	return (
 		<AppContext.Provider
@@ -40,8 +60,8 @@ function MyApp({ Component, pageProps }) {
 				changeValue,
 				cartList,
 				cartLength,
-				addBook,
-				substractBook,
+				addBookContext,
+				removeBookContext,
 			}}
 		>
 			<Component {...pageProps} />

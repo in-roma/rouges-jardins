@@ -17,20 +17,13 @@ import { getAllPublications } from '../lib/api';
 
 export default function Publications({ posts }) {
 	// Context states
-	const { cartLength, cartList, addBook, substractBook } = useContext(
-		AppContext
-	);
-
-	const substractBookQuantity = (e) => {
-		const bookId = e.target.name;
-		substractBook(bookId);
-		console.log('substract bookID:', bookId);
-	};
-	const addBookQuantity = (e) => {
-		const bookId = e.target.name;
-		addBook(bookId);
-		console.log('add bookID:', bookId);
-	};
+	const {
+		cartLength,
+		cartList,
+		addBookContext,
+		removeBookContext,
+	} = useContext(AppContext);
+	console.log('this is cartLength', cartLength);
 
 	const publications = posts.edges;
 
@@ -41,10 +34,28 @@ export default function Publications({ posts }) {
 			<div className={styles.containerPublications}>
 				<div className={styles.navBarPublications}>
 					<h1>Publications</h1>
-					<CartButton products={cartLength} />
+					<div className={styles.dropDownMenuPublications}>
+						<button
+							products={cartLength}
+							className={styles.dropDownButtonPublications}
+						>
+							Panier
+						</button>
+
+						<div className={styles.dropDownContentPublications}>
+							{cartList.map((el) => (
+								<>
+									<span>{el.id}</span>
+									<span>{el.quantity}</span>
+									<span>{el.picture}</span>
+								</>
+							))}
+						</div>
+					</div>
 				</div>
+
 				<div className={styles.contentPublications}>
-					{publications.map((el) => (
+					{publications.map((el, index) => (
 						<CardPublication
 							key={'publication' + el.node.id}
 							type="publications"
@@ -58,8 +69,15 @@ export default function Publications({ posts }) {
 							slug={el.node.slug}
 							name={el.node.apiStripeID}
 							price={el.node.apiStripePrice}
-							addBookQuantity={addBookQuantity}
-							substractBookQuantity={substractBookQuantity}
+							addBook={() =>
+								addBookContext(
+									el.node.apiStripeID,
+									el.node.featuredImage.node.sourceUrl
+								)
+							}
+							removeBook={() =>
+								removeBookContext(el.node.apiStripeID)
+							}
 						/>
 					))}
 				</div>

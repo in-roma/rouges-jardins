@@ -25,13 +25,14 @@ export default function CardPublication({
 	slug,
 	type,
 	price,
-	addBookQuantity,
-	substractBookQuantity,
+	addBook,
+	removeBook,
+	quantity,
 }) {
 	const router = useRouter();
 
 	return (
-		<div type={type} className={styles.cardPublication}>
+		<div type={type} className={styles.cardPublication} name={name}>
 			<Tag text={category} color={colorTag} textColor={textColor} />
 			<div
 				className={styles.pictureCardPublication}
@@ -54,18 +55,19 @@ export default function CardPublication({
 						<span className={styles.pricePublication}>
 							Prix: {price} euros
 						</span>
-						<Quantity
-							substract={substractBookQuantity}
-							add={addBookQuantity}
+						<Button
+							text="Ajouter au panier"
+							className={styles.buttonCardPublication}
+							onClick={addBook}
 							name={name}
 						/>
+						{/* <Quantity
+							remove={removeBook}
+							add={addBook}
+							name={name}
+							quantity={quantity}
+						/> */}
 					</div>
-					<Button
-						text="Ajouter au panier"
-						className={styles.buttonCardPublication}
-						onClick={addBookQuantity}
-						name={name}
-					/>
 				</div>
 			</div>
 		</div>
