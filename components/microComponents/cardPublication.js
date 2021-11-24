@@ -1,3 +1,4 @@
+import { useState, useContext, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -9,6 +10,9 @@ import Quantity from './quantity.js';
 
 // Styling
 import styles from '../../styles/components/microComponents/CardPublication.module.scss';
+
+// Context
+import { AppContext } from '../../lib/context';
 
 export default function CardPublication({
 	title,
@@ -23,8 +27,20 @@ export default function CardPublication({
 	slug,
 	type,
 	price = '20.00 euros',
+	apiStripeID,
 }) {
 	const router = useRouter();
+
+	// Context
+	const { addBook, substractBook } = useContext(AppContext);
+
+	const substractBookQuantity = (bookID) => {
+		substractBook(bookID);
+	};
+	const addBookQuantity = (bookID) => {
+		addBook(bookID);
+	};
+
 	return (
 		<div type={type} className={styles.cardPublication}>
 			<Tag text={category} color={colorTag} textColor={textColor} />
@@ -49,7 +65,10 @@ export default function CardPublication({
 						<span className={styles.pricePublication}>
 							Prix: {price}
 						</span>
-						<Quantity />
+						<Quantity
+							substract={substractBookQuantity(apiStripeID)}
+							add={addBookQuantity(apiStripeID)}
+						/>
 					</div>
 					<Button
 						text="Ajouter au panier"

@@ -14,9 +14,22 @@ function MyApp({ Component, pageProps }) {
 		setPostsViewed(newArr);
 	};
 
+	const [cartList, setCartList] = useState([]);
+
+	const addBook = (bookId) => {};
+	const substractBook = (bookId) => {};
+
 	return (
 		<AppContext.Provider
-			value={{ searchValue, changeValue, postsViewed, changePostsViewed }}
+			value={{
+				searchValue,
+				changeValue,
+				postsViewed,
+				changePostsViewed,
+				cartList,
+				addBook,
+				substractBook,
+			}}
 		>
 			<Component {...pageProps} />
 		</AppContext.Provider>

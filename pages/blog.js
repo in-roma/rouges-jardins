@@ -114,7 +114,7 @@ export default function Blog({ posts, categories }) {
 			setchroniquesSearched(results);
 		}
 	}, [searchValue, searchActive, filtering, chroniquesImported]);
-	console.log('searchValue:', searchValue);
+
 	return (
 		<Layout>
 			<div className={styles.containerBlog}>

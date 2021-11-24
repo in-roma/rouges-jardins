@@ -1,3 +1,4 @@
+import { useState, useContext, useEffect } from 'react';
 import parsing from '../helpers/helpers';
 
 // Components
@@ -8,16 +9,21 @@ import CartButton from '../components/microComponents/cartButton';
 // Styling
 import styles from '../styles/Publications.module.scss';
 
+// Context
+import { AppContext } from '../lib/context';
+
 // api
 import { getAllPublications } from '../lib/api';
 
 export default function Publications({ posts }) {
+	const { cartList } = useContext(AppContext);
+
 	const publications = posts.edges;
 	return (
 		<Layout>
 			<div className={styles.containerPublications}>
 				<div className={styles.navBarPublications}>
-					<CartButton />
+					<CartButton products={cartList.length} />
 				</div>
 				<div className={styles.contentPublications}>
 					{publications.map((el) => (
