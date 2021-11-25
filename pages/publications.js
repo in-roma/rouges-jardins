@@ -34,24 +34,7 @@ export default function Publications({ posts }) {
 			<div className={styles.containerPublications}>
 				<div className={styles.navBarPublications}>
 					<h1>Publications</h1>
-					<div className={styles.dropDownMenuPublications}>
-						<button
-							products={cartLength}
-							className={styles.dropDownButtonPublications}
-						>
-							Panier
-						</button>
-
-						<div className={styles.dropDownContentPublications}>
-							{cartList.map((el) => (
-								<>
-									<span>{el.id}</span>
-									<span>{el.quantity}</span>
-									<span>{el.picture}</span>
-								</>
-							))}
-						</div>
-					</div>
+					<CartButton products={cartLength} />
 				</div>
 
 				<div className={styles.contentPublications}>
@@ -72,7 +55,9 @@ export default function Publications({ posts }) {
 							addBook={() =>
 								addBookContext(
 									el.node.apiStripeID,
-									el.node.featuredImage.node.sourceUrl
+									el.node.featuredImage.node.sourceUrl,
+									el.node.title,
+									el.node.apiStripePrice
 								)
 							}
 							removeBook={() =>

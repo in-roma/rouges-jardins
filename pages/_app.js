@@ -23,11 +23,17 @@ function MyApp({ Component, pageProps }) {
 	};
 
 	// Add to cart
-	const addBookContext = (bookId, bookPicture) => {
+	const addBookContext = (bookId, bookPicture, bookTitle, bookPrice) => {
 		if (cartList.every((el) => el.id !== bookId)) {
 			setCartList((prevBooks) => [
 				...prevBooks,
-				{ id: bookId, quantity: 1, picture: bookPicture },
+				{
+					id: bookId,
+					title: bookTitle,
+					price: bookPrice,
+					quantity: 1,
+					picture: bookPicture,
+				},
 			]);
 			setQuantity();
 		}
