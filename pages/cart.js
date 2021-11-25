@@ -21,11 +21,26 @@ export default function Cart() {
 	const {
 		cartLength,
 		cartList,
-		addBookContext,
-		removeBookContext,
+		addBook,
+		substractBook,
+		removeBook,
+		cartTotal,
 	} = useContext(AppContext);
 
-	const deleteBook = () => {};
+	const addQuantity = (e) => {
+		const bookId = e.target.name;
+		addBook(bookId);
+	};
+
+	const substractQuantity = (e) => {
+		const bookId = e.target.name;
+		substractBook(bookId);
+	};
+
+	const deleteBook = (e) => {
+		const bookId = e.target.name;
+		removeBook(bookId);
+	};
 
 	const redirectToCheckout = async () => {
 		// Create Stripe checkout
@@ -85,7 +100,12 @@ export default function Cart() {
 								>
 									{el.price}
 								</span>
-								<Quantity />
+								<Quantity
+									add={addQuantity}
+									remove={substractQuantity}
+									quantity={el.quantity}
+									name={el.id}
+								/>
 								<span
 									key={el.id + 'total'}
 									className={styles.totalTableCart}
@@ -104,9 +124,24 @@ export default function Cart() {
 					</div>
 					<div className={styles.tableCartfooter}>
 						<span className={styles.SumTableCart}>Quantity</span>
-						<span className={styles.SumValueTableCart}>0</span>
-						<span className={styles.SumTableCart}>Total</span>
-						<span className={styles.SumValueTableCart}>00.00</span>
+						<span className={styles.SumValueTableCart}>
+							{cartList.reduce(function (acc, obj) {
+								return acc + obj.quantity;
+							}, 0)}
+						</span>
+						<div className={styles.SumTableCart}>
+							<span>Total</span>
+							<span className={styles.SumNoticeTableCart}>
+								Frais de port inclus
+							</span>
+						</div>
+						<span className={styles.SumValueTableCart}>
+							{cartList.reduce(function (acc, obj) {
+								return acc + obj.price * obj.quantity;
+							}, 0)}
+							.00 euros
+						</span>
+						<span className={styles.noticeTableCart}></span>
 						<Button text="Commander" onClick={redirectToCheckout} />
 					</div>
 				</div>

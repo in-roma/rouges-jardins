@@ -17,12 +17,7 @@ import { getAllPublications } from '../lib/api';
 
 export default function Publications({ posts }) {
 	// Context states
-	const {
-		cartLength,
-		cartList,
-		addBookContext,
-		removeBookContext,
-	} = useContext(AppContext);
+	const { cartLength, cartList, addBook } = useContext(AppContext);
 	console.log('this is cartLength', cartLength);
 
 	const publications = posts.edges;
@@ -34,7 +29,11 @@ export default function Publications({ posts }) {
 			<div className={styles.containerPublications}>
 				<div className={styles.navBarPublications}>
 					<h1>Publications</h1>
-					<CartButton products={cartLength} />
+					<CartButton
+						products={cartList.reduce(function (acc, obj) {
+							return acc + obj.quantity;
+						}, 0)}
+					/>
 				</div>
 
 				<div className={styles.contentPublications}>
@@ -53,15 +52,12 @@ export default function Publications({ posts }) {
 							name={el.node.apiStripeID}
 							price={el.node.apiStripePrice}
 							addBook={() =>
-								addBookContext(
+								addBook(
 									el.node.apiStripeID,
 									el.node.featuredImage.node.sourceUrl,
 									el.node.title,
 									el.node.apiStripePrice
 								)
-							}
-							removeBook={() =>
-								removeBookContext(el.node.apiStripeID)
 							}
 						/>
 					))}

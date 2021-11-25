@@ -11,19 +11,29 @@ function MyApp({ Component, pageProps }) {
 
 	// Cart states
 	const [cartList, setCartList] = useState([]);
-	const [cartLength, setCartLength] = useState();
+	const [cartLength, setCartLength] = useState(0);
+	const [cartTotal, setCartTotal] = useState(0);
 
 	const setQuantity = () => {
 		if (cartList.length > 0) {
 			let newLength = cartList.reduce(function (acc, obj) {
 				return acc + obj.quantity;
-			}, 1);
+			}, 0);
 			setCartLength(newLength);
 		}
 	};
 
+	const setTotal = () => {
+		if (cartList.length > 0) {
+			let newTotal = cartList.reduce(function (acc, obj) {
+				return acc + obj.price * obj.quantity;
+			}, 0);
+			setCartTotal(newTotal);
+		}
+	};
+
 	// Add to cart
-	const addBookContext = (bookId, bookPicture, bookTitle, bookPrice) => {
+	const addBook = (bookId, bookPicture, bookTitle, bookPrice) => {
 		if (cartList.every((el) => el.id !== bookId)) {
 			setCartList((prevBooks) => [
 				...prevBooks,
@@ -36,6 +46,7 @@ function MyApp({ Component, pageProps }) {
 				},
 			]);
 			setQuantity();
+			setTotal();
 		}
 		if (cartList.some((el) => el.id === bookId)) {
 			let index = cartList.findIndex((el) => el.id === bookId);
@@ -44,19 +55,28 @@ function MyApp({ Component, pageProps }) {
 			newList[index].quantity += 1;
 			setCartList(newList);
 			setQuantity();
+			setTotal();
 		}
 	};
-	// Remove from cart
-	const removeBookContext = (bookId) => {
+	// Substract quantity
+	const substractBook = (bookId) => {
 		let index = cartList.findIndex((el) => el.id === bookId);
 
-		if (cartList[index] && cartList[index].quantity > 0) {
+		if (cartList[index] && cartList[index].quantity > 1) {
 			console.log('this is index', index);
 			let newList = cartList;
 			newList[index].quantity -= 1;
 			setCartList(newList);
 			setQuantity();
+			setTotal();
 		}
+	};
+	/// Remove book from cart
+	const removeBook = (bookId) => {
+		let newList = cartList.filter((el) => el.id !== bookId);
+		setCartList(newList);
+		setQuantity();
+		setTotal();
 	};
 
 	return (
@@ -66,8 +86,10 @@ function MyApp({ Component, pageProps }) {
 				changeValue,
 				cartList,
 				cartLength,
-				addBookContext,
-				removeBookContext,
+				addBook,
+				removeBook,
+				substractBook,
+				cartTotal,
 			}}
 		>
 			<Component {...pageProps} />
