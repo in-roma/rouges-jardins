@@ -2,6 +2,7 @@ import { useState, useContext, useEffect } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 import Image from 'next/image';
+import Loader from 'react-loader-spinner';
 
 // Components
 import Layout from '../components/Layout';
@@ -41,6 +42,8 @@ export default function Cart() {
 		const bookId = e.target.name;
 		removeBook(bookId);
 	};
+
+	const [redirecting, setRedirecting] = useState(false);
 
 	const redirectToCheckout = async () => {
 		// Create Stripe checkout
@@ -142,7 +145,19 @@ export default function Cart() {
 							.00 euros
 						</span>
 						<span className={styles.noticeTableCart}></span>
-						<Button text="Commander" onClick={redirectToCheckout} />
+						<Button
+							text="Commander"
+							onClick={redirectToCheckout}
+							disabled={redirecting}
+						/>
+						{redirecting && (
+							<Loader
+								type="Puff"
+								color="#00BFFF"
+								height={100}
+								width={100}
+							/>
+						)}
 					</div>
 				</div>
 			</div>

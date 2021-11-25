@@ -39,7 +39,7 @@ export default function Publications({ posts }) {
 				<div className={styles.contentPublications}>
 					{publications.map((el, index) => (
 						<CardPublication
-							key={'publication' + el.node.id}
+							key={'publication' + el.node.apiStripePriceID}
 							type="publications"
 							colorTag="#FFD31D"
 							textColor="black"
@@ -53,7 +53,7 @@ export default function Publications({ posts }) {
 							price={el.node.apiStripePrice}
 							addBook={() =>
 								addBook(
-									el.node.apiStripeID,
+									el.node.apiStripePriceID,
 									el.node.featuredImage.node.sourceUrl,
 									el.node.title,
 									el.node.apiStripePrice

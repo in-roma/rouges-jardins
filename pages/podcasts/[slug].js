@@ -39,12 +39,7 @@ export default function PostPage({ data, posts }) {
 							</span>
 						</div>
 					</div>
-					{/* <div
-						className={styles.picturePostPage}
-						style={{
-							backgroundImage: `url(${data.post.featuredImage.node.sourceUrl})`,
-						}}
-					></div> */}
+
 					<h1 className={styles.titlePodcastPage}>
 						{data.post.title}
 					</h1>
