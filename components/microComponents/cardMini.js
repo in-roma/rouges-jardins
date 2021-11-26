@@ -7,7 +7,7 @@ import Tag from './tag';
 import DateCard from './dateCard';
 
 // Styling
-import styles from '../../styles/components/microComponents/cardMini.module.scss';
+import styles from '../../styles/components/microComponents/CardMini.module.scss';
 
 export default function CardMini({
 	title,

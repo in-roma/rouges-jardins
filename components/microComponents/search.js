@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 // Components
-import styles from '../../styles/components/microComponents/search.module.scss';
+import styles from '../../styles/components/microComponents/Search.module.scss';
 import searchPicBlack from '../../public/searchBlack.svg';
 
 export default function Search({ value, onSubmitSearch, onChangeInput }) {

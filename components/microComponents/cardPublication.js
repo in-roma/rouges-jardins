@@ -9,7 +9,7 @@ import Button from '../microComponents/button';
 import Quantity from './quantity.js';
 
 // Styling
-import styles from '../../styles/components/microComponents/cardPublication.module.scss';
+import styles from '../../styles/components/microComponents/CardPublication.module.scss';
 
 export default function CardPublication({
 	name,

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Search from '../../components/microComponents/search';
 
 // Styling
-import styles from '../../styles/components/microComponents/sectionBar.module.scss';
+import styles from '../../styles/components/microComponents/SectionBar.module.scss';
 
 export default function SectionBar({
 	sectionTitle,

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // Components
-import styles from '../../styles/components/microComponents/cartButton.module.scss';
+import styles from '../../styles/components/microComponents/CartButton.module.scss';
 
 export default function CartButton({ products }) {
 	return (

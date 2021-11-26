@@ -9,7 +9,7 @@ import leftArrow from '../../public/arrow-left.svg';
 import rightArrow from '../../public/arrow-right.svg';
 
 // Layout
-import styles from '../../styles/components/microComponents/more.module.scss';
+import styles from '../../styles/components/microComponents/More.module.scss';
 
 export default function More({
 	dataMore,

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 // Components
-import styles from '../../styles/components/microComponents/button.module.scss';
+import styles from '../../styles/components/microComponents/Button.module.scss';
 
 export default function Button({ onClick, text, name }) {
 	return (

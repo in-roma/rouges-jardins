@@ -1,5 +1,5 @@
 // Components
-import styles from '../../styles/components/microComponents/filter.module.scss';
+import styles from '../../styles/components/microComponents/Filter.module.scss';
 
 export default function Filter({ categories, onChangeCategory }) {
 	return (

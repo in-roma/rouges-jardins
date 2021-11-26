@@ -22,7 +22,7 @@ import CardSmall from '../components/microComponents/cardSmall';
 import CardSmallVertical from '../components/microComponents/cardSmallVertical';
 
 // Styling
-import styles from '../styles/home.module.scss';
+import styles from '../styles/Home.module.scss';
 
 export default function Home({ posts, podcasts, publications }) {
 	// Search states

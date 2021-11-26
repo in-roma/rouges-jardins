@@ -6,7 +6,7 @@ import Tag from './tag';
 import DateCard from './dateCard';
 
 // Styling
-import styles from '../../styles/components/microComponents/cardSmallVertical.module.scss';
+import styles from '../../styles/components/microComponents/CardSmallVertical.module.scss';
 
 export default function CardSmallVertical({
 	title,

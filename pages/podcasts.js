@@ -6,7 +6,7 @@ import CardPodcast from '../components/microComponents/cardPodcast';
 import Search from '../components/microComponents/search';
 
 // Styling
-import styles from '../styles/podcasts.module.scss';
+import styles from '../styles/Podcasts.module.scss';
 
 // api
 import { getAllPodcasts } from '../lib/api';

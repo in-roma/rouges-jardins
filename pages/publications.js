@@ -7,7 +7,7 @@ import CardPublication from '../components/microComponents/cardPublication';
 import CartButton from '../components/microComponents/cartButton';
 
 // Styling
-import styles from '../styles/publications.module.scss';
+import styles from '../styles/Publications.module.scss';
 
 // Context
 import { AppContext } from '../lib/context';
