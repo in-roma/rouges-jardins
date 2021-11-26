@@ -6,7 +6,7 @@
 justify-self: end;
 display: flex;
 flex-flow: row nowrap;
-justify-self: end;
+
 cursor: pointer;
 }
 
@@ -47,7 +47,7 @@ cursor: pointer;
         width: 28rem;
         height: 24.8rem;
         flex-flow: column;
-        align-self: start;
+        align-self: flex-start;
     }
     .cardMediumPicture {
         width: 28rem;

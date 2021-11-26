@@ -19,9 +19,6 @@ import styles from '../../styles/PostPage.module.scss';
 import arrowLeft from '../../public/arrow-left.svg';
 
 export default function PostPage({ data, posts }) {
-	console.log('data fecthed:', data);
-
-	console.log('posts fecthed:', posts);
 	// Router
 	const router = useRouter();
 

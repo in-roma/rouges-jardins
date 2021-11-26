@@ -1,5 +1,4 @@
 import '../styles/globals.scss';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import React, { createContext, useState, useMemo } from 'react';
 import { AppContext } from '../lib/context';
 
@@ -51,7 +50,7 @@ function MyApp({ Component, pageProps }) {
 		}
 		if (cartList.some((el) => el.id === bookId)) {
 			let index = cartList.findIndex((el) => el.id === bookId);
-			console.log('this is index', index);
+
 			let newList = cartList;
 			newList[index].quantity += 1;
 			setCartList(newList);
@@ -64,7 +63,6 @@ function MyApp({ Component, pageProps }) {
 		let index = cartList.findIndex((el) => el.id === bookId);
 
 		if (cartList[index] && cartList[index].quantity > 1) {
-			console.log('this is index', index);
 			let newList = cartList;
 			newList[index].quantity -= 1;
 			setCartList(newList);

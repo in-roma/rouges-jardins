@@ -2,7 +2,6 @@ import { useState, useContext, useEffect } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
 import Image from 'next/image';
-import Loader from 'react-loader-spinner';
 
 // Components
 import Layout from '../components/Layout';
@@ -150,14 +149,6 @@ export default function Cart() {
 							onClick={redirectToCheckout}
 							disabled={redirecting}
 						/>
-						{redirecting && (
-							<Loader
-								type="Puff"
-								color="#00BFFF"
-								height={100}
-								width={100}
-							/>
-						)}
 					</div>
 				</div>
 			</div>

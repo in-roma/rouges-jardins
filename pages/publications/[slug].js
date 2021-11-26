@@ -15,11 +15,6 @@ import styles from '../../styles/PublicationPage.module.scss';
 import arrowLeft from '../../public/arrow-left.svg';
 
 export default function PostPage({ data, posts }) {
-	// console.log(
-	// 	'data.post.categories.nodes[0].name',
-	// 	data.post.categories.nodes[0].name
-	// );
-
 	const router = useRouter();
 
 	return (

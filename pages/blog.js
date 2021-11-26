@@ -169,7 +169,7 @@ export default function Blog({ posts, categories }) {
 export async function getStaticProps() {
 	const { posts } = await getAllChroniques();
 	const { categories } = await getAllCategories();
-	console.log(categories);
+
 	return {
 		props: { posts, categories },
 	};

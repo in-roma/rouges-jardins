@@ -18,12 +18,9 @@ import { getAllPublications } from '../lib/api';
 export default function Publications({ posts }) {
 	// Context states
 	const { cartLength, cartList, addBook } = useContext(AppContext);
-	console.log('this is cartLength', cartLength);
 
 	const publications = posts.edges;
 
-	console.log('this is CartLength:', cartLength);
-	console.log('this is CartList:', cartList);
 	return (
 		<Layout>
 			<div className={styles.containerPublications}>
