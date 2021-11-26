@@ -11,7 +11,7 @@ import DateCard from '../../components/microComponents/dateCard';
 import More from '../../components/microComponents/more';
 
 // Layout
-import styles from '../../styles/PodcastPage.module.scss';
+import styles from '../../styles/podcastPage.module.scss';
 import arrowLeft from '../../public/arrow-left.svg';
 
 export default function PostPage({ data, posts }) {

@@ -4,13 +4,13 @@ import axios from 'axios';
 import Image from 'next/image';
 
 // Components
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import SectionBar from '../components/microComponents/sectionBar';
 import Button from '../components/microComponents/button';
 import Quantity from '../components/microComponents/quantity';
 
 // Styling
-import styles from '../styles/Cart.module.scss';
+import styles from '../styles/cart.module.scss';
 import crossIcon from '../public/crossBlack.svg';
 
 // Context

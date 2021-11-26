@@ -1,5 +1,5 @@
 // Styling
-import styles from '../../styles/components/microComponents/Quantity.module.scss';
+import styles from '../../styles/components/microComponents/quantity.module.scss';
 
 export default function Quantity({ add, remove, quantity = 0, name }) {
 	return (

@@ -15,7 +15,7 @@ import DateCard from '../../components/microComponents/dateCard';
 import More from '../../components/microComponents/more';
 
 // Layout
-import styles from '../../styles/PostPage.module.scss';
+import styles from '../../styles/postPage.module.scss';
 import arrowLeft from '../../public/arrow-left.svg';
 
 export default function PostPage({ data, posts }) {

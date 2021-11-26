@@ -1,7 +1,7 @@
 import Moment from 'react-moment';
 import 'moment/locale/fr';
 // Styling
-import styles from '../../styles/components/microComponents/DateCard.module.scss';
+import styles from '../../styles/components/microComponents/dateCard.module.scss';
 
 export default function DateCard({ date }) {
 	return (

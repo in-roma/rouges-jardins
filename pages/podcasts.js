@@ -1,12 +1,12 @@
 import parsing from '../helpers/helpers';
 
 // Components
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import CardPodcast from '../components/microComponents/cardPodcast';
 import Search from '../components/microComponents/search';
 
 // Styling
-import styles from '../styles/Podcasts.module.scss';
+import styles from '../styles/podcasts.module.scss';
 
 // api
 import { getAllPodcasts } from '../lib/api';

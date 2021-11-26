@@ -1,7 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
 
 // Components
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import Search from '../components/microComponents/search';
 import Filter from '../components/microComponents/filter';
 

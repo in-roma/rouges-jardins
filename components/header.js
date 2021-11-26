@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from '../styles/components/Header.module.scss';
+import styles from '../styles/components/header.module.scss';
 import Media from 'react-media';
 
 //Components & elements

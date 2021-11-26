@@ -14,7 +14,7 @@ import {
 import { AppContext } from '../lib/context';
 
 // Components
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 import SectionBar from '../components/microComponents/sectionBar';
 import CardLarge from '../components/microComponents/cardLarge';
 import CardMedium from '../components/microComponents/cardMedium';
@@ -22,10 +22,9 @@ import CardSmall from '../components/microComponents/cardSmall';
 import CardSmallVertical from '../components/microComponents/cardSmallVertical';
 
 // Styling
-import styles from '../styles/Home.module.scss';
+import styles from '../styles/home.module.scss';
 
 export default function Home({ posts, podcasts, publications }) {
-
 	// Search states
 	const { changeValue } = useContext(AppContext);
 	const [searchValueDisplay, setSearchValueDisplay] = useState('');

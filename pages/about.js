@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
 // Components
-import Layout from '../components/Layout';
+import Layout from '../components/layout';
 
 // Layout
-import styles from '../styles/About.module.scss';
+import styles from '../styles/about.module.scss';
 
 export default function About() {
 	return (
