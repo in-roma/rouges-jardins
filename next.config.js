@@ -8,6 +8,6 @@ module.exports = {
 		includePaths: [path.join(__dirname, 'styles')],
 	},
 	images: {
-		domains: ['jcou8054.odns.fr'],
+		domains: ['www.jcou8054.odns.fr'],
 	},
 };

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 
 // Component
@@ -33,12 +34,9 @@ export default function CardLarge({
 			onClick={() => router.push(`/${type}/${slug}`)}
 		>
 			<Tag text={category} color={colorTag} textColor={textColor} />
-			<div
-				className={styles.cardLargePicture}
-				style={{
-					backgroundImage: `url(${imageUrl})`,
-				}}
-			></div>
+			<div className={styles.cardLargePicture}>
+				<Image src={imageUrl} layout="fill" objectFit="reponsive" />
+			</div>
 			<div className={styles.titleCardLarge}>{title}</div>
 			<div className={styles.textCardLarge}>{text}</div>
 			<DateCard date={date} />
