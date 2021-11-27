@@ -33,7 +33,12 @@ export default function CardLarge({
 			}
 			onClick={() => router.push(`/${type}/${slug}`)}
 		>
-			<Tag text={category} color={colorTag} textColor={textColor} />
+			<Tag
+				text={category}
+				color={colorTag}
+				textColor={textColor}
+				style={{ zIndex: 10 }}
+			/>
 			<div
 				className={styles.cardLargePicture}
 				style={{

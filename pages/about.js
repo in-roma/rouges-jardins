@@ -35,9 +35,21 @@ export default function About() {
 					<div
 						className={styles.pictureAbout}
 						style={{
-							backgroundImage: `url("http://www.jcou8054.odns.fr/wp-content/uploads/2021/11/DSC_3695-1.jpeg")`,
+							display: 'block',
+							position: 'relative',
+							borderRadius: '6px',
+							overflow: 'hidden',
 						}}
-					></div>
+					>
+						<Image
+							src={
+								'http://www.jcou8054.odns.fr/wp-content/uploads/2021/11/DSC_3695-1.jpeg'
+							}
+							alt=""
+							layout="fill"
+							objectFit="cover"
+						/>
+					</div>
 					<span className={styles.textAbout}>
 						Il exerce pendant 32 ans. Féru de bactériologie, il
 						essaie tout au long des ces années de faire vivre un
