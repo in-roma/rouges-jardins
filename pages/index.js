@@ -82,7 +82,10 @@ export default function Home({ posts, podcasts, publications }) {
 				<CardSmall
 					key={'smallCard' + el.node.id}
 					title={el.node.title}
-					imageUrl={el.node.featuredImage.node.sourceUrl}
+					imageUrl={
+						el.node.featuredImage.node.mediaDetails.sizes[0]
+							.sourceUrl
+					}
 					imageAltText={'test'}
 					date={el.node.date}
 					category={el.node.categories.nodes[0].name}
@@ -127,7 +130,10 @@ export default function Home({ posts, podcasts, publications }) {
 					textColor="white"
 					key={'smallCard' + el.node.id}
 					title={el.node.title}
-					imageUrl={el.node.featuredImage.node.sourceUrl}
+					imageUrl={
+						el.node.featuredImage.node.mediaDetails.sizes[0]
+							.sourceUrl
+					}
 					imageAltText={'test'}
 					date={el.node.date}
 					category={el.node.categories.nodes[0].name}
@@ -145,7 +151,10 @@ export default function Home({ posts, podcasts, publications }) {
 					colorTag="#FFD31D"
 					key={'smallCard' + el.node.id}
 					title={el.node.title}
-					imageUrl={el.node.featuredImage.node.sourceUrl}
+					imageUrl={
+						el.node.featuredImage.node.mediaDetails.sizes[0]
+							.sourceUrl
+					}
 					imageAltText={'test'}
 					date={el.node.date}
 					category={el.node.categories.nodes[0].name}

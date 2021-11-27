@@ -41,7 +41,10 @@ export default function Publications({ posts }) {
 							colorTag="#FFD31D"
 							textColor="black"
 							title={parsing(el.node.title)}
-							imageUrl={el.node.featuredImage.node.sourceUrl}
+							imageUrl={
+								el.node.featuredImage.node.mediaDetails.sizes[0]
+									.sourceUrl
+							}
 							imageAltText={'test'}
 							date={el.node.date}
 							category={el.node.categories.nodes[0].name}

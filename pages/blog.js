@@ -150,7 +150,10 @@ export default function Blog({ posts, categories }) {
 						<CardSmall
 							key={'smallCard' + el.node.id}
 							title={el.node.title}
-							imageUrl={el.node.featuredImage.node.sourceUrl}
+							imageUrl={
+								el.node.featuredImage.node.mediaDetails.sizes[0]
+									.sourceUrl
+							}
 							imageAltText={'test'}
 							date={el.node.date}
 							category={el.node.categories.nodes[0].name}

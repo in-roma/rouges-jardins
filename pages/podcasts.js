@@ -55,7 +55,10 @@ export default function Podcast({ posts }) {
 							// 		  )
 							// 		: parsing(el.node.excerpt)
 							// }
-							imageUrl={el.node.featuredImage.node.sourceUrl}
+							imageUrl={
+								el.node.featuredImage.node.mediaDetails.sizes[0]
+									.sourceUrl
+							}
 							imageAltText={'test'}
 							date={el.node.date}
 							category={el.node.categories.nodes[0].name}

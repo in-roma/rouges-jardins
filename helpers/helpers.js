@@ -7,33 +7,41 @@ import parse, {
 import Image from 'next/image';
 
 const parsingImageContainer = {
-	replace: ({ attribs, children }) => {
-		if (!attribs) {
-			return;
-		}
-		if (
-			attribs.class &&
-			attribs.class.includes('sqs-image-shape-container-element')
-		) {
-			return (
-				<div
-					className="containerImagePage"
-					style={{
-						display: 'block',
-						position: 'relative',
-						borderRadius: '6px',
-						overflow: 'hidden',
-					}}
-				>
-					{domToReact(children, parsingImageContainer)}
-				</div>
-			);
-		}
-	},
+	// replace: ({ attribs, children }) => {
+	// 	if (!attribs) {
+	// 		return;
+	// 	}
+	// 	if (
+	// 		attribs.class &&
+	// 		attribs.class.includes('sqs-image-shape-container-element')
+	// 	) {
+	// 		return (
+	// 			<div
+	// 				className="containerImagePage"
+	// 				style={{
+	// 					display: 'block',
+	// 					position: 'relative',
+	// 					borderRadius: '6px',
+	// 					overflow: 'hidden',
+	// 				}}
+	// 			>
+	// 				{domToReact(children, parsingImageContainer)}
+	// 			</div>
+	// 		);
+	// 	}
+	// },
 	replace: (domNode) => {
 		if (domNode.attribs && domNode.attribs.class === 'thumb-image') {
 			const props = attributesToProps(domNode.attribs);
-			return <Image {...props} layout="fill" objectFit="cover" alt="" />;
+			return (
+				<Image
+					{...props}
+					layout="fill"
+					objectFit="cover"
+					alt=""
+					src={props.src}
+				/>
+			);
 		}
 	},
 };
