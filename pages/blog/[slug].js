@@ -45,9 +45,19 @@ export default function PostPage({ data, posts }) {
 					<div
 						className={styles.picturePostPage}
 						style={{
-							backgroundImage: `url(${data.post.featuredImage.node.sourceUrl})`,
+							display: 'block',
+							position: 'relative',
+							borderRadius: '6px',
+							overflow: 'hidden',
 						}}
-					></div>
+					>
+						<Image
+							src={data.post.featuredImage.node.sourceUrl}
+							layout="fill"
+							objectFit="cover"
+							alt=""
+						/>
+					</div>
 					<h1 className={styles.titlePostPage}>{data.post.title}</h1>
 					<div className={styles.infoPostPage}>
 						{data.post.categories.nodes[0].name && (

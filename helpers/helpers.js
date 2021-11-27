@@ -1,7 +1,12 @@
 // Parser
-import parse, { domToReact } from 'html-react-parser';
+import parse, {
+	domToReact,
+	attributesToProps,
+	domNode,
+} from 'html-react-parser';
+import Image from 'next/image';
 
-const parsingImage = {
+const parsingImageContainer = {
 	replace: ({ attribs, children }) => {
 		if (!attribs) {
 			return;
@@ -11,25 +16,51 @@ const parsingImage = {
 			attribs.class.includes('sqs-image-shape-container-element')
 		) {
 			return (
-				<figure
-					className="wp-block-image size-full"
-					style={{ padding: 0, margin: 0 }}
+				<div
+					className="containerImagePage"
+					style={{
+						display: 'block',
+						position: 'relative',
+						borderRadius: '6px',
+						overflow: 'hidden',
+					}}
 				>
-					{domToReact(children, parsingImage)}
-				</figure>
+					{domToReact(children, parsingImageContainer)}
+				</div>
 			);
+		}
+	},
+	replace: (domNode) => {
+		if (domNode.attribs && domNode.attribs.class === 'thumb-image') {
+			const props = attributesToProps(domNode.attribs);
+			return <Image {...props} layout="fill" objectFit="cover" alt="" />;
 		}
 	},
 };
 
-const regexSpaces = /<p class="" style="white-space:pre-wrap;">&nbsp;<\/p>\\n/gm;
-
 export default function parsing(content) {
-	const parsedContentImage = parse(content, parsingImage);
-	// const results = parsedContentImage.replace(
-	// 	'J’ai une mon enfance bercée de dictons',
-	// 	''
-	// );
+	const parsedContainer = parse(content, parsingImageContainer);
 
-	return parsedContentImage;
+	return parsedContainer;
 }
+
+// const parsingImageContainer = {
+// 	replace: ({ attribs, children }) => {
+// 		if (!attribs) {
+// 			return;
+// 		}
+// 		if (
+// 			attribs.class &&
+// 			attribs.class.includes('sqs-image-shape-container-element')
+// 		) {
+// 			return (
+// 				<figure
+// 					className="wp-block-image size-full"
+// 					style={{ padding: 0, margin: 0 }}
+// 				>
+// 					{domToReact(children, parsingImageContainer)}
+// 				</figure>
+// 			);
+// 		}
+// 	},
+// };
