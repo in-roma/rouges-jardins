@@ -27,20 +27,17 @@ export default function CardMedium({
 			onClick={() => router.push(`/podcasts/${slug}`)}
 		>
 			<Tag text={category} color={colorTag} textColor={textColor} />
-			<div className={styles.cardMediumPicture}>
-				<img src={imageUrl} alt={imageAltText} />
-			</div>
-
-			{/* <div
+			<div
+				className={styles.cardMediumPicture}
 				style={{
-					backgroundImage: `url(${imageUrl})`,
-					backgroundPosition: 'center',
-					backgroundSize: 'cover',
-					width: '29.1rem',
-					height: '16.8rem',
-					borderRadius: '0.6rem',
+					display: 'block',
+					position: 'relative',
+					borderRadius: '6px',
+					overflow: 'hidden',
 				}}
-			></div> */}
+			>
+				<Image src={imageUrl} layout="fill" objectFit="cover" />
+			</div>
 			<div className={styles.containerTextCardMedium}>
 				<div className={styles.titleCardMedium}>{title}</div>
 				<DateCard date={date} />

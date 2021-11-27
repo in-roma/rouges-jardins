@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -28,9 +29,14 @@ export default function CardSmallVertical({
 			<div
 				className={styles.pictureCardVertical}
 				style={{
-					backgroundImage: `url(${imageUrl})`,
+					display: 'block',
+					position: 'relative',
+					borderRadius: '6px',
+					overflow: 'hidden',
 				}}
-			></div>
+			>
+				<Image src={imageUrl} layout="fill" objectFit="cover" />
+			</div>
 			<div className={styles.titleCardSmallVertical}>{title}</div>
 			<DateCard date={date} />
 		</div>
