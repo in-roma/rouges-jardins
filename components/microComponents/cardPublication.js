@@ -1,6 +1,7 @@
 import { useState, useContext, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 // Component
 import Tag from './tag';
@@ -37,10 +38,15 @@ export default function CardPublication({
 			<div
 				className={styles.pictureCardPublication}
 				style={{
-					backgroundImage: `url(${imageUrl})`,
+					display: 'block',
+					position: 'relative',
+					borderRadius: '6px',
+					overflow: 'hidden',
 				}}
 				onClick={() => router.push(`/${type}/${slug}`)}
-			></div>
+			>
+				<Image src={imageUrl} layout="fill" objectFit="cover" />
+			</div>
 			<div className={styles.textContainerCardPublication}>
 				<div
 					className={styles.textCardPublication}
