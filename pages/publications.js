@@ -45,6 +45,7 @@ export default function Publications({ posts }) {
 								el.node.featuredImage.node.mediaDetails.sizes[0]
 									.sourceUrl
 							}
+							altText={el.node.featuredImage.node.altText}
 							imageAltText={'test'}
 							date={el.node.date}
 							category={el.node.categories.nodes[0].name}

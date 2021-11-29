@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getPost, getAllSlugs, getAllPublications } from '../../lib/api';
+import {
+	getPost,
+	getAllSlugsPublications,
+	getAllPublications,
+} from '../../lib/api';
 import { useRouter } from 'next/router';
 import parsing from '../../helpers/helpers';
 
@@ -44,10 +48,7 @@ export default function PostPage({ data, posts }) {
 						}}
 					>
 						<Image
-							src={
-								data.post.featuredImage.node.featuredImage.node
-									.mediaDetails.sizes[3].sourceUrl
-							}
+							src={data.post.featuredImage.node.sourceUrl}
 							layout="fill"
 							objectFit="cover"
 							alt=""
@@ -84,7 +85,7 @@ export default function PostPage({ data, posts }) {
 }
 
 export async function getStaticPaths() {
-	const response = await getAllSlugs();
+	const response = await getAllSlugsPublications();
 	const paths = response.posts.edges.map((post) => ({
 		params: {
 			slug: post.node.slug,

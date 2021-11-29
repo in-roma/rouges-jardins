@@ -27,48 +27,7 @@ a {
 
 // Styling imported from WP
 
-// For unwanted first picture:
-.image-block-outer-wrapper:nth-child(1) {
-  display: none;
-}
-
-.wp-block-image {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 4.8rem 0rem;
-}
-
-.wp-block-image img{
-  max-width: 44rem;
-  height: auto;
-  background-position: center;
-  background-size: cover;
-  border-radius: 0.6rem;
-  margin: 0;
-  padding: 0;
-  box-sizing: content-box;
-}
-
-
-figcaption{
-  width: 44rem;
-  height: auto;
-  font-size:1.2rem;
-  font-style: italic;
-  margin-top: 2.4rem;
-  align-self: center;
-  text-align: center;
-}
-
-.image-caption-wrapper figcaption {
-  width: auto;
-  height: auto;
-}
-
+// Container 1
 .image-block-outer-wrapper,
 .layout-caption-below,
 .design-layout-inline,
@@ -79,28 +38,57 @@ figcaption{
 .image-block-wrapper,
 .image-block-outer-wrapper {
   // all: revert!important;
-  width: auto;
-  height: auto;
-}
-
-.sqs-block-image-figure,
-.intrinsic{
-  // all: revert!important;
-  max-width: none!important;
-  margin: 0!important;
-  padding: 0!important;
   width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 4.8rem!important;
+  margin: 4.8rem 0rem;
+}
+
+// Container 2
+.image-caption-wrapper figcaption, .sqs-image-shape-container-element{
+  // all: revert!important;
+  width: 100%;
+  height: auto;
+}
+
+// Container 3
+.image-block-wrapper{
+  // all: revert!important;
+  width: 100%;
+  height: auto;
+}
+
+// Container 4
+.sqs-block-image-figure,
+.intrinsic{
+  // all: revert!important;
+  width: 100%;
+  height: auto;
+}
+
+// Container 4
+.container-img-content-page{
+
+  width: 20rem;
+	height: auto;
+}
+
+.img-content-page{
+  width: 20rem;
+	height: auto;
+}
+
+// For unwanted first picture:
+.image-block-outer-wrapper:nth-child(1) {
+  display: none!important;
 }
 
 
-
+// Spotify layout
 .wp-block-embed-spotify {
-
   margin: 4.8rem 0;
 }
 

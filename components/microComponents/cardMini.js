@@ -20,6 +20,7 @@ export default function CardMini({
 	slug,
 	color,
 	textColor,
+	altText,
 }) {
 	const router = useRouter();
 	return (
@@ -37,7 +38,12 @@ export default function CardMini({
 					overflow: 'hidden',
 				}}
 			>
-				<Image src={imageUrl} layout="fill" objectFit="cover" />
+				<Image
+					src={imageUrl}
+					layout="fill"
+					objectFit="cover"
+					alt={altText}
+				/>
 			</div>
 			<div className={styles.titleCardMini}>
 				{title.length > 60 ? title.slice(0, 60) + '...' : title}

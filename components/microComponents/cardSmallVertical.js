@@ -18,6 +18,7 @@ export default function CardSmallVertical({
 	category,
 	colorTag,
 	slug,
+	altText,
 }) {
 	const router = useRouter();
 	return (
@@ -35,7 +36,12 @@ export default function CardSmallVertical({
 					overflow: 'hidden',
 				}}
 			>
-				<Image src={imageUrl} layout="fill" objectFit="cover" />
+				<Image
+					src={imageUrl}
+					layout="fill"
+					objectFit="cover"
+					alt={altText}
+				/>
 			</div>
 			<div className={styles.titleCardSmallVertical}>{title}</div>
 			<DateCard date={date} />

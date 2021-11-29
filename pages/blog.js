@@ -161,6 +161,7 @@ export default function Blog({ posts, categories }) {
 							color="
 							rgba(0, 0, 0, 0.7)"
 							textColor="white"
+							altText={el.node.featuredImage.node.altText}
 						/>
 					))}
 				</content>

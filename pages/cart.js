@@ -87,9 +87,19 @@ export default function Cart() {
 									key={el.id + 'picture'}
 									className={styles.pictureCardCart}
 									style={{
-										backgroundImage: `url(${el.picture})`,
+										display: 'block',
+										position: 'relative',
+										borderRadius: '6px',
+										overflow: 'hidden',
 									}}
-								></div>
+								>
+									<Image
+										src={el.picture}
+										layout="fill"
+										objectFit="cover"
+										alt={altText}
+									/>
+								</div>
 								<span
 									key={el.id + 'title'}
 									className={styles.titleTableCart}

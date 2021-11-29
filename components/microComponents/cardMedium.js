@@ -19,6 +19,7 @@ export default function CardMedium({
 	colorTag,
 	textColor,
 	slug,
+	altText,
 }) {
 	const router = useRouter();
 	return (
@@ -36,7 +37,12 @@ export default function CardMedium({
 					overflow: 'hidden',
 				}}
 			>
-				<Image src={imageUrl} layout="fill" objectFit="cover" />
+				<Image
+					src={imageUrl}
+					layout="fill"
+					objectFit="cover"
+					alt={altText}
+				/>
 			</div>
 			<div className={styles.containerTextCardMedium}>
 				<div className={styles.titleCardMedium}>{title}</div>

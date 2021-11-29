@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 // Component
 import Tag from './tag';
@@ -20,6 +21,7 @@ export default function CardLarge({
 	cardLargeType,
 	slug,
 	type,
+	altText,
 }) {
 	const router = useRouter();
 	return (
@@ -32,12 +34,22 @@ export default function CardLarge({
 			<div
 				className={styles.pictureCardPodcast}
 				style={{
-					backgroundImage: `url(${imageUrl})`,
+					display: 'block',
+					position: 'relative',
+					borderRadius: '6px',
+					overflow: 'hidden',
 				}}
-			></div>
+			>
+				<Image
+					src={imageUrl}
+					layout="fill"
+					objectFit="cover"
+					alt={altText}
+				/>
+			</div>
 			<div className={styles.textContainerCardPodcast}>
 				<div className={styles.titleCardPodcast}>{title}</div>
-				{/* <div className={styles.textCardPodcast}>{text}</div> */}
+
 				<DateCard date={date} className={styles.dateCardPodcast} />
 			</div>
 		</div>

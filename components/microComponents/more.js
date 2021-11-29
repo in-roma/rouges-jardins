@@ -90,6 +90,7 @@ export default function More({
 							imageUrl={el.node.featuredImage.node.sourceUrl}
 							slug={el.node.slug}
 							category={el.node.categories.nodes[0].name}
+							altText={el.node.featuredImage.node.altText}
 						/>
 					))}
 				</Carousel>

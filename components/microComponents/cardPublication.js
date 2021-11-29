@@ -29,6 +29,7 @@ export default function CardPublication({
 	addBook,
 	removeBook,
 	quantity,
+	altText,
 }) {
 	const router = useRouter();
 
@@ -45,7 +46,12 @@ export default function CardPublication({
 				}}
 				onClick={() => router.push(`/${type}/${slug}`)}
 			>
-				<Image src={imageUrl} layout="fill" objectFit="cover" />
+				<Image
+					src={imageUrl}
+					layout="fill"
+					objectFit="cover"
+					alt={altText}
+				/>
 			</div>
 			<div className={styles.textContainerCardPublication}>
 				<div

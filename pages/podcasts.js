@@ -63,6 +63,7 @@ export default function Podcast({ posts }) {
 							date={el.node.date}
 							category={el.node.categories.nodes[0].name}
 							slug={el.node.slug}
+							altText={el.node.featuredImage.node.altText}
 						/>
 					))}
 				</div>

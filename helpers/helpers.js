@@ -6,69 +6,40 @@ import parse, {
 } from 'html-react-parser';
 import Image from 'next/image';
 
-const parsingImageContainer = {
-	// replace: ({ attribs, children }) => {
-	// 	if (!attribs) {
-	// 		return;
-	// 	}
-	// 	if (
-	// 		attribs.class &&
-	// 		attribs.class.includes('sqs-image-shape-container-element')
-	// 	) {
-	// 		return (
-	// 			<div
-	// 				className="containerImagePage"
-	// 				style={{
-	// 					display: 'block',
-	// 					position: 'relative',
-	// 					borderRadius: '6px',
-	// 					overflow: 'hidden',
-	// 				}}
-	// 			>
-	// 				{domToReact(children, parsingImageContainer)}
-	// 			</div>
-	// 		);
-	// 	}
-	// },
+const parsingContainerMethod = {
 	replace: (domNode) => {
-		if (domNode.attribs && domNode.attribs.class === 'thumb-image') {
+		if (domNode.name && domNode.name === 'img') {
 			const props = attributesToProps(domNode.attribs);
 			return (
-				<Image
-					{...props}
-					layout="fill"
-					objectFit="cover"
-					alt=""
-					src={props.src}
-				/>
+				<div
+					className="container-img-content-page"
+					style={{
+						display: 'block',
+						position: 'relative',
+						borderRadius: '6px',
+						overflow: 'hidden',
+					}}
+				>
+					<Image
+						{...props}
+						className="img-content-page"
+						src={props.src}
+						layout="fill"
+						objectFit="cover"
+						alt=""
+					/>
+				</div>
 			);
 		}
 	},
 };
 
-export default function parsing(content) {
-	const parsedContainer = parse(content, parsingImageContainer);
-
+const parsingContainer = (content) => {
+	const parsedContainer = parse(content, parsingContainerMethod);
 	return parsedContainer;
-}
+};
 
-// const parsingImageContainer = {
-// 	replace: ({ attribs, children }) => {
-// 		if (!attribs) {
-// 			return;
-// 		}
-// 		if (
-// 			attribs.class &&
-// 			attribs.class.includes('sqs-image-shape-container-element')
-// 		) {
-// 			return (
-// 				<figure
-// 					className="wp-block-image size-full"
-// 					style={{ padding: 0, margin: 0 }}
-// 				>
-// 					{domToReact(children, parsingImageContainer)}
-// 				</figure>
-// 			);
-// 		}
-// 	},
-// };
+export default function parsing(content) {
+	const parsedContainers = parsingContainer(content);
+	return parsedContainers;
+}

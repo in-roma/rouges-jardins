@@ -77,6 +77,7 @@ export default function Home({ posts, podcasts, publications }) {
 				date={posts.edges[0].node.date}
 				category={posts.edges[0].node.categories.nodes[0].name}
 				slug={posts.edges[0].node.slug}
+				altText={posts.edges[0].node.featuredImage.node.altText}
 			/>
 			{posts.edges.slice(1, 5).map((el) => (
 				<CardSmall
@@ -93,6 +94,7 @@ export default function Home({ posts, podcasts, publications }) {
 					color="
 					rgba(0, 0, 0, 0.7)"
 					textColor="white"
+					altText={el.node.featuredImage.node.altText}
 				/>
 			))}
 			<SectionBar
@@ -123,6 +125,7 @@ export default function Home({ posts, podcasts, publications }) {
 				date={podcasts.posts.edges[0].node.date}
 				category={podcasts.posts.edges[0].node.categories.nodes[0].name}
 				slug={podcasts.posts.edges[0].node.slug}
+				altText={posts.edges[0].node.featuredImage.node.altText}
 			/>
 			{podcasts.posts.edges.slice(1, 4).map((el) => (
 				<CardMedium
@@ -138,6 +141,7 @@ export default function Home({ posts, podcasts, publications }) {
 					date={el.node.date}
 					category={el.node.categories.nodes[0].name}
 					slug={el.node.slug}
+					altText={el.node.featuredImage.node.altText}
 				/>
 			))}
 			<SectionBar
@@ -159,6 +163,7 @@ export default function Home({ posts, podcasts, publications }) {
 					date={el.node.date}
 					category={el.node.categories.nodes[0].name}
 					slug={el.node.slug}
+					altText={el.node.featuredImage.node.altText}
 				/>
 			))}
 		</Layout>

@@ -21,6 +21,7 @@ export default function CardLarge({
 	cardLargeType,
 	slug,
 	type,
+	altText,
 }) {
 	const router = useRouter();
 	return (
@@ -48,7 +49,12 @@ export default function CardLarge({
 					overflow: 'hidden',
 				}}
 			>
-				<Image src={imageUrl} layout="fill" objectFit="cover" />
+				<Image
+					src={imageUrl}
+					layout="fill"
+					objectFit="cover"
+					alt={altText}
+				/>
 			</div>
 			<div className={styles.titleCardLarge}>{title}</div>
 			<div className={styles.textCardLarge}>{text}</div>

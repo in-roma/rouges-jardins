@@ -25,8 +25,7 @@ export default function PostPage({ data, posts }) {
 	// Context
 	const { postsViewed, changePostsViewed } = useContext(AppContext);
 
-	// Suggestions
-
+	console.log('this is parsed date:', parsing(data.post.content));
 	return (
 		<Layout>
 			<div className={styles.containerPostPage}>
@@ -53,8 +52,8 @@ export default function PostPage({ data, posts }) {
 					>
 						<Image
 							src={
-								data.post.featuredImage.node.featuredImage.node
-									.mediaDetails.sizes[3].sourceUrl
+								data.post.featuredImage.node.mediaDetails
+									.sizes[0].sourceUrl
 							}
 							layout="fill"
 							objectFit="cover"

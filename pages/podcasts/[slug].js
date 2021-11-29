@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getPost, getAllSlugs, getAllPodcasts } from '../../lib/api';
+import { getPost, getAllSlugsPodcasts, getAllPodcasts } from '../../lib/api';
 import { useRouter } from 'next/router';
 import parsing from '../../helpers/helpers';
 
@@ -65,7 +65,7 @@ export default function PostPage({ data, posts }) {
 }
 
 export async function getStaticPaths() {
-	const response = await getAllSlugs();
+	const response = await getAllSlugsPodcasts();
 	const paths = response.posts.edges.map((post) => ({
 		params: {
 			slug: post.node.slug,
