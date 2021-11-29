@@ -37,48 +37,87 @@ a {
 .image-caption-wrapper,
 .image-block-wrapper,
 .image-block-outer-wrapper {
-  // all: revert!important;
+  width: 100%;
+  height: auto;
+}
+
+// Container 2
+.sqs-block-image-figure{
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 4.8rem 0rem;
-}
 
-// Container 2
-.image-caption-wrapper figcaption, .sqs-image-shape-container-element{
-  // all: revert!important;
-  width: 100%;
-  height: auto;
+  max-width: none!important;
+  overflow: auto!important;
+
+  padding: 0!important;
+  margin: 2.4rem 0rem!important;
 }
 
 // Container 3
 .image-block-wrapper{
-  // all: revert!important;
+  // all: revert;
   width: 100%;
   height: auto;
-}
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+
+ }
 
 // Container 4
-.sqs-block-image-figure,
-.intrinsic{
-  // all: revert!important;
-  width: 100%;
-  height: auto;
+.sqs-image-shape-container-element{
+  // all: revert;
+
+  width: 100%!important;
+  height: 40rem!important;
+
+  padding-bottom: 0!important;
+  border-radius: 0.6rem!important;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  &:nth-child(1){
+    width: 50rem!important;
+    position: relative;
+  }
 }
-
-// Container 4
-.container-img-content-page{
-
-  width: 20rem;
-	height: auto;
-}
-
 .img-content-page{
-  width: 20rem;
-	height: auto;
+  all: revert;
+  width: 42rem!important;
+	max-height: 40rem!important;
+}
+
+
+.image-caption-wrapper {
+  width: 100%!important;
+  height: auto!important;
+  display: flex!important;
+  flex-flow: row nowrap!important;
+  justify-content: center!important;
+
+}
+.image-caption-wrapper div{
+  width: 50rem!important;
+  height: auto!important;
+}
+
+
+.image-caption {
+  width: 50rem!important;
+	height: auto!important;
+  justify-self: center!important;
+  margin-top: 1.2rem;
+}
+
+.image-caption p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-align: center;
+
 }
 
 // For unwanted first picture:

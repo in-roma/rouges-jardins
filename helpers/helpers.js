@@ -7,9 +7,14 @@ import parse, {
 import Image from 'next/image';
 
 const parsingContainerMethod = {
-	replace: (domNode) => {
-		if (domNode.name && domNode.name === 'img') {
-			const props = attributesToProps(domNode.attribs);
+	replace: ({ attribs, children }) => {
+		if (!attribs) {
+			return;
+		}
+		if (
+			attribs.class &&
+			attribs.class.includes('sqs-image-shape-container-element')
+		) {
 			return (
 				<div
 					className="container-img-content-page"
@@ -20,26 +25,28 @@ const parsingContainerMethod = {
 						overflow: 'hidden',
 					}}
 				>
-					<Image
-						{...props}
-						className="img-content-page"
-						src={props.src}
-						layout="fill"
-						objectFit="cover"
-						alt=""
-					/>
+					{domToReact(children, parsingContainerMethod)}
 				</div>
+			);
+		}
+	},
+	replace: (domNode) => {
+		if (domNode.name && domNode.name === 'img') {
+			const props = attributesToProps(domNode.attribs);
+			return (
+				<Image
+					className="img-content-page"
+					src={props.src}
+					layout="fill"
+					objectFit="cover"
+					alt={props.alt}
+				/>
 			);
 		}
 	},
 };
 
-const parsingContainer = (content) => {
+export default function parsing(content) {
 	const parsedContainer = parse(content, parsingContainerMethod);
 	return parsedContainer;
-};
-
-export default function parsing(content) {
-	const parsedContainers = parsingContainer(content);
-	return parsedContainers;
 }
