@@ -51,10 +51,7 @@ export default function PostPage({ data, posts }) {
 						}}
 					>
 						<Image
-							src={
-								data.post.featuredImage.node.mediaDetails
-									.sizes[0].sourceUrl
-							}
+							src={data.post.featuredImage.node.sourceUrl}
 							layout="fill"
 							alt=""
 						/>
