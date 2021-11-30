@@ -16,6 +16,9 @@ import crossIcon from '../public/crossBlack.svg';
 // Context
 import { AppContext } from '../lib/context';
 
+// Stripe
+import getStripe from '../lib/get-stripe';
+
 export default function Cart() {
 	// Context states
 	const {

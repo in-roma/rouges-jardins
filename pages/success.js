@@ -1,19 +1,25 @@
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import useSWR from 'swr';
+import axios from 'axios';
+
 export default function Success() {
-	// const {
-	// 	query: { session_id },
-	// } = useRouter();
+	const fetcher = (url) => axios.get(url).then((res) => res.data);
 
-	// const { data, error } = useSWR(
-	// 	() => `/api/checkout_sessions/${session_id}`,
-	// 	fetcher
-	// );
+	const {
+		query: { session_id },
+	} = useRouter();
 
-	// useEffect(() => {
-	// 	if (data) {
-	// 		shootFireworks();
-	// 		clearCart();
-	// 	}
-	// }, [data]);
+	const { data, error } = useSWR(
+		() => `/api/checkout_sessions/${session_id}`,
+		fetcher
+	);
+
+	useEffect(() => {
+		if (data) {
+			console.log('succes data');
+		}
+	}, [data]);
 
 	return (
 		<div>

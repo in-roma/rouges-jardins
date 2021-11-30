@@ -1,5 +1,6 @@
 import Stripe from 'stripe';
 import { buffer } from 'micro';
+import { getRawBody } from 'raw-body';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -15,7 +16,7 @@ export default async function handler(req, res) {
 
 		try {
 			// 1. Retrieving the event
-			const rawBody = await buffer(req);
+			const rawBody = await getRawBody(req);
 			const signature = req.headers['stripe-signature'];
 
 			event = stripe.webhooks.constructEvent(
@@ -32,7 +33,7 @@ export default async function handler(req, res) {
 		// Successfully constructed event
 		console.log('Success:', event.id);
 
-		// 2. Handle event type (add business logic here)
+		// 2. Handle event type
 		if (event.type === 'checkout.session.completed') {
 			console.log(`Payment received!`);
 		} else {

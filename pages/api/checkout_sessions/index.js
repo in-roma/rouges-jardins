@@ -14,8 +14,12 @@ export default async function handler(req, res) {
 			});
 
 			res.status(200).json(session);
+			console.log('Sucessful API request - handler function');
 		} catch (err) {
 			res.status(500).json({ statusCode: 500, message: err.message });
+			console.log('issue with API request - handler function');
+			console.log('error message:', err.message);
+			console.log('these are items:', req.body.items);
 		}
 	} else {
 		res.setHeader('Allow', 'POST');
