@@ -97,7 +97,7 @@ export default function Cart() {
 										src={el.picture}
 										layout="fill"
 										objectFit="cover"
-										alt={altText}
+										alt={el.altText}
 									/>
 								</div>
 								<span

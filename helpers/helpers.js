@@ -39,7 +39,7 @@ const parsingContainerMethod = {
 					src={props.src}
 					layout="fill"
 					objectFit="cover"
-					alt={props.alt}
+					alt={props.alt && props.alt}
 				/>
 			);
 		}

@@ -72,8 +72,8 @@ a {
 .sqs-image-shape-container-element{
   // all: revert;
 
-  width: 100%!important;
-  height: 40rem!important;
+  width: 30rem!important;
+	height: 40rem!important;
 
   padding-bottom: 0!important;
   border-radius: 0.6rem!important;
@@ -87,8 +87,8 @@ a {
 }
 .img-content-page{
   all: revert;
-  width: 42rem!important;
-	max-height: 40rem!important;
+  width: 30rem!important;
+	max-height: 50rem!important;
 }
 
 
@@ -101,14 +101,16 @@ a {
 
 }
 .image-caption-wrapper div{
-  width: 50rem!important;
+  display: block;
+  width: 30rem!important;
   height: auto!important;
+  position: relative;
 }
 
 
 .image-caption {
-  width: 50rem!important;
-	height: auto!important;
+  width: 100%!important;
+	max-height: 50rem;
   justify-self: center!important;
   margin-top: 1.2rem;
 }

@@ -56,7 +56,6 @@ export default function PostPage({ data, posts }) {
 									.sizes[0].sourceUrl
 							}
 							layout="fill"
-							objectFit="cover"
 							alt=""
 						/>
 					</div>
