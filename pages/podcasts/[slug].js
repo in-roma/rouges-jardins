@@ -74,7 +74,7 @@ export async function getStaticPaths() {
 
 	return {
 		paths,
-		fallback: false,
+		fallback: true,
 	};
 }
 
@@ -86,6 +86,6 @@ export async function getStaticProps({ params: slug }) {
 			data,
 			posts,
 		},
-		revalidate: 120,
+		revalidate: 180,
 	};
 }
