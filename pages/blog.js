@@ -182,5 +182,6 @@ export async function getStaticProps() {
 
 	return {
 		props: { posts, categories },
+		revalidate: 5,
 	};
 }
