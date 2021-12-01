@@ -44,14 +44,14 @@ export default function Home({ posts, podcasts, publications }) {
 	return (
 		<>
 			<Head>
-				<title>Rouges Jardins - Chroniques sur le monde vivant</title>
+				<title>Rouges Jardins</title>
 				<meta
 					name="viewport"
 					content="initial-scale=1.0, width=device-width"
 				/>
 				<meta
 					name="description"
-					content="Blog édité par Guy Grandjean depuis 2009"
+					content="Chroniques sur le monde vivant - Blog par Guy Grandjean"
 				/>
 			</Head>
 			<Layout>

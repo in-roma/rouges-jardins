@@ -74,6 +74,8 @@ export default function Cart() {
 					content="initial-scale=1.0, width=device-width"
 				/>
 				<meta name="description" content="¨Panier" />
+				<meta name="robots" content="noindex" />
+				<meta name="googlebot" content="noindex" />
 			</Head>
 			<Layout>
 				<div className={styles.containerCart}>
