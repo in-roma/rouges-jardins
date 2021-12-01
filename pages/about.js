@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Head from 'next/head';
 
 // Components
 import Layout from '../components/layout';
@@ -8,99 +9,113 @@ import styles from '../styles/About.module.scss';
 
 export default function About() {
 	return (
-		<Layout>
-			<div className={styles.containerAbout}>
-				<section className={styles.navBarAbout}>
-					<h1 className={styles.titreAbout}>À propos</h1>
-				</section>
-				<div className={styles.contentAbout}>
-					<span className={styles.textAbout}>
-						<strong>
-							Guy est né en 1951 dans la région parisienne.
-						</strong>
-						&nbsp;L’été, il passe ses vacances à Scaër en Bretagne
-						où il travaille dans la ferme familiale. C’est au
-						travers de cette confrontation avec une campagne “brute”
-						que naît sa fascination pour la nature.
-					</span>
+		<>
+			<Head>
+				<title>À propos</title>
 
-					<span className={styles.textAbout}>
-						Après un cycle universitaire en biologie, il quitte
-						paris et part vivre dans la région nantaise. Pendant un
-						temps il est professeur de travaux manuels puis reprend
-						ses études sur le tard, d’abord pharma, puis internat de
-						biologie. Il ouvre en 1989 un laboratoire d’analyses
-						médicales dans la commune du Loroux Bottereaux.
-					</span>
-					<picture
-						className={styles.pictureAbout}
-						style={{
-							display: 'block',
-							position: 'relative',
-							borderRadius: '6px',
-							overflow: 'hidden',
-						}}
-					>
-						<Image
-							src={
-								'http://www.jcou8054.odns.fr/wp-content/uploads/2021/11/DSC_3695-1.jpeg'
-							}
-							alt=""
-							layout="fill"
-							objectFit="cover"
-						/>
-					</picture>
-					<span className={styles.textAbout}>
-						Il exerce pendant 32 ans. Féru de bactériologie, il
-						essaie tout au long des ces années de faire vivre un
-						laboratoire à l’excellence médicale. Au quotidien, il
-						affectionne particulièrement les prises de sang, moment
-						de partage.
-					</span>
-					<span className={styles.textAbout}>
-						Parallèlement à ses activités professionnelles, il écrit
-						des chroniques sur les relations entre l’homme et la
-						nature, d’abord dans les 1990 sous la forme d’un fanzine
-						informel envoyé par courrier à ses proches, plus tard
-						avec sa première publication en 2004&nbsp;
-						<em>NZO ou les grimoires d’un vieux singe</em>. Elle
-						sera suivie d’autres livres dont&nbsp;
-						<em>De nature Clandestine</em> en 2015, une
-						collaboration avec la plasticienne&nbsp;
-						<a
-							href="https://christinelaquet.com/"
-							target="_blank"
-							rel="noreferrer"
+				<meta
+					name="viewport"
+					content="initial-scale=1.0, width=device-width"
+				/>
+				<meta name="description" content="Section Guy Grandjean" />
+			</Head>
+			<Layout>
+				<div className={styles.containerAbout}>
+					<section className={styles.navBarAbout}>
+						<h1 className={styles.titreAbout}>À propos</h1>
+					</section>
+					<article className={styles.contentAbout}>
+						<span className={styles.textAbout}>
+							<strong>
+								Guy est né en 1951 dans la région parisienne.
+							</strong>
+							&nbsp;L’été, il passe ses vacances à Scaër en
+							Bretagne où il travaille dans la ferme familiale.
+							C’est au travers de cette confrontation avec une
+							campagne “brute” que naît sa fascination pour la
+							nature.
+						</span>
+
+						<span className={styles.textAbout}>
+							Après un cycle universitaire en biologie, il quitte
+							paris et part vivre dans la région nantaise. Pendant
+							un temps il est professeur de travaux manuels puis
+							reprend ses études sur le tard, d’abord pharma, puis
+							internat de biologie. Il ouvre en 1989 un
+							laboratoire d’analyses médicales dans la commune du
+							Loroux Bottereaux.
+						</span>
+						<picture
+							className={styles.pictureAbout}
+							style={{
+								display: 'block',
+								position: 'relative',
+								borderRadius: '6px',
+								overflow: 'hidden',
+							}}
 						>
-							Christine Laquet
-						</a>
-						. En 2009, il commence à publier ses chroniques sur ce
-						blog, puis plus récemment sous forme de podcasts
-						diffusés sur&nbsp;
-						<a
-							href="https://radio-chateaubriant.com/category/rouges-jardins/"
-							target="_blank"
-							rel="noreferrer"
-						>
-							Radio Châteaubriant.
-						</a>
-					</span>
-					<span className={styles.textAbout}>
-						Aujourd’hui Guy est un jeune retraité, continue à
-						partager ses histoires...
-					</span>
-					<span className={styles.emailTextAbout}>
-						Vous pouvez le contacter avec cet&nbsp;
-						<a
-							href="mailto: guygrandjean@icloud.com"
-							className={styles.emailAbout}
-						>
-							email
-						</a>
-						.
-					</span>
+							<Image
+								src={
+									'http://www.jcou8054.odns.fr/wp-content/uploads/2021/11/DSC_3695-1.jpeg'
+								}
+								alt=""
+								layout="fill"
+								objectFit="cover"
+							/>
+						</picture>
+						<span className={styles.textAbout}>
+							Il exerce pendant 32 ans. Féru de bactériologie, il
+							essaie tout au long des ces années de faire vivre un
+							laboratoire à l’excellence médicale. Au quotidien,
+							il affectionne particulièrement les prises de sang,
+							moment de partage.
+						</span>
+						<span className={styles.textAbout}>
+							Parallèlement à ses activités professionnelles, il
+							écrit des chroniques sur les relations entre l’homme
+							et la nature, d’abord dans les 1990 sous la forme
+							d’un fanzine informel envoyé par courrier à ses
+							proches, plus tard avec sa première publication en
+							2004&nbsp;
+							<em>NZO ou les grimoires d’un vieux singe</em>. Elle
+							sera suivie d’autres livres dont&nbsp;
+							<em>De nature Clandestine</em> en 2015, une
+							collaboration avec la plasticienne&nbsp;
+							<a
+								href="https://christinelaquet.com/"
+								target="_blank"
+								rel="noreferrer"
+							>
+								Christine Laquet
+							</a>
+							. En 2009, il commence à publier ses chroniques sur
+							ce blog, puis plus récemment sous forme de podcasts
+							diffusés sur&nbsp;
+							<a
+								href="https://radio-chateaubriant.com/category/rouges-jardins/"
+								target="_blank"
+								rel="noreferrer"
+							>
+								Radio Châteaubriant.
+							</a>
+						</span>
+						<span className={styles.textAbout}>
+							Aujourd’hui Guy est un jeune retraité, continue à
+							partager ses histoires...
+						</span>
+						<span className={styles.emailTextAbout}>
+							Vous pouvez le contacter avec cet&nbsp;
+							<a
+								href="mailto: guygrandjean@icloud.com"
+								className={styles.emailAbout}
+							>
+								email
+							</a>
+							.
+						</span>
+					</article>
 				</div>
-			</div>
-		</Layout>
+			</Layout>
+		</>
 	);
 }

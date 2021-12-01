@@ -1,5 +1,6 @@
 import { useState, useContext, useEffect } from 'react';
 import Image from 'next/image';
+import Head from 'next/head';
 import Link from 'next/link';
 import { getPost, getAllSlugs, getMore } from '../../lib/api';
 import { useRouter } from 'next/router';
@@ -27,59 +28,76 @@ export default function PostPage({ data, posts }) {
 
 	console.log('this is parsed date:', parsing(data.post.content));
 	return (
-		<Layout>
-			<article className={styles.containerPostPage}>
-				<div className={styles.postPage}>
-					<div className={styles.navBarPostPage}>
-						<div
-							className={styles.containerBtnPostPage}
-							onClick={() => router.back()}
-						>
-							<div className={styles.iconBackPostPage}>
-								<Image src={arrowLeft} alt="search icon" />
+		<>
+			<Head>
+				<title>{data.post.title}</title>
+				<meta
+					name="viewport"
+					content="initial-scale=1.0, width=device-width"
+				/>
+				<meta
+					name="description"
+					content={`Article '${data.post.title}' - ${data.post.categories.nodes[0].name}`}
+				/>
+			</Head>
+			<Layout>
+				<article className={styles.containerPostPage}>
+					<div className={styles.postPage}>
+						<div className={styles.navBarPostPage}>
+							<div
+								className={styles.containerBtnPostPage}
+								onClick={() => router.back()}
+							>
+								<div className={styles.iconBackPostPage}>
+									<Image src={arrowLeft} alt="search icon" />
+								</div>
+								<span className={styles.btnPostPage}>
+									Retour
+								</span>
 							</div>
-							<span className={styles.btnPostPage}>Retour</span>
+						</div>
+						<picture
+							className={styles.picturePostPage}
+							style={{
+								display: 'block',
+								position: 'relative',
+								borderRadius: '6px',
+								overflow: 'hidden',
+							}}
+						>
+							<Image
+								src={data.post.featuredImage.node.sourceUrl}
+								layout="fill"
+								alt=""
+							/>
+						</picture>
+						<h1 className={styles.titlePostPage}>
+							{data.post.title}
+						</h1>
+						<div className={styles.infoPostPage}>
+							{data.post.categories.nodes[0].name && (
+								<TagPost
+									text={data.post.categories.nodes[0].name}
+									color={'black'}
+									textColor={'white'}
+								/>
+							)}
+							<DateCard date={data.post.date} />
+						</div>
+						<div className={styles.contentPostPage}>
+							{parsing(data.post.content)}
 						</div>
 					</div>
-					<picture
-						className={styles.picturePostPage}
-						style={{
-							display: 'block',
-							position: 'relative',
-							borderRadius: '6px',
-							overflow: 'hidden',
-						}}
-					>
-						<Image
-							src={data.post.featuredImage.node.sourceUrl}
-							layout="fill"
-							alt=""
-						/>
-					</picture>
-					<h1 className={styles.titlePostPage}>{data.post.title}</h1>
-					<div className={styles.infoPostPage}>
-						{data.post.categories.nodes[0].name && (
-							<TagPost
-								text={data.post.categories.nodes[0].name}
-								color={'black'}
-								textColor={'white'}
-							/>
-						)}
-						<DateCard date={data.post.date} />
-					</div>
-					<div className={styles.contentPostPage}>
-						{parsing(data.post.content)}
-					</div>
-				</div>
-				<More
-					dataMore={posts.posts.edges}
-					slug={'/blog'}
-					linkText="Voir tout"
-					colorCard="Black"
-					textColorCard="white"
-				/>
-			</article>
-		</Layout>
+					<More
+						dataMore={posts.posts.edges}
+						slug={'/blog'}
+						linkText="Voir tout"
+						colorCard="Black"
+						textColorCard="white"
+					/>
+				</article>
+			</Layout>
+		</>
 	);
 }
 

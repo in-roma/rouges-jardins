@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Head from 'next/head';
 import Link from 'next/link';
 import {
 	getPost,
@@ -22,65 +23,78 @@ export default function PostPage({ data, posts }) {
 	const router = useRouter();
 
 	return (
-		<Layout>
-			<article className={styles.containerPublicationPage}>
-				<div className={styles.PublicationPage}>
-					<div className={styles.navBarPublicationPage}>
-						<div
-							className={styles.containerBtnPublicationPage}
-							onClick={() => router.back()}
-						>
-							<div className={styles.iconBackPublicationPage}>
-								<Image src={arrowLeft} alt="search icon" />
+		<>
+			<Head>
+				<title>{data.post.title}</title>
+				<meta
+					name="viewport"
+					content="initial-scale=1.0, width=device-width"
+				/>
+				<meta
+					name="description"
+					content={`Livre '${data.post.title}' - ${data.post.categories.nodes[0].name}`}
+				/>
+			</Head>
+			<Layout>
+				<article className={styles.containerPublicationPage}>
+					<div className={styles.PublicationPage}>
+						<div className={styles.navBarPublicationPage}>
+							<div
+								className={styles.containerBtnPublicationPage}
+								onClick={() => router.back()}
+							>
+								<div className={styles.iconBackPublicationPage}>
+									<Image src={arrowLeft} alt="search icon" />
+								</div>
+								<span className={styles.btnPublicationPage}>
+									Retour
+								</span>
 							</div>
-							<span className={styles.btnPublicationPage}>
-								Retour
-							</span>
 						</div>
-					</div>
-					<picture
-						className={styles.picturePublicationPage}
-						style={{
-							display: 'block',
-							position: 'relative',
-							borderRadius: '6px',
-							overflow: 'hidden',
-						}}
-					>
-						<Image
-							src={data.post.featuredImage.node.sourceUrl}
-							layout="fill"
-							objectFit="cover"
-							alt=""
-						/>
-					</picture>
-					<h1 className={styles.titlePublicationPage}>
-						{data.post.title}
-					</h1>
-					<div className={styles.infoPublicationPage}>
-						{data.post.categories.nodes[0].name && (
-							<TagPost
-								text={data.post.categories.nodes[0].name}
-								color={'#FFD31D'}
-								textColor={'black'}
+						<picture
+							className={styles.picturePublicationPage}
+							style={{
+								display: 'block',
+								position: 'relative',
+								borderRadius: '6px',
+								overflow: 'hidden',
+							}}
+						>
+							<Image
+								src={data.post.featuredImage.node.sourceUrl}
+								layout="fill"
+								objectFit="cover"
+								alt=""
 							/>
-						)}
-						<DateCard date={data.post.date} />
-					</div>
+						</picture>
+						<h1 className={styles.titlePublicationPage}>
+							{data.post.title}
+						</h1>
+						<div className={styles.infoPublicationPage}>
+							{data.post.categories.nodes[0].name && (
+								<TagPost
+									text={data.post.categories.nodes[0].name}
+									color={'#FFD31D'}
+									textColor={'black'}
+								/>
+							)}
+							<DateCard date={data.post.date} />
+						</div>
 
-					<div className={styles.contentPublicationPage}>
-						{parsing(data.post.content)}
+						<div className={styles.contentPublicationPage}>
+							{parsing(data.post.content)}
+						</div>
+						<More
+							dataMore={posts.posts.edges}
+							slug={'/blog'}
+							linkText="Voir tout"
+							colorCard="Black"
+							textColorCard="white"
+						/>
 					</div>
-					<More
-						dataMore={posts.posts.edges}
-						slug={'/blog'}
-						linkText="Voir tout"
-						colorCard="Black"
-						textColorCard="white"
-					/>
-				</div>
-			</article>
-		</Layout>
+				</article>
+			</Layout>
+		</>
 	);
 }
 

@@ -39,7 +39,7 @@ export default function Header() {
 
 	return (
 		<header className={styles.header}>
-			<div className={styles.headerContent}>
+			<navbar className={styles.headerContent}>
 				<div className={styles.logoContainer}>
 					<Link href="/">
 						<a className={styles.logo}>Rouges jardins</a>
@@ -135,7 +135,7 @@ export default function Header() {
 						)
 					}
 				/>
-			</div>
+			</navbar>
 		</header>
 	);
 }

@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from 'react';
+import Head from 'next/head';
 
 // Components
 import Layout from '../components/layout';
@@ -116,57 +117,68 @@ export default function Blog({ posts, categories }) {
 	}, [searchValue, searchActive, filtering, chroniquesImported]);
 
 	return (
-		<Layout>
-			<div className={styles.containerBlog}>
-				<section className={styles.navBarBlog}>
-					<h1>Chroniques</h1>
-					<Search
-						value={searchValueDisplay}
-						onChangeInput={onChangeInput}
-						onSubmitSearch={searchPosts}
-					/>
-					<Filter
-						categories={categories}
-						onChangeCategory={onChangeCategory}
-					/>
-				</section>
-				{searchActive && (
-					<div className={styles.searchBarBlog}>
-						<h2>
-							{`${chroniques.length} résultat${
-								chroniques.length > 1 ? 's' : ''
-							} pour  "${valueSearchActive}" `}
-						</h2>
-						<button onClick={resetSearch}>
-							Annuler la recherche
-						</button>
-					</div>
-				)}
-				<div
-					className={styles.contentBlog}
-					style={searchActive ? { marginTop: '12rem' } : {}}
-				>
-					{chroniques.map((el) => (
-						<CardSmall
-							key={'smallCard' + el.node.id}
-							title={el.node.title}
-							imageUrl={
-								el.node.featuredImage.node.mediaDetails.sizes[0]
-									.sourceUrl
-							}
-							imageAltText={'test'}
-							date={el.node.date}
-							category={el.node.categories.nodes[0].name}
-							slug={el.node.slug}
-							color="
-							rgba(0, 0, 0, 0.7)"
-							textColor="white"
-							altText={el.node.featuredImage.node.altText}
+		<>
+			<Head>
+				<title>Chroniques</title>
+
+				<meta
+					name="viewport"
+					content="initial-scale=1.0, width=device-width"
+				/>
+				<meta name="description" content="Section chroniques" />
+			</Head>
+			<Layout>
+				<div className={styles.containerBlog}>
+					<section className={styles.navBarBlog}>
+						<h1>Chroniques</h1>
+						<Search
+							value={searchValueDisplay}
+							onChangeInput={onChangeInput}
+							onSubmitSearch={searchPosts}
 						/>
-					))}
+						<Filter
+							categories={categories}
+							onChangeCategory={onChangeCategory}
+						/>
+					</section>
+					{searchActive && (
+						<div className={styles.searchBarBlog}>
+							<h2>
+								{`${chroniques.length} résultat${
+									chroniques.length > 1 ? 's' : ''
+								} pour  "${valueSearchActive}" `}
+							</h2>
+							<button onClick={resetSearch}>
+								Annuler la recherche
+							</button>
+						</div>
+					)}
+					<div
+						className={styles.contentBlog}
+						style={searchActive ? { marginTop: '12rem' } : {}}
+					>
+						{chroniques.map((el) => (
+							<CardSmall
+								key={'smallCard' + el.node.id}
+								title={el.node.title}
+								imageUrl={
+									el.node.featuredImage.node.mediaDetails
+										.sizes[0].sourceUrl
+								}
+								imageAltText={'test'}
+								date={el.node.date}
+								category={el.node.categories.nodes[0].name}
+								slug={el.node.slug}
+								color="
+							rgba(0, 0, 0, 0.7)"
+								textColor="white"
+								altText={el.node.featuredImage.node.altText}
+							/>
+						))}
+					</div>
 				</div>
-			</div>
-		</Layout>
+			</Layout>
+		</>
 	);
 }
 

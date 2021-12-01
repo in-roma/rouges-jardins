@@ -43,7 +43,7 @@ export default function More({
 		// transitionMode: 'fade',
 	};
 	return (
-		<div className={styles.containerMore}>
+		<aside className={styles.containerMore}>
 			<div className={styles.headerMore}>
 				<h1 className={styles.titleMore}>Suggestions</h1>
 				<Link href={slug}>
@@ -95,6 +95,6 @@ export default function More({
 					))}
 				</Carousel>
 			</div>
-		</div>
+		</aside>
 	);
 }

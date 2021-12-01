@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Head from 'next/head';
 import Link from 'next/link';
 import { getPost, getAllSlugsPodcasts, getAllPodcasts } from '../../lib/api';
 import { useRouter } from 'next/router';
@@ -18,49 +19,62 @@ export default function PostPage({ data, posts }) {
 	const router = useRouter();
 
 	return (
-		<Layout>
-			<article className={styles.containerPodcastPage}>
-				<div className={styles.podcastPage}>
-					<div className={styles.navBarPodcastPage}>
-						<div
-							className={styles.containerBtnPodcastPage}
-							onClick={() => router.back()}
-						>
-							<div className={styles.iconBackPodcastPage}>
-								<Image src={arrowLeft} alt="search icon" />
+		<>
+			<Head>
+				<title>{data.post.title}</title>
+				<meta
+					name="viewport"
+					content="initial-scale=1.0, width=device-width"
+				/>
+				<meta
+					name="description"
+					content={`Podcast '${data.post.title}' - ${data.post.categories.nodes[0].name}`}
+				/>
+			</Head>
+			<Layout>
+				<article className={styles.containerPodcastPage}>
+					<div className={styles.podcastPage}>
+						<div className={styles.navBarPodcastPage}>
+							<div
+								className={styles.containerBtnPodcastPage}
+								onClick={() => router.back()}
+							>
+								<div className={styles.iconBackPodcastPage}>
+									<Image src={arrowLeft} alt="search icon" />
+								</div>
+								<span className={styles.btnPodcastPage}>
+									Retour
+								</span>
 							</div>
-							<span className={styles.btnPodcastPage}>
-								Retour
-							</span>
 						</div>
-					</div>
 
-					<h1 className={styles.titlePodcastPage}>
-						{data.post.title}
-					</h1>
-					<div className={styles.infoPodcastPage}>
-						{data.post.categories.nodes[0].name && (
-							<TagPost
-								text={data.post.categories.nodes[0].name}
-								color={'#D63447'}
-								textColor={'white'}
-							/>
-						)}
-						<DateCard date={data.post.date} />
+						<h1 className={styles.titlePodcastPage}>
+							{data.post.title}
+						</h1>
+						<div className={styles.infoPodcastPage}>
+							{data.post.categories.nodes[0].name && (
+								<TagPost
+									text={data.post.categories.nodes[0].name}
+									color={'#D63447'}
+									textColor={'white'}
+								/>
+							)}
+							<DateCard date={data.post.date} />
+						</div>
+						<div className={styles.contentPodcastPage}>
+							{parsing(data.post.content)}
+						</div>
+						<More
+							dataMore={posts.posts.edges}
+							slug={'/blog'}
+							linkText="Voir tout"
+							colorCard="Black"
+							textColorCard="white"
+						/>
 					</div>
-					<div className={styles.contentPodcastPage}>
-						{parsing(data.post.content)}
-					</div>
-					<More
-						dataMore={posts.posts.edges}
-						slug={'/blog'}
-						linkText="Voir tout"
-						colorCard="Black"
-						textColorCard="white"
-					/>
-				</div>
-			</article>
-		</Layout>
+				</article>
+			</Layout>
+		</>
 	);
 }
 

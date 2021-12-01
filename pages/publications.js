@@ -1,5 +1,6 @@
 import { useState, useContext, useEffect } from 'react';
 import parsing from '../helpers/helpers';
+import Head from 'next/head';
 
 // Components
 import Layout from '../components/layout';
@@ -22,49 +23,60 @@ export default function Publications({ posts }) {
 	const publications = posts.edges;
 
 	return (
-		<Layout>
-			<div className={styles.containerPublications}>
-				<section className={styles.navBarPublications}>
-					<h1>Publications</h1>
-					<CartButton
-						products={cartList.reduce(function (acc, obj) {
-							return acc + obj.quantity;
-						}, 0)}
-					/>
-				</section>
+		<>
+			<Head>
+				<title>Publications</title>
 
-				<div className={styles.contentPublications}>
-					{publications.map((el, index) => (
-						<CardPublication
-							key={'publication' + el.node.apiStripePriceID}
-							type="publications"
-							colorTag="#FFD31D"
-							textColor="black"
-							title={parsing(el.node.title)}
-							imageUrl={
-								el.node.featuredImage.node.mediaDetails.sizes[0]
-									.sourceUrl
-							}
-							altText={el.node.featuredImage.node.altText}
-							imageAltText={'test'}
-							date={el.node.date}
-							category={el.node.categories.nodes[0].name}
-							slug={el.node.slug}
-							name={el.node.apiStripeID}
-							price={el.node.apiStripePrice}
-							addBook={() =>
-								addBook(
-									el.node.apiStripePriceID,
-									el.node.featuredImage.node.sourceUrl,
-									el.node.title,
-									el.node.apiStripePrice
-								)
-							}
+				<meta
+					name="viewport"
+					content="initial-scale=1.0, width=device-width"
+				/>
+				<meta name="description" content="Section Publications" />
+			</Head>
+			<Layout>
+				<div className={styles.containerPublications}>
+					<section className={styles.navBarPublications}>
+						<h1>Publications</h1>
+						<CartButton
+							products={cartList.reduce(function (acc, obj) {
+								return acc + obj.quantity;
+							}, 0)}
 						/>
-					))}
+					</section>
+
+					<div className={styles.contentPublications}>
+						{publications.map((el, index) => (
+							<CardPublication
+								key={'publication' + el.node.apiStripePriceID}
+								type="publications"
+								colorTag="#FFD31D"
+								textColor="black"
+								title={parsing(el.node.title)}
+								imageUrl={
+									el.node.featuredImage.node.mediaDetails
+										.sizes[0].sourceUrl
+								}
+								altText={el.node.featuredImage.node.altText}
+								imageAltText={'test'}
+								date={el.node.date}
+								category={el.node.categories.nodes[0].name}
+								slug={el.node.slug}
+								name={el.node.apiStripeID}
+								price={el.node.apiStripePrice}
+								addBook={() =>
+									addBook(
+										el.node.apiStripePriceID,
+										el.node.featuredImage.node.sourceUrl,
+										el.node.title,
+										el.node.apiStripePrice
+									)
+								}
+							/>
+						))}
+					</div>
 				</div>
-			</div>
-		</Layout>
+			</Layout>
+		</>
 	);
 }
 export async function getStaticProps() {
