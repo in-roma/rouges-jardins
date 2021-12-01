@@ -16,22 +16,10 @@ export default function Podcast({ posts }) {
 	return (
 		<Layout>
 			<div className={styles.containerPodcasts}>
-				<div className={styles.navBarPodcast}>
+				<section className={styles.navBarPodcast}>
 					<h1>Podcasts</h1>
 					<Search />
-				</div>
-				{/* {searchActive && (
-					<div className={styles.searchBarBlog}>
-						<h2>
-							{`${chroniques.length} résultat${
-								chroniques.length > 1 ? 's' : ''
-							} pour  "${valueSearchActive}" `}
-						</h2>
-						<button onClick={resetSearch}>
-							Annuler la recherche
-						</button>
-					</div>
-				)} */}
+				</section>
 				<div className={styles.contentPodcasts}>
 					{podcasts.map((el) => (
 						<CardPodcast
@@ -47,14 +35,6 @@ export default function Podcast({ posts }) {
 									  )
 									: parsing(el.node.title)
 							}
-							// text={
-							// 	el.node.excerpt.length > 128
-							// 		? parsing(
-							// 				el.node.excerpt.slice(0, 128) +
-							// 					'...'
-							// 		  )
-							// 		: parsing(el.node.excerpt)
-							// }
 							imageUrl={
 								el.node.featuredImage.node.mediaDetails.sizes[0]
 									.sourceUrl

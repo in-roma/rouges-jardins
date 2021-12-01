@@ -25,13 +25,13 @@ export default function CardLarge({
 }) {
 	const router = useRouter();
 	return (
-		<div
+		<article
 			type={type}
 			className={styles.cardPodcast}
 			onClick={() => router.push(`/${type}/${slug}`)}
 		>
 			<Tag text={category} color={colorTag} textColor={textColor} />
-			<div
+			<picture
 				className={styles.pictureCardPodcast}
 				style={{
 					display: 'block',
@@ -46,12 +46,12 @@ export default function CardLarge({
 					objectFit="cover"
 					alt={altText}
 				/>
-			</div>
+			</picture>
 			<div className={styles.textContainerCardPodcast}>
-				<div className={styles.titleCardPodcast}>{title}</div>
+				<h3 className={styles.titleCardPodcast}>{title}</h3>
 
 				<DateCard date={date} className={styles.dateCardPodcast} />
 			</div>
-		</div>
+		</article>
 	);
 }

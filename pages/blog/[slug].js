@@ -28,7 +28,7 @@ export default function PostPage({ data, posts }) {
 	console.log('this is parsed date:', parsing(data.post.content));
 	return (
 		<Layout>
-			<div className={styles.containerPostPage}>
+			<article className={styles.containerPostPage}>
 				<div className={styles.postPage}>
 					<div className={styles.navBarPostPage}>
 						<div
@@ -41,7 +41,7 @@ export default function PostPage({ data, posts }) {
 							<span className={styles.btnPostPage}>Retour</span>
 						</div>
 					</div>
-					<div
+					<picture
 						className={styles.picturePostPage}
 						style={{
 							display: 'block',
@@ -55,7 +55,7 @@ export default function PostPage({ data, posts }) {
 							layout="fill"
 							alt=""
 						/>
-					</div>
+					</picture>
 					<h1 className={styles.titlePostPage}>{data.post.title}</h1>
 					<div className={styles.infoPostPage}>
 						{data.post.categories.nodes[0].name && (
@@ -78,7 +78,7 @@ export default function PostPage({ data, posts }) {
 					colorCard="Black"
 					textColorCard="white"
 				/>
-			</div>
+			</article>
 		</Layout>
 	);
 }

@@ -22,12 +22,12 @@ export default function CardSmallVertical({
 }) {
 	const router = useRouter();
 	return (
-		<div
+		<article
 			className={styles.cardSmallVertical}
 			onClick={() => router.push(`/publications/${slug}`)}
 		>
 			<Tag text={category} color={colorTag} />
-			<div
+			<picture
 				className={styles.pictureCardVertical}
 				style={{
 					display: 'block',
@@ -42,9 +42,9 @@ export default function CardSmallVertical({
 					objectFit="cover"
 					alt={altText}
 				/>
-			</div>
-			<div className={styles.titleCardSmallVertical}>{title}</div>
+			</picture>
+			<h3 className={styles.titleCardSmallVertical}>{title}</h3>
 			<DateCard date={date} />
-		</div>
+		</article>
 	);
 }

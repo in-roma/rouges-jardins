@@ -118,7 +118,7 @@ export default function Blog({ posts, categories }) {
 	return (
 		<Layout>
 			<div className={styles.containerBlog}>
-				<div className={styles.navBarBlog}>
+				<section className={styles.navBarBlog}>
 					<h1>Chroniques</h1>
 					<Search
 						value={searchValueDisplay}
@@ -129,7 +129,7 @@ export default function Blog({ posts, categories }) {
 						categories={categories}
 						onChangeCategory={onChangeCategory}
 					/>
-				</div>
+				</section>
 				{searchActive && (
 					<div className={styles.searchBarBlog}>
 						<h2>
@@ -142,7 +142,7 @@ export default function Blog({ posts, categories }) {
 						</button>
 					</div>
 				)}
-				<content
+				<div
 					className={styles.contentBlog}
 					style={searchActive ? { marginTop: '12rem' } : {}}
 				>
@@ -157,20 +157,14 @@ export default function Blog({ posts, categories }) {
 							imageAltText={'test'}
 							date={el.node.date}
 							category={el.node.categories.nodes[0].name}
-							slug={
-								el.node.slug
-								// 	.replace(
-								// 	/(^\d{1,4})-(\d{1,2})-(\d{1,2})-(.+)/i,
-								// 	'$1/$2/$3/$4'
-								// )
-							}
+							slug={el.node.slug}
 							color="
 							rgba(0, 0, 0, 0.7)"
 							textColor="white"
 							altText={el.node.featuredImage.node.altText}
 						/>
 					))}
-				</content>
+				</div>
 			</div>
 		</Layout>
 	);

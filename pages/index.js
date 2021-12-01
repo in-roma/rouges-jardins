@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import { createContext, useState, useContext, useMemo } from 'react';
+import { useState, useContext } from 'react';
 import parsing from '../helpers/helpers';
 import { useRouter } from 'next/router';
 
@@ -20,9 +19,6 @@ import CardLarge from '../components/microComponents/cardLarge';
 import CardMedium from '../components/microComponents/cardMedium';
 import CardSmall from '../components/microComponents/cardSmall';
 import CardSmallVertical from '../components/microComponents/cardSmallVertical';
-
-// Styling
-import styles from '../styles/Home.module.scss';
 
 export default function Home({ posts, podcasts, publications }) {
 	// Search states
@@ -54,7 +50,6 @@ export default function Home({ posts, podcasts, publications }) {
 				value={searchValueDisplay}
 				onChangeInput={handleChangeInput}
 				onSubmitSearch={searchSubmit}
-				// marginBottom="0em"
 			/>
 
 			<CardLarge

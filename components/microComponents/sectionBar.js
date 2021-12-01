@@ -19,16 +19,16 @@ export default function SectionBar({
 }) {
 	return (
 		<>
-			<div className={styles.containerSectionBar} style={style}>
+			<section className={styles.containerSectionBar} style={style}>
 				<div
 					className={styles.sectionBar}
 					style={{ marginBottom: marginBottom }}
 				>
 					<div className={styles.containerTitleSearchSectionBar}>
 						{sectionTitle && (
-							<span className={styles.titleSectionBar}>
+							<h1 className={styles.titleSectionBar}>
 								{sectionTitle}
-							</span>
+							</h1>
 						)}
 						<div className={styles.searchSectionBar}>
 							{search && (
@@ -51,7 +51,7 @@ export default function SectionBar({
 				<div className={styles.searchMobile} value={value}>
 					{search && <Search />}
 				</div>
-			</div>
+			</section>
 		</>
 	);
 }

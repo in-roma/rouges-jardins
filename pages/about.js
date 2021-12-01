@@ -10,10 +10,10 @@ export default function About() {
 	return (
 		<Layout>
 			<div className={styles.containerAbout}>
-				<div className={styles.navBarAbout}>
+				<section className={styles.navBarAbout}>
 					<h1 className={styles.titreAbout}>À propos</h1>
-				</div>
-				<content className={styles.contentAbout}>
+				</section>
+				<div className={styles.contentAbout}>
 					<span className={styles.textAbout}>
 						<strong>
 							Guy est né en 1951 dans la région parisienne.
@@ -32,7 +32,7 @@ export default function About() {
 						biologie. Il ouvre en 1989 un laboratoire d’analyses
 						médicales dans la commune du Loroux Bottereaux.
 					</span>
-					<div
+					<picture
 						className={styles.pictureAbout}
 						style={{
 							display: 'block',
@@ -49,7 +49,7 @@ export default function About() {
 							layout="fill"
 							objectFit="cover"
 						/>
-					</div>
+					</picture>
 					<span className={styles.textAbout}>
 						Il exerce pendant 32 ans. Féru de bactériologie, il
 						essaie tout au long des ces années de faire vivre un
@@ -99,7 +99,7 @@ export default function About() {
 						</a>
 						.
 					</span>
-				</content>
+				</div>
 			</div>
 		</Layout>
 	);

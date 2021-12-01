@@ -23,7 +23,7 @@ export default function PostPage({ data, posts }) {
 
 	return (
 		<Layout>
-			<div className={styles.containerPublicationPage}>
+			<article className={styles.containerPublicationPage}>
 				<div className={styles.PublicationPage}>
 					<div className={styles.navBarPublicationPage}>
 						<div
@@ -38,7 +38,7 @@ export default function PostPage({ data, posts }) {
 							</span>
 						</div>
 					</div>
-					<div
+					<picture
 						className={styles.picturePublicationPage}
 						style={{
 							display: 'block',
@@ -53,7 +53,7 @@ export default function PostPage({ data, posts }) {
 							objectFit="cover"
 							alt=""
 						/>
-					</div>
+					</picture>
 					<h1 className={styles.titlePublicationPage}>
 						{data.post.title}
 					</h1>
@@ -79,7 +79,7 @@ export default function PostPage({ data, posts }) {
 						textColorCard="white"
 					/>
 				</div>
-			</div>
+			</article>
 		</Layout>
 	);
 }

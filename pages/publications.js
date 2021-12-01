@@ -24,14 +24,14 @@ export default function Publications({ posts }) {
 	return (
 		<Layout>
 			<div className={styles.containerPublications}>
-				<div className={styles.navBarPublications}>
+				<section className={styles.navBarPublications}>
 					<h1>Publications</h1>
 					<CartButton
 						products={cartList.reduce(function (acc, obj) {
 							return acc + obj.quantity;
 						}, 0)}
 					/>
-				</div>
+				</section>
 
 				<div className={styles.contentPublications}>
 					{publications.map((el, index) => (

@@ -23,7 +23,7 @@ export default function CardMedium({
 }) {
 	const router = useRouter();
 	return (
-		<div
+		<article
 			className={styles.cardMedium}
 			onClick={() => router.push(`/podcasts/${slug}`)}
 		>
@@ -45,9 +45,9 @@ export default function CardMedium({
 				/>
 			</div>
 			<div className={styles.containerTextCardMedium}>
-				<div className={styles.titleCardMedium}>{title}</div>
+				<h3 className={styles.titleCardMedium}>{title}</h3>
 				<DateCard date={date} />
 			</div>
-		</div>
+		</article>
 	);
 }

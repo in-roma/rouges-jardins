@@ -24,12 +24,12 @@ export default function CardMini({
 }) {
 	const router = useRouter();
 	return (
-		<div
+		<article
 			className={styles.cardMini}
 			onClick={() => router.push(`/blog/${slug}`)}
 		>
 			<Tag text={category} color={color} textColor={textColor} />
-			<div
+			<picture
 				className={styles.pictureCardMini}
 				style={{
 					display: 'block',
@@ -44,11 +44,10 @@ export default function CardMini({
 					objectFit="cover"
 					alt={altText}
 				/>
-			</div>
-			<div className={styles.titleCardMini}>
+			</picture>
+			<h3 className={styles.titleCardMini}>
 				{title.length > 60 ? title.slice(0, 60) + '...' : title}
-			</div>
-			{/* <DateCard date={date} /> */}
-		</div>
+			</h3>
+		</article>
 	);
 }

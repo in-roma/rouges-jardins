@@ -24,12 +24,12 @@ export default function CardSmall({
 }) {
 	const router = useRouter();
 	return (
-		<div
+		<article
 			className={styles.cardSmall}
 			onClick={() => router.push(`/blog/${slug}`)}
 		>
 			<Tag text={category} color={color} textColor={textColor} />
-			<div
+			<picture
 				className={styles.pictureCardSmall}
 				style={{
 					display: 'block',
@@ -44,11 +44,11 @@ export default function CardSmall({
 					objectFit="cover"
 					alt={altText}
 				/>
-			</div>
-			<div className={styles.titleCardSmall}>
+			</picture>
+			<h3 className={styles.titleCardSmall}>
 				{title.length > 60 ? title.slice(0, 60) + '...' : title}
-			</div>
+			</h3>
 			<DateCard date={date} />
-		</div>
+		</article>
 	);
 }

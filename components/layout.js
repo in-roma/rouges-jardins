@@ -8,7 +8,7 @@ export default function Layout({ children }) {
 	return (
 		<div className={styles.pageLayout}>
 			<Header />
-			<content className={styles.contentLayout}>{children}</content>
+			<main className={styles.contentLayout}>{children}</main>
 			<Footer />
 		</div>
 	);

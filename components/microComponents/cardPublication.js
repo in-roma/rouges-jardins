@@ -34,9 +34,9 @@ export default function CardPublication({
 	const router = useRouter();
 
 	return (
-		<div type={type} className={styles.cardPublication} name={name}>
+		<article type={type} className={styles.cardPublication} name={name}>
 			<Tag text={category} color={colorTag} textColor={textColor} />
-			<div
+			<picture
 				className={styles.pictureCardPublication}
 				style={{
 					display: 'block',
@@ -52,13 +52,13 @@ export default function CardPublication({
 					objectFit="cover"
 					alt={altText}
 				/>
-			</div>
+			</picture>
 			<div className={styles.textContainerCardPublication}>
 				<div
 					className={styles.textCardPublication}
 					onClick={() => router.push(`/${type}/${slug}`)}
 				>
-					<div className={styles.titleCardPublication}>{title}</div>
+					<h3 className={styles.titleCardPublication}>{title}</h3>
 					<DateCard date={date} />
 				</div>
 
@@ -73,15 +73,9 @@ export default function CardPublication({
 							onClick={addBook}
 							name={name}
 						/>
-						{/* <Quantity
-							remove={removeBook}
-							add={addBook}
-							name={name}
-							quantity={quantity}
-						/> */}
 					</div>
 				</div>
 			</div>
-		</div>
+		</article>
 	);
 }

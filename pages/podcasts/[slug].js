@@ -19,7 +19,7 @@ export default function PostPage({ data, posts }) {
 
 	return (
 		<Layout>
-			<div className={styles.containerPodcastPage}>
+			<article className={styles.containerPodcastPage}>
 				<div className={styles.podcastPage}>
 					<div className={styles.navBarPodcastPage}>
 						<div
@@ -59,7 +59,7 @@ export default function PostPage({ data, posts }) {
 						textColorCard="white"
 					/>
 				</div>
-			</div>
+			</article>
 		</Layout>
 	);
 }

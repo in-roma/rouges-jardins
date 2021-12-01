@@ -25,7 +25,7 @@ export default function CardLarge({
 }) {
 	const router = useRouter();
 	return (
-		<div
+		<article
 			type={type}
 			className={
 				cardLargeType === 'cardLargeChroniques'
@@ -56,9 +56,9 @@ export default function CardLarge({
 					alt={altText}
 				/>
 			</div>
-			<div className={styles.titleCardLarge}>{title}</div>
+			<h2 className={styles.titleCardLarge}>{title}</h2>
 			<div className={styles.textCardLarge}>{text}</div>
 			<DateCard date={date} />
-		</div>
+		</article>
 	);
 }
