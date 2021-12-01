@@ -176,5 +176,6 @@ export async function getStaticProps() {
 
 	return {
 		props: { posts, podcasts, publications },
+		revalidate: 5,
 	};
 }
