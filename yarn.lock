@@ -2407,11 +2407,6 @@
     "inherits" "^2.0.1"
     "minimalistic-assert" "^1.0.0"
 
-"detect-browser@^5.2.1":
-  "integrity" "sha512-eAcRiEPTs7utXWPaAgu/OX1HRJpxW7xSHpw4LTDrGFaeWnJ37HRlqpUkKsDm0AoTbtrvHQhH+5U2Cd87EGhJTg=="
-  "resolved" "https://registry.npmjs.org/detect-browser/-/detect-browser-5.2.1.tgz"
-  "version" "5.2.1"
-
 "detect-libc@^1.0.3":
   "integrity" "sha1-+hN8S9aY7fVc1c0CrFWfkaTEups="
   "resolved" "https://registry.npmjs.org/detect-libc/-/detect-libc-1.0.3.tgz"

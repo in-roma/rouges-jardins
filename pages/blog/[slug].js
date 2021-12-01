@@ -85,7 +85,7 @@ export default function PostPage({ data, posts }) {
 
 export async function getStaticPaths() {
 	const response = await getAllSlugs();
-	const paths = response.posts.edges.map((post) => ({
+	let paths = response.posts.edges.map((post) => ({
 		params: {
 			slug: post.node.slug,
 		},
@@ -99,7 +99,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: slug }) {
 	const data = await getPost(slug);
+
 	const posts = await getMore(data.post.terms.pageInfo.startCursor);
+
 	return {
 		props: {
 			data,

@@ -157,7 +157,13 @@ export default function Blog({ posts, categories }) {
 							imageAltText={'test'}
 							date={el.node.date}
 							category={el.node.categories.nodes[0].name}
-							slug={el.node.slug}
+							slug={
+								el.node.slug
+								// 	.replace(
+								// 	/(^\d{1,4})-(\d{1,2})-(\d{1,2})-(.+)/i,
+								// 	'$1/$2/$3/$4'
+								// )
+							}
 							color="
 							rgba(0, 0, 0, 0.7)"
 							textColor="white"

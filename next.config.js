@@ -10,4 +10,13 @@ module.exports = {
 	images: {
 		domains: ['www.jcou8054.odns.fr'],
 	},
+	async redirects() {
+		return [
+			{
+				source: '/blog/:year/:month/:day/:post',
+				destination: '/blog/:year-:month-:day-:post',
+				permanent: true,
+			},
+		];
+	},
 };
