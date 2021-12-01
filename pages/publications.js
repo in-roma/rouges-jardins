@@ -32,6 +32,8 @@ export default function Publications({ posts }) {
 					content="initial-scale=1.0, width=device-width"
 				/>
 				<meta name="description" content="Section Publications" />
+				<meta name="robots" />
+				<meta name="googlebot" />
 			</Head>
 			<Layout>
 				<div className={styles.containerPublications}>

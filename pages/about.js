@@ -18,14 +18,16 @@ export default function About() {
 					content="initial-scale=1.0, width=device-width"
 				/>
 				<meta name="description" content="Section Guy Grandjean" />
+				<meta name="robots" />
+				<meta name="googlebot" />
 			</Head>
 			<Layout>
-				<div className={styles.containerAbout}>
-					<section className={styles.navBarAbout}>
+				<section className={styles.containerAbout}>
+					<div className={styles.navBarAbout}>
 						<h1 className={styles.titreAbout}>À propos</h1>
-					</section>
+					</div>
 					<article className={styles.contentAbout}>
-						<span className={styles.textAbout}>
+						<p className={styles.textAbout}>
 							<strong>
 								Guy est né en 1951 dans la région parisienne.
 							</strong>
@@ -34,9 +36,9 @@ export default function About() {
 							C’est au travers de cette confrontation avec une
 							campagne “brute” que naît sa fascination pour la
 							nature.
-						</span>
+						</p>
 
-						<span className={styles.textAbout}>
+						<p className={styles.textAbout}>
 							Après un cycle universitaire en biologie, il quitte
 							paris et part vivre dans la région nantaise. Pendant
 							un temps il est professeur de travaux manuels puis
@@ -44,7 +46,7 @@ export default function About() {
 							internat de biologie. Il ouvre en 1989 un
 							laboratoire d’analyses médicales dans la commune du
 							Loroux Bottereaux.
-						</span>
+						</p>
 						<picture
 							className={styles.pictureAbout}
 							style={{
@@ -63,14 +65,14 @@ export default function About() {
 								objectFit="cover"
 							/>
 						</picture>
-						<span className={styles.textAbout}>
+						<p className={styles.textAbout}>
 							Il exerce pendant 32 ans. Féru de bactériologie, il
 							essaie tout au long des ces années de faire vivre un
 							laboratoire à l’excellence médicale. Au quotidien,
 							il affectionne particulièrement les prises de sang,
 							moment de partage.
-						</span>
-						<span className={styles.textAbout}>
+						</p>
+						<p className={styles.textAbout}>
 							Parallèlement à ses activités professionnelles, il
 							écrit des chroniques sur les relations entre l’homme
 							et la nature, d’abord dans les 1990 sous la forme
@@ -98,12 +100,12 @@ export default function About() {
 							>
 								Radio Châteaubriant.
 							</a>
-						</span>
-						<span className={styles.textAbout}>
+						</p>
+						<p className={styles.textAbout}>
 							Aujourd’hui Guy est un jeune retraité, continue à
 							partager ses histoires...
-						</span>
-						<span className={styles.emailTextAbout}>
+						</p>
+						<p className={styles.emailTextAbout}>
 							Vous pouvez le contacter avec cet&nbsp;
 							<a
 								href="mailto: guygrandjean@icloud.com"
@@ -112,9 +114,9 @@ export default function About() {
 								email
 							</a>
 							.
-						</span>
+						</p>
 					</article>
-				</div>
+				</section>
 			</Layout>
 		</>
 	);

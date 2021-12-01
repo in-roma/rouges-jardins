@@ -53,6 +53,8 @@ export default function Home({ posts, podcasts, publications }) {
 					name="description"
 					content="Chroniques sur le monde vivant - Blog par Guy Grandjean"
 				/>
+				<meta name="robots" />
+				<meta name="googlebot" />
 			</Head>
 			<Layout>
 				<SectionBar

@@ -37,6 +37,8 @@ export default function Success() {
 					name="description"
 					content="Page Paiement enregistré - Blog par Guy Grandjean"
 				/>
+				<meta name="robots" content="noindex" />
+				<meta name="googlebot" content="noindex" />
 			</Head>
 			<Layout>
 				<div>

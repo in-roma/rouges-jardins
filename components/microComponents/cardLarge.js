@@ -57,7 +57,7 @@ export default function CardLarge({
 				/>
 			</div>
 			<h2 className={styles.titleCardLarge}>{title}</h2>
-			<div className={styles.textCardLarge}>{text}</div>
+			<p className={styles.textCardLarge}>{text}</p>
 			<DateCard date={date} />
 		</article>
 	);

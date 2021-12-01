@@ -80,14 +80,14 @@ export default function Cart() {
 			<Layout>
 				<div className={styles.containerCart}>
 					<div className={styles.contentCart}>
-						<div className={styles.navBarCart}>
+						<section className={styles.navBarCart}>
 							<h2>Panier</h2>
 							<Link href="/publications">
 								<a>Retour</a>
 							</Link>
-						</div>
+						</section>
 
-						<div className={styles.tableCart}>
+						<table className={styles.tableCart}>
 							<span className={styles.thTableTitreCart}>
 								Titre
 							</span>
@@ -152,8 +152,8 @@ export default function Cart() {
 									/>
 								</>
 							))}
-						</div>
-						<div className={styles.tableCartfooter}>
+						</table>
+						<table className={styles.tableCartfooter}>
 							<span className={styles.SumTableCart}>
 								Quantity
 							</span>
@@ -180,7 +180,7 @@ export default function Cart() {
 								onClick={redirectToCheckout}
 								disabled={redirecting}
 							/>
-						</div>
+						</table>
 					</div>
 				</div>
 			</Layout>

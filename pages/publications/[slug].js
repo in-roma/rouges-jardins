@@ -34,6 +34,8 @@ export default function PostPage({ data, posts }) {
 					name="description"
 					content={`Livre '${data.post.title}' - ${data.post.categories.nodes[0].name}`}
 				/>
+				<meta name="robots" />
+				<meta name="googlebot" />
 			</Head>
 			<Layout>
 				<article className={styles.containerPublicationPage}>

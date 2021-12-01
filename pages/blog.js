@@ -126,6 +126,8 @@ export default function Blog({ posts, categories }) {
 					content="initial-scale=1.0, width=device-width"
 				/>
 				<meta name="description" content="Section chroniques" />
+				<meta name="robots" />
+				<meta name="googlebot" />
 			</Head>
 			<Layout>
 				<div className={styles.containerBlog}>
