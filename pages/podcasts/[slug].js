@@ -86,5 +86,6 @@ export async function getStaticProps({ params: slug }) {
 			data,
 			posts,
 		},
+		revalidate: 120,
 	};
 }
