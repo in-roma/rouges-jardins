@@ -45,9 +45,9 @@ export default function CardMini({
 					alt={altText}
 				/>
 			</picture>
-			<h3 className={styles.titleCardMini}>
+			<h2 className={styles.titleCardMini}>
 				{title.length > 60 ? title.slice(0, 60) + '...' : title}
-			</h3>
+			</h2>
 		</article>
 	);
 }

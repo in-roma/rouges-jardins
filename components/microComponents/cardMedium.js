@@ -45,7 +45,7 @@ export default function CardMedium({
 				/>
 			</div>
 			<div className={styles.containerTextCardMedium}>
-				<h3 className={styles.titleCardMedium}>{title}</h3>
+				<h2 className={styles.titleCardMedium}>{title}</h2>
 				<DateCard date={date} />
 			</div>
 		</article>

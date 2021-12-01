@@ -48,7 +48,7 @@ export default function CardLarge({
 				/>
 			</picture>
 			<div className={styles.textContainerCardPodcast}>
-				<h3 className={styles.titleCardPodcast}>{title}</h3>
+				<h2 className={styles.titleCardPodcast}>{title}</h2>
 
 				<DateCard date={date} className={styles.dateCardPodcast} />
 			</div>

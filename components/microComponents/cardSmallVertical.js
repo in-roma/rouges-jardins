@@ -43,7 +43,7 @@ export default function CardSmallVertical({
 					alt={altText}
 				/>
 			</picture>
-			<h3 className={styles.titleCardSmallVertical}>{title}</h3>
+			<h2 className={styles.titleCardSmallVertical}>{title}</h2>
 			<DateCard date={date} />
 		</article>
 	);

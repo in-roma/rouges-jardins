@@ -58,7 +58,7 @@ export default function CardPublication({
 					className={styles.textCardPublication}
 					onClick={() => router.push(`/${type}/${slug}`)}
 				>
-					<h3 className={styles.titleCardPublication}>{title}</h3>
+					<h2 className={styles.titleCardPublication}>{title}</h2>
 					<DateCard date={date} />
 				</div>
 
