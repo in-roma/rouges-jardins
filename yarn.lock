@@ -5048,6 +5048,11 @@
   "resolved" "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
   "version" "2.6.2"
 
+"next-secure-headers@^2.2.0":
+  "integrity" "sha512-C7OfZ9JdSJyYMz2ZBMI/WwNbt0qNjlFWX9afUp8nEUzbz6ez3JbeopdyxSZJZJAzVLIAfyk6n73rFpd4e22jRg=="
+  "resolved" "https://registry.npmjs.org/next-secure-headers/-/next-secure-headers-2.2.0.tgz"
+  "version" "2.2.0"
+
 "next-stripe@^1.0.0-beta.9":
   "integrity" "sha512-gjYcy81qDikkz3/4EBaCmzNEa4/yccQGUQzSRQD2oW2VwXuuSAflwy9JzgcnGt8/B6amrobDN2uBHlmy/iyybg=="
   "resolved" "https://registry.npmjs.org/next-stripe/-/next-stripe-1.0.0-beta.9.tgz"
