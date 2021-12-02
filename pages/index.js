@@ -82,7 +82,11 @@ export default function Home({ posts, podcasts, publications }) {
 							  )
 							: parsing(posts.edges[0].node.excerpt)
 					}
-					imageUrl={posts.edges[0].node.featuredImage.node.sourceUrl}
+					imageUrl={
+						posts.edges[0].node.featuredImage.node.mediaDetails
+							.sizes[3].sourceUrl
+					}
+					// imageUrl={posts.edges[0].node.featuredImage.node.sourceUrl}
 					imageAltText={'test'}
 					date={posts.edges[0].node.date}
 					category={posts.edges[0].node.categories.nodes[0].name}
@@ -128,6 +132,10 @@ export default function Home({ posts, podcasts, publications }) {
 							  )
 							: parsing(podcasts.posts.edges[0].node.excerpt)
 					}
+					// imageUrl={
+					// 	podcasts.posts.edges[0].node.featuredImage.node
+					// 		.sourceUrl
+					// }
 					imageUrl={
 						podcasts.posts.edges[0].node.featuredImage.node
 							.sourceUrl
