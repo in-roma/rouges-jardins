@@ -30,11 +30,11 @@ const securityHeaders = [
 		key: 'Permissions-Policy',
 		value: 'geolocation=*',
 	},
-	{
-		key: 'Content-Security-Policy',
-		value:
-			"default-src 'self' jcou8054.odns.fr *.jcou8054.odns.fr fonts.googleapis.com *.fonts.googleapis.com/",
-	},
+	// {
+	// 	key: 'Content-Security-Policy',
+	// 	value:
+	// 		"default-src 'self' jcou8054.odns.fr *.jcou8054.odns.fr fonts.googleapis.com *.fonts.googleapis.com/",
+	// },
 ];
 
 module.exports = withSass({
