@@ -1,7 +1,7 @@
 const path = require('path');
 const withSass = require('@zeit/next-sass');
 
-const headers = [
+const securityHeaders = [
 	{
 		key: 'X-DNS-Prefetch-Control',
 		value: 'on',
@@ -60,7 +60,7 @@ module.exports = {
 		return [
 			{
 				source: '/(.*)',
-				headers,
+				headers: securityHeaders,
 			},
 		];
 	},
