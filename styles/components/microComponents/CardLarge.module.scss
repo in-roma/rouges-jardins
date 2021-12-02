@@ -1,5 +1,5 @@
 .cardLargeChroniques {
-    position: relative;   
+    position: relative;
     width: 58.2rem;
     height: auto;
     grid-column: 1/3;
@@ -7,8 +7,8 @@
     cursor: pointer;
 }
 
-.cardLargePodcasts{
-    position: relative;   
+.cardLargePodcasts {
+    position: relative;
     width: 58.2rem;
     height: auto;
     grid-column: 1/3;
@@ -19,14 +19,14 @@
 .titleCardLarge {
     width: 100%;
     height: auto;
-    font-family: 'lora', serif;
+    font-family: "lora", serif;
     font-size: 2.4rem;
     font-weight: 600;
     color: black;
     margin-top: 1.8rem;
     line-height: 2.4rem;
 }
-.cardLargePicture{
+.cardLargePicture {
     width: 58.2rem;
     height: 35.2rem;
 }
@@ -44,43 +44,40 @@
 
 @media screen and (max-width: 1240px) {
     .cardLargeChroniques {
-    grid-column: 1/3;
-
+        grid-column: 1/3;
     }
-    .cardLargePodcasts{
-    grid-column: 1/3;
-
+    .cardLargePodcasts {
+        grid-column: 1/3;
     }
-
 }
 
 @media screen and (max-width: 1040px) {
-        .cardLargeChroniques {
+    .cardLargeChroniques {
         width: 68.2rem;
         height: auto;
         grid-column: 1/2;
-        }
-        .cardLargePodcasts{
+    }
+    .cardLargePodcasts {
         grid-column: 1/2;
         width: 68.2rem;
         height: auto;
-        }
-        .cardLargePicture{
+    }
+    .cardLargePicture {
         width: 68.2rem;
-        height: 41.2rem;  
-        }
+        height: 41.2rem;
+    }
 }
 
 @media screen and (max-width: 740px) {
     .cardLargeChroniques {
         width: 58.2rem;
     }
-    .cardLargePodcasts{
+    .cardLargePodcasts {
         width: 58.2rem;
-     }
-    .cardLargePicture{
+    }
+    .cardLargePicture {
         width: 58.2rem;
-        height: 35.1rem;  
+        height: 35.1rem;
     }
 }
 
@@ -88,90 +85,81 @@
     .cardLargeChroniques {
         width: 48.2rem;
     }
-    .cardLargePodcasts{
-
+    .cardLargePodcasts {
         width: 48.2rem;
-
-        }
-        .cardLargePicture{
+    }
+    .cardLargePicture {
         width: 48.2rem;
-        height: 29rem;  
-        }
+        height: 29rem;
+    }
 }
 
 @media screen and (max-width: 540px) {
     .cardLargeChroniques {
         width: 42.2rem;
     }
-    .cardLargePodcasts{
+    .cardLargePodcasts {
         width: 42.2rem;
-
     }
-    .cardLargePicture{
+    .cardLargePicture {
         width: 42.2rem;
-        height: 25.4rem;  
-        }
+        height: 25.4rem;
+    }
 }
 
 @media screen and (max-width: 460px) {
     .cardLargeChroniques {
         width: 36rem;
     }
-    .cardLargePodcasts{
-
+    .cardLargePodcasts {
         width: 36rem;
-
-        }
-        .cardLargePicture{
+    }
+    .cardLargePicture {
         width: 36rem;
-        height: 21.6rem;  
-        }
-        .titleCardLarge {
-            font-size: 2rem;    
-        }
-        .textCardLarge {
-            font-size: 1.5rem;
-        }
+        height: 21.6rem;
+    }
+    .titleCardLarge {
+        font-size: 2rem;
+    }
+    .textCardLarge {
+        font-size: 1.5rem;
+    }
 }
 @media screen and (max-width: 400px) {
     .cardLargeChroniques {
         width: 30rem;
     }
-    .cardLargePodcasts{
-
+    .cardLargePodcasts {
         width: 30rem;
-
-        }
-        .cardLargePicture{
+    }
+    .cardLargePicture {
         width: 30rem;
-        height: 18rem;  
-        }
-        .titleCardLarge {
-            font-size: 1.6rem;    
-        }
-        .textCardLarge {
-            font-size: 1.4rem;
-        }
+        height: 18rem;
+    }
+    .titleCardLarge {
+        font-size: 1.6rem;
+    }
+    .textCardLarge {
+        font-size: 1.4rem;
+    }
 }
 
 @media screen and (max-width: 340px) {
     .cardLargeChroniques {
         width: 28rem;
     }
-    .cardLargePodcasts{
-
+    .cardLargePodcasts {
         width: 28rem;
-
-        }
-        .cardLargePicture{
+    }
+    .cardLargePicture {
         width: 28rem;
-        height: 16.7rem;  
-        }
-        .titleCardLarge {
-            font-size: 1.5rem;    
-        }
-        .textCardLarge {
-            font-size: 1.3rem;
-            line-height: 2rem;
-        }
+        height: 16.7rem;
+    }
+    .titleCardLarge {
+        font-size: 1.5rem;
+    }
+    .textCardLarge {
+        font-size: 1.3rem;
+        line-height: 2rem;
+    }
 }

@@ -13,19 +13,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 0.1rem solid #EFEFEF;
-    border-bottom: 0.1rem solid #EFEFEF;
+    border-top: 0.1rem solid #efefef;
+    border-bottom: 0.1rem solid #efefef;
     margin-top: 2.4rem;
     margin-bottom: 2.4rem;
-
 }
 
 .containerTitleSearchSectionBar {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-
-} 
+}
 
 .titleSectionBar {
     font-size: 2rem;
@@ -38,9 +36,9 @@
     transform: translateY(0.15rem);
 }
 
-
 .linkSectionBar {
     font-size: 1.2rem;
+    line-height: 4.8rem;
     font-weight: 600;
     color: black;
     text-decoration: underline;
@@ -51,19 +49,17 @@
 }
 
 @media screen and (max-width: 1240px) {
-    .containerSectionBar  {
+    .containerSectionBar {
         grid-column: 1/4;
     }
-
 }
 @media screen and (max-width: 1040px) {
-    .containerSectionBar  {
+    .containerSectionBar {
         grid-column: 1/3;
     }
 }
 @media screen and (max-width: 640px) {
-
-    .searchSectionBar{
+    .searchSectionBar {
         display: none;
     }
     .searchMobile {
@@ -76,27 +72,24 @@
     }
 }
 
-
 @media screen and (max-width: 540px) {
-    .sectionBar  {
+    .sectionBar {
         grid-column: 1/2;
     }
-
 }
 
 @media screen and (max-width: 440px) {
-    .sectionBar  {
+    .sectionBar {
         grid-column: 1/2;
     }
     .titleSectionBar {
         font-size: 1.6rem;
     }
     .linkSectionBar {
-        font-size: 1.0rem;
+        font-size: 1rem;
     }
 }
 @media screen and (max-width: 340px) {
-
     .titleSectionBar {
         font-size: 1.4rem;
     }
@@ -104,4 +97,3 @@
         font-size: 0.9rem;
     }
 }
-

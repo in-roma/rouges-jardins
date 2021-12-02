@@ -62,22 +62,36 @@ export default function Header() {
 					<Media
 						query="(min-width: 1040px)"
 						render={() => (
-							<div className={styles.linksContainer}>
-								<Link href="/blog">
-									<a className={styles.navItem}>Chroniques</a>
-								</Link>
-								<Link href="/podcasts">
-									<a className={styles.navItem}>Podcasts</a>
-								</Link>
-								<Link href="/publications">
-									<a className={styles.navItem}>
-										Publications
-									</a>
-								</Link>
-								<Link href="/about">
-									<a className={styles.navItem}>À propos</a>
-								</Link>
-							</div>
+							<ul className={styles.linksContainer}>
+								<li>
+									<Link href="/blog">
+										<a className={styles.navItem}>
+											Chroniques
+										</a>
+									</Link>
+								</li>
+								<li>
+									<Link href="/podcasts">
+										<a className={styles.navItem}>
+											Podcasts
+										</a>
+									</Link>
+								</li>
+								<li>
+									<Link href="/publications">
+										<a className={styles.navItem}>
+											Publications
+										</a>
+									</Link>
+								</li>
+								<li>
+									<Link href="/about">
+										<a className={styles.navItem}>
+											À propos
+										</a>
+									</Link>
+								</li>
+							</ul>
 						)}
 					/>
 				</nav>
@@ -85,53 +99,67 @@ export default function Header() {
 					query="(max-width: 1040px)"
 					render={() =>
 						burgerMenu ? (
-							<div className={styles.linksContainerMobileActive}>
-								<Link href="/blog">
-									<a className={styles.navItemMobile}>
-										Chroniques
-									</a>
-								</Link>
-								<Link href="/podcasts">
-									<a className={styles.navItemMobile}>
-										Podcasts
-									</a>
-								</Link>
-								<Link href="/publications">
-									<a className={styles.navItemMobile}>
-										Publications
-									</a>
-								</Link>
-								<Link href="/about">
-									<a className={styles.navItemMobile}>
-										À propos
-									</a>
-								</Link>
-							</div>
+							<ul className={styles.linksContainerMobileActive}>
+								<li>
+									<Link href="/blog">
+										<a className={styles.navItemMobile}>
+											Chroniques
+										</a>
+									</Link>
+								</li>
+								<li>
+									<Link href="/podcasts">
+										<a className={styles.navItemMobile}>
+											Podcasts
+										</a>
+									</Link>
+								</li>
+								<li>
+									<Link href="/publications">
+										<a className={styles.navItemMobile}>
+											Publications
+										</a>
+									</Link>
+								</li>
+								<li>
+									<Link href="/about">
+										<a className={styles.navItemMobile}>
+											À propos
+										</a>
+									</Link>
+								</li>
+							</ul>
 						) : (
-							<div
-								className={styles.linksContainerMobileInactive}
-							>
-								<Link href="/blog">
-									<a className={styles.navItemMobile}>
-										Chroniques
-									</a>
-								</Link>
-								<Link href="/podcasts">
-									<a className={styles.navItemMobile}>
-										Podcasts
-									</a>
-								</Link>
-								<Link href="/publications">
-									<a className={styles.navItemMobile}>
-										Publications
-									</a>
-								</Link>
-								<Link href="/about">
-									<a className={styles.navItemMobile}>
-										À propos
-									</a>
-								</Link>
-							</div>
+							<ul className={styles.linksContainerMobileInactive}>
+								<li>
+									<Link href="/blog">
+										<a className={styles.navItemMobile}>
+											Chroniques
+										</a>
+									</Link>
+								</li>
+								<li>
+									<Link href="/podcasts">
+										<a className={styles.navItemMobile}>
+											Podcasts
+										</a>
+									</Link>
+								</li>
+								<li>
+									<Link href="/publications">
+										<a className={styles.navItemMobile}>
+											Publications
+										</a>
+									</Link>
+								</li>
+								<li>
+									<Link href="/about">
+										<a className={styles.navItemMobile}>
+											À propos
+										</a>
+									</Link>
+								</li>
+							</ul>
 						)
 					}
 				/>

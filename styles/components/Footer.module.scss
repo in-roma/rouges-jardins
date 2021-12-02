@@ -18,241 +18,153 @@
 .footerLogoContainer {
     display: flex;
     flex-direction: column;
-
 }
 .footerLogo {
     color: white;
-    font-size: 1.5rem;  
+    font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 0%;
 }
 
 .footerBy {
     font-size: 1.2rem;
-    font-weight: 400;  
-    color: #ADADAD;
- 
+    font-weight: 400;
+    color: #adadad;
 }
 
 .footerNav {
-
-    // margin-right: 19.6rem;
+    display: flex;
+    flex-flow: row nowrap;
 }
 
 .footerNavItem {
-    color: #ADADAD;
+    color: #adadad;
     font-size: 1rem;
+    line-height: 4.8rem;
     font-weight: 500;
     margin-right: 4.8rem;
-    &:hover{
+    &:hover {
         text-decoration: underline;
     }
 }
 
 .footerMentions {
-width: 25.2rem;
-height: 3.2rem;
-display: flex;
-flex-direction: column;
+    width: 25.2rem;
+    height: 3.2rem;
+    display: flex;
+    flex-direction: column;
 
-span{
-color: #ADADAD;
-font-size: 1.1rem;
-font-weight: 400;
-}
+    span {
+        color: #adadad;
+        font-size: 1.1rem;
+        font-weight: 400;
+    }
 }
 
 @media screen and (max-width: 1240px) {
-    .footerContent  {
+    .footerContent {
         width: 88.6rem;
     }
     .footerLogoContainer {
         margin-right: 4.4rem;
     }
     .footerLogo {
-        font-size: 1.3rem; 
+        font-size: 1.3rem;
     }
     .footerBy {
-        font-size: 1.1rem; 
-    }
-    .footerNav {
-
-        // margin-right: 11rem;
+        font-size: 1.1rem;
     }
     .footerMentions {
         width: 22.2rem;
         span {
-        font-size: 1rem;
-        font-weight: 400;
+            font-size: 1rem;
+            font-weight: 400;
         }
-        }
+    }
 }
 
 @media screen and (max-width: 1040px) {
-    .footerContent  {
+    .footerContent {
         width: 68.2rem;
     }
 
     .footerNav {
-        display: flex;
-        flex-direction: column;
-    }
-    .footerMentions {
-        width: 18.2rem;
-        span{
-
-            font-size: 0.8rem;
-            font-weight: 400;
-            }
+        display: none;
     }
 }
 
 @media screen and (max-width: 740px) {
-    .footerContent  {
+    .footerContent {
         width: 58.2rem;
     }
 }
 
-@media screen and (max-width: 640px) {    
-    .footerContent  {
-    width: 48.2rem;
+@media screen and (max-width: 640px) {
+    .footerContent {
+        width: 48.2rem;
     }
-    .footerLogoContainer {
-        width: 12.2rem;
-    }
-    .footerLogo {
-        font-size: 1.0rem; 
-    }
-    .footerBy {
-        font-size: 0.9rem; 
-    }
-    .footerNav {
-
-
-    }
-    .footerMentions {
-        width: 18.2rem;
-        span {
-        font-size: 0.8rem;
-        font-weight: 400;
-        }
-        }
 }
 
-@media screen and (max-width: 540px) {    
-    .footerContent  {
+@media screen and (max-width: 540px) {
+    .footerContent {
         width: 42.2rem;
-    }
-    .footerLogoContainer {
-        width: 18.2rem;
-    }
-    .footerLogo {
-        font-size: 0.9rem; 
-    }
-    .footerBy {
-        font-size: 0.8rem; 
-    }
-    .footerNav {
-
-    }
-    .footerMentions {
-        width: 20.2rem;
-        span {
-        font-size: 0.7rem;
-        font-weight: 400;
-        }
     }
 }
 
 @media screen and (max-width: 460px) {
-    .footerContent  {
+    .footerContent {
         width: 36rem;
     }
     .footerLogoContainer {
-        width: 20.2rem;
+        width: 24.2rem;
     }
     .footerLogo {
-        font-size: 0.9rem; 
+        font-size: 1.2rem;
     }
     .footerBy {
-        font-size: 0.7rem; 
+        font-size: 1rem;
     }
     .footerNav {
-
-
     }
 
     .footerNavItem {
-        font-size: 0.8rem; 
+        font-size: 1.2rem;
     }
     .footerMentions {
-        width: 26.2rem;
+        width: 24.2rem;
 
         span {
-        font-size: 0.7rem;
-        font-weight: 400;
+            font-size: 0.9rem;
+            font-weight: 400;
         }
-        }
+    }
 }
 
 @media screen and (max-width: 400px) {
-    .footerContent  {
+    .footerContent {
         width: 30rem;
     }
     .footerLogoContainer {
         width: 20.2rem;
     }
     .footerLogo {
-        font-size: 0.9rem; 
+        font-size: 1.1rem;
     }
     .footerBy {
-        font-size: 0.7rem; 
+        font-size: 0.9rem;
     }
     .footerNav {
-
-
     }
 
     .footerNavItem {
-        font-size: 0.8rem; 
+        font-size: 0.8rem;
     }
     .footerMentions {
         width: 26.2rem;
 
         span {
-        font-size: 0.7rem;
-        font-weight: 400;
+            font-size: 0.9rem;
+            font-weight: 400;
         }
-        }
-}
-
-
-@media screen and (max-width: 340px) {
-    .footerContent  {
-        width: 28rem;
     }
-    .footerLogoContainer {
-        width: 20.2rem;
-    }
-    .footerLogo {
-        font-size: 0.9rem; 
-    }
-    .footerBy {
-        font-size: 0.7rem; 
-    }
-    .footerNav {
-
-    }
-
-    .footerNavItem {
-        font-size: 0.7em; 
-    }
-    .footerMentions {
-        width: 26.2rem;
-
-        span {
-        font-size: 0.6rem;
-        font-weight: 400;
-        }
-        }
 }

@@ -71,7 +71,7 @@ export default function Home({ posts, podcasts, publications }) {
 					type="blog"
 					cardLargeType="cardLargeChroniques"
 					colorTag="
-				rgba(0, 0, 0, 0.7)"
+				rgba(0, 0, 0, 1)"
 					textColor="white"
 					title={parsing(posts.edges[0].node.title)}
 					text={
@@ -106,7 +106,7 @@ export default function Home({ posts, podcasts, publications }) {
 						category={el.node.categories.nodes[0].name}
 						slug={el.node.slug}
 						color="
-					rgba(0, 0, 0, 0.7)"
+					rgba(0, 0, 0, 1)"
 						textColor="white"
 						altText={el.node.featuredImage.node.altText}
 					/>

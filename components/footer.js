@@ -11,19 +11,33 @@ export default function Footer() {
 					</Link>
 					<span className={styles.footerBy}>par Guy Grandjean</span>
 				</div>
-				<nav className={styles.footerNav}>
-					<Link href="/blog">
-						<a className={styles.footerNavItem}>Chroniques</a>
-					</Link>
-					<Link href="/podcasts">
-						<a className={styles.footerNavItem}>Podcasts</a>
-					</Link>
-					<Link href="/publications">
-						<a className={styles.footerNavItem}>Publications</a>
-					</Link>
-					<Link href="/about">
-						<a className={styles.footerNavItem}>À propos</a>
-					</Link>
+				<nav>
+					<ul className={styles.footerNav}>
+						<li>
+							<Link href="/blog">
+								<a className={styles.footerNavItem}>
+									Chroniques
+								</a>
+							</Link>
+						</li>
+						<li>
+							<Link href="/podcasts">
+								<a className={styles.footerNavItem}>Podcasts</a>
+							</Link>
+						</li>
+						<li>
+							<Link href="/publications">
+								<a className={styles.footerNavItem}>
+									Publications
+								</a>
+							</Link>
+						</li>
+						<li>
+							<Link href="/about">
+								<a className={styles.footerNavItem}>À propos</a>
+							</Link>
+						</li>
+					</ul>
 				</nav>
 				<div className={styles.footerMentions}>
 					<span>Tous droits réservés - Rouges Jardins</span>

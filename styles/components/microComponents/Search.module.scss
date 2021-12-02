@@ -1,11 +1,10 @@
 .formSearch {
-    height: 2.6rem;
+    height: 4.8rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
     border-bottom: 0.5px solid #fcfcfcfb;
- 
 }
 
 .formSearch label {
@@ -15,23 +14,23 @@
 .inputSearch {
     width: 24rem;
     font-size: 1.4rem;
+    line-height: 4.8rem;
     outline: none;
-    border:none;
-    background-color:transparent;
+    border: none;
+    background-color: transparent;
     margin-left: 1.2rem;
     &::placeholder {
-        color: #EEEEEE;
+        color: #eeeeee;
     }
 }
 
 .buttonSearch {
-    color: black;
+    width:4.8rem;
     font-weight: 500;
     font-size: 0.8rem;
-    // transform: translateY(0.2rem);
+    line-height: 4.8rem;
     border: none;
     background: transparent;
-    padding: 0.2rem 0.4rem;
     border-radius: 0.4rem;
     cursor: pointer;
     &:hover {
@@ -40,11 +39,10 @@
 }
 
 @media screen and (max-width: 640px) {
-
-    .formSearch{
+    .formSearch {
         width: 100%;
-        justify-content: space-between;  
-        align-items: center;      
+        justify-content: space-between;
+        align-items: center;
     }
     .inputSearch {
         width: 100%;
@@ -53,6 +51,3 @@
 }
 
 
-@media screen and (max-width: 340px) {
-
-}
