@@ -1,65 +1,84 @@
 import { useState, useContext, useEffect } from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 // Components
 import Layout from '../components/layout';
 import Search from '../components/microComponents/search';
 import Filter from '../components/microComponents/filter';
+import Loader from 'react-loader-spinner';
 
 // Layout
 import styles from '../styles/Blog.module.scss';
 import CardSmall from '../components/microComponents/cardSmall';
 
-// Api
+// API
 import { getAllChroniques, getAllCategories } from '../lib/api';
 
 // Context
 import { AppContext } from '../lib/context';
 
-export default function Blog({ posts, categories }) {
-	// Initial import
-	const initialImport = posts.edges.filter(
-		(el) =>
-			el.node.categories.nodes[0].name !== 'Podcast' &&
-			el.node.categories.nodes[0].name !== 'Publication'
-	);
-
-	// Context
-	const { searchValue, changeValue } = useContext(AppContext);
+export default function Blog({ posts, categories, statusCode }) {
+	const router = useRouter();
 
 	// States
-	const [chroniquesImported, setChroniquesImported] = useState(initialImport);
-	const [chroniques, setChroniques] = useState(chroniquesImported);
-	const [searchValueDisplay, setSearchValueDisplay] = useState('');
-	// Setting input field
-	const onChangeInput = (event) => {
-		let { value } = event.target;
-		setSearchValueDisplay(value);
-		// changeValue(value);
+	// -> Data
+	const [dataFetched, setDataFetched] = useState(posts.edges);
+	const [chroniques, setChroniques] = useState(dataFetched);
+	const [isRefreshing, setIsRefreshing] = useState(false);
+
+	// -> Number of posts
+	const [numberOfPosts, setNumberOfPosts] = useState(20);
+
+	// -> Category
+	const [category, setCategory] = useState([5, 6, 7, 11, 12, 13, 14, 15]);
+
+	// -> Keyword
+	const { searchValue, changeSearchValue } = useContext(AppContext);
+	const [keyword, setKeyword] = useState('');
+	const [searchActive, setSearchActive] = useState(false);
+
+	const refreshData = () => {
+		router.replace(router.asPath);
+		setIsRefreshing(true);
 	};
 
-	// Search function
-	const [searchActive, setSearchActive] = useState(false);
-	const [valueSearchActive, setValueSearchActive] = useState('');
-	const [chroniquesSearched, setchroniquesSearched] = useState();
+	// Fetch more posts
+	const morePosts = () => {
+		let count = numberOfPosts + 20;
+		setNumberOfPosts(count);
+		router.replace({
+			pathname: 'blog',
+			query: {
+				volume: numberOfPosts,
+				category: category,
+				keyword: keyword,
+			},
+		});
+		refreshData();
+	};
+
+	// Setting input field
+	const onChangeInput = (event) => {
+		// event.preventDefault();
+		let { value } = event.target;
+		setKeyword(value);
+	};
 
 	const searchPosts = (event) => {
-		event.preventDefault();
-		if (searchValueDisplay.length > 3) {
-			let formatting = searchValueDisplay
-				.split(' ')
-				.map((el) => `(${el}).*`)
-				.join('');
-			let regex = new RegExp(formatting, 'gmi');
-
-			let results = chroniquesImported.filter(
-				(el) => regex.test(el.node.title) || regex.test(el.node.content)
-			);
-			setValueSearchActive(searchValueDisplay);
-			setSearchActive(true);
-			setChroniques(results);
-			setchroniquesSearched(results);
-		}
+		const { value } = event.target;
+		router.replace({
+			pathname: 'blog',
+			query: {
+				volume: numberOfPosts,
+				category: category,
+				keyword: value,
+			},
+		});
+		setKeyword(event.target.value);
+		changeSearchValue(value);
+		refreshData();
 	};
 
 	const resetSearch = () => {
@@ -72,49 +91,46 @@ export default function Blog({ posts, categories }) {
 	// Filter categories
 	const [filtering, setFiltering] = useState(false);
 	const onChangeCategory = (event) => {
-		setFiltering(true);
 		let { value } = event.target;
-		if (value !== 'Toutes' && !searchActive) {
-			let filtered = chroniquesImported.filter(
-				(el) => el.node.categories.nodes[0].name === value
-			);
-			setChroniques(filtered);
-		}
-		if (value === 'Toutes' && !searchActive) {
-			setChroniques(chroniques);
-		}
-		// Search active
-		if (value !== 'Toutes' && searchActive) {
-			let filtered = chroniquesSearched.filter(
-				(el) => el.node.categories.nodes[0].name === value
-			);
+		setFiltering(true);
+		setCategory(value);
 
-			setChroniques(filtered);
-		}
-		if (value === 'Toutes' && searchActive) {
-			setChroniques(chroniquesSearched);
-		}
+		router.replace({
+			pathname: 'blog',
+			query: {
+				volume: numberOfPosts,
+				category: value,
+				keyword: keyword,
+			},
+		});
+		refreshData();
 	};
+	console.log('statusCode:', statusCode);
+
+	// Updating cards display
+	useEffect(() => {
+		// setFiltering(true);
+		if (statusCode < 300) {
+			setDataFetched(posts.edges);
+			setChroniques(dataFetched);
+			// setFiltering(false);
+		}
+	}, [posts, numberOfPosts, keyword, category]);
 
 	// Search context value from home
-	useEffect(() => {
-		if (searchValue.length > 0 && !searchActive && !filtering) {
-			let formatting = searchValue
-				.split(' ')
-				.map((el) => `(${el}).*`)
-				.join('');
-			let regex = new RegExp(formatting, 'gmi');
+	// useEffect(() => {
+	// 	if (
+	// 		searchValue &&
+	// 		searchValue.length > 0 &&
+	// 		!searchActive &&
+	// 		!filtering
+	// 	) {
+	// 		setKeyword(searchValue);
+	// 		setSearchActive(true);
 
-			let results = chroniquesImported.filter(
-				(el) => regex.test(el.node.title) || regex.test(el.node.content)
-			);
-			setValueSearchActive(searchValue);
-			setSearchValueDisplay(searchValue);
-			setSearchActive(true);
-			setChroniques(results);
-			setchroniquesSearched(results);
-		}
-	}, [searchValue, searchActive, filtering, chroniquesImported]);
+	// 		refreshData();
+	// 	}
+	// }, [searchValue, searchActive, filtering]);
 
 	return (
 		<>
@@ -134,7 +150,7 @@ export default function Blog({ posts, categories }) {
 					<section className={styles.navBarBlog}>
 						<h1>Chroniques</h1>
 						<Search
-							value={searchValueDisplay}
+							value={keyword}
 							onChangeInput={onChangeInput}
 							onSubmitSearch={searchPosts}
 						/>
@@ -148,48 +164,78 @@ export default function Blog({ posts, categories }) {
 							<h2>
 								{`${chroniques.length} résultat${
 									chroniques.length > 1 ? 's' : ''
-								} pour  "${valueSearchActive}" `}
+								} pour  "${keyword}" `}
 							</h2>
 							<button onClick={resetSearch}>
 								Annuler la recherche
 							</button>
 						</div>
 					)}
-					<div
-						className={styles.contentBlog}
-						style={searchActive ? { marginTop: '12rem' } : {}}
-					>
-						{chroniques.map((el) => (
-							<CardSmall
-								key={'smallCard' + el.node.id}
-								title={el.node.title}
-								imageUrl={
-									el.node.featuredImage.node.mediaDetails
-										.sizes[0].sourceUrl
-								}
-								imageAltText={'test'}
-								date={el.node.date}
-								category={el.node.categories.nodes[0].name}
-								slug={el.node.slug}
-								color="
+					{
+						<div
+							className={styles.contentBlog}
+							style={searchActive ? { marginTop: '12rem' } : {}}
+						>
+							{!isRefreshing ? (
+								chroniques.map((el) => (
+									<CardSmall
+										key={'smallCard' + el.node.id}
+										title={el.node.title}
+										imageUrl={
+											el.node.featuredImage.node
+												.mediaDetails.sizes[0].sourceUrl
+										}
+										imageAltText={'test'}
+										date={el.node.date}
+										category={
+											el.node.categories.nodes[0].name
+										}
+										slug={el.node.slug}
+										color="
 							rgba(0, 0, 0, 0.7)"
-								textColor="white"
-								altText={el.node.featuredImage.node.altText}
-							/>
-						))}
-					</div>
+										textColor="white"
+										altText={
+											el.node.featuredImage.node.altText
+										}
+									/>
+								))
+							) : (
+								<Loader
+									type="Puff"
+									color="#00BFFF"
+									height={100}
+									width={100}
+								/>
+							)}
+						</div>
+					}
 				</div>
+				<button
+					type="button"
+					className={styles.buttonMoreBlog}
+					onClick={morePosts}
+				>
+					More posts
+				</button>
 			</Layout>
 		</>
 	);
 }
 
-export async function getStaticProps() {
-	const { posts } = await getAllChroniques();
-	const { categories } = await getAllCategories();
+export async function getServerSideProps(context) {
+	const { volume, category, keyword } = context.query;
 
+	const { statusCode } = context.req;
+	const { posts } = await getAllChroniques(
+		parseInt(volume),
+		category,
+		keyword
+	);
+	const { categories } = await getAllCategories();
+	console.log('context.req', context.req);
+	console.log('query:', volume, category, keyword);
+	console.log('statusCode:', statusCode);
 	return {
-		props: { posts, categories },
-		revalidate: 5,
+		props: { posts, categories, statusCode },
 	};
 }

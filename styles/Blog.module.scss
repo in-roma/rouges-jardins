@@ -73,6 +73,20 @@
 }
 
 
+.buttonMoreBlog {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    margin-left: 1.2rem;
+    font-weight: 600;
+    text-decoration-line: underline;
+    color: black;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    grid-column: 1/5;
+    justify-self: center;
+}
+
 @media screen and (max-width: 1240px) {
     .navBarBlog   {
         width: 88.6rem;

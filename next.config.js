@@ -33,7 +33,7 @@ const securityHeaders = [
 	// {
 	// 	key: 'Content-Security-Policy',
 	// 	value:
-	// 		"default-src 'self' jcou8054.odns.fr *.jcou8054.odns.fr fonts.googleapis.com *.fonts.googleapis.com/",
+	// 		"default-src 'self'; style-src 'self' fonts.googleapis.com; img-src 'self' jcou8054.odns.fr *.jcou8054.odns.fr; font-src 'self' fonts.gstatic.com *.fonts.gstatic.com",
 	// },
 ];
 
