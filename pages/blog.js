@@ -200,7 +200,7 @@ export default function Blog({ posts, categories }) {
 										}
 										slug={el.node.slug}
 										color="
-							rgba(0, 0, 0, 0.7)"
+							rgba(0, 0, 0, 1)"
 										textColor="white"
 										altText={
 											el.node.featuredImage.node.altText
