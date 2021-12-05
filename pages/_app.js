@@ -5,12 +5,12 @@ import { AppContext } from '../lib/context';
 
 function MyApp({ Component, pageProps }) {
 	// Posts Volume to fetch - Category - Search value
-	const [postsVolume, setPostsVolume] = useState(40);
+	const [numberOfPosts, setNumberOfPosts] = useState(40);
 	const [category, setCategory] = useState([5, 6, 7, 11, 12, 13, 14, 15]);
 	const [searchValue, setSearchValue] = useState('');
 
-	const changePostsVolume = (value) => {
-		setPostsVolume(value);
+	const changeNumberOfPosts = (value) => {
+		setNumberOfPosts(value);
 	};
 
 	const changeCategory = (value) => {
@@ -93,8 +93,8 @@ function MyApp({ Component, pageProps }) {
 	return (
 		<AppContext.Provider
 			value={{
-				postsVolume,
-				changePostsVolume,
+				numberOfPosts,
+				changeNumberOfPosts,
 				category,
 				changeCategory,
 				searchValue,

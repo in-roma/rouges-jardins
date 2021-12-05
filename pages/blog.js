@@ -24,19 +24,21 @@ export default function Blog({ posts, categories }) {
 
 	// States
 	// -> Data
-	const [dataFetched, setDataFetched] = useState(posts.edges);
-	const [chroniques, setChroniques] = useState(dataFetched);
+	// const [dataFetched, setDataFetched] = useState(posts.edges);
+	const [chroniques, setChroniques] = useState(posts.edges);
+
+	// Context states
+	const {
+		searchValue,
+		changeSearchValue,
+		category,
+		changeCategory,
+		numberOfPosts,
+		changeNumberOfPosts,
+	} = useContext(AppContext);
+
+	// Process States
 	const [isRefreshing, setIsRefreshing] = useState(false);
-
-	// -> Number of posts
-	const [numberOfPosts, setNumberOfPosts] = useState(20);
-
-	// -> Category
-	const [category, setCategory] = useState([5, 6, 7, 11, 12, 13, 14, 15]);
-
-	// -> Keyword
-	const { searchValue, changeSearchValue } = useContext(AppContext);
-	const [keyword, setKeyword] = useState('');
 	const [searchActive, setSearchActive] = useState(false);
 
 	const refreshData = () => {
@@ -44,48 +46,40 @@ export default function Blog({ posts, categories }) {
 		setIsRefreshing(true);
 	};
 
-	// Fetch more posts
-	const morePosts = () => {
-		let count = numberOfPosts + 20;
-		setNumberOfPosts(count);
-		router.replace({
-			pathname: 'blog',
-			query: {
-				volume: numberOfPosts,
-				category: category,
-				keyword: keyword,
-			},
-		});
-		refreshData();
-	};
-
 	// Setting input field
 	const onChangeInput = (event) => {
-		// event.preventDefault();
+		event.preventDefault();
 		let { value } = event.target;
-		setKeyword(value);
+		changeSearchValue(value);
 	};
 
+	// Searchkeyword
 	const searchPosts = (event) => {
-		const { value } = event.target;
 		router.replace({
 			pathname: 'blog',
 			query: {
-				volume: numberOfPosts,
+				volume: 1000,
 				category: category,
-				keyword: value,
+				keyword: searchValue,
 			},
 		});
-		setKeyword(event.target.value);
-		changeSearchValue(value);
+		setSearchActive(true);
 		refreshData();
 	};
 
 	const resetSearch = () => {
+		router.replace({
+			pathname: 'blog',
+			query: {
+				volume: numberOfPosts,
+				category: category,
+				keyword: '',
+			},
+		});
+
 		setSearchActive(false);
-		setChroniques(chroniquesImported);
-		setValueSearchActive('');
-		changeValue('');
+		changeSearchValue('');
+		refreshData();
 	};
 
 	// Filter categories
@@ -93,21 +87,41 @@ export default function Blog({ posts, categories }) {
 	const onChangeCategory = (event) => {
 		let { value } = event.target;
 		setFiltering(true);
-		setCategory(value);
+		changeCategory([value]);
 
 		router.replace({
 			pathname: 'blog',
 			query: {
-				volume: numberOfPosts,
-				category: value,
-				keyword: keyword,
+				volume: 1000,
+				category: category,
+				keyword: searchValue,
 			},
 		});
 		refreshData();
 	};
 
+	// Fetch more posts
+	const morePosts = () => {
+		let count = numberOfPosts + 20;
+		changeNumberOfPosts(count);
+		router.replace({
+			pathname: 'blog',
+			query: {
+				volume: numberOfPosts,
+				category: category,
+				keyword: searchValue,
+			},
+		});
+		// refreshData();
+	};
+
 	// Updating cards display
+	// useEffect(() => {
+
+	// }, [posts]);
+
 	useEffect(() => {
+		setChroniques(posts.edges);
 		setIsRefreshing(false);
 	}, [posts]);
 
@@ -144,7 +158,7 @@ export default function Blog({ posts, categories }) {
 					<section className={styles.navBarBlog}>
 						<h1>Chroniques</h1>
 						<Search
-							value={keyword}
+							value={searchValue}
 							onChangeInput={onChangeInput}
 							onSubmitSearch={searchPosts}
 						/>
@@ -158,7 +172,7 @@ export default function Blog({ posts, categories }) {
 							<h2>
 								{`${chroniques.length} résultat${
 									chroniques.length > 1 ? 's' : ''
-								} pour  "${keyword}" `}
+								} pour  "${searchValue}" `}
 							</h2>
 							<button onClick={resetSearch}>
 								Annuler la recherche
@@ -204,14 +218,19 @@ export default function Blog({ posts, categories }) {
 							)}
 						</div>
 					}
+
+					{!isRefreshing && !filtering && (
+						<div className={styles.containerButtonBlog}>
+							<button
+								type="button"
+								className={styles.buttonMoreBlog}
+								onClick={morePosts}
+							>
+								More posts
+							</button>
+						</div>
+					)}
 				</div>
-				<button
-					type="button"
-					className={styles.buttonMoreBlog}
-					onClick={morePosts}
-				>
-					More posts
-				</button>
 			</Layout>
 		</>
 	);

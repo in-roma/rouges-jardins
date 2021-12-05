@@ -47,6 +47,9 @@ module.exports = {
 	images: {
 		domains: ['www.jcou8054.odns.fr'],
 	},
+	experimental: {
+		scrollRestoration: true,
+	},
 	async redirects() {
 		return [
 			{

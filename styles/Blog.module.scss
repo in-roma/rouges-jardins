@@ -83,11 +83,20 @@
     align-self: center;
 }
 
+.containerButtonBlog {
+    width: 118.8rem;
+    height: 9.4rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .buttonMoreBlog {
+    height: 4.2rem;
     font-size: 1.2rem;
     line-height: 1.4rem;
-    margin-left: 1.2rem;
     font-weight: 600;
     text-decoration-line: underline;
     color: black;
@@ -96,6 +105,7 @@
     cursor: pointer;
     grid-column: 1/5;
     justify-self: center;
+    margin-top: 2.4rem;
 }
 
 @media screen and (max-width: 1240px) {
