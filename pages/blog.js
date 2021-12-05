@@ -2,12 +2,12 @@ import { useState, useContext, useEffect } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { Loader } from 'semantic-ui-react';
 
 // Components
 import Layout from '../components/layout';
 import Search from '../components/microComponents/search';
 import Filter from '../components/microComponents/filter';
-import Loader from 'react-loader-spinner';
 
 // Layout
 import styles from '../styles/Blog.module.scss';
@@ -19,7 +19,7 @@ import { getAllChroniques, getAllCategories } from '../lib/api';
 // Context
 import { AppContext } from '../lib/context';
 
-export default function Blog({ posts, categories, statusCode }) {
+export default function Blog({ posts, categories }) {
 	const router = useRouter();
 
 	// States
@@ -105,17 +105,11 @@ export default function Blog({ posts, categories, statusCode }) {
 		});
 		refreshData();
 	};
-	console.log('statusCode:', statusCode);
 
 	// Updating cards display
 	useEffect(() => {
-		// setFiltering(true);
-		if (statusCode < 300) {
-			setDataFetched(posts.edges);
-			setChroniques(dataFetched);
-			// setFiltering(false);
-		}
-	}, [posts, numberOfPosts, keyword, category]);
+		setIsRefreshing(false);
+	}, [posts]);
 
 	// Search context value from home
 	// useEffect(() => {
@@ -200,12 +194,13 @@ export default function Blog({ posts, categories, statusCode }) {
 									/>
 								))
 							) : (
-								<Loader
-									type="Puff"
-									color="#00BFFF"
-									height={100}
-									width={100}
-								/>
+								<div className={styles.loaderBlog}>
+									<Loader
+										active
+										size="medium"
+										content="Chargement"
+									/>
+								</div>
 							)}
 						</div>
 					}
@@ -225,17 +220,15 @@ export default function Blog({ posts, categories, statusCode }) {
 export async function getServerSideProps(context) {
 	const { volume, category, keyword } = context.query;
 
-	const { statusCode } = context.req;
 	const { posts } = await getAllChroniques(
 		parseInt(volume),
 		category,
 		keyword
 	);
 	const { categories } = await getAllCategories();
-	console.log('context.req', context.req);
 	console.log('query:', volume, category, keyword);
-	console.log('statusCode:', statusCode);
+
 	return {
-		props: { posts, categories, statusCode },
+		props: { posts, categories },
 	};
 }

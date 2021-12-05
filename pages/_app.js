@@ -1,5 +1,5 @@
 import '../styles/globals.scss';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import 'semantic-ui-css/semantic.min.css';
 import React, { createContext, useState, useMemo } from 'react';
 import { AppContext } from '../lib/context';
 
