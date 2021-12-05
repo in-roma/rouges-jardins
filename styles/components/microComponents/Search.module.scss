@@ -1,5 +1,5 @@
 .formSearch {
-    height: 4.8rem;
+    height: 2.4rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -14,11 +14,12 @@
 .inputSearch {
     width: 24rem;
     font-size: 1.4rem;
-    line-height: 4.8rem;
+    line-height: 1.4rem;
     outline: none;
     border: none;
     background-color: transparent;
     margin-left: 1.2rem;
+
     &::placeholder {
         color: #eeeeee;
     }
@@ -33,6 +34,7 @@
     background: transparent;
     border-radius: 0.4rem;
     cursor: pointer;
+    transform: translateX(1.8rem);
     &:hover {
         font-weight: 800;
     }

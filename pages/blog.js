@@ -1,7 +1,6 @@
 import { useState, useContext, useEffect } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 
 // Components
 import Layout from '../components/layout';
@@ -41,7 +40,7 @@ export default function Blog({ posts, categories }) {
 	const [searchActive, setSearchActive] = useState(false);
 
 	const refreshData = () => {
-		router.replace(router.asPath);
+		// router.replace(router.asPath);
 		setIsRefreshing(true);
 	};
 
@@ -54,12 +53,14 @@ export default function Blog({ posts, categories }) {
 
 	// Searchkeyword
 	const searchPosts = (event) => {
+		event.preventDefault();
+		let keyword = searchValue;
 		router.replace({
 			pathname: 'blog',
 			query: {
 				volume: 1000,
 				category: category,
-				keyword: searchValue,
+				keyword: keyword,
 			},
 		});
 		setSearchActive(true);
@@ -84,15 +85,16 @@ export default function Blog({ posts, categories }) {
 	// Filter categories
 	const [filtering, setFiltering] = useState(false);
 	const onChangeCategory = (event) => {
+		event.preventDefault();
 		let { value } = event.target;
 		setFiltering(true);
 		changeCategory([value]);
-
+		console.log('this is value:', value);
 		router.replace({
 			pathname: 'blog',
 			query: {
 				volume: 1000,
-				category: category,
+				category: [value],
 				keyword: searchValue,
 			},
 		});
@@ -106,12 +108,12 @@ export default function Blog({ posts, categories }) {
 		router.replace({
 			pathname: 'blog',
 			query: {
-				volume: numberOfPosts,
-				category: category,
+				volume: count,
+				category: [5, 6, 7, 11, 12, 13, 14, 15],
 				keyword: searchValue,
 			},
 		});
-		// refreshData();
+		refreshData();
 	};
 
 	// Updating cards display
@@ -216,6 +218,12 @@ export default function Blog({ posts, categories }) {
 									</div>
 								</div>
 							)}
+							{/* <div className={styles.containerLoaderBlog}>
+								<div className={styles.loader}>
+									<div className={styles.loaderIcon}></div>
+									<span>Chargement</span>
+								</div>
+							</div> */}
 						</div>
 					}
 

@@ -5,7 +5,7 @@ import { AppContext } from '../lib/context';
 function MyApp({ Component, pageProps }) {
 	// Posts Volume to fetch - Category - Search value
 	const [numberOfPosts, setNumberOfPosts] = useState(40);
-	const [category, setCategory] = useState([5, 6, 7, 11, 12, 13, 14, 15]);
+	const [category, setCategory] = useState();
 	const [searchValue, setSearchValue] = useState('');
 
 	const changeNumberOfPosts = (value) => {
