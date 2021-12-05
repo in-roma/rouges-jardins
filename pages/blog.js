@@ -2,7 +2,6 @@ import { useState, useContext, useEffect } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { Loader } from 'semantic-ui-react';
 
 // Components
 import Layout from '../components/layout';
@@ -38,7 +37,7 @@ export default function Blog({ posts, categories }) {
 	} = useContext(AppContext);
 
 	// Process States
-	const [isRefreshing, setIsRefreshing] = useState(false);
+	const [isRefreshing, setIsRefreshing] = useState(true);
 	const [searchActive, setSearchActive] = useState(false);
 
 	const refreshData = () => {
@@ -208,12 +207,13 @@ export default function Blog({ posts, categories }) {
 									/>
 								))
 							) : (
-								<div className={styles.loaderBlog}>
-									<Loader
-										active
-										size="medium"
-										content="Chargement"
-									/>
+								<div className={styles.containerLoaderBlog}>
+									<div className={styles.loader}>
+										<div
+											className={styles.loaderIcon}
+										></div>
+										<span>Chargement</span>
+									</div>
 								</div>
 							)}
 						</div>

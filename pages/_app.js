@@ -1,5 +1,4 @@
 import '../styles/globals.scss';
-import 'semantic-ui-css/semantic.min.css';
 import React, { createContext, useState, useMemo } from 'react';
 import { AppContext } from '../lib/context';
 
