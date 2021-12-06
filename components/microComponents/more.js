@@ -23,14 +23,16 @@ export default function More({
 	colorCard,
 	textColorCard,
 }) {
-	const breakPoint1000 = useMediaQuery('(max-width:950px)');
-	const breakPoint700 = useMediaQuery('(max-width:500px)');
+	const breakPoint740 = useMediaQuery('(max-width:740px)');
+	const breakPoint540 = useMediaQuery('(max-width:500px)');
 
 	let SlideToShowNumber = 3;
-	if (breakPoint1000) {
+
+	if (breakPoint740) {
 		SlideToShowNumber = 2;
 	}
-	if (breakPoint700) {
+
+	if (breakPoint540) {
 		SlideToShowNumber = 1;
 	}
 
@@ -40,7 +42,6 @@ export default function More({
 		wrapAround: true,
 		cellAlign: 'center',
 		framePadding: '24px',
-		// transitionMode: 'fade',
 	};
 	return (
 		<aside className={styles.containerMore}>

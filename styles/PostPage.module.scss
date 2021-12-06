@@ -1,11 +1,10 @@
 .containerPostPage {
     position: relative;
     width: 118.8rem;
+    margin-top: 2.4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2.4rem;
-    grid-column: 1/5;
 }
 
 .navBarPostPage {
@@ -17,13 +16,12 @@
     align-items: center;
 }
 
-.containerBtnPostPage{
+.containerBtnPostPage {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
     cursor: pointer;
-
 }
 
 .iconBackPostPage {
@@ -32,35 +30,29 @@
 
 .btnPostPage {
     font-size: 1.2rem;
-    line-height: 1.0rem;
+    line-height: 1rem;
     margin-left: 1.2rem;
     font-weight: 500;
     text-decoration-line: underline;
     color: black;
-
 }
 
 .postPage {
     position: relative;
-
     width: 67.2rem;
-
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
 }
 
 .picturePostPage {
     width: 67.2rem;
     height: 40.5rem;
-
-
 }
 
 .titlePostPage {
     width: auto;
-    height:auto;
+    height: auto;
     font-family: "Lora", sans-serif;
     font-size: 2.6rem;
     font-style: normal;
@@ -68,7 +60,6 @@
     line-height: 2.6rem;
     letter-spacing: 0em;
     margin-top: 2.6rem;
-
 }
 
 .infoPostPage {
@@ -78,9 +69,7 @@
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: flex-end;
-
 }
-
 
 .contentPostPage {
     width: 67.2rem;
@@ -92,64 +81,141 @@
     margin: 4.8rem 0;
     p {
         margin-bottom: 1.8rem;
-
     }
 }
 
-
 @media screen and (max-width: 1240px) {
-    .containerPostPage  {
+    .containerPostPage {
         width: 88.6rem;
     }
-
 }
 
 @media screen and (max-width: 1040px) {
-    .containerPostPage  {
+    .containerPostPage {
         width: 68.2rem;
     }
-
 }
 
 @media screen and (max-width: 740px) {
-    .containerPostPage  {
+    .containerPostPage {
         width: 58.2rem;
     }
-
+    .postPage {
+        width: 58.2rem;
+    }
+    .picturePostPage {
+        width: 58.2rem;
+        height: 35rem;
+    }
+    .titlePostPage {
+        font-size: 2.2rem;
+    }
+    .contentPostPage {
+        width: 58.2rem;
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 640px) {
-    .containerPostPage  {
+    .containerPostPage {
         width: 48.2rem;
     }
-
+    .postPage {
+        width: 48.2rem;
+    }
+    .picturePostPage {
+        width: 48.2rem;
+        height: 29rem;
+    }
+    .titlePostPage {
+        font-size: 2rem;
+    }
+    .contentPostPage {
+        width: 48.2rem;
+    }
 }
 
 @media screen and (max-width: 540px) {
-    .containerPostPage  {
+    .containerPostPage {
         width: 42.2rem;
     }
-
+    .btnPostPage {
+        font-size: 1rem;
+    }
+    .postPage {
+        width: 42.2rem;
+    }
+    .picturePostPage {
+        width: 42.2rem;
+        height: 25.3rem;
+    }
+    .titlePostPage {
+        font-size: 1.8rem;
+    }
+    .contentPostPage {
+        width: 42.2rem;
+    }
 }
 
 @media screen and (max-width: 460px) {
-    .containerPostPage  {
+    .containerPostPage {
         width: 36rem;
     }
-
+    .navBarPostPage {
+        height: 4rem;
+    }
+    .postPage {
+        width: 36rem;
+    }
+    .picturePostPage {
+        width: 36rem;
+        height: 21.6rem;
+    }
+    .titlePostPage {
+        font-size: 1.8rem;
+    }
+    .contentPostPage {
+        width: 36rem;
+        font-size: 1.4rem;
+    }
 }
 
 @media screen and (max-width: 400px) {
-    .containerPostPage  {
+    .containerPostPage {
         width: 30rem;
-
     }
-
+    .postPage {
+        width: 30rem;
+    }
+    .picturePostPage {
+        width: 30rem;
+        height: 18rem;
+    }
+    .titlePostPage {
+        font-size: 1.7rem;
+    }
+    .contentPostPage {
+        width: 30rem;
+        font-size: 1.2rem;
+    }
 }
 
 @media screen and (max-width: 340px) {
-    .containerPostPage  {
+    .containerPostPage {
         width: 28rem;
     }
-
+    .postPage {
+        width: 28rem;
+    }
+    .picturePostPage {
+        width: 28rem;
+        height: 16.8rem;
+    }
+    .titlePostPage {
+        font-size: 1.5rem;
+    }
+    .contentPostPage {
+        width: 28rem;
+        font-size: 1.2rem;
+    }
 }

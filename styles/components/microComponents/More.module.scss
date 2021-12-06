@@ -9,7 +9,7 @@
 .headerMore {
     width: 100%;
     height: 6rem;
-    border-bottom: 0.1rem solid #EFEFEF;
+    border-bottom: 0.1rem solid #efefef;
     display: flex;
     flex-direction: row nowrap;
     justify-content: space-between;
@@ -39,10 +39,7 @@
     align-items: center;
 }
 
-
-
 .iconLeftMore {
-
     padding-left: 0;
     border: none;
     background: transparent;
@@ -50,16 +47,53 @@
 }
 
 .iconRightMore {
-
     padding-right: 0;
     border: none;
     background: transparent;
     cursor: pointer;
-
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 740px) {
     .containerMore {
-        width: 57.2rem;
+        width: 58.2rem;
+    }
 }
+
+@media screen and (max-width: 640px) {
+    .containerMore {
+        width: 48.2rem;
+    }
+    .titleMore {
+    font-size: 1.6rem;  
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .containerMore {
+        width: 42.2rem;
+    }
+    .linkMore {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .containerMore {
+        width: 36rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .containerMore {
+        width: 30rem;
+    }
+    .titleMore {
+        font-size: 1.4rem;  
+        }
+}
+
+@media screen and (max-width: 340px) {
+    .containerMore {
+        width: 28rem;
+    }
 }
