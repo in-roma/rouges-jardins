@@ -4,6 +4,7 @@
     margin-top: 12rem;
     background-color: black;
     display: flex;
+    flex-grow: row nowrap;
     justify-content: center;
 }
 
@@ -23,7 +24,6 @@
 .footerLogo {
     font-size: 1.5rem;
     font-weight: 600;
-    letter-spacing: 0%;
     color: white;
 }
 
@@ -40,10 +40,10 @@
 }
 
 .footerNavItem {
-    color: #adadad;
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 4.8rem;
-    font-weight: 500;
+    font-weight: 400;
+    color: #adadad;
     margin-right: 4.8rem;
     &:hover {
         text-decoration: underline;
@@ -51,11 +51,10 @@
 }
 
 .footerMentions {
-    width: 25.2rem;
     height: 3.2rem;
     display: flex;
     flex-direction: column;
-
+    align-items: flex-end;
     span {
         color: #adadad;
         font-size: 1.1rem;
@@ -67,17 +66,7 @@
     .footerContent {
         width: 88.6rem;
     }
-    .footerLogoContainer {
-        margin-right: 4.4rem;
-    }
-    .footerLogo {
-        font-size: 1.3rem;
-    }
-    .footerBy {
-        font-size: 1.1rem;
-    }
     .footerMentions {
-        width: 22.2rem;
         span {
             font-size: 1rem;
             font-weight: 400;
@@ -89,7 +78,6 @@
     .footerContent {
         width: 68.2rem;
     }
-
     .footerNav {
         display: none;
     }
@@ -98,6 +86,12 @@
 @media screen and (max-width: 740px) {
     .footerContent {
         width: 58.2rem;
+    }
+    .footerLogo {
+        font-size: 1.3rem;
+    }
+    .footerBy {
+        font-size: 1.1rem;
     }
 }
 
@@ -117,37 +111,11 @@
     .footerContent {
         width: 36rem;
     }
-    .footerLogoContainer {
-        width: 24.2rem;
-    }
-    .footerLogo {
-        font-size: 1.2rem;
-    }
-    .footerBy {
-        font-size: 1rem;
-    }
-    .footerNav {
-    }
-
-    .footerNavItem {
-        font-size: 1.2rem;
-    }
-    .footerMentions {
-        width: 24.2rem;
-
-        span {
-            font-size: 0.9rem;
-            font-weight: 400;
-        }
-    }
 }
 
 @media screen and (max-width: 400px) {
     .footerContent {
         width: 30rem;
-    }
-    .footerLogoContainer {
-        width: 20.2rem;
     }
     .footerLogo {
         font-size: 1.1rem;
@@ -155,18 +123,16 @@
     .footerBy {
         font-size: 0.9rem;
     }
-    .footerNav {
-    }
-
-    .footerNavItem {
-        font-size: 0.8rem;
-    }
     .footerMentions {
-        width: 26.2rem;
-
         span {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             font-weight: 400;
         }
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .footerContent {
+        width: 28rem;
     }
 }

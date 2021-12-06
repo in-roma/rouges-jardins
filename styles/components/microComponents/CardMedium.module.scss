@@ -3,10 +3,9 @@
     width: 58.2rem;
     height: 16.8rem;
     grid-column: 3/5;
-    justify-self: end;
     display: flex;
     flex-flow: row nowrap;
-
+    justify-content: flex-start;
     cursor: pointer;
 }
 
@@ -53,6 +52,9 @@
             width: 28rem;
             height: 16.2rem;
         }
+    }
+    .containerTextCardMedium {
+        margin-left: 0rem;
     }
     .titleCardMedium {
         margin-top: 1.6rem;

@@ -21,24 +21,30 @@ import CardMedium from '../components/microComponents/cardMedium';
 import CardSmall from '../components/microComponents/cardSmall';
 import CardSmallVertical from '../components/microComponents/cardSmallVertical';
 
+// Styling
+import styles from '../styles/Home.module.scss';
+
 export default function Home({ posts, podcasts, publications }) {
+	const router = useRouter();
+
 	// Search states
-	const { changeValue } = useContext(AppContext);
-	const [searchValueDisplay, setSearchValueDisplay] = useState('');
+	const { searchValue, changeSearchValue } = useContext(AppContext);
 
 	//  Search Input
 	const handleChangeInput = (event) => {
-		setSearchValueDisplay(event.target.value);
-		changeValue(searchValueDisplay);
+		event.preventDefault();
+		let { value } = event.target;
+		changeSearchValue(value);
 	};
 
-	const router = useRouter();
 	const searchSubmit = (event) => {
 		event.preventDefault();
-		if (searchValueDisplay.length > 3) {
-			changeValue(searchValueDisplay);
-			router.push('/blog/');
-		}
+		router.replace({
+			pathname: 'blog',
+			query: {
+				keyword: searchValue,
+			},
+		});
 	};
 
 	return (
@@ -57,136 +63,141 @@ export default function Home({ posts, podcasts, publications }) {
 				<meta name="googlebot" />
 			</Head>
 			<Layout>
-				<SectionBar
-					sectionTitle="Chroniques"
-					slug={'/blog'}
-					text="Toutes les chroniques"
-					search="true"
-					value={searchValueDisplay}
-					onChangeInput={handleChangeInput}
-					onSubmitSearch={searchSubmit}
-				/>
-
-				<CardLarge
-					type="blog"
-					cardLargeType="cardLargeChroniques"
-					colorTag="
-				rgba(0, 0, 0, 1)"
-					textColor="white"
-					title={parsing(posts.edges[0].node.title)}
-					text={
-						posts.edges[0].node.excerpt.length > 288
-							? parsing(
-									posts.edges[0].node.excerpt.slice(0, 288) +
-										'...'
-							  )
-							: parsing(posts.edges[0].node.excerpt)
-					}
-					imageUrl={
-						posts.edges[0].node.featuredImage.node.mediaDetails
-							.sizes[3].sourceUrl
-					}
-					// imageUrl={posts.edges[0].node.featuredImage.node.sourceUrl}
-					imageAltText={'test'}
-					date={posts.edges[0].node.date}
-					category={posts.edges[0].node.categories.nodes[0].name}
-					slug={posts.edges[0].node.slug}
-					altText={posts.edges[0].node.featuredImage.node.altText}
-				/>
-				{posts.edges.slice(1, 5).map((el) => (
-					<CardSmall
-						key={'smallCard' + el.node.id}
-						title={el.node.title}
-						imageUrl={
-							el.node.featuredImage.node.mediaDetails.sizes[0]
-								.sourceUrl
-						}
-						imageAltText={'test'}
-						date={el.node.date}
-						category={el.node.categories.nodes[0].name}
-						slug={el.node.slug}
-						color="
-					rgba(0, 0, 0, 1)"
-						textColor="white"
-						altText={el.node.featuredImage.node.altText}
+				<div className={styles.contentHome}>
+					<SectionBar
+						sectionTitle="Chroniques"
+						slug={'/blog'}
+						text="Toutes les chroniques"
+						search="true"
+						value={searchValue}
+						onChangeInput={handleChangeInput}
+						onSubmitSearch={searchSubmit}
 					/>
-				))}
-				<SectionBar
-					sectionTitle="Podcasts"
-					slug={'/podcasts'}
-					text="Tous les podcasts"
-				/>
-				<CardLarge
-					type="podcasts"
-					cardLargeType="cardLargePodcasts"
-					colorTag="#D63447"
-					textColor="white"
-					title={parsing(podcasts.posts.edges[0].node.title)}
-					text={
-						podcasts.posts.edges[0].node.excerpt.length > 288
-							? parsing(
-									podcasts.posts.edges[0].node.excerpt.slice(
-										0,
-										288
-									) + '...'
-							  )
-							: parsing(podcasts.posts.edges[0].node.excerpt)
-					}
-					// imageUrl={
-					// 	podcasts.posts.edges[0].node.featuredImage.node
-					// 		.sourceUrl
-					// }
-					imageUrl={
-						podcasts.posts.edges[0].node.featuredImage.node
-							.sourceUrl
-					}
-					imageAltText={'test'}
-					date={podcasts.posts.edges[0].node.date}
-					category={
-						podcasts.posts.edges[0].node.categories.nodes[0].name
-					}
-					slug={podcasts.posts.edges[0].node.slug}
-					altText={posts.edges[0].node.featuredImage.node.altText}
-				/>
-				{podcasts.posts.edges.slice(1, 4).map((el) => (
-					<CardMedium
+
+					<CardLarge
+						type="blog"
+						cardLargeType="cardLargeChroniques"
+						colorTag="
+				rgba(0, 0, 0, 1)"
+						textColor="white"
+						title={parsing(posts.edges[0].node.title)}
+						text={
+							posts.edges[0].node.excerpt.length > 288
+								? parsing(
+										posts.edges[0].node.excerpt.slice(
+											0,
+											288
+										) + '...'
+								  )
+								: parsing(posts.edges[0].node.excerpt)
+						}
+						imageUrl={
+							posts.edges[0].node.featuredImage.node.mediaDetails
+								.sizes[3].sourceUrl
+						}
+						// imageUrl={posts.edges[0].node.featuredImage.node.sourceUrl}
+						imageAltText={'test'}
+						date={posts.edges[0].node.date}
+						category={posts.edges[0].node.categories.nodes[0].name}
+						slug={posts.edges[0].node.slug}
+						altText={posts.edges[0].node.featuredImage.node.altText}
+					/>
+					{posts.edges.slice(1, 5).map((el) => (
+						<CardSmall
+							key={'smallCard' + el.node.id}
+							title={el.node.title}
+							imageUrl={
+								el.node.featuredImage.node.mediaDetails.sizes[0]
+									.sourceUrl
+							}
+							imageAltText={'test'}
+							date={el.node.date}
+							category={el.node.categories.nodes[0].name}
+							slug={el.node.slug}
+							color="
+					rgba(0, 0, 0, 1)"
+							textColor="white"
+							altText={el.node.featuredImage.node.altText}
+						/>
+					))}
+					<SectionBar
+						sectionTitle="Podcasts"
+						slug={'/podcasts'}
+						text="Tous les podcasts"
+					/>
+					<CardLarge
+						type="podcasts"
+						cardLargeType="cardLargePodcasts"
 						colorTag="#D63447"
 						textColor="white"
-						key={'smallCard' + el.node.id}
-						title={el.node.title}
+						title={parsing(podcasts.posts.edges[0].node.title)}
+						text={
+							podcasts.posts.edges[0].node.excerpt.length > 288
+								? parsing(
+										podcasts.posts.edges[0].node.excerpt.slice(
+											0,
+											288
+										) + '...'
+								  )
+								: parsing(podcasts.posts.edges[0].node.excerpt)
+						}
+						// imageUrl={
+						// 	podcasts.posts.edges[0].node.featuredImage.node
+						// 		.sourceUrl
+						// }
 						imageUrl={
-							el.node.featuredImage.node.mediaDetails.sizes[0]
+							podcasts.posts.edges[0].node.featuredImage.node
 								.sourceUrl
 						}
 						imageAltText={'test'}
-						date={el.node.date}
-						category={el.node.categories.nodes[0].name}
-						slug={el.node.slug}
-						altText={el.node.featuredImage.node.altText}
+						date={podcasts.posts.edges[0].node.date}
+						category={
+							podcasts.posts.edges[0].node.categories.nodes[0]
+								.name
+						}
+						slug={podcasts.posts.edges[0].node.slug}
+						altText={posts.edges[0].node.featuredImage.node.altText}
 					/>
-				))}
-				<SectionBar
-					sectionTitle="Publications"
-					slug={'/publications'}
-					text="Toutes les publications"
-				/>
+					{podcasts.posts.edges.slice(1, 4).map((el) => (
+						<CardMedium
+							colorTag="#D63447"
+							textColor="white"
+							key={'smallCard' + el.node.id}
+							title={el.node.title}
+							imageUrl={
+								el.node.featuredImage.node.mediaDetails.sizes[0]
+									.sourceUrl
+							}
+							imageAltText={'test'}
+							date={el.node.date}
+							category={el.node.categories.nodes[0].name}
+							slug={el.node.slug}
+							altText={el.node.featuredImage.node.altText}
+						/>
+					))}
+					<SectionBar
+						sectionTitle="Publications"
+						slug={'/publications'}
+						text="Toutes les publications"
+					/>
 
-				{publications.posts.edges.slice(0, 5).map((el) => (
-					<CardSmallVertical
-						colorTag="#FFD31D"
-						key={'smallCard' + el.node.id}
-						title={el.node.title}
-						imageUrl={
-							el.node.featuredImage.node.mediaDetails.sizes[0]
-								.sourceUrl
-						}
-						imageAltText={'test'}
-						date={el.node.date}
-						category={el.node.categories.nodes[0].name}
-						slug={el.node.slug}
-						altText={el.node.featuredImage.node.altText}
-					/>
-				))}
+					{publications.posts.edges.slice(0, 5).map((el) => (
+						<CardSmallVertical
+							colorTag="#FFD31D"
+							key={'smallCard' + el.node.id}
+							title={el.node.title}
+							imageUrl={
+								el.node.featuredImage.node.mediaDetails.sizes[0]
+									.sourceUrl
+							}
+							imageAltText={'test'}
+							date={el.node.date}
+							category={el.node.categories.nodes[0].name}
+							slug={el.node.slug}
+							altText={el.node.featuredImage.node.altText}
+						/>
+					))}
+				</div>
 			</Layout>
 		</>
 	);

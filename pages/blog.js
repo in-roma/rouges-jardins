@@ -117,9 +117,6 @@ export default function Blog({ posts, categories }) {
 	};
 
 	// Updating cards display
-	// useEffect(() => {
-
-	// }, [posts]);
 
 	useEffect(() => {
 		setChroniques(posts.edges);
@@ -134,10 +131,9 @@ export default function Blog({ posts, categories }) {
 	// 		!searchActive &&
 	// 		!filtering
 	// 	) {
-	// 		setKeyword(searchValue);
+	// 		setChroniques(posts.edges);
 	// 		setSearchActive(true);
-
-	// 		refreshData();
+	// 		setIsRefreshing(false);
 	// 	}
 	// }, [searchValue, searchActive, filtering]);
 
