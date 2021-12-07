@@ -103,12 +103,10 @@ export default function Blog({ posts, categories }) {
 
 	// Fetch more posts
 	const morePosts = () => {
-		let count = numberOfPosts + 20;
-		changeNumberOfPosts(count);
 		router.replace({
 			pathname: 'blog',
 			query: {
-				volume: count,
+				volume: 1000,
 				category: [5, 6, 7, 11, 12, 13, 14, 15],
 				keyword: searchValue,
 			},
@@ -164,6 +162,14 @@ export default function Blog({ posts, categories }) {
 							onChangeCategory={onChangeCategory}
 						/>
 					</section>
+					{isRefreshing && (
+						<div className={styles.containerLoaderBlog}>
+							<div className={styles.loader}>
+								<div className={styles.loaderIcon}></div>
+								<span>Chargement</span>
+							</div>
+						</div>
+					)}
 					{searchActive && (
 						<div className={styles.searchBarBlog}>
 							<h2>
@@ -181,7 +187,7 @@ export default function Blog({ posts, categories }) {
 							className={styles.contentBlog}
 							style={searchActive ? { marginTop: '12rem' } : {}}
 						>
-							{!isRefreshing ? (
+							{!isRefreshing &&
 								chroniques.map((el) => (
 									<CardSmall
 										key={'smallCard' + el.node.id}
@@ -203,34 +209,18 @@ export default function Blog({ posts, categories }) {
 											el.node.featuredImage.node.altText
 										}
 									/>
-								))
-							) : (
-								<div className={styles.containerLoaderBlog}>
-									<div className={styles.loader}>
-										<div
-											className={styles.loaderIcon}
-										></div>
-										<span>Chargement</span>
-									</div>
-								</div>
-							)}
-							{/* <div className={styles.containerLoaderBlog}>
-								<div className={styles.loader}>
-									<div className={styles.loaderIcon}></div>
-									<span>Chargement</span>
-								</div>
-							</div> */}
+								))}
 						</div>
 					}
 
-					{!isRefreshing && !filtering && (
+					{!isRefreshing && !filtering && chroniques.length < 40 && (
 						<div className={styles.containerButtonBlog}>
 							<button
 								type="button"
 								className={styles.buttonMoreBlog}
 								onClick={morePosts}
 							>
-								More posts
+								Toutes les chroniques
 							</button>
 						</div>
 					)}

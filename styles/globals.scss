@@ -31,6 +31,8 @@ a{
 }
 
 // Styling imported from WP
+// Note: page content are imported from old WP database with styling.
+// The CSS below is used to manager picture styling
 
 // Container 1
 .image-block-outer-wrapper,
@@ -42,60 +44,72 @@ a{
 .image-caption-wrapper,
 .image-block-wrapper,
 .image-block-outer-wrapper {
-  width: 100%;
-  height: auto;
+  width: 100%!important;
+  height: auto!important;
+  margin: 0!important;
+  padding: 0!important;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
 }
 
 // Container 2
 .sqs-block-image-figure{
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  max-width: none!important;
-  overflow: auto!important;
-
+  width: 100%!important;
+  height: auto!important;
+  margin: 0!important;
   padding: 0!important;
-  margin: 2.4rem 0rem!important;
 }
 
 // Container 3
 .image-block-wrapper{
-  // all: revert;
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  width: 100%!important;;
+  height: auto!important;;
 
  }
 
 // Container 4
 .sqs-image-shape-container-element{
-  // all: revert;
-
-  width: 30rem!important;
-	height: 30rem!important;
-
+  width: 100%;
+  height:  auto;
   padding-bottom: 0!important;
   border-radius: 0.6rem!important;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+
   &:nth-child(1){
     width: 50rem!important;
+    height:  50rem!important;
     position: relative;
   }
 }
-.img-content-page{
-  all: revert;
-  width: 30rem!important;
-	max-height: 30rem!important;
+
+figure:nth-child(1) {
+  // width: 50rem!important;
+  // height:  50rem!important;
+  // width:100%!important;
+  // display: flex;
+  // flex-flow: row nowrap;
+  // justify-content: center;
 }
 
+
+// New wrapped generated with html-react-parser
+// (parsing function is placed in folder helper)
+
+.container-img-content-page{
+  width: 46rem;
+  max-height: 60rem!important;
+  min-height: 42rem!important;
+  margin: 2.4rem auto 2.4rem auto;
+}
+
+// New img styles generated with html-react-parser
+// (parsing function is placed in folder helper)
+
+.img-content-page{
+  width: 30rem!important;
+  max-height: 40rem!important;
+
+}
 
 .image-caption-wrapper {
   width: 100%!important;
@@ -107,7 +121,7 @@ a{
 }
 .image-caption-wrapper div{
   display: block;
-  width: 30rem!important;
+  width: 50rem!important;
   height: auto!important;
   position: relative;
 }
@@ -115,9 +129,9 @@ a{
 
 .image-caption {
   width: 100%!important;
-	max-height: 30rem;
+	height: auto;
   justify-self: center!important;
-  margin-top: 1.2rem;
+  margin-bottom: 1.4rem;
 }
 
 .image-caption p {
@@ -130,6 +144,16 @@ a{
 // For unwanted first picture:
 .image-block-outer-wrapper:nth-child(1) {
   display: none!important;
+}
+
+// Uneedeed empty space
+
+p[data-rte-preserve-empty] {
+  display: none!important;
+}
+
+.white-space p {
+  &:empty {display: none!important;}
 }
 
 

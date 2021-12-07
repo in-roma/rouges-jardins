@@ -73,22 +73,19 @@
 
 }
 
-.containerloaderBlog {
-    width: 118.8rem;
-    height: 53.3rem;
-    grid-column: 1/5;
-    // display: flex;
-    // flex-flow: row nowrap;
-    // justify-content: flex-end;
-    // align-items: flex-end;
+.containerLoaderBlog{
+    width: 100%;
+    height: 100%;
+    margin: 36rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .loader {
     width: 8rem;
     height: 8rem;
-    align-self: center;
-    justify-self: center;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -1,7 +1,6 @@
 import { useState, useContext, useEffect } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
-import Link from 'next/link';
 import { getPost, getAllSlugs, getMore } from '../../lib/api';
 import { useRouter } from 'next/router';
 import parsing from '../../helpers/helpers';
@@ -70,6 +69,7 @@ export default function PostPage({ data, posts }) {
 							<Image
 								src={data.post.featuredImage.node.sourceUrl}
 								layout="fill"
+								objectFit="cover"
 								alt=""
 							/>
 						</picture>
