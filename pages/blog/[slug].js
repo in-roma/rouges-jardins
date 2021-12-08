@@ -25,7 +25,6 @@ export default function PostPage({ data, posts }) {
 	// Context
 	const { postsViewed, changePostsViewed } = useContext(AppContext);
 
-	console.log('this is parsed date:', parsing(data.post.content));
 	return (
 		<>
 			<Head>

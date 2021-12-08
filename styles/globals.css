@@ -1,0 +1,231 @@
+:root {
+  font-size: 62.5%;
+  /* --> equivalent to 10px  */
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.image-block-outer-wrapper:nth-child(1) {
+  display: none !important;
+}
+
+.image-block-outer-wrapper,
+.layout-caption-below,
+.design-layout-inline,
+.combination-animation-none,
+.individual-animation-none,
+.individual-text-animation-none,
+.image-caption-wrapper,
+.image-block-wrapper,
+.image-block-outer-wrapper,
+.sqs-gallery-container {
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sqs-block-image-figure {
+  width: auto;
+  height: auto;
+  max-width: unset !important;
+  overflow: unset !important;
+}
+
+.image-block-wrapper {
+  position: relative !important;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.container-img-content-page {
+  position: relative !important;
+  display: block;
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wp-caption {
+  width: 100% !important;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper-img-content-page {
+  position: unset !important;
+  width: 50rem;
+  min-height: 32rem;
+  border-radius: 6px;
+  margin: 2.4rem 0;
+}
+
+.image-block-wrapper .container-img-content-page .wrapper-img-content-page {
+  margin: 0;
+}
+
+.img-content-page {
+  position: unset !important;
+  width: 50rem !important;
+  min-width: unset !important;
+  max-width: unset !important;
+  height: 32rem !important;
+  min-height: unset !important;
+  max-height: unset !important;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.image-caption-wrapper {
+  display: block;
+  position: relative;
+  width: 50rem;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+}
+
+.image-caption {
+  width: 100%;
+  height: auto;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.image-caption p {
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-align: center;
+  padding: 0 1.2rem;
+  margin: 2.4rem 0;
+}
+
+figcaption p {
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-align: center;
+  padding: 0 1.2rem;
+  margin: 0;
+}
+
+.wp-caption-text, figcaption {
+  width: 50rem;
+  min-height: 4.2rem;
+  position: relative;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-align: center;
+  padding: 0 1.2rem;
+  margin: 2.4rem 0;
+}
+
+p[data-rte-preserve-empty] {
+  display: none !important;
+}
+
+.white-space p:empty {
+  display: none !important;
+}
+
+.wp-block-embed-spotify {
+  margin: 4.8rem 0;
+}
+
+.embed-podcast {
+  background-color: #D63447;
+}
+
+@media screen and (max-width: 740px) {
+  .container-img-content-page {
+    width: 42rem;
+    min-height: 28rem !important;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .container-img-content-page {
+    width: 38rem;
+    min-height: 25.3rem !important;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .container-img-content-page {
+    width: 34rem;
+    min-height: 22.6rem !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container-img-content-page {
+    width: 30rem;
+    min-height: 20rem !important;
+  }
+}
+/*# sourceMappingURL=globals.css.map */

@@ -1,0 +1,42 @@
+.quantityContainer {
+  width: 6.2rem;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: black;
+  background-color: white;
+  border-radius: 0.6rem;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.quantityButton {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+  color: black;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+.quantityValue {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+  color: black;
+}
+/*# sourceMappingURL=Quantity.module.css.map */

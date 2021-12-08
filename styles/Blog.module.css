@@ -1,0 +1,287 @@
+.containerBlog {
+  width: 100%;
+  min-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  margin-top: 2.4rem;
+}
+
+.navBarBlog {
+  position: fixed;
+  width: 118.8rem;
+  height: 7.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 0.1rem solid #EFEFEF;
+  background-color: white;
+  opacity: 0.9;
+  z-index: 5;
+}
+
+.contentBlog {
+  width: 100%;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 2.2rem;
+          column-gap: 2.2rem;
+  row-gap: 2.4rem;
+  margin-top: 12rem;
+}
+
+.searchBarBlog {
+  position: fixed;
+  width: 118.8rem;
+  height: 6rem;
+  margin-top: 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  opacity: 0.9;
+  z-index: 5;
+}
+
+.searchBarBlog h2 {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 500;
+}
+
+.searchBarBlog button {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  margin-left: 1.2rem;
+  font-weight: 600;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: black;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.cardSmallBlog {
+  grid-row: none;
+}
+
+.containerLoaderBlog {
+  width: 100%;
+  height: 100%;
+  margin: 36rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loader {
+  width: 8rem;
+  height: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loader .loaderIcon {
+  border: 2.2px solid rgba(0, 0, 0, 0.3);
+  border-top-color: black;
+  border-radius: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  -webkit-animation: spin 0.7s linear infinite;
+          animation: spin 0.7s linear infinite;
+}
+
+.loader span {
+  font-size: 1.0rem;
+  line-height: 1.0rem;
+  font-weight: 400;
+  margin-top: 0.8rem;
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.containerButtonBlog {
+  width: 118.8rem;
+  height: 9.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.buttonMoreBlog {
+  height: 4.2rem;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  font-weight: 600;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: black;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1/5;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  margin-top: 2.4rem;
+}
+
+@media screen and (max-width: 1240px) {
+  .navBarBlog {
+    width: 88.6rem;
+  }
+  .searchBarBlog {
+    width: 88.6rem;
+  }
+  .contentBlog {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .navBarBlog {
+    width: 68.2rem;
+  }
+  .searchBarBlog {
+    width: 68.2rem;
+  }
+  .contentBlog {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .navBarBlog {
+    width: 58.2rem;
+  }
+  .searchBarBlog {
+    width: 58.2rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .navBarBlog {
+    width: 48.2rem;
+  }
+  .searchBarBlog {
+    width: 48.2rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .navBarBlog {
+    width: 42.2rem;
+  }
+  .contentBlog {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .navBarBlog {
+    width: 36rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navBarBlog {
+    width: 30rem;
+    height: 8rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .navBarBlog {
+    width: 28rem;
+  }
+}
+/*# sourceMappingURL=Blog.module.css.map */

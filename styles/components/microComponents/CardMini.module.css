@@ -1,0 +1,24 @@
+.cardMini {
+  position: relative;
+  width: 18rem;
+  height: 17rem;
+  cursor: pointer;
+}
+
+.pictureCardMini {
+  width: 18rem;
+  height: 10.8rem;
+}
+
+.titleCardMini {
+  width: 100%;
+  height: 3.2rem;
+  font-family: "lora", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+  margin-top: 1.2rem;
+  line-height: 2.4rem;
+  margin-bottom: 2.8rem;
+}
+/*# sourceMappingURL=CardMini.module.css.map */

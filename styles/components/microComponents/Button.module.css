@@ -1,0 +1,22 @@
+.buttonCart {
+  height: 3.2rem;
+  position: relative;
+  display: block;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  border: 0.1rem solid white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+}
+
+.buttonCart:hover {
+  color: black;
+  background-color: white;
+  font-weight: 700;
+  border: 0.1rem solid black;
+}
+/*# sourceMappingURL=Button.module.css.map */

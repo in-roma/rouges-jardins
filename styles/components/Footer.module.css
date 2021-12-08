@@ -1,0 +1,170 @@
+.footer {
+  width: 100%;
+  height: 14.4rem;
+  margin-top: 12rem;
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row nowrap;
+      -ms-flex-positive: row nowrap;
+          flex-grow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footerContent {
+  width: 118.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row nowrap;
+      -ms-flex-positive: row nowrap;
+          flex-grow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footerLogoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footerLogo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.footerBy {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #adadad;
+}
+
+.footerNav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footerNavItem {
+  font-size: 1.1rem;
+  line-height: 4.8rem;
+  font-weight: 400;
+  color: #adadad;
+  margin-right: 4.8rem;
+}
+
+.footerNavItem:hover {
+  text-decoration: underline;
+}
+
+.footerMentions {
+  height: 3.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.footerMentions span {
+  color: #adadad;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1240px) {
+  .footerContent {
+    width: 88.6rem;
+  }
+  .footerMentions span {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .footerContent {
+    width: 68.2rem;
+  }
+  .footerNav {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .footerContent {
+    width: 58.2rem;
+  }
+  .footerLogo {
+    font-size: 1.3rem;
+  }
+  .footerBy {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .footerContent {
+    width: 48.2rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .footerContent {
+    width: 42.2rem;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .footerContent {
+    width: 36rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .footerContent {
+    width: 30rem;
+  }
+  .footerLogo {
+    font-size: 1.1rem;
+  }
+  .footerBy {
+    font-size: 0.9rem;
+  }
+  .footerMentions span {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .footerContent {
+    width: 28rem;
+  }
+}
+/*# sourceMappingURL=Footer.module.css.map */

@@ -1,0 +1,121 @@
+.cardPublication {
+  position: relative;
+  width: 58.2rem;
+  height: 26.4rem;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.textContainerCardPublication {
+  width: 36.2rem;
+  height: 26.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-left: 1.8rem;
+}
+
+.titleCardPublication {
+  width: 100%;
+  font-family: 'lora', serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 1.2rem;
+  line-height: 2.4rem;
+}
+
+.titleCardPublication:hover {
+  text-decoration: underline;
+}
+
+.pictureCardPublication {
+  width: 22rem;
+  height: 26.4rem;
+}
+
+.textCardPublication {
+  width: 100%;
+  height: auto;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  font-weight: 200;
+  color: #434343;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.actionContainerPublication {
+  width: 100%;
+  background-color: "red";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2.4rem;
+}
+
+.priceQuantityContainerPublication {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.pricePublication {
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  margin-right: 2.4rem;
+}
+
+@media screen and (max-width: 1240px) {
+  .cardPublication {
+    width: 28rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  .textContainerCardPublication {
+    width: 28rem;
+    margin-top: 1.2rem;
+    margin-left: 0;
+  }
+}
+/*# sourceMappingURL=CardPublication.module.css.map */

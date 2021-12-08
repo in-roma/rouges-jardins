@@ -1,0 +1,60 @@
+.cardPodcast {
+  position: relative;
+  width: 28rem;
+  height: auto;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.pictureCardPodcast {
+  width: 28rem;
+  height: 16.8rem;
+}
+
+.textContainerCardPodcast {
+  width: 28rem;
+  height: 8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 1.2rem;
+}
+
+.titleCardPodcast {
+  width: 100%;
+  height: auto;
+  font-family: 'lora', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: black;
+  line-height: 2.4rem;
+}
+
+@media screen and (max-width: 1240px) {
+  .cardPodcast {
+    width: 28rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+  .textContainerCardPodcast {
+    width: 28rem;
+    margin-top: 1.2rem;
+    margin-left: 0;
+  }
+}
+/*# sourceMappingURL=CardPodcast.module.css.map */

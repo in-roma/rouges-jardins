@@ -1,0 +1,355 @@
+.containerCart {
+  width: 100%;
+  min-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  margin-top: 2.4rem;
+}
+
+.contentCart {
+  width: 118.8rem;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 2.2rem;
+          column-gap: 2.2rem;
+  row-gap: 2.4rem;
+}
+
+.navBarCart {
+  position: fixed;
+  width: 118.8rem;
+  height: 7.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 0.1rem solid #EFEFEF;
+  background-color: white;
+  opacity: 0.9;
+  z-index: 5;
+}
+
+.navBarCart h2 {
+  font-size: 2rem;
+}
+
+.navBarCart a {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.navBarCart a:hover {
+  text-decoration: underline;
+}
+
+.searchBarBlog {
+  position: fixed;
+  width: 118.8rem;
+  height: 6rem;
+  margin-top: 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  opacity: 0.9;
+  z-index: 5;
+}
+
+.searchBarBlog h2 {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 500;
+}
+
+.searchBarBlog button {
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  margin-left: 1.2rem;
+  font-weight: 600;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: black;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.tableCart {
+  width: 100%;
+  min-height: 16rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 18rem 1fr 1fr 1fr 10rem 1rem;
+      grid-template-columns: 18rem 1fr 1fr 1fr 10rem 1rem;
+  -webkit-column-gap: 1.2rem;
+          column-gap: 1.2rem;
+  row-gap: 2rem;
+  margin-top: 10.4rem;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tableCart span {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 500;
+}
+
+.tableCart .thTableTitreCart {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-column: 1/3;
+  justify-items: center;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+}
+
+.tableCart .thTableCart {
+  margin-bottom: 1.8rem;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+}
+
+.tableCart .pictureCardCart {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/2;
+}
+
+.tableCart .titleTableCart {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-column-align: start;
+      justify-self: start;
+}
+
+.tableCart .noItemsCart {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1/7;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-style: italic;
+}
+
+.pictureCardCart {
+  width: 18rem;
+  height: 10.8rem;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.6rem;
+}
+
+.iconDeleteCArt {
+  cursor: pointer;
+}
+
+.cardSmallBlog {
+  grid-row: none;
+}
+
+.tableCartfooter {
+  position: absolute;
+  bottom: 0rem;
+  width: 100%;
+  height: 16rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 18rem 1fr 1fr 1fr 10rem 1rem;
+      grid-template-columns: 18rem 1fr 1fr 1fr 10rem 1rem;
+  -webkit-column-gap: 1.2rem;
+          column-gap: 1.2rem;
+  row-gap: 0.8rem;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tableCartfooter span {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 500;
+}
+
+.tableCartfooter .iconDeleteCArt {
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+.tableCartfooter .SumTableCart {
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4/5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.tableCartfooter .SumTableCart .SumNoticeTableCart {
+  font-size: 1.2em;
+  line-height: 1.2rem;
+  font-weight: 400;
+  font-style: italic;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  text-align: center;
+  margin-top: 0.8rem;
+}
+
+.tableCartfooter .SumValueTableCart {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 1;
+  grid-column: 5/6;
+}
+
+.tableCartfooter button {
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 1;
+  grid-column: 5/6;
+}
+
+@media screen and (max-width: 1240px) {
+  .navBarBlog {
+    width: 88.6rem;
+  }
+  .searchBarBlog {
+    width: 88.6rem;
+  }
+  .contentBlog {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .navBarBlog {
+    width: 68.2rem;
+  }
+  .searchBarBlog {
+    width: 68.2rem;
+  }
+  .contentBlog {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .navBarBlog {
+    width: 58.2rem;
+  }
+  .searchBarBlog {
+    width: 58.2rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .navBarBlog {
+    width: 48.2rem;
+  }
+  .searchBarBlog {
+    width: 48.2rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .navBarBlog {
+    width: 42.2rem;
+  }
+  .contentBlog {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .navBarBlog {
+    width: 36rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navBarBlog {
+    width: 30rem;
+    height: 8rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .navBarBlog {
+    width: 28rem;
+  }
+}
+/*# sourceMappingURL=Cart.module.css.map */

@@ -1,0 +1,265 @@
+.containerPostPage {
+  position: relative;
+  width: 118.8rem;
+  margin-top: 2.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navBarPostPage {
+  width: 100%;
+  height: 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.containerBtnPostPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.iconBackPostPage {
+  margin-top: 0.2rem;
+}
+
+.btnPostPage {
+  font-size: 1.2rem;
+  line-height: 1rem;
+  margin-left: 1.2rem;
+  font-weight: 500;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: black;
+}
+
+.postPage {
+  position: relative;
+  width: 67.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.picturePostPage {
+  width: 67.2rem;
+  height: 40.5rem;
+}
+
+.titlePostPage {
+  width: auto;
+  height: auto;
+  font-family: "Lora", sans-serif;
+  font-size: 2.6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.6rem;
+  letter-spacing: 0em;
+  margin-top: 2.6rem;
+}
+
+.infoPostPage {
+  width: auto;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.contentPostPage {
+  width: 67.2rem;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  margin: 4.8rem 0;
+}
+
+.contentPostPage p {
+  margin-bottom: 1.8rem;
+}
+
+@media screen and (max-width: 1240px) {
+  .containerPostPage {
+    width: 88.6rem;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .containerPostPage {
+    width: 68.2rem;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .containerPostPage {
+    width: 58.2rem;
+  }
+  .postPage {
+    width: 58.2rem;
+  }
+  .picturePostPage {
+    width: 58.2rem;
+    height: 35rem;
+  }
+  .titlePostPage {
+    font-size: 2.2rem;
+  }
+  .contentPostPage {
+    width: 58.2rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .containerPostPage {
+    width: 48.2rem;
+  }
+  .postPage {
+    width: 48.2rem;
+  }
+  .picturePostPage {
+    width: 48.2rem;
+    height: 29rem;
+  }
+  .titlePostPage {
+    font-size: 2rem;
+  }
+  .contentPostPage {
+    width: 48.2rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .containerPostPage {
+    width: 42.2rem;
+  }
+  .btnPostPage {
+    font-size: 1rem;
+  }
+  .postPage {
+    width: 42.2rem;
+  }
+  .picturePostPage {
+    width: 42.2rem;
+    height: 25.3rem;
+  }
+  .titlePostPage {
+    font-size: 1.8rem;
+  }
+  .contentPostPage {
+    width: 42.2rem;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .containerPostPage {
+    width: 36rem;
+  }
+  .navBarPostPage {
+    height: 4rem;
+  }
+  .postPage {
+    width: 36rem;
+  }
+  .picturePostPage {
+    width: 36rem;
+    height: 21.6rem;
+  }
+  .titlePostPage {
+    font-size: 1.8rem;
+  }
+  .contentPostPage {
+    width: 36rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .containerPostPage {
+    width: 30rem;
+  }
+  .postPage {
+    width: 30rem;
+  }
+  .picturePostPage {
+    width: 30rem;
+    height: 18rem;
+  }
+  .titlePostPage {
+    font-size: 1.7rem;
+  }
+  .contentPostPage {
+    width: 30rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .containerPostPage {
+    width: 28rem;
+  }
+  .postPage {
+    width: 28rem;
+  }
+  .picturePostPage {
+    width: 28rem;
+    height: 16.8rem;
+  }
+  .titlePostPage {
+    font-size: 1.5rem;
+  }
+  .contentPostPage {
+    width: 28rem;
+    font-size: 1.2rem;
+  }
+}
+/*# sourceMappingURL=PostPage.module.css.map */

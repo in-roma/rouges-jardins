@@ -31,10 +31,14 @@ a{
 }
 
 // Styling imported from WP
-// Note: page content are imported from old WP database with styling.
-// The CSS below is used to manager picture styling
+// Note: page content are imported from old WP database with inner styles.
 
-// Container 1
+// For unwanted first picture / posts used to start with main post picture
+.image-block-outer-wrapper:nth-child(1) {
+  display: none!important;
+}
+
+// Wrapper level 1 - no div parsing with html-react-parser
 .image-block-outer-wrapper,
 .layout-caption-below,
 .design-layout-inline,
@@ -43,111 +47,140 @@ a{
 .individual-text-animation-none,
 .image-caption-wrapper,
 .image-block-wrapper,
-.image-block-outer-wrapper {
-  width: 100%!important;
-  height: auto!important;
-  margin: 0!important;
-  padding: 0!important;
+.image-block-outer-wrapper,
+.sqs-gallery-container {
+  width: 100%;
+  height: auto;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
 }
 
-// Container 2
+// Wrapper level 2 - no div parsing with html-react-parser
 .sqs-block-image-figure{
-  width: 100%!important;
-  height: auto!important;
-  margin: 0!important;
-  padding: 0!important;
+  width: auto;
+  height: auto;
+  max-width: unset!important; //overwritte needed from wp db styling
+  overflow: unset!important;
+
 }
 
-// Container 3
+// Wrapper level 3 - no div parsing with html-react-parser
 .image-block-wrapper{
-  width: 100%!important;;
-  height: auto!important;;
-
- }
-
-// Container 4
-.sqs-image-shape-container-element{
+  position: relative!important;
   width: 100%;
-  height:  auto;
-  padding-bottom: 0!important;
-  border-radius: 0.6rem!important;
-
-  &:nth-child(1){
-    width: 50rem!important;
-    height:  50rem!important;
-    position: relative;
-  }
-}
-
-figure:nth-child(1) {
-  // width: 50rem!important;
-  // height:  50rem!important;
-  // width:100%!important;
-  // display: flex;
-  // flex-flow: row nowrap;
-  // justify-content: center;
+  height: auto;
+  margin: 0;
 }
 
 
-// New wrapped generated with html-react-parser
-// (parsing function is placed in folder helper)
-
+// Wrapper level 4 - with div parsing with html-react-parser
+// class "sqs-image-shape-container-element" becomes container-img-content-page
 .container-img-content-page{
-  width: 46rem;
-  max-height: 60rem!important;
-  min-height: 42rem!important;
-  margin: 2.4rem auto 2.4rem auto;
-}
-
-// New img styles generated with html-react-parser
-// (parsing function is placed in folder helper)
-
-.img-content-page{
-  width: 30rem!important;
-  max-height: 40rem!important;
-
-}
-
-.image-caption-wrapper {
-  width: 100%!important;
-  height: auto!important;
-  display: flex!important;
-  flex-flow: row nowrap!important;
-  justify-content: center!important;
-
-}
-.image-caption-wrapper div{
+  position: relative!important;
   display: block;
-  width: 50rem!important;
-  height: auto!important;
-  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
 }
 
+// Wrapper level 5 - figure wrapper with newest posts -  does not show on all posts
+.wp-caption {
+  width: 100%!important; //overwrite needed from wp db styling
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+// Wrapper level 6 - div generated with html-react-parser
+.wrapper-img-content-page {
+  position: unset!important;
+  width: 50rem;
+  min-height: 32rem;
+  border-radius: 6px;
+  margin: 2.4rem 0;
+}
+
+// exception
+.image-block-wrapper .container-img-content-page .wrapper-img-content-page {
+  margin: 0;
+}
+
+
+
+// img becomes Next Image generated with html-react-parser
+.img-content-page{
+  position: unset!important;
+  width: 50rem!important; //overwrite needed from wp db styling
+  min-width: unset!important;
+  max-width: unset!important;
+  height: 32rem!important; //overwrite needed from wp db styling
+  min-height:unset!important;
+  max-height: unset!important;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+// Caption structure 1  -  does not show on all posts
+.image-caption-wrapper {
+  display: block;
+  position: relative;
+  width: 50rem;
+  height: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin: 0;
+}
 
 .image-caption {
-  width: 100%!important;
+  width: 100%;
 	height: auto;
-  justify-self: center!important;
-  margin-bottom: 1.4rem;
+  justify-self: center;
+
 }
 
 .image-caption p {
+  width: 100%;
   font-size: 1.2rem;
   line-height: 1.8rem;
   text-align: center;
-
+  padding: 0 1.2rem;
+  margin: 2.4rem 0;
 }
 
-// For unwanted first picture:
-.image-block-outer-wrapper:nth-child(1) {
-  display: none!important;
+figcaption p {
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-align: center;
+  padding: 0 1.2rem;
+  margin: 0;
 }
+
+
+// Caption structure 2  -  does not show on all posts - part of figure which uncludes image
+.wp-caption-text, figcaption {
+  width: 50rem;
+  min-height: 4.2rem;
+  position: relative;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-align: center;
+  padding: 0 1.2rem;
+  margin: 2.4rem 0;
+}
+
 
 // Uneedeed empty space
-
 p[data-rte-preserve-empty] {
   display: none!important;
 }
@@ -155,7 +188,6 @@ p[data-rte-preserve-empty] {
 .white-space p {
   &:empty {display: none!important;}
 }
-
 
 // Spotify layout
 .wp-block-embed-spotify {
@@ -166,3 +198,32 @@ p[data-rte-preserve-empty] {
   background-color: #D63447;
 } 
 
+
+
+@media screen and (max-width: 740px) {
+  .container-img-content-page{
+    width: 42rem;
+    min-height: 28rem!important;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .container-img-content-page{
+    width: 38rem;
+    min-height: 25.3rem!important;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .container-img-content-page{
+    width: 34rem;
+    min-height: 22.6rem!important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container-img-content-page{
+    width: 30rem;
+    min-height: 20rem!important;
+  }
+}

@@ -1,0 +1,124 @@
+.cardSmall {
+  position: relative;
+  width: 28rem;
+  height: 24.8rem;
+  cursor: pointer;
+}
+
+.pictureCardSmall {
+  width: 28rem;
+  height: 16.8rem;
+}
+
+.titleCardSmall {
+  width: 100%;
+  height: 3.2rem;
+  font-family: 'lora', serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: black;
+  margin-top: 1.2rem;
+  line-height: 2.4rem;
+  margin-bottom: 2.8rem;
+}
+
+@media screen and (max-width: 1040px) {
+  .cardSmall {
+    width: 32rem;
+    height: 29.6rem;
+  }
+  .pictureCardSmall {
+    width: 32rem;
+    height: 19.1rem;
+  }
+  .titleCardSmall {
+    font-size: 1.7rem;
+    line-height: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .cardSmall {
+    width: 27.2rem;
+    height: 25.1rem;
+  }
+  .pictureCardSmall {
+    width: 27.2rem;
+    height: 16.2rem;
+  }
+  .titleCardSmall {
+    font-size: 1.7rem;
+    line-height: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .cardSmall {
+    width: 22rem;
+    height: 19.5rem;
+  }
+  .pictureCardSmall {
+    width: 22rem;
+    height: 13.2rem;
+  }
+  .titleCardSmall {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .cardSmall {
+    width: 42.2rem;
+    height: 37.4rem;
+  }
+  .pictureCardSmall {
+    width: 42.2rem;
+    height: 25.3rem;
+  }
+  .titleCardSmall {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .cardSmall {
+    width: 36rem;
+    height: 31.9rem;
+  }
+  .pictureCardSmall {
+    width: 36rem;
+    height: 21.6rem;
+  }
+  .titleCardSmall {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .cardSmall {
+    width: 30rem;
+    height: 26.5rem;
+  }
+  .pictureCardSmall {
+    width: 30rem;
+    height: 18rem;
+  }
+  .titleCardSmall {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .cardSmall {
+    width: 28rem;
+    height: 24.7rem;
+  }
+  .pictureCardSmall {
+    width: 28rem;
+    height: 16.7rem;
+  }
+  .titleCardSmall {
+    font-size: 1.6rem;
+  }
+}
+/*# sourceMappingURL=CardSmall.module.css.map */

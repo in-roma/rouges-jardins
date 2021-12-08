@@ -1,0 +1,195 @@
+.containerPodcastPage {
+  position: relative;
+  width: 118.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2.4rem;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1/5;
+}
+
+.podcastPage {
+  position: relative;
+  width: 72.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.navBarPodcastPage {
+  width: 100%;
+  height: 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.containerBtnPodcastPage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.iconBackPodcastPage {
+  margin-top: 0.2rem;
+}
+
+.btnPodcastPage {
+  font-size: 1.2rem;
+  line-height: 1.0rem;
+  margin-left: 1.2rem;
+  font-weight: 500;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: black;
+}
+
+.picturePodcastPage {
+  width: 72.2rem;
+  height: 43.6rem;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.6rem;
+}
+
+.titlePodcastPage {
+  width: auto;
+  height: auto;
+  font-family: "Lora", sans-serif;
+  font-size: 2.6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.6rem;
+  letter-spacing: 0em;
+  margin-top: 2.6rem;
+}
+
+.infoPodcastPage {
+  width: auto;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.contentPodcastPage {
+  width: 72.2rem;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  margin: 0 0 6rem 0;
+}
+
+.contentPodcastPage p {
+  font-size: 1.6rem;
+  font-weight: 300;
+  margin-bottom: 1.8rem;
+}
+
+.contentPodcastPage strong {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.contentPodcastPage h1, .contentPodcastPage h2, .contentPodcastPage h3, .contentPodcastPage h4, .contentPodcastPage h5, .contentPodcastPage h6 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1240px) {
+  .containerPodcastPage {
+    width: 88.6rem;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .containerPodcastPage {
+    width: 68.2rem;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .containerPodcastPage {
+    width: 58.2rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .containerPodcastPage {
+    width: 48.2rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .containerPodcastPage {
+    width: 42.2rem;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .containerPodcastPage {
+    width: 36rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .containerPodcastPage {
+    width: 30rem;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .containerPodcastPage {
+    width: 28rem;
+  }
+}
+/*# sourceMappingURL=PodcastPage.module.css.map */

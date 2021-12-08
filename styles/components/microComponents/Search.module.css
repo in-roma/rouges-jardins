@@ -1,0 +1,82 @@
+.formSearch {
+  height: 2.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 0.5px solid #fcfcfcfb;
+}
+
+.formSearch label {
+  -webkit-transform: translateY(0.2rem);
+          transform: translateY(0.2rem);
+}
+
+.inputSearch {
+  width: 24rem;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  margin-left: 1.2rem;
+}
+
+.inputSearch::-webkit-input-placeholder {
+  color: #eeeeee;
+}
+
+.inputSearch:-ms-input-placeholder {
+  color: #eeeeee;
+}
+
+.inputSearch::-ms-input-placeholder {
+  color: #eeeeee;
+}
+
+.inputSearch::placeholder {
+  color: #eeeeee;
+}
+
+.buttonSearch {
+  width: 4.8rem;
+  font-weight: 500;
+  font-size: 0.8rem;
+  line-height: 4.8rem;
+  border: none;
+  background: transparent;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  -webkit-transform: translateX(1.8rem);
+          transform: translateX(1.8rem);
+}
+
+.buttonSearch:hover {
+  font-weight: 800;
+}
+
+@media screen and (max-width: 640px) {
+  .formSearch {
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .inputSearch {
+    width: 100%;
+    font-size: 1.4rem;
+  }
+}
+/*# sourceMappingURL=Search.module.css.map */

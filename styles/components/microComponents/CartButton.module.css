@@ -1,0 +1,53 @@
+.buttonCart {
+  color: black;
+  font-weight: 500;
+  font-size: 1.2rem;
+  border: none;
+  background: none;
+  padding: 0.2rem 0.0rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: row nowrap;
+      -ms-flex-positive: row nowrap;
+          flex-grow: row nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-self: flex-end;
+}
+
+.buttonCart a {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.6rem;
+}
+
+.buttonCart a:hover {
+  text-decoration: underline;
+}
+
+.productCountCart {
+  width: 1.6rem;
+  height: 1.6rem;
+  color: black;
+  background-color: #FFD31D;
+  -webkit-transform: translateY(-0.7rem);
+          transform: translateY(-0.7rem);
+  border-radius: 50%;
+  opacity: 1;
+  margin-left: 0.2rem;
+}
+
+.productCountCart span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.6rem;
+}
+
+.productCountCart span:hover {
+  text-decoration: none;
+}
+/*# sourceMappingURL=CartButton.module.css.map */
