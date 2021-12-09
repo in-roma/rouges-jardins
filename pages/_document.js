@@ -14,6 +14,11 @@ class MyDocument extends Document {
 						href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
 						rel="stylesheet"
 					/>
+					<script
+						defer
+						data-domain="rouges-jardins-8yzlk.ondigitalocean.app"
+						src="https://plausible.io/js/plausible.js"
+					></script>
 				</Head>
 				<body>
 					<Main />
