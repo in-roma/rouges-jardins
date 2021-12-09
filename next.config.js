@@ -47,7 +47,6 @@ module.exports = {
 	images: {
 		domains: ['www.jcou8054.odns.fr'],
 	},
-	compress: true,
 
 	async redirects() {
 		return [
