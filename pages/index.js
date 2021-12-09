@@ -61,11 +61,6 @@ export default function Home({ posts, podcasts, publications }) {
 				/>
 				<meta name="robots" />
 				<meta name="googlebot" />
-				<script
-					defer
-					data-domain="rouges-jardins-8yzlk.ondigitalocean.app"
-					src="https://plausible.io/js/plausible.js"
-				></script>
 			</Head>
 			<Layout>
 				<div className={styles.contentHome}>
