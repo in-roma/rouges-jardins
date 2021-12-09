@@ -64,6 +64,9 @@ a{
   overflow: unset!important;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
 }
 
@@ -105,6 +108,7 @@ a{
   margin: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 // Wrapper level 6 - div generated with html-react-parser
@@ -121,8 +125,6 @@ a{
 .image-block-wrapper .container-img-content-page .wrapper-img-content-page {
   // margin: 3.2rem 0;
 }
-
-
 
 // img becomes Next Image generated with html-react-parser
 .img-content-page{
@@ -141,7 +143,7 @@ a{
 .image-caption-wrapper {
   display: block;
   position: relative;
-  width: 50rem;
+  width: 50rem!important;
   height: auto;
   display: flex;
   flex-flow: row nowrap;
@@ -177,7 +179,7 @@ figcaption p {
 
 // Caption structure 2  -  does not show on all posts - part of figure which uncludes image
 .wp-caption-text, figcaption {
-  width: 50rem;
+  width: 50rem!important;
   min-height: 4.2rem;
   position: relative;
   font-size: 1.2rem;
@@ -207,31 +209,103 @@ p[data-rte-preserve-empty] {
 } 
 
 
-
 @media screen and (max-width: 740px) {
-  .container-img-content-page{
+  .wrapper-img-content-page {
     width: 42rem;
+    min-height: 28rem;
+    margin: 1.2rem 0;
+  }
+  .container-img-content-page{
+    width: 42rem!important;
     min-height: 28rem!important;
+  }
+  .img-content-page {
+    width: 42rem!important;
+    height: 28rem!important;
+  }
+  .image-caption-wrapper {
+    width: 42rem!important;
+  }
+  .wp-caption-text, figcaption {
+    width: 42rem!important;
+  }
+  .image-caption p {
+    font-size: 1.2rem;
+    padding: 0 0.6rem;
+  }
+  .wp-caption-text, figcaption {
+    font-size: 1.2rem;
+    padding: 0 0.6rem;
   }
 }
 
 @media screen and (max-width: 540px) {
+  .wrapper-img-content-page {
+    width: 38rem;
+    min-height: 25.3rem;
+  }
   .container-img-content-page{
     width: 38rem;
     min-height: 25.3rem!important;
   }
+  .img-content-page {
+    width: 38rem!important;
+    height: 25.3rem!important;
+  }
+  .image-caption-wrapper {
+    width: 38rem!important;
+  }
+  .wp-caption-text, figcaption {
+    width: 38rem!important;
+  }
 }
 
 @media screen and (max-width: 460px) {
+  .wrapper-img-content-page {
+    width: 34rem;
+    min-height: 22.6rem;
+  }
   .container-img-content-page{
     width: 34rem;
     min-height: 22.6rem!important;
   }
+  .img-content-page {
+    width: 34rem!important;
+    height: 22.6rem!important;
+  }
+  .image-caption-wrapper {
+    width: 34rem!important;
+  }
+  .wp-caption-text, figcaption {
+    width: 34rem!important;
+  }
 }
 
 @media screen and (max-width: 400px) {
+  .wrapper-img-content-page {
+    width: 26rem;
+    min-height: 17.3rem;
+  } 
   .container-img-content-page{
-    width: 30rem;
-    min-height: 20rem!important;
+    width: 26rem;
+    min-height: 17.3rem!important;
+  }
+  .img-content-page {
+    width: 26rem!important;
+    height: 17.3rem!important;
+  }
+  .image-caption-wrapper {
+    width: 26rem!important;
+  }
+  .wp-caption-text, figcaption {
+    width: 26rem!important;
+  }
+  .image-caption p {
+    font-size: 1.0rem;
+    padding: 0 0.6rem;
+  }
+  .wp-caption-text, figcaption {
+    font-size: 1.0rem;
+    padding: 0 0.6rem;
   }
 }
