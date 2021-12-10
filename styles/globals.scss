@@ -67,7 +67,7 @@ a{
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  
 }
 
 // Rule do reset unwanted p tag on some content
@@ -81,6 +81,10 @@ a{
   width: 100%;
   height: auto;
   margin: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  
 }
 
 
@@ -95,7 +99,6 @@ a{
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  // margin: 4.8rem 0 0;
 }
 
 // Wrapper level 5 - figure wrapper with newest posts -  does not show on all posts
@@ -215,10 +218,6 @@ p[data-rte-preserve-empty] {
     min-height: 28rem;
     margin: 1.2rem 0;
   }
-  .container-img-content-page{
-    width: 42rem!important;
-    min-height: 28rem!important;
-  }
   .img-content-page {
     width: 42rem!important;
     height: 28rem!important;
@@ -244,10 +243,6 @@ p[data-rte-preserve-empty] {
     width: 38rem;
     min-height: 25.3rem;
   }
-  .container-img-content-page{
-    width: 38rem;
-    min-height: 25.3rem!important;
-  }
   .img-content-page {
     width: 38rem!important;
     height: 25.3rem!important;
@@ -264,10 +259,6 @@ p[data-rte-preserve-empty] {
   .wrapper-img-content-page {
     width: 34rem;
     min-height: 22.6rem;
-  }
-  .container-img-content-page{
-    width: 34rem;
-    min-height: 22.6rem!important;
   }
   .img-content-page {
     width: 34rem!important;
@@ -286,10 +277,6 @@ p[data-rte-preserve-empty] {
     width: 26rem;
     min-height: 17.3rem;
   } 
-  .container-img-content-page{
-    width: 26rem;
-    min-height: 17.3rem!important;
-  }
   .img-content-page {
     width: 26rem!important;
     height: 17.3rem!important;
