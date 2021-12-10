@@ -21,12 +21,13 @@ export default function CardSmall({
 	color,
 	textColor,
 	altText,
+	section,
 }) {
 	const router = useRouter();
 	return (
 		<article
 			className={styles.cardSmall}
-			onClick={() => router.push(`/blog/${slug}`)}
+			onClick={() => router.push(`/${section}/${slug}`)}
 		>
 			<Tag text={category} color={color} textColor={textColor} />
 			<picture

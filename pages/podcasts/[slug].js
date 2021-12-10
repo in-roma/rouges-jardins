@@ -49,7 +49,22 @@ export default function PostPage({ data, posts }) {
 								</span>
 							</div>
 						</div>
-
+						<picture
+							className={styles.picturePodcastPage}
+							style={{
+								display: 'block',
+								position: 'relative',
+								borderRadius: '6px',
+								overflow: 'hidden',
+							}}
+						>
+							<Image
+								src={data.post.featuredImage.node.sourceUrl}
+								layout="fill"
+								objectFit="cover"
+								alt=""
+							/>
+						</picture>
 						<h1 className={styles.titlePodcastPage}>
 							{data.post.title}
 						</h1>

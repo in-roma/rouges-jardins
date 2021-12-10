@@ -46,7 +46,7 @@ export default function Podcast({ posts }) {
 								key={'podcasts' + el.node.id}
 								type="podcasts"
 								cardLargeType="cardLargePodcasts"
-								colorTag="#D63447"
+								color="#D63447"
 								textColor="white"
 								title={
 									el.node.title.length > 64
@@ -65,6 +65,7 @@ export default function Podcast({ posts }) {
 								category={el.node.categories.nodes[0].name}
 								slug={el.node.slug}
 								altText={el.node.featuredImage.node.altText}
+								section="podcasts"
 							/>
 						))}
 					</div>

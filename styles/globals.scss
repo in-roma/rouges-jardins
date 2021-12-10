@@ -57,7 +57,7 @@ a{
 }
 
 // Wrapper level 2 - no div parsing with html-react-parser
-.sqs-block-image-figure{
+.sqs-block-image-figure, .aligncenter{
   width: auto;
   height: auto;
   max-width: unset!important; //overwritte needed from wp db styling

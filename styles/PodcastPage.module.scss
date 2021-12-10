@@ -10,11 +10,10 @@
 
 .podcastPage {
     position: relative;
-    width: 72.2rem;
+    width: 67.2rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
 }
 
 .navBarPodcastPage {
@@ -26,13 +25,12 @@
     align-items: center;
 }
 
-.containerBtnPodcastPage{
+.containerBtnPodcastPage {
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
     cursor: pointer;
-
 }
 
 .iconBackPodcastPage {
@@ -41,26 +39,24 @@
 
 .btnPodcastPage {
     font-size: 1.2rem;
-    line-height: 1.0rem;
+    line-height: 1rem;
     margin-left: 1.2rem;
     font-weight: 500;
     text-decoration-line: underline;
     color: black;
-
 }
 
 .picturePodcastPage {
-    width: 72.2rem;
+    width: 67.2rem;
     height: 43.6rem;
     background-position: center;
     background-size: cover;
     border-radius: 0.6rem;
-
 }
 
 .titlePodcastPage {
     width: auto;
-    height:auto;
+    height: auto;
     font-family: "Lora", sans-serif;
     font-size: 2.6rem;
     font-style: normal;
@@ -68,7 +64,6 @@
     line-height: 2.6rem;
     letter-spacing: 0em;
     margin-top: 2.6rem;
-
 }
 
 .infoPodcastPage {
@@ -78,12 +73,10 @@
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: flex-end;
-
 }
 
-
 .contentPodcastPage {
-    width: 72.2rem;
+    width: 67.2rem;
     font-size: 1.6rem;
     font-weight: 300;
     line-height: 24px;
@@ -91,78 +84,146 @@
     text-align: left;
     margin: 0 0 6rem 0;
 
-
     p {
         font-size: 1.6rem;
         font-weight: 300;
         margin-bottom: 1.8rem;
-
     }
     strong {
         font-size: 1.6rem;
         font-weight: 600;
     }
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         font-size: 1.6rem;
         font-weight: 500;
     }
 }
 
-
-
 @media screen and (max-width: 1240px) {
-    .containerPodcastPage  {
+    .containerPodcastPage {
         width: 88.6rem;
     }
-
 }
 
 @media screen and (max-width: 1040px) {
-    .containerPodcastPage  {
+    .containerPodcastPage {
         width: 68.2rem;
     }
-
 }
 
 @media screen and (max-width: 740px) {
-    .containerPodcastPage  {
+    .containerPodcastPage {
         width: 58.2rem;
     }
-
+    .podcastPage {
+        width: 58.2rem;
+    }
+    .picturePodcastPage {
+        width: 58.2rem;
+        height: 35rem;
+    }
+    .titlePodcastPage {
+        font-size: 2.2rem;
+    }
+    .contentPodcastPage {
+        width: 58.2rem;
+    }
 }
 
 @media screen and (max-width: 640px) {
-    .containerPodcastPage  {
+    .containerPodcastPage {
         width: 48.2rem;
     }
-
+    .podcastPage {
+        width: 48.2rem;
+    }
+    .picturePodcastPage {
+        width: 48.2rem;
+        height: 29rem;
+    }
+    .titlePodcastPage {
+        font-size: 2rem;
+    }
+    .contentPodcastPage {
+        width: 48.2rem;
+    }
 }
 
 @media screen and (max-width: 540px) {
-    .containerPodcastPage  {
+    .containerPodcastPage {
         width: 42.2rem;
     }
-
+    .podcastPage {
+        width: 42.2rem;
+    }
+    .picturePodcastPage {
+        width: 42.2rem;
+        height: 25.3rem;
+    }
+    .titlePodcastPage {
+        font-size: 1.8rem;
+    }
+    .contentPodcastPage {
+        width: 42.2rem;
+    }
 }
 
 @media screen and (max-width: 460px) {
-    .containerPodcastPage  {
+    .containerPodcastPage {
         width: 36rem;
     }
-
+    .podcastPage {
+        width: 36rem;
+    }
+    .picturePodcastPage {
+        width: 36rem;
+        height: 21.6rem;
+    }
+    .titlePodcastPage {
+        font-size: 1.8rem;
+    }
+    .contentPodcastPage {
+        width: 36rem;
+        font-size: 1.4rem;
+    }
 }
 
 @media screen and (max-width: 400px) {
-    .containerPodcastPage  {
+    .containerPodcastPage {
         width: 30rem;
-
     }
-
+    .podcastPage {
+        width: 30rem;
+    }
+    .picturePodcastPage {
+        width: 30rem;
+        height: 18rem;
+    }
+    .titlePodcastPage {
+        font-size: 1.7rem;
+    }
+    .contentPodcastPage {
+        width: 30rem;
+    }
 }
 
 @media screen and (max-width: 340px) {
-    .containerPodcastPage  {
+    .containerPodcastPage {
         width: 28rem;
     }
-
+    .podcastPage {
+        width: 28rem;
+    }
+    .picturePodcastPage {
+        width: 28rem;
+        height: 16.8rem;
+    }
+    .contentPodcastPage {
+        width: 28rem;
+    }
 }

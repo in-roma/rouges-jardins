@@ -210,6 +210,7 @@ export default function Blog({ posts, categories }) {
 										altText={
 											el.node.featuredImage.node.altText
 										}
+										section="blog"
 									/>
 								))}
 						</div>
