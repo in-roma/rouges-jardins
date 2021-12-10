@@ -151,15 +151,17 @@ export default function Blog({ posts, categories }) {
 			<Layout>
 				<div className={styles.containerBlog}>
 					<section className={styles.navBarBlog}>
-						<h1>Chroniques</h1>
+						<div className={styles.containerBlogHeaderFilter}>
+							<h1>Chroniques</h1>
+							<Filter
+								categories={categories}
+								onChangeCategory={onChangeCategory}
+							/>
+						</div>
 						<Search
 							value={searchValue}
 							onChangeInput={onChangeInput}
 							onSubmitSearch={searchPosts}
-						/>
-						<Filter
-							categories={categories}
-							onChangeCategory={onChangeCategory}
 						/>
 					</section>
 					{isRefreshing && (

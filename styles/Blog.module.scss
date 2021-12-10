@@ -16,10 +16,19 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 0.1rem solid #EFEFEF;
+    border-bottom: 0.1rem solid #efefef;
     background-color: white;
     opacity: 0.9;
     z-index: 5;
+}
+
+.containerBlogHeaderFilter {
+    width: auto;
+    height: 7.2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .contentBlog {
@@ -64,10 +73,10 @@
 }
 
 .cardSmallBlog {
-    grid-row:none;
+    grid-row: none;
 }
 
-.containerLoaderBlog{
+.containerLoaderBlog {
     position: fixed;
     width: 118.8rem;
     height: auto;
@@ -87,17 +96,17 @@
     justify-content: center;
     align-items: center;
 
-    .loaderIcon{
+    .loaderIcon {
         border: 2.2px solid hsla(0, 0%, 0%, 0.3);
         border-top-color: hsla(0, 0%, 0%, 1);
         border-radius: 50%;
         width: 2.4rem;
         height: 2.4rem;
-        animation: spin 0.7s linear infinite;     
-}
+        animation: spin 0.7s linear infinite;
+    }
     span {
-        font-size: 1.0rem;
-        line-height: 1.0rem;
+        font-size: 1rem;
+        line-height: 1rem;
         font-weight: 400;
         margin-top: 0.8rem;
     }
@@ -105,9 +114,9 @@
 
 @keyframes spin {
     to {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
+}
 
 .containerButtonBlog {
     width: 118.8rem;
@@ -117,7 +126,6 @@
     justify-content: center;
     align-items: center;
 }
-
 
 .buttonMoreBlog {
     height: 4.2rem;
@@ -135,86 +143,87 @@
 }
 
 @media screen and (max-width: 1240px) {
-    .navBarBlog, .containerLoaderBlog,
+    .navBarBlog,
+    .containerLoaderBlog,
     .searchBarBlog {
         width: 88.6rem;
     }
-    .contentBlog{
+    .contentBlog {
         grid-template-columns: repeat(3, 1fr);
     }
-
 }
 
 @media screen and (max-width: 1040px) {
-    .navBarBlog, .containerLoaderBlog,
+    .navBarBlog,
+    .containerLoaderBlog,
     .searchBarBlog {
         width: 68.2rem;
     }
-    .contentBlog{
+    .contentBlog {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 4.2rem;
     }
-
 }
 
 @media screen and (max-width: 740px) {
-    .contentBlog{
+    .contentBlog {
         column-gap: 3.6rem;
+        margin-top: 14.2rem;
     }
-    .navBarBlog, 
-    .containerLoaderBlog,
+    .navBarBlog,
     .searchBarBlog {
         width: 58.2rem;
+        height: 10.8rem;
+        flex-flow: column;
+        justify-content: center;
+        align-items: flex-start;
     }
-
+    .containerLoaderBlog {
+        width: 58.2rem;
+    }
 }
 
 @media screen and (max-width: 640px) {
-    .navBarBlog   {
+    .navBarBlog {
         width: 48.2rem;
-        height: 14rem;
-        flex-flow: column;
-        justify-content: space-between;
-        align-items: flex-start;
+        height: 10.8rem;
     }
-    .searchBarBlog, .containerLoaderBlog {
+    .searchBarBlog,
+    .containerLoaderBlog {
         width: 48.2rem;
     }
     .contentBlog {
         column-gap: 3.8rem;
-        margin-top: 16rem;
     }
-
 }
 
 @media screen and (max-width: 540px) {
-    .navBarBlog, .containerLoaderBlog   {
+    .navBarBlog,
+    .containerLoaderBlog {
         width: 42.2rem;
     }
-    .contentBlog{
+    .contentBlog {
         grid-template-columns: 1fr;
     }
-
 }
 
 @media screen and (max-width: 460px) {
-    .navBarBlog, .containerLoaderBlog   {
+    .navBarBlog,
+    .containerLoaderBlog {
         width: 36rem;
     }
-
 }
 
 @media screen and (max-width: 400px) {
-    .navBarBlog, .containerLoaderBlog   {
+    .navBarBlog,
+    .containerLoaderBlog {
         width: 30rem;
     }
-
 }
 
-
 @media screen and (max-width: 340px) {
-    .navBarBlog, .containerLoaderBlog   {
+    .navBarBlog,
+    .containerLoaderBlog {
         width: 28rem;
     }
-
 }

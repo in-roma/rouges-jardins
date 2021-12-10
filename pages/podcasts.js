@@ -3,6 +3,7 @@ import Head from 'next/head';
 
 // Components
 import Layout from '../components/layout';
+import CardSmall from '../components/microComponents/cardSmall';
 import CardPodcast from '../components/microComponents/cardPodcast';
 import Search from '../components/microComponents/search';
 
@@ -30,12 +31,18 @@ export default function Podcast({ posts }) {
 			<Layout>
 				<div className={styles.containerPodcasts}>
 					<section className={styles.navBarPodcast}>
-						<h1>Podcasts</h1>
-						<Search />
+						<div className={styles.containerBlogHeaderFilter}>
+							<h1>Podcasts</h1>
+						</div>
+						<Search
+						// value={searchValue}
+						// onChangeInput={onChangeInput}
+						// onSubmitSearch={searchPosts}
+						/>
 					</section>
 					<div className={styles.contentPodcasts}>
 						{podcasts.map((el) => (
-							<CardPodcast
+							<CardSmall
 								key={'podcasts' + el.node.id}
 								type="podcasts"
 								cardLargeType="cardLargePodcasts"

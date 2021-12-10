@@ -1,5 +1,6 @@
 .formSearch {
-    height: 2.4rem;
+    height: 3.6rem;
+    justify-self: flex-end !important;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
@@ -27,7 +28,7 @@
 }
 
 .buttonSearch {
-    width:4.8rem;
+    width: 4.8rem;
     font-weight: 500;
     font-size: 0.8rem;
     line-height: 4.8rem;
@@ -42,21 +43,31 @@
 }
 
 @media screen and (max-width: 740px) {
+    .formSearch {
+        width: 100%;
+    }
     .inputSearch {
-        width: 18rem;
-}
+        width: 88%;
+    }
 }
 
 @media screen and (max-width: 640px) {
-    .formSearch {
-        width: 90%;
-        justify-content: space-between;
-        align-items: center;
+    .inputSearch {
+        font-size: 1.4rem;
     }
     .inputSearch {
-        width: 100%;
-        font-size: 1.4rem;
+        width: 86%;
     }
 }
 
+@media screen and (max-width: 540px) {
+    .inputSearch {
+        width: 88%;
+    }
+}
 
+@media screen and (max-width: 400px) {
+    .inputSearch {
+        width: 78%;
+    }
+}
