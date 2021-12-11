@@ -41,6 +41,10 @@ module.exports = withSass({
 	cssModules: true,
 });
 module.exports = {
+	reactStrictMode: true,
+	env: {
+		RAYGUN_API_KEY: 'OUP2nDfz1ksV9wTJgEQ7Q',
+	},
 	sassOptions: {
 		includePaths: [path.join(__dirname, 'styles')],
 	},
