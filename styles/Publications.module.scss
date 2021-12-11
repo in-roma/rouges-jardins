@@ -7,7 +7,6 @@
     justify-content: space-between;
     align-items: space-between;
     margin-top: 2.4rem;
-
 }
 
 .navBarPublications {
@@ -18,7 +17,7 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 0.1rem solid #EFEFEF;
+    border-bottom: 0.1rem solid #efefef;
     background-color: white;
     opacity: 0.9;
     z-index: 5;
@@ -29,31 +28,68 @@
     height: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    justify-content: space-between;    
-    column-gap: 2.2rem;
-    row-gap: 2.4rem;
+    justify-content: space-between;
+    column-gap: 2rem;
+    row-gap: 4.8rem;
     margin-top: 10.6rem;
-
-
 }
 
-
 @media screen and (max-width: 1240px) {
-    .contentPublications{
+    .contentPublications {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .navBarPublications {
+        width: 88.6rem;
     }
 }
 
 @media screen and (max-width: 1040px) {
-    .contentPublications{
+    .contentPublications {
         grid-template-columns: repeat(2, 1fr);
     }
-}
-
-
-@media screen and (max-width: 540px) {
-    .contentPublications{
-        grid-template-columns: 1fr;
+    .navBarPublications {
+        width: 68.2rem;
     }
 }
 
+@media screen and (max-width: 740px) {
+    .contentPublications {
+       column-gap: 2rem;
+    }
+    .navBarPublications {
+        width: 58.2rem;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .navBarPublications {
+        width: 48.2rem;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .contentPublications {
+        grid-template-columns: 1fr;
+    }
+    .navBarPublications {
+        width: 42.2rem;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .navBarPublications {
+        width: 36rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .navBarPublications {
+        width: 30rem;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .navBarPublications {
+        width: 28rem;
+    }
+}
