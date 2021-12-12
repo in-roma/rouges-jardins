@@ -42,9 +42,7 @@
 
 .PublicationPage {
     position: relative;
-
-    width: 72.2rem;
-
+    width: 67.2rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -83,15 +81,13 @@
 
 
 .contentPublicationPage {
-    width: 72.2rem;
+    width: 100%;
     font-size: 1.6rem;
     font-weight: 300;
     line-height: 24px;
     letter-spacing: 0.02em;
     text-align: left;
     margin: 0 0 6rem 0;
-
-
     p {
         font-size: 1.6rem;
         font-weight: 300;
@@ -100,7 +96,7 @@
     }
     strong {
         font-size: 1.6rem;
-        font-weight: 600;
+        font-weight: 500;
     }
     h1, h2, h3, h4, h5, h6 {
         font-size: 1.6rem;
@@ -127,12 +123,38 @@
     .containerPublicationPage  {
         width: 58.2rem;
     }
-
+    .PublicationPage {
+        width: 58.2rem;
+    }
+    .picturePublicationPage {
+        width: 30rem;
+        height: 36.2rem;
+        margin-bottom: 1.2rem;
+    }
+    .titlePublicationPage {
+        font-size: 2.2rem;
+    }
+    .contentPublicationPage {
+        p {
+            font-size: 1.5rem;
+        }
+    }
 }
 
 @media screen and (max-width: 640px) {
     .containerPublicationPage  {
         width: 48.2rem;
+    }
+    .PublicationPage {
+        width: 48.2rem;
+    }
+    .picturePublicationPage {
+        width: 26rem;
+        height: 31.3rem;
+        margin-bottom: 1.2rem;
+    }
+    .titlePublicationPage {
+        font-size: 2rem;
     }
 
 }
@@ -141,20 +163,45 @@
     .containerPublicationPage  {
         width: 42.2rem;
     }
-
+    .PublicationPage {
+        width: 42.2rem;
+    }
+    .titlePublicationPage {
+        font-size: 1.8rem;
+    }
+    .btnPublicationPage {
+        font-size:1rem;
+    }
 }
 
 @media screen and (max-width: 460px) {
     .containerPublicationPage  {
         width: 36rem;
     }
-
+    .PublicationPage {
+        width: 36rem;
+    }
+    .titlePublicationPage {
+        font-size: 1.8rem;
+    }
+    .picturePublicationPage {
+        width: 24rem;
+        height: 28.9rem;
+        margin-bottom:0.6rem;
+    }
+    .contentPublicationPage {
+        p {
+            font-size: 1.4rem;
+        }
+    }
 }
 
 @media screen and (max-width: 400px) {
     .containerPublicationPage  {
         width: 30rem;
-
+    }
+    .PublicationPage {
+        width: 30rem;
     }
 
 }
@@ -163,5 +210,7 @@
     .containerPublicationPage  {
         width: 28rem;
     }
-
+    .PublicationPage {
+        width: 28rem;
+    }
 }
