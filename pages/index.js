@@ -82,6 +82,7 @@ export default function Home({ posts, podcasts, publications }) {
 						textColor="white"
 						title={parsing(posts.edges[0].node.title)}
 						text={
+							posts.edges[0].node.excerpt &&
 							posts.edges[0].node.excerpt.length > 288
 								? parsing(
 										posts.edges[0].node.excerpt.slice(
@@ -118,6 +119,7 @@ export default function Home({ posts, podcasts, publications }) {
 					rgba(0, 0, 0, 1)"
 							textColor="white"
 							altText={el.node.featuredImage.node.altText}
+							section="blog"
 						/>
 					))}
 					<SectionBar
@@ -132,6 +134,7 @@ export default function Home({ posts, podcasts, publications }) {
 						textColor="white"
 						title={parsing(podcasts.posts.edges[0].node.title)}
 						text={
+							podcasts.posts.edges[0].node.excerpt &&
 							podcasts.posts.edges[0].node.excerpt.length > 288
 								? parsing(
 										podcasts.posts.edges[0].node.excerpt.slice(
