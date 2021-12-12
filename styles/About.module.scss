@@ -1,5 +1,4 @@
 .containerAbout {
-
     width: 100%;
     min-height: 90vh;
     display: flex;
@@ -7,11 +6,9 @@
     justify-content: space-between;
     align-items: center;
     grid-column: 1/5;
-    
-
 }
 
-.navBarAbout{
+.navBarAbout {
     position: fixed;
     width: 118.8rem;
     height: 7.2rem;
@@ -19,14 +16,12 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 0.1rem solid #EFEFEF;
+    border-bottom: 0.1rem solid #efefef;
     background-color: white;
     opacity: 0.9;
     z-index: 5;
     margin-top: 2.4rem;
 }
-
-
 
 .contentAbout {
     width: 67.2rem;
@@ -37,8 +32,6 @@
     margin-top: 12rem;
 }
 
-
-
 .pictureAbout {
     width: 42rem;
     height: 25.2rem;
@@ -47,7 +40,7 @@
 }
 
 .textAbout {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     line-height: 2.4rem;
     font-weight: 300;
     font-family: poppins, sans-serif;
@@ -55,22 +48,102 @@
     strong {
         font-weight: 400;
     }
-    a, em {
+    a,
+    em {
         font-weight: 300;
         text-decoration: underline;
     }
 }
 
-.emailTextAbout{
+.emailTextAbout {
     font-size: 1.5rem;
     line-height: 2.4rem;
     font-weight: 300;
     font-family: poppins, sans-serif;
     margin: 5rem 0 0rem 0rem;
-
 }
 
 .emailAbout {
     text-decoration: underline;
     font-weight: 500;
+}
+
+@media screen and (max-width: 1240px) {
+    .navBarAbout {
+        width: 88.6rem;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    .navBarAbout {
+        width: 68.2rem;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .navBarAbout {
+        width: 58.2rem;
+    }
+    .contentAbout {
+        width: 58.2rem;
+    }
+    .textAbout {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .navBarAbout {
+        width: 48.2rem;
+    }
+    .contentAbout {
+        width: 48.2rem;
+    }
+    .pictureAbout {
+        width: 36rem;
+        height: 21.5rem;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .navBarAbout {
+        width: 42.2rem;
+    }
+    .contentAbout {
+        width: 42.2rem;
+    }
+    .pictureAbout {
+        width: 26rem;
+        height: 15.5rem;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .navBarAbout {
+        width: 36rem;
+    }
+    .contentAbout {
+        width: 36rem;
+    }
+    .textAbout {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .navBarAbout {
+        width: 30rem;
+    }
+    .contentAbout {
+        width: 30rem;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .navBarAbout {
+        width: 28rem;
+    }
+    .contentAbout {
+        width: 28rem;
+    }
 }
