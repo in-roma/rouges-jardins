@@ -1,0 +1,119 @@
+.containerSuccess {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 2.4rem;
+}
+
+.contentSuccess {
+    width: 118.8rem;
+    height: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5.8rem;
+    padding: 2.4rem;
+}
+
+.pictureSuccess {
+    width: 42rem;
+    height: 30rem;
+    margin: 2.4rem 0;
+}
+
+.textSuccess {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin: 0;
+    }
+    span {
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    .contentSuccess {
+        width: 88.6rem;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    .contentSuccess {
+        width: 68.2rem;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .contentSuccess {
+        width: 58.2rem;
+    }
+
+    .textSuccess {
+        h2 {
+            font-size: 1.8rem;
+        }
+
+        span {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .contentSuccess {
+        width: 48.2rem;
+    }
+    .pictureSuccess {
+        width: 30rem;
+        height: 22.8rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .contentSuccess {
+        width: 42.2rem;
+    }
+    .textSuccess {
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        span {
+            font-size: 1.3rem;
+        }
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .contentSuccess {
+        width: 36rem;
+    }
+    .pictureSuccess {
+        width: 26rem;
+        height: 18.57rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .contentSuccess {
+        width: 30rem;
+    }
+}
+@media screen and (max-width: 340px) {
+    .contentSuccess {
+        width: 28rem;
+    }
+}

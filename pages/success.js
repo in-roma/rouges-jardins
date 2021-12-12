@@ -3,9 +3,15 @@ import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import axios from 'axios';
 import Head from 'next/head';
+import Image from 'next/image';
+import useWindowSize from 'react-use/lib/useWindowSize';
+import Confetti from 'react-confetti';
 
 // Components
 import Layout from '../components/layout';
+
+// Styles
+import styles from '../styles/Success.module.scss';
 
 export default function Success() {
 	const fetcher = (url) => axios.get(url).then((res) => res.data);
@@ -25,10 +31,13 @@ export default function Success() {
 		}
 	}, [data]);
 
+	// Confetti
+	const { width, height } = useWindowSize();
+
 	return (
 		<>
 			<Head>
-				<title>Paiement enregistré</title>
+				<title>Commande effectuée</title>
 				<meta
 					name="viewport"
 					content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
@@ -41,8 +50,43 @@ export default function Success() {
 				<meta name="googlebot" content="noindex" />
 			</Head>
 			<Layout>
-				<div>
-					<h3>Payment OK - Success Page</h3>
+				<Confetti
+					width={width}
+					height={height}
+					colors={['#1B1B1B', '#FAD31D', '#D63346']}
+					numberOfPieces={100}
+				/>
+				<div className={styles.containerSuccess}>
+					<div className={styles.contentSuccess}>
+						<div className={styles.textSuccess}>
+							<h2>- Succès de votre commmande - </h2>
+							<div
+								className={styles.pictureSuccess}
+								style={{
+									display: 'block',
+									position: 'relative',
+									borderRadius: '6px',
+									overflow: 'hidden',
+								}}
+							>
+								<Image
+									src={
+										'http://www.jcou8054.odns.fr/wp-content/uploads/2015/10/SINGE-SANS-NEZ-scaled.jpg'
+									}
+									layout="fill"
+									objectFit="cover"
+									alt={'image de signes pour dire merci'}
+								/>
+							</div>
+							<span>
+								Votre commande a bien été enregistrée, merci !!!
+							</span>
+							<span>
+								Vous allez recevoir un email de confirmation
+								sous peu.
+							</span>
+						</div>
+					</div>
 				</div>
 			</Layout>
 		</>
