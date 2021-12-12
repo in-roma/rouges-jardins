@@ -4,9 +4,8 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    align-items: space-between;
+    align-items: flex-start;
     margin-top: 2.4rem;
-
 }
 
 .contentCart {
@@ -14,10 +13,9 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;    
+    justify-content: space-between;
     column-gap: 2.2rem;
-    row-gap: 2.4rem;
-
+    row-gap: 1.2rem;
 }
 
 .navBarCart {
@@ -28,12 +26,12 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 0.1rem solid #EFEFEF;
+    border-bottom: 0.1rem solid #efefef;
     background-color: white;
     opacity: 0.9;
     z-index: 5;
     h2 {
-        font-size:2rem;
+        font-size: 2rem;
     }
     a {
         font-weight: 500;
@@ -44,23 +42,18 @@
     }
 }
 
-
-
 .searchBarBlog {
     position: fixed;
     width: 118.8rem;
     height: 6rem;
     margin-top: 6rem;
-
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     background-color: white;
     opacity: 0.9;
     z-index: 5;
-
-
     h2 {
         font-size: 1.4rem;
         line-height: 1.4rem;
@@ -79,56 +72,51 @@
     }
 }
 
-
 .tableCart {
     width: 100%;
     min-height: 16rem;
     display: grid;
-    grid-template-columns: 18rem 1fr 1fr 1fr 10rem 1rem;
+    grid-template-columns: 8rem 1fr 1fr 1fr 6rem 1rem;
     column-gap: 1.2rem;
     row-gap: 2rem;
-    margin-top: 10.4rem;
+    margin: 10.4rem 0 4.2rem 0;
+
     justify-items: center;
     align-items: center;
 
-    span{
-        font-size:1.4rem;
-        line-height:1.4rem;
+    span {
+        font-size: 1.4rem;
+        line-height: 1.4rem;
         font-weight: 500;
     }
-    .thTableTitreCart{
+    .thTableTitreCart {
         grid-column: 1/3;
         justify-items: center;
         align-self: start;
-  
-    }   
-    .thTableCart{
-    margin-bottom: 1.8rem;
-    align-self: start;
     }
-    .pictureCardCart{
+    .thTableCart {
+        margin-bottom: 1.8rem;
+        align-self: start;
+    }
+    .pictureCardCart {
         grid-column: 1/2;
     }
     .titleTableCart {
         grid-column: 2/3;
         justify-self: start;
-
     }
-    .noItemsCart{
+    .noItemsCart {
         grid-column: 1/7;
-        grid-row: 2/3;
+
         justify-self: center;
         align-self: center;
-        font-style: italic;  
+        font-style: italic;
     }
-   
-
 }
 
-
-.pictureCardCart{
-    width: 18rem;
-    height: 10.8rem;
+.pictureCardCart {
+    width: 8rem;
+    height: 9.63rem;
     background-position: center;
     background-size: cover;
     border-radius: 0.6rem;
@@ -139,41 +127,38 @@
 }
 
 .cardSmallBlog {
-    grid-row:none;
+    grid-row: none;
 }
 
 .tableCartfooter {
-    position: absolute;
-    bottom: 0rem;
     width: 100%;
     height: 16rem;
     display: grid;
-    grid-template-columns: 18rem 1fr 1fr 1fr 10rem 1rem;
+    grid-template-columns: 8rem 1fr 1fr 1fr 6rem 1rem;
     column-gap: 1.2rem;
     row-gap: 0.8rem;
 
     justify-items: center;
     align-items: center;
-    span{
-        font-size:1.4rem;
-        line-height:1.4rem;
+    span {
+        font-size: 1.4rem;
+        line-height: 1.4rem;
         font-weight: 500;
     }
-    .iconDeleteCArt{
-        justify-self:end;
+    .iconDeleteCArt {
+        justify-self: end;
     }
-    .SumTableCart {
+    .sumTableCart {
         grid-column: 4/5;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
         align-self: center;
-        
 
-        .SumNoticeTableCart{
-            font-size:1.2em;
-            line-height:1.2rem;
+        .sumNoticeTableCart {
+            font-size: 1.2em;
+            line-height: 1.2rem;
             font-weight: 400;
             font-style: italic;
             justify-self: center;
@@ -181,97 +166,136 @@
             margin-top: 0.8rem;
         }
     }
-    .SumValueTableCart{
+    .sumValueTableCart {
         grid-column: 5/6;
-
     }
 
-    button{
+    button {
         grid-column: 5/6;
-
     }
-
 }
 
-
 @media screen and (max-width: 1240px) {
-    .navBarBlog   {
+    .navBarCart {
         width: 88.6rem;
     }
     .searchBarBlog {
         width: 88.6rem;
     }
-    .contentBlog{
+    .contentBlog {
         grid-template-columns: repeat(3, 1fr);
     }
-
 }
 
 @media screen and (max-width: 1040px) {
-    .navBarBlog   {
+    .navBarCart {
         width: 68.2rem;
     }
     .searchBarBlog {
         width: 68.2rem;
     }
-    .contentBlog{
+    .contentBlog {
         grid-template-columns: repeat(2, 1fr);
     }
-
 }
 
 @media screen and (max-width: 740px) {
-    .navBarBlog   {
+    .tableCart {
+        span {
+            font-size: 1.2rem;
+        }
+    }
+    .navBarCart {
         width: 58.2rem;
     }
     .searchBarBlog {
         width: 58.2rem;
     }
-
 }
 
 @media screen and (max-width: 640px) {
-    .navBarBlog   {
+    .navBarCart {
         width: 48.2rem;
     }
     .searchBarBlog {
         width: 48.2rem;
     }
-
 }
 
 @media screen and (max-width: 540px) {
-    .navBarBlog   {
+    .navBarCart {
         width: 42.2rem;
+        a {
+            font-size: 1rem;
+        }
     }
-    .contentBlog{
+    .tableCart {
+        grid-template-columns: 6rem 1fr 1fr 1fr 4rem 1rem;
+        span {
+            font-size: 1.1rem;
+        }
+    }
+    .tableCartfooter {
+        grid-template-columns: 6rem 1fr 1fr 1fr 4rem 1rem;
+        span {
+            font-size: 1.1rem;
+        }
+        .sumTableCart {
+            .sumNoticeTableCart {
+                font-size: 0.8rem;
+            }
+        }
+    }
+    .contentBlog {
         grid-template-columns: 1fr;
     }
-
+    .pictureCardCart {
+        width: 6rem;
+        height: 7.22rem;
+    }
 }
 
 @media screen and (max-width: 460px) {
-    .navBarBlog   {
+    .navBarCart {
         width: 36rem;
     }
-
 }
 
 @media screen and (max-width: 400px) {
-    .navBarBlog   {
+    .navBarCart {
         width: 30rem;
-        height: 8rem;
-        flex-flow: column;
-        justify-content: space-around;
-        align-items: flex-start;
     }
-
+    .tableCart {
+        grid-template-columns: 4rem 1fr 1fr 1fr 2rem 1rem;
+        margin-bottom: 1.2rem;
+        span {
+            font-size: 1rem;
+        }
+    }
+    .tableCartfooter {
+        grid-template-columns: 4rem 1fr 1fr 1fr 2rem 1rem;
+        span {
+            font-size: 1rem;
+        }
+    }
+    .pictureCardCart {
+        width: 4rem;
+        height: 4.81rem;
+    }
 }
 
-
 @media screen and (max-width: 340px) {
-    .navBarBlog   {
+    .navBarCart {
         width: 28rem;
     }
-
+    .tableCart {
+        span {
+            font-size: 0.9rem;
+        }
+    }
+    .tableCartfooter {
+        span {
+            font-size: 0.9rem;
+        }
+    }
 }

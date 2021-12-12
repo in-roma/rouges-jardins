@@ -156,18 +156,18 @@ export default function Cart() {
 							<span className={styles.SumTableCart}>
 								Quantity
 							</span>
-							<span className={styles.SumValueTableCart}>
+							<span className={styles.sumValueTableCart}>
 								{cartList.reduce(function (acc, obj) {
 									return acc + obj.quantity;
 								}, 0)}
 							</span>
-							<div className={styles.SumTableCart}>
+							<div className={styles.sumTableCart}>
 								<span>Total</span>
-								<span className={styles.SumNoticeTableCart}>
+								<span className={styles.sumNoticeTableCart}>
 									Frais de port inclus
 								</span>
 							</div>
-							<span className={styles.SumValueTableCart}>
+							<span className={styles.sumValueTableCart}>
 								{cartList.reduce(function (acc, obj) {
 									return acc + obj.price * obj.quantity;
 								}, 0)}
