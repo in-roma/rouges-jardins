@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import axios from 'axios';
@@ -25,14 +25,19 @@ export default function Success() {
 		fetcher
 	);
 
+	// Confetti
+
+	const [width, setWidth] = useState();
+	const [height, setHeight] = useState();
+	const windowSize = useWindowSize();
+
 	useEffect(() => {
 		if (data) {
-			console.log('succes data');
+			// console.log('succes data');
+			setWidth(windowSize.width);
+			setHeight(windowSize.height);
 		}
 	}, [data]);
-
-	// Confetti
-	const { width, height } = useWindowSize();
 
 	return (
 		<>
@@ -49,15 +54,16 @@ export default function Success() {
 				<meta name="robots" content="noindex" />
 				<meta name="googlebot" content="noindex" />
 			</Head>
+
 			<Layout>
-				<Confetti
-					width={width}
-					height={height}
-					colors={['#1B1B1B', '#FAD31D', '#D63346']}
-					numberOfPieces={100}
-				/>
 				<div className={styles.containerSuccess}>
 					<div className={styles.contentSuccess}>
+						<Confetti
+							width={width}
+							height={height}
+							colors={['#1B1B1B', '#FAD31D', '#D63346']}
+							numberOfPieces={100}
+						/>
 						<div className={styles.textSuccess}>
 							<h2>- Succès de votre commmande - </h2>
 							<div
