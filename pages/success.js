@@ -4,8 +4,6 @@ import useSWR from 'swr';
 import axios from 'axios';
 import Head from 'next/head';
 import Image from 'next/image';
-import useWindowSize from 'react-use/lib/useWindowSize';
-import Confetti from 'react-confetti';
 
 // Components
 import Layout from '../components/layout';
@@ -25,17 +23,9 @@ export default function Success() {
 		fetcher
 	);
 
-	// Confetti
-
-	const [width, setWidth] = useState();
-	const [height, setHeight] = useState();
-	const windowSize = useWindowSize();
-
 	useEffect(() => {
 		if (data) {
 			// console.log('succes data');
-			setWidth(windowSize.width);
-			setHeight(windowSize.height);
 		}
 	}, [data]);
 
@@ -58,12 +48,6 @@ export default function Success() {
 			<Layout>
 				<div className={styles.containerSuccess}>
 					<div className={styles.contentSuccess}>
-						<Confetti
-							width={width}
-							height={height}
-							colors={['#1B1B1B', '#FAD31D', '#D63346']}
-							numberOfPieces={100}
-						/>
 						<div className={styles.textSuccess}>
 							<h2>- Succès de votre commmande - </h2>
 							<div

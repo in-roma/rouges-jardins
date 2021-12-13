@@ -1,4 +1,4 @@
-.containerSuccess {
+.container500 {
     width: 100%;
     min-height: 70vh;
     display: flex;
@@ -8,9 +8,9 @@
     margin-top: 2.4rem;
 }
 
-.contentSuccess {
+.content500 {
     width: 118.8rem;
-    height: 50vh;
+    height: auto;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -19,13 +19,8 @@
     padding: 2.4rem;
 }
 
-.pictureSuccess {
-    width: 42rem;
-    height: 30rem;
-    margin: 2.4rem 0;
-}
-
-.textSuccess {
+.text500 {
+    height: 50vh;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -33,88 +28,83 @@
     h2 {
         font-size: 2rem;
         font-weight: 600;
-        margin: 0;
+        margin: 0 0 2.4rem 0;
     }
     span {
         font-size: 1.5rem;
         font-weight: 300;
         text-align: center;
     }
+    a {
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-decoration: underline;
+    }
 }
 
 @media screen and (max-width: 1240px) {
-    .contentSuccess {
+    .content500 {
         width: 88.6rem;
     }
 }
 
 @media screen and (max-width: 1040px) {
-    .contentSuccess {
+    .content500 {
         width: 68.2rem;
     }
 }
 
 @media screen and (max-width: 740px) {
-    .contentSuccess {
+    .content500 {
         width: 58.2rem;
         padding: 1.2rem;
     }
 
-    .textSuccess {
+    .text500 {
         h2 {
             font-size: 1.8rem;
         }
 
-        span {
+        span, a {
             font-size: 1.5rem;
         }
     }
 }
 
 @media screen and (max-width: 640px) {
-    .contentSuccess {
+    .content500 {
         width: 48.2rem;
-    }
-    .pictureSuccess {
-        width: 30rem;
-        height: 22.8rem;
-        margin-bottom: 2rem;
     }
 }
 
 @media screen and (max-width: 540px) {
-    .contentSuccess {
+    .content500 {
         width: 42.2rem;
     }
-    .textSuccess {
+    .text500 {
         h2 {
             font-size: 1.5rem;
         }
 
-        span {
+        span, a {
             font-size: 1.3rem;
         }
     }
 }
 
 @media screen and (max-width: 460px) {
-    .contentSuccess {
+    .content500 {
         width: 36rem;
-    }
-    .pictureSuccess {
-        width: 26rem;
-        height: 18.57rem;
-        margin-bottom: 2rem;
     }
 }
 
 @media screen and (max-width: 400px) {
-    .contentSuccess {
+    .content500 {
         width: 30rem;
     }
 }
 @media screen and (max-width: 340px) {
-    .contentSuccess {
+    .content500 {
         width: 28rem;
     }
 }

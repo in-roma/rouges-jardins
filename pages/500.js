@@ -3,6 +3,9 @@ import Head from 'next/head';
 // Components
 import Layout from '../components/layout';
 
+// Styles
+import styles from '../styles/Page500.module.scss';
+
 export default function Custom500() {
 	return (
 		<>
@@ -20,8 +23,20 @@ export default function Custom500() {
 				<meta name="googlebot" content="noindex" />
 			</Head>
 			<Layout>
-				<div>
-					<h3>Page introuvable</h3>
+				<div className={styles.container500}>
+					<div className={styles.content500}>
+						<div className={styles.text500}>
+							<h2>- Problème serveur - </h2>
+							<span>
+								Le serveur du site rencontre un problème
+								momentané.
+							</span>
+							<span>
+								Nous vous invitons à vous reconnecter
+								ultérieurement.
+							</span>
+						</div>
+					</div>
 				</div>
 			</Layout>
 		</>
