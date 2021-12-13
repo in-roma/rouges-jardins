@@ -1,11 +1,15 @@
 import { useState, useContext, useEffect } from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
+import Media from 'react-media';
 
 // Components
 import Layout from '../components/layout';
 import Search from '../components/microComponents/search';
 import Filter from '../components/microComponents/filter';
+import searchPicBlack from '../public/searchBlack.svg';
+import crossIcon from '../public/crossBlack.svg';
 
 // Layout
 import styles from '../styles/Blog.module.scss';
@@ -52,6 +56,16 @@ export default function Blog({ posts, categories }) {
 	};
 
 	// Searchkeyword
+	const [searchMobileActive, setSearchMobileActive] = useState(false);
+	const mobileSearch = () => {
+		if (!searchActive) {
+			setSearchMobileActive(true);
+		}
+		if (searchActive) {
+			setSearchMobileActive(false);
+		}
+	};
+
 	const searchPosts = (event) => {
 		event.preventDefault();
 		let keyword = searchValue;
@@ -154,16 +168,70 @@ export default function Blog({ posts, categories }) {
 						<div className={styles.containerBlogHeaderFilter}>
 							<h1>Chroniques</h1>
 							<Filter
+								className={styles.filterBlog}
 								categories={categories}
 								onChangeCategory={onChangeCategory}
+								autofocusSet={false}
 							/>
 						</div>
-						<Search
-							value={searchValue}
-							onChangeInput={onChangeInput}
-							onSubmitSearch={searchPosts}
+						<Media
+							query="(min-width: 741px)"
+							render={() => (
+								<Search
+									value={searchValue}
+									onChangeInput={onChangeInput}
+									onSubmitSearch={searchPosts}
+								/>
+							)}
 						/>
+						{!searchMobileActive && (
+							<Media
+								query="(max-width: 740px)"
+								render={() => (
+									<div
+										className={styles.iconSearchMobile}
+										onClick={mobileSearch}
+									>
+										<Image
+											src={searchPicBlack}
+											alt="search icon"
+										/>
+									</div>
+								)}
+							/>
+						)}
+						{searchMobileActive && (
+							<Media
+								query="(max-width: 740px)"
+								render={() => (
+									<div
+										className={styles.iconSearchMobile}
+										onClick={mobileSearch}
+									>
+										<Image
+											src={crossIcon}
+											alt="close icon"
+										/>
+									</div>
+								)}
+							/>
+						)}
 					</section>
+					{searchMobileActive && (
+						<Media
+							query="(max-width: 740px)"
+							render={() => (
+								<div className={styles.searchMobile}>
+									<Search
+										value={searchValue}
+										onChangeInput={onChangeInput}
+										onSubmitSearch={searchPosts}
+										autofocusSet={true}
+									/>
+								</div>
+							)}
+						/>
+					)}
 					{isRefreshing && (
 						<div className={styles.containerLoaderBlog}>
 							<div className={styles.loader}>

@@ -39,13 +39,13 @@
     justify-content: space-between;
     column-gap: 2.2rem;
     row-gap: 2.4rem;
-    margin-top: 12rem;
+    margin-top: 10rem;
 }
 
 .searchBarBlog {
     position: fixed;
     width: 118.8rem;
-    height: 6rem;
+    height: 7.2rem;
     margin-top: 6rem;
     display: flex;
     flex-flow: row nowrap;
@@ -70,6 +70,34 @@
         background: transparent;
         cursor: pointer;
     }
+}
+
+.searchMobile {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-grow: row nowrap;
+    margin: 7.2rem 0 0 0;
+    opacity: 0.9;
+    z-index: 5;
+    background-color: white;
+}
+
+.iconSearchMobile {
+    display: block;
+    position: relative;
+    width: 4.2rem!important;
+    height: 4.2rem!important;
+    cursor: pointer;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 99;
+}
+
+.iconClosehMobile {
+    margin-left: 4.2rem;
 }
 
 .cardSmallBlog {
@@ -168,15 +196,11 @@
 @media screen and (max-width: 740px) {
     .contentBlog {
         column-gap: 3.6rem;
-        margin-top: 14.2rem;
+
     }
     .navBarBlog,
     .searchBarBlog {
         width: 58.2rem;
-        height: 10.8rem;
-        flex-flow: column;
-        justify-content: center;
-        align-items: flex-start;
     }
     .containerLoaderBlog {
         width: 58.2rem;
@@ -186,7 +210,7 @@
 @media screen and (max-width: 640px) {
     .navBarBlog {
         width: 48.2rem;
-        height: 10.8rem;
+
     }
     .searchBarBlog,
     .containerLoaderBlog {
