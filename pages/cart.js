@@ -49,19 +49,24 @@ export default function Cart() {
 	const [redirecting, setRedirecting] = useState(false);
 
 	const redirectToCheckout = async () => {
-		// Create Stripe checkout
-		const {
-			data: { id },
-		} = await axios.post('/api/checkout_sessions', {
-			items: Object.entries(cartList).map(([_, { id, quantity }]) => ({
-				price: id,
-				quantity,
-			})),
-		});
+		if (cartList.length > 0) {
+			setRedirecting(true);
+			// Create Stripe checkout
+			const {
+				data: { id },
+			} = await axios.post('/api/checkout_sessions', {
+				items: Object.entries(cartList).map(
+					([_, { id, quantity }]) => ({
+						price: id,
+						quantity,
+					})
+				),
+			});
 
-		// Redirect to checkout
-		const stripe = await getStripe();
-		await stripe.redirectToCheckout({ sessionId: id });
+			// Redirect to checkout
+			const stripe = await getStripe();
+			await stripe.redirectToCheckout({ sessionId: id });
+		}
 	};
 
 	return (
@@ -174,11 +179,26 @@ export default function Cart() {
 								.00 euros
 							</span>
 							<span className={styles.noticeTableCart}></span>
-							<Button
-								text="Commander"
-								onClick={redirectToCheckout}
-								disabled={redirecting}
-							/>
+							{!redirecting ? (
+								<Button
+									text="Commander"
+									onClick={redirectToCheckout}
+									disabled={redirecting}
+								/>
+							) : (
+								<div
+									className={
+										styles.redirectionStripeContainer
+									}
+								>
+									<span>Redirection vers Stripe</span>
+									<div className={styles.loaderButton}>
+										<div
+											className={styles.loaderIconButton}
+										></div>
+									</div>
+								</div>
+							)}
 						</table>
 					</div>
 				</div>

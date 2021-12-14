@@ -175,6 +175,60 @@
     }
 }
 
+.redirectionStripeContainer {
+    grid-column: 3/6;
+    justify-self: end;
+    width: auto;
+    height: 3.2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    justify-self: flex-end;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.4rem;
+    color: white;
+    background-color: black;
+    span {
+        color: white;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        font-weight: 400;
+        margin-right: 0.4rem;
+    }
+}
+
+
+.loaderButton {
+    width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+
+
+
+    .loaderIconButton {
+        border: 2px solid hsla(0, 0%, 100%, 0.3);
+        border-top-color: rgb(255, 255, 255);
+        border-radius: 50%;
+        width: 1.8rem;
+        height: 1.8rem;
+        animation: spin 0.7s linear infinite;
+        z-index: 5;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
 @media screen and (max-width: 1240px) {
     .navBarCart {
         width: 88.6rem;
