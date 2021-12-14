@@ -62,6 +62,9 @@ export default function Blog({ posts, categories }) {
 	const searchPosts = (event) => {
 		event.preventDefault();
 		setFiltering(true);
+		setSearchActive(false);
+		setEnteredKeyWord(searchValue);
+
 		router.replace({
 			pathname: 'blog',
 			query: {
@@ -71,9 +74,8 @@ export default function Blog({ posts, categories }) {
 			},
 		});
 		refreshData();
-		setEnteredKeyWord(searchValue);
 		setSearchActive(true);
-		changeSearchValue('');
+		// changeSearchValue('');
 	};
 
 	const resetSearch = () => {
@@ -87,7 +89,6 @@ export default function Blog({ posts, categories }) {
 		});
 		setEnteredKeyWord('');
 		setSearchActive(false);
-		changeSearchValue('');
 		// refreshData();
 	};
 
