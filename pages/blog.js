@@ -32,8 +32,8 @@ export default function Blog({ posts, categories }) {
 	const {
 		searchValue,
 		changeSearchValue,
-		category,
-		changeCategory,
+		// category,
+		// changeCategory,
 		numberOfPosts,
 		changeNumberOfPosts,
 	} = useContext(AppContext);
@@ -41,6 +41,7 @@ export default function Blog({ posts, categories }) {
 	// Process States
 	const [isRefreshing, setIsRefreshing] = useState(true);
 	const [searchActive, setSearchActive] = useState(false);
+	const [category, setCategory] = useState([5, 6, 7, 11, 12, 13, 14, 15]);
 
 	const refreshData = () => {
 		// router.replace(router.asPath);
@@ -56,20 +57,23 @@ export default function Blog({ posts, categories }) {
 
 	// Searchkeyword
 	const [searchMobileActive, setSearchMobileActive] = useState(false);
+	const [enteredKeyWord, setEnteredKeyWord] = useState('');
 
 	const searchPosts = (event) => {
 		event.preventDefault();
-		let keyword = searchValue;
+		setFiltering(true);
 		router.replace({
 			pathname: 'blog',
 			query: {
 				volume: 1000,
 				category: category,
-				keyword: keyword,
+				keyword: searchValue,
 			},
 		});
-		setSearchActive(true);
 		refreshData();
+		setEnteredKeyWord(searchValue);
+		setSearchActive(true);
+		changeSearchValue('');
 	};
 
 	const resetSearch = () => {
@@ -81,10 +85,10 @@ export default function Blog({ posts, categories }) {
 				keyword: '',
 			},
 		});
-
+		setEnteredKeyWord('');
 		setSearchActive(false);
 		changeSearchValue('');
-		refreshData();
+		// refreshData();
 	};
 
 	// Filter categories
@@ -93,13 +97,13 @@ export default function Blog({ posts, categories }) {
 		event.preventDefault();
 		let { value } = event.target;
 		setFiltering(true);
-		changeCategory([value]);
-		console.log('this is value:', value);
+		// changeCategory([value]);
+		setCategory(value);
 		router.replace({
 			pathname: 'blog',
 			query: {
 				volume: 1000,
-				category: [value],
+				category: value,
 				keyword: searchValue,
 			},
 		});
@@ -211,7 +215,7 @@ export default function Blog({ posts, categories }) {
 							<h2>
 								{`${chroniques.length} résultat${
 									chroniques.length > 1 ? 's' : ''
-								} pour  "${searchValue}" `}
+								} pour  "${enteredKeyWord}" `}
 							</h2>
 							<button onClick={resetSearch}>
 								Annuler la recherche

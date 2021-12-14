@@ -21,7 +21,7 @@ export default function SectionBar({
 	marginBottom,
 	style,
 }) {
-	const [searchMobileActive, setSearchMobileActive] = useState(true);
+	const [searchMobileActive, setSearchMobileActive] = useState(false);
 	return (
 		<>
 			<section className={styles.containerSectionBar} style={style}>
