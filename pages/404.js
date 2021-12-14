@@ -29,10 +29,10 @@ export default function Custom404() {
 						<div className={styles.text404}>
 							<h2>- Page Introuvable - </h2>
 							<span>
-								La page que vous recherchez n'existe pas.
+								La page que vous recherchez n existe pas.
 							</span>
 							<Link href="/">
-								<a>Retour à la page d'accueil</a>
+								<a>Retour à la page d accueil</a>
 							</Link>
 						</div>
 					</div>
