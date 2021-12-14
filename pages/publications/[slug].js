@@ -13,6 +13,7 @@ import parsing from '../../helpers/helpers';
 import Layout from '../../components/layout';
 import TagPost from '../../components/microComponents/tagPost';
 import DateCard from '../../components/microComponents/dateCard';
+import Button from '../../components/microComponents/button';
 import More from '../../components/microComponents/more';
 
 // Layout
@@ -72,15 +73,45 @@ export default function PostPage({ data, posts }) {
 						<h1 className={styles.titlePublicationPage}>
 							{data.post.title}
 						</h1>
-						<div className={styles.infoPublicationPage}>
-							{data.post.categories.nodes[0].name && (
-								<TagPost
-									text={data.post.categories.nodes[0].name}
-									color={'#FFD31D'}
-									textColor={'black'}
-								/>
-							)}
-							<DateCard date={data.post.date} />
+						<div className={styles.subtitlePublicationPage}>
+							<div className={styles.infoPublicationPage}>
+								{data.post.categories.nodes[0].name && (
+									<div
+										className={styles.tagPublicationPage}
+										// text={
+										// 	data.post.categories.nodes[0].name
+										// }
+										// color={'#FFD31D'}
+										// textColor={'black'}
+									>
+										{data.post.categories.nodes[0].name}
+									</div>
+								)}
+								<DateCard date={data.post.date} />
+							</div>
+							<div
+								className={
+									styles.actionContainerPublicationPage
+								}
+							>
+								<div
+									className={
+										styles.priceQuantityContainerPublicationPage
+									}
+								>
+									<span
+										className={styles.pricePublicationPage}
+									>
+										Prix: {data.post.apiStripePrice} euros
+									</span>
+									<Button
+										text="Ajouter au panier"
+										// className={styles.buttonCardPublication}
+										// onClick={addBook}
+										name={data.post.name}
+									/>
+								</div>
+							</div>
 						</div>
 
 						<div className={styles.contentPublicationPage}>
