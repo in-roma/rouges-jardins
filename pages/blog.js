@@ -99,11 +99,13 @@ export default function Blog({ posts, categories }) {
 		setFiltering(true);
 		// changeCategory([value]);
 		setCategory(value);
+		console.log('this is filter value:', value);
 		router.replace({
 			pathname: 'blog',
 			query: {
 				volume: 1000,
-				category: value,
+				category:
+					value === 'all' ? [5, 6, 7, 11, 12, 13, 14, 15] : value,
 				keyword: searchValue,
 			},
 		});

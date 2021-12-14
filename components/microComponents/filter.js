@@ -5,9 +5,9 @@ export default function Filter({ categories, onChangeCategory }) {
 	return (
 		<form type="get" className={styles.containerSelectFilter}>
 			<select className={styles.selectFilter} onChange={onChangeCategory}>
-				<option value={[5, 6, 7, 11, 12, 13, 14, 15]}>Toutes</option>
+				<option value={'all'}>Toutes</option>
 				{categories.nodes.map((el) => (
-					<option key={el.categoryId} value={[el.categoryId]}>
+					<option key={el.categoryId} value={el.categoryId}>
 						{el.name}
 					</option>
 				))}
