@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }) {
 	const [numberOfPosts, setNumberOfPosts] = useState(40);
 	const [category, setCategory] = useState();
 	const [searchValue, setSearchValue] = useState('');
+	const [searchValuePodcast, setSearchValuePodcast] = useState('');
 
 	const changeNumberOfPosts = (value) => {
 		setNumberOfPosts(value);
@@ -18,6 +19,10 @@ function MyApp({ Component, pageProps }) {
 
 	const changeSearchValue = (value) => {
 		setSearchValue(value);
+	};
+
+	const changeSearchValuePodcast = (value) => {
+		setSearchValuePodcast(value);
 	};
 
 	// Cart states
@@ -98,6 +103,8 @@ function MyApp({ Component, pageProps }) {
 				changeCategory,
 				searchValue,
 				changeSearchValue,
+				searchValuePodcast,
+				changeSearchValuePodcast,
 				cartList,
 				cartLength,
 				addBook,

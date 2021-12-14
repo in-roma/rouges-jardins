@@ -9,17 +9,6 @@
     margin-top: 2.4rem;
 }
 
-.contentPodcasts {
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: space-between;
-    column-gap: 2.2rem;
-    row-gap: 4.8rem;
-    margin-top: 12rem;
-}
-
 .navBarPodcast {
     position: fixed;
     width: 118.8rem;
@@ -34,30 +23,112 @@
     z-index: 5;
 }
 
+.contentPodcasts {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    column-gap: 2.2rem;
+    row-gap: 4.8rem;
+    margin-top: 12rem;
+}
 
-.searchInputContainer {
+.searchBarPodcast {
+    position: fixed;
+    width: 118.8rem;
+    height: 7.2rem;
+    margin-top: 6rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    opacity: 0.9;
+    z-index: 5;
+    h2 {
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        font-weight: 500;
+        overflow: hidden;
+    }
+    button {
+        width: 16rem;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        margin-left: 0.6rem;
+        font-weight: 600;
+        text-decoration-line: underline;
+        color: black;
+        text-align: end;
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        overflow: hidden;
+    }
+}
+
+.searchInputContainerPodcast {
     display: block;
 }
 
-.searchMobile {
+.searchMobilePodcast {
     position: none;
-
 }
 
-.searchInputMobileContainer {
+.searchInputMobileContainerPodcast {
     position: fixed;
     display: none;
 }
 
-.iconSearchMobile {
+.iconSearchMobilePodcast {
     display: none;
-
 }
 
+.cardSmallPodcast {
+    grid-row: none;
+}
+
+.containerLoaderPodcast {
+    position: fixed;
+    width: 118.8rem;
+    height: auto;
+    top: 50vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.containerButtonPodcast {
+    width: 118.8rem;
+    height: 9.4rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonMorePodcast {
+    height: 4.2rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    font-weight: 600;
+    text-decoration-line: underline;
+    color: black;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    grid-column: 1/5;
+    justify-self: center;
+    margin-top: 2.4rem;
+}
 
 @media screen and (max-width: 1240px) {
     .navBarPodcast,
-    .containerLoaderBlog {
+    .containerLoaderPodcast,
+    .searchBarPodcast {
         width: 88.6rem;
     }
     .contentPodcasts {
@@ -67,7 +138,8 @@
 
 @media screen and (max-width: 1040px) {
     .navBarPodcast,
-    .containerLoaderBlog {
+    .containerLoaderPodcast,
+    .searchBarPodcast {
         width: 68.2rem;
     }
     .contentPodcasts {
@@ -79,20 +151,16 @@
 @media screen and (max-width: 740px) {
     .contentPodcasts {
         column-gap: 3.6rem;
-        // margin-top: 14.2rem;
     }
-    .navBarPodcast {
-        width: 58.2rem;
-
-    }
-    .containerLoaderBlog {
+    .navBarPodcast,
+    .searchBarPodcast,
+    .containerLoaderPodcast {
         width: 58.2rem;
     }
-    .searchInputContainer {
+    .searchInputContainerPodcast {
         display: none;
     }
-
-    .searchInputMobileContainer {
+    .searchInputMobileContainerPodcast {
         display: fixed;
         width: 100%;
         display: flex;
@@ -102,7 +170,7 @@
         z-index: 5;
         background-color: white;
     }
-    .iconSearchMobile {
+    .iconSearchMobilePodcast {
         display: block;
         position: relative;
         width: 4.2rem !important;
@@ -120,8 +188,20 @@
     .navBarPodcast {
         width: 48.2rem;
     }
-    .searchBarBlog,
-    .containerLoaderBlog {
+    .searchBarPodcast {
+        width: 48.2rem;
+
+        h2 {
+            font-size: 1.2rem;
+            line-height: 1.4rem;
+            font-weight: 500;
+        }
+        button {
+            width: 12rem;
+            font-size: 1rem;
+        }
+    }
+    .containerLoaderPodcast {
         width: 48.2rem;
     }
     .contentPodcasts {
@@ -131,7 +211,8 @@
 
 @media screen and (max-width: 540px) {
     .navBarPodcast,
-    .containerLoaderBlog {
+    .searchBarPodcast,
+    .containerLoaderPodcast {
         width: 42.2rem;
     }
     .contentPodcasts {
@@ -141,21 +222,24 @@
 
 @media screen and (max-width: 460px) {
     .navBarPodcast,
-    .containerLoaderBlog {
+    .searchBarPodcast,
+    .containerLoaderPodcast {
         width: 36rem;
     }
 }
 
 @media screen and (max-width: 400px) {
     .navBarPodcast,
-    .containerLoaderBlog {
+    .searchBarPodcast,
+    .containerLoaderPodcast {
         width: 30rem;
     }
 }
 
 @media screen and (max-width: 340px) {
     .navBarPodcast,
-    .containerLoaderBlog {
+    .searchBarPodcast,
+    .containerLoaderPodcast {
         width: 28rem;
     }
 }

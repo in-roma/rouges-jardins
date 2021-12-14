@@ -61,7 +61,7 @@
         overflow: hidden;
     }
     button {
-        width:12rem;
+        width: 16rem;
         font-size: 1.2rem;
         line-height: 1.4rem;
         margin-left: 0.6rem;
@@ -72,6 +72,7 @@
         border: none;
         background: transparent;
         cursor: pointer;
+        overflow: hidden;
     }
 }
 
@@ -81,22 +82,15 @@
 
 .searchMobile {
     position: none;
-
 }
 
 .searchInputMobileContainer {
     position: fixed;
     display: none;
-    z-index: 5;
 }
 
 .iconSearchMobile {
     display: none;
-
-}
-
-.iconClosehMobile {
-    margin-left: 4.2rem;
 }
 
 .cardSmallBlog {
@@ -113,36 +107,6 @@
     justify-content: center;
     align-items: center;
     z-index: 10;
-}
-
-.loader {
-    width: 8rem;
-    height: 8rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .loaderIcon {
-        border: 2.2px solid hsla(0, 0%, 0%, 0.3);
-        border-top-color: hsla(0, 0%, 0%, 1);
-        border-radius: 50%;
-        width: 2.4rem;
-        height: 2.4rem;
-        animation: spin 0.7s linear infinite;
-    }
-    span {
-        font-size: 1rem;
-        line-height: 1rem;
-        font-weight: 400;
-        margin-top: 0.8rem;
-    }
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
 }
 
 .containerButtonBlog {
@@ -197,7 +161,8 @@
         column-gap: 3.6rem;
     }
     .navBarBlog,
-    .searchBarBlog {
+    .searchBarBlog,
+    .containerLoaderBlog {
         width: 58.2rem;
     }
     .searchInputContainer {
@@ -226,16 +191,13 @@
         align-items: center;
         z-index: 5;
     }
-    .containerLoaderBlog {
-        width: 58.2rem;
-    }
 }
 
 @media screen and (max-width: 640px) {
     .navBarBlog {
         width: 48.2rem;
     }
-    .searchBarBlog{
+    .searchBarBlog {
         width: 48.2rem;
 
         h2 {
@@ -244,14 +206,13 @@
             font-weight: 500;
         }
         button {
+            width: 12rem;
             font-size: 1rem;
         }
     }
     .containerLoaderBlog {
         width: 48.2rem;
     }
-
-
     .contentBlog {
         column-gap: 3.8rem;
     }
