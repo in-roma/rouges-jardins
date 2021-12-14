@@ -161,34 +161,38 @@ export default function Podcast({ posts }) {
 						</div>
 					)}
 
-					<div className={styles.contentPodcasts}>
-						{podcasts.map((el) => (
-							<CardSmall
-								key={'podcasts' + el.node.id}
-								type="podcasts"
-								cardLargeType="cardLargePodcasts"
-								color="#D63447"
-								textColor="white"
-								title={
-									el.node.title.length > 64
-										? parsing(
-												el.node.title.slice(0, 64) +
-													'...'
-										  )
-										: parsing(el.node.title)
-								}
-								imageUrl={
-									el.node.featuredImage.node.mediaDetails
-										.sizes[0].sourceUrl
-								}
-								imageAltText={'test'}
-								date={el.node.date}
-								category={el.node.categories.nodes[0].name}
-								slug={el.node.slug}
-								altText={el.node.featuredImage.node.altText}
-								section="podcasts"
-							/>
-						))}
+					<div
+						className={styles.contentPodcasts}
+						style={searchActive ? { marginTop: '12rem' } : {}}
+					>
+						{!isRefreshing &&
+							podcasts.map((el) => (
+								<CardSmall
+									key={'podcasts' + el.node.id}
+									type="podcasts"
+									cardLargeType="cardLargePodcasts"
+									color="#D63447"
+									textColor="white"
+									title={
+										el.node.title.length > 64
+											? parsing(
+													el.node.title.slice(0, 64) +
+														'...'
+											  )
+											: parsing(el.node.title)
+									}
+									imageUrl={
+										el.node.featuredImage.node.mediaDetails
+											.sizes[0].sourceUrl
+									}
+									imageAltText={'test'}
+									date={el.node.date}
+									category={el.node.categories.nodes[0].name}
+									slug={el.node.slug}
+									altText={el.node.featuredImage.node.altText}
+									section="podcasts"
+								/>
+							))}
 					</div>
 				</div>
 			</Layout>

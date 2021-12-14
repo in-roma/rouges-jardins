@@ -130,18 +130,19 @@ export default function Blog({ posts, categories }) {
 	}, [posts]);
 
 	// Search context value from home
-	// useEffect(() => {
-	// 	if (
-	// 		searchValue &&
-	// 		searchValue.length > 0 &&
-	// 		!searchActive &&
-	// 		!filtering
-	// 	) {
-	// 		setChroniques(posts.edges);
-	// 		setSearchActive(true);
-	// 		setIsRefreshing(false);
-	// 	}
-	// }, [searchValue, searchActive, filtering]);
+	useEffect(() => {
+		if (
+			searchValue &&
+			searchValue.length > 0 &&
+			!searchActive &&
+			!filtering
+		) {
+			setChroniques(posts.edges);
+			setEnteredKeyWord(searchValue);
+			setSearchActive(true);
+			setIsRefreshing(false);
+		}
+	}, [searchValue, searchActive, filtering]);
 
 	return (
 		<>

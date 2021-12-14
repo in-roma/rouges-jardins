@@ -243,3 +243,34 @@
         width: 28rem;
     }
 }
+
+// Loader
+.loader {
+    width: 8rem;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    .loaderIcon {
+        border: 2.2px solid hsla(0, 0%, 0%, 0.3);
+        border-top-color: hsla(0, 0%, 0%, 1);
+        border-radius: 50%;
+        width: 2.4rem;
+        height: 2.4rem;
+        animation: spin 0.7s linear infinite;
+    }
+    span {
+        font-size: 1rem;
+        line-height: 1rem;
+        font-weight: 400;
+        margin-top: 0.8rem;
+    }
+  }
+  
+  @keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+  }
