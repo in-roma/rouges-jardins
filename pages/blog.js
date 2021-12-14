@@ -32,8 +32,6 @@ export default function Blog({ posts, categories }) {
 	const {
 		searchValue,
 		changeSearchValue,
-		// category,
-		// changeCategory,
 		numberOfPosts,
 		changeNumberOfPosts,
 	} = useContext(AppContext);
@@ -44,7 +42,6 @@ export default function Blog({ posts, categories }) {
 	const [category, setCategory] = useState([5, 6, 7, 11, 12, 13, 14, 15]);
 
 	const refreshData = () => {
-		// router.replace(router.asPath);
 		setIsRefreshing(true);
 	};
 
@@ -62,7 +59,7 @@ export default function Blog({ posts, categories }) {
 	const searchPosts = (event) => {
 		event.preventDefault();
 		setFiltering(true);
-		setSearchActive(false);
+		// setSearchActive(false);
 		setEnteredKeyWord(searchValue);
 
 		router.replace({
@@ -75,7 +72,7 @@ export default function Blog({ posts, categories }) {
 		});
 		refreshData();
 		setSearchActive(true);
-		// changeSearchValue('');
+		setSearchMobileActive(false);
 	};
 
 	const resetSearch = () => {
@@ -87,9 +84,10 @@ export default function Blog({ posts, categories }) {
 				keyword: '',
 			},
 		});
+		changeSearchValue('');
 		setEnteredKeyWord('');
 		setSearchActive(false);
-		// refreshData();
+		refreshData();
 	};
 
 	// Filter categories
@@ -98,8 +96,7 @@ export default function Blog({ posts, categories }) {
 		event.preventDefault();
 		let { value } = event.target;
 		setFiltering(true);
-		// changeCategory([value]);
-		setCategory(value);
+		setCategory(value === 'all' ? [5, 6, 7, 11, 12, 13, 14, 15] : value);
 		console.log('this is filter value:', value);
 		router.replace({
 			pathname: 'blog',
@@ -127,7 +124,6 @@ export default function Blog({ posts, categories }) {
 	};
 
 	// Updating cards display
-
 	useEffect(() => {
 		setChroniques(posts.edges);
 		setIsRefreshing(false);
@@ -205,6 +201,18 @@ export default function Blog({ posts, categories }) {
 							/>
 						</div>
 					) : null}
+					{!searchMobileActive && searchActive && (
+						<div className={styles.searchBarBlog}>
+							<h2>
+								{`${chroniques.length} résultat${
+									chroniques.length > 1 ? 's' : ''
+								} pour  "${enteredKeyWord}" `}
+							</h2>
+							<button onClick={resetSearch}>
+								Annuler Recherche
+							</button>
+						</div>
+					)}
 					{isRefreshing && (
 						<div className={styles.containerLoaderBlog}>
 							<div className={styles.loader}>
@@ -213,18 +221,7 @@ export default function Blog({ posts, categories }) {
 							</div>
 						</div>
 					)}
-					{searchActive && (
-						<div className={styles.searchBarBlog}>
-							<h2>
-								{`${chroniques.length} résultat${
-									chroniques.length > 1 ? 's' : ''
-								} pour  "${enteredKeyWord}" `}
-							</h2>
-							<button onClick={resetSearch}>
-								Annuler la recherche
-							</button>
-						</div>
-					)}
+
 					{
 						<div
 							className={styles.contentBlog}

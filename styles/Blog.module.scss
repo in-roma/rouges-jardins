@@ -58,14 +58,17 @@
         font-size: 1.4rem;
         line-height: 1.4rem;
         font-weight: 500;
+        overflow: hidden;
     }
     button {
+        width:12rem;
         font-size: 1.2rem;
         line-height: 1.4rem;
-        margin-left: 1.2rem;
+        margin-left: 0.6rem;
         font-weight: 600;
         text-decoration-line: underline;
         color: black;
+        text-align: end;
         border: none;
         background: transparent;
         cursor: pointer;
@@ -84,6 +87,7 @@
 .searchInputMobileContainer {
     position: fixed;
     display: none;
+    z-index: 5;
 }
 
 .iconSearchMobile {
@@ -231,10 +235,23 @@
     .navBarBlog {
         width: 48.2rem;
     }
-    .searchBarBlog,
+    .searchBarBlog{
+        width: 48.2rem;
+
+        h2 {
+            font-size: 1.2rem;
+            line-height: 1.4rem;
+            font-weight: 500;
+        }
+        button {
+            font-size: 1rem;
+        }
+    }
     .containerLoaderBlog {
         width: 48.2rem;
     }
+
+
     .contentBlog {
         column-gap: 3.8rem;
     }
@@ -242,6 +259,7 @@
 
 @media screen and (max-width: 540px) {
     .navBarBlog,
+    .searchBarBlog,
     .containerLoaderBlog {
         width: 42.2rem;
     }
@@ -252,6 +270,7 @@
 
 @media screen and (max-width: 460px) {
     .navBarBlog,
+    .searchBarBlog,
     .containerLoaderBlog {
         width: 36rem;
     }
@@ -259,6 +278,7 @@
 
 @media screen and (max-width: 400px) {
     .navBarBlog,
+    .searchBarBlog,
     .containerLoaderBlog {
         width: 30rem;
     }
@@ -266,6 +286,7 @@
 
 @media screen and (max-width: 340px) {
     .navBarBlog,
+    .searchBarBlog,
     .containerLoaderBlog {
         width: 28rem;
     }
