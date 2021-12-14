@@ -2,7 +2,6 @@ import { useState, useContext, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import Media from 'react-media';
 
 // Components
 import Layout from '../components/layout';
@@ -57,14 +56,6 @@ export default function Blog({ posts, categories }) {
 
 	// Searchkeyword
 	const [searchMobileActive, setSearchMobileActive] = useState(false);
-	const mobileSearch = () => {
-		if (!searchActive) {
-			setSearchMobileActive(true);
-		}
-		if (searchActive) {
-			setSearchMobileActive(false);
-		}
-	};
 
 	const searchPosts = (event) => {
 		event.preventDefault();
@@ -174,64 +165,39 @@ export default function Blog({ posts, categories }) {
 								autofocusSet={false}
 							/>
 						</div>
-						<Media
-							query="(min-width: 741px)"
-							render={() => (
-								<Search
-									value={searchValue}
-									onChangeInput={onChangeInput}
-									onSubmitSearch={searchPosts}
-								/>
-							)}
-						/>
-						{!searchMobileActive && (
-							<Media
-								query="(max-width: 740px)"
-								render={() => (
-									<div
-										className={styles.iconSearchMobile}
-										onClick={mobileSearch}
-									>
-										<Image
-											src={searchPicBlack}
-											alt="search icon"
-										/>
-									</div>
-								)}
+						<div className={styles.searchInputContainer}>
+							<Search
+								value={searchValue}
+								onChangeInput={onChangeInput}
+								onSubmitSearch={searchPosts}
 							/>
-						)}
-						{searchMobileActive && (
-							<Media
-								query="(max-width: 740px)"
-								render={() => (
-									<div
-										className={styles.iconSearchMobile}
-										onClick={mobileSearch}
-									>
-										<Image
-											src={crossIcon}
-											alt="close icon"
-										/>
-									</div>
-								)}
-							/>
+						</div>
+						{!searchMobileActive ? (
+							<div
+								className={styles.iconSearchMobile}
+								onClick={() => setSearchMobileActive(true)}
+							>
+								<Image src={searchPicBlack} alt="search icon" />
+							</div>
+						) : (
+							<div
+								className={styles.iconSearchMobile}
+								onClick={() => setSearchMobileActive(false)}
+							>
+								<Image src={crossIcon} alt="close icon" />
+							</div>
 						)}
 					</section>
-					{searchMobileActive && (
-						<Media
-							query="(max-width: 740px)"
-							render={() => (
-								<div className={styles.searchMobile}>
-									<Search
-										value={searchValue}
-										onChangeInput={onChangeInput}
-										onSubmitSearch={searchPosts}
-										autofocusSet={true}
-									/>
-								</div>
-							)}
-						/>
-					)}
+					{searchMobileActive ? (
+						<div className={styles.searchInputMobileContainer}>
+							<Search
+								value={searchValue}
+								onChangeInput={onChangeInput}
+								onSubmitSearch={searchPosts}
+								autofocusSet={true}
+							/>
+						</div>
+					) : null}
 					{isRefreshing && (
 						<div className={styles.containerLoaderBlog}>
 							<div className={styles.loader}>

@@ -1,11 +1,15 @@
+import { useState } from 'react';
 import parsing from '../helpers/helpers';
 import Head from 'next/head';
+import Image from 'next/image';
 
 // Components
 import Layout from '../components/layout';
 import CardSmall from '../components/microComponents/cardSmall';
 import CardPodcast from '../components/microComponents/cardPodcast';
 import Search from '../components/microComponents/search';
+import searchPicBlack from '../public/searchBlack.svg';
+import crossIcon from '../public/crossBlack.svg';
 
 // Styling
 import styles from '../styles/Podcasts.module.scss';
@@ -15,6 +19,8 @@ import { getAllPodcasts } from '../lib/api';
 
 export default function Podcast({ posts }) {
 	const podcasts = posts.edges;
+	const [searchMobileActive, setSearchMobileActive] = useState(false);
+
 	return (
 		<>
 			<Head>
@@ -34,12 +40,40 @@ export default function Podcast({ posts }) {
 						<div className={styles.containerBlogHeaderFilter}>
 							<h1>Podcasts</h1>
 						</div>
-						<Search
-						// value={searchValue}
-						// onChangeInput={onChangeInput}
-						// onSubmitSearch={searchPosts}
-						/>
+						<div className={styles.searchInputContainer}>
+							<Search
+								// value={searchValue}
+								// onChangeInput={onChangeInput}
+								// onSubmitSearch={searchPosts}
+								autofocusSet={false}
+							/>
+						</div>
+						{!searchMobileActive ? (
+							<div
+								className={styles.iconSearchMobile}
+								onClick={() => setSearchMobileActive(true)}
+							>
+								<Image src={searchPicBlack} alt="search icon" />
+							</div>
+						) : (
+							<div
+								className={styles.iconSearchMobile}
+								onClick={() => setSearchMobileActive(false)}
+							>
+								<Image src={crossIcon} alt="close icon" />
+							</div>
+						)}
 					</section>
+					{searchMobileActive ? (
+						<div className={styles.searchInputMobileContainer}>
+							<Search
+								// value={searchValue}
+								// onChangeInput={onChangeInput}
+								// onSubmitSearch={searchPosts}
+								autofocusSet={true}
+							/>
+						</div>
+					) : null}
 					<div className={styles.contentPodcasts}>
 						{podcasts.map((el) => (
 							<CardSmall

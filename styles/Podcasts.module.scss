@@ -34,6 +34,27 @@
     z-index: 5;
 }
 
+
+.searchInputContainer {
+    display: block;
+}
+
+.searchMobile {
+    position: none;
+
+}
+
+.searchInputMobileContainer {
+    position: fixed;
+    display: none;
+}
+
+.iconSearchMobile {
+    display: none;
+
+}
+
+
 @media screen and (max-width: 1240px) {
     .navBarPodcast,
     .containerLoaderBlog {
@@ -58,24 +79,46 @@
 @media screen and (max-width: 740px) {
     .contentPodcasts {
         column-gap: 3.6rem;
-        margin-top: 14.2rem;
+        // margin-top: 14.2rem;
     }
     .navBarPodcast {
         width: 58.2rem;
-        height: 10.8rem;
-        flex-flow: column;
-        justify-content: center;
-        align-items: flex-start;
+
     }
     .containerLoaderBlog {
         width: 58.2rem;
+    }
+    .searchInputContainer {
+        display: none;
+    }
+
+    .searchInputMobileContainer {
+        display: fixed;
+        width: 100%;
+        display: flex;
+        flex-grow: row nowrap;
+        margin: 7.2rem 0 0 0;
+        opacity: 0.9;
+        z-index: 5;
+        background-color: white;
+    }
+    .iconSearchMobile {
+        display: block;
+        position: relative;
+        width: 4.2rem !important;
+        height: 4.2rem !important;
+        cursor: pointer;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        z-index: 5;
     }
 }
 
 @media screen and (max-width: 640px) {
     .navBarPodcast {
         width: 48.2rem;
-        height: 10.8rem;
     }
     .searchBarBlog,
     .containerLoaderBlog {

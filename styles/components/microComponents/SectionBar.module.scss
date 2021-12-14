@@ -13,7 +13,7 @@
     border-top: 0.1rem solid #efefef;
     border-bottom: 0.1rem solid #efefef;
     margin-top: 2.4rem;
-    margin-bottom: 2.4rem;
+    margin-bottom: 1.2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -44,6 +44,22 @@
     text-decoration: underline;
 }
 
+.searchInputContainer {
+    display: block;
+}
+
+.searchMobile {
+    position: none;
+}
+
+.searchInputMobileContainerBlog {
+    display: none;
+}
+
+.iconSearchMobileBlogSearch, .iconSearchMobileBlogClose  {
+    display: none;
+}
+
 .searchMobile {
     display: none;
 }
@@ -59,9 +75,6 @@
     }
 }
 @media screen and (max-width: 740px) {
-    .searchSectionBar {
-        display: none;
-    }
     .searchMobile {
         width: 80%;
         height: 3.6rem;
@@ -70,6 +83,44 @@
         justify-content: flex-start;
         align-items: center;
         margin-bottom: 1.2rem;
+    }
+    .searchInputContainer {
+        display: none;
+    }
+
+    .searchInputMobileContainerBlog {
+        width: 100%;
+        display: flex;
+        flex-grow: row nowrap;
+        align-items: center;
+        margin: 0rem 0 0 0;
+        opacity: 0.9;
+        z-index: 5;
+        background-color: white;
+    }
+    .iconSearchMobileBlogSearch {
+        display: block;
+        position: relative;
+        width: 4.2rem !important;
+        height: 4.2rem !important;
+        cursor: pointer;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        z-index: 5;
+    }
+    .iconSearchMobileBlogClose {
+        display: block;
+        position: relative;
+        width: 4.2rem !important;
+        height: 4.2rem !important;
+        cursor: pointer;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        align-items: center;
+        z-index: 5;
     }
 }
 
@@ -80,7 +131,7 @@
 }
 
 @media screen and (max-width: 440px) {
-    .containerSectionBar{
+    .containerSectionBar {
         grid-column: 1/2;
     }
     .titleSectionBar {
