@@ -50,7 +50,18 @@
     width: 36.1rem;
     height: 43.6rem;
     align-self: center;
-    margin-bottom: 2.4rem;
+    margin-bottom: 2.8rem;
+}
+
+.actionContainerPublicationPage {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 14.2rem;
+    grid-template-rows: 1fr 1fr;
+    margin: 1.2rem 0 2.4rem 0;
+    align-items: center;
 }
 
 .titlePublicationPage {
@@ -62,25 +73,26 @@
     font-weight: 700;
     line-height: 2.6rem;
     letter-spacing: 0em;
-    // margin-top: 2.6rem;
+    margin: 1.2rem 0 1.2rem 0;
+    grid-column: 1/2;
+    grid-row: 1/2;
 }
-.subtitlePublicationPage {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 4.8rem;
+
+.buttonCardPublicationPage {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    align-self: center;
 }
 
 .infoPublicationPage {
     width: auto;
-    height: 2rem;
+    height: 3.2rem;
     display: flex;
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
+    grid-column: 1/2;
+    grid-row: 2/3;
 }
 
 .tagPublicationPage {
@@ -95,27 +107,31 @@
     background-color: #FFD31D;
 }
 
-.actionContainerPublicationPage {
-    width: auto;
+.cartContainer {
+    width: 100%;
+    height: 2.8rem;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: flex-end;
+    justify-content: flex-end;
+    align-items: center;
+    // margin: 0.8rem 0 0.6rem 0;
+    grid-column: 2/3;
+    grid-row: 2/3;
 }
 
-.priceQuantityContainerPublicationPage {
-    display: flex;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
+.cartButtonPublicationPage {
+    justify-self: start;
+    padding-right: 1.6rem;
 }
+
 
 .pricePublicationPage {
+    width: 10.2rem;
     font-size: 1.1rem;
-    line-height: 1rem;
+    line-height: 1.6rem;
     font-weight: 300;
-    margin-right: 2.4rem;
+    margin: 0 1.2rem 0 0 ;
+    text-align: end;
 }
 
 .contentPublicationPage {
@@ -220,13 +236,38 @@ width: 32rem;
         width: 36rem;
     }
     .titlePublicationPage {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
+
     }
     .picturePublicationPage {
         width: 24rem;
         height: 28.9rem;
         margin-bottom: 0.6rem;
     }
+    .actionContainerPublicationPage {
+        height: 12.2rem;
+        grid-template-columns: 1fr 12rem;
+    }
+
+   .infoPublicationPage {
+        flex-flow: column;
+        height: 4.8rem;
+        justify-content: space-between;
+    }
+
+    .infoPublicationPage{
+        align-items: flex-start;
+    }
+    .cartContainer{
+        height: 4.8rem;
+        flex-flow: column;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+    .pricePublicationPage {
+        margin: 0;
+    }
+
     .contentPublicationPage {
         p {
             font-size: 1.4rem;
@@ -236,8 +277,8 @@ width: 32rem;
         margin-bottom: 2.4rem;
     }
     .priceQuantityContainerPublicationPage{
-            flex-flow: column-reverse;
-        align-items: flex-end;
+          
+    
         .pricePublicationPage {
             margin: 0.6rem 0 0 0;
         }

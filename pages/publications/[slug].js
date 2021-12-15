@@ -1,3 +1,4 @@
+import { useState, useContext, useEffect } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -14,7 +15,11 @@ import Layout from '../../components/layout';
 import TagPost from '../../components/microComponents/tagPost';
 import DateCard from '../../components/microComponents/dateCard';
 import Button from '../../components/microComponents/button';
+import CartButton from '../../components/microComponents/cartButton';
 import More from '../../components/microComponents/more';
+
+// Context
+import { AppContext } from '../../lib/context';
 
 // Layout
 import styles from '../../styles/PublicationPage.module.scss';
@@ -22,7 +27,8 @@ import arrowLeft from '../../public/arrow-left.svg';
 
 export default function PostPage({ data, posts }) {
 	const router = useRouter();
-
+	const { cartLength, cartList, addBook } = useContext(AppContext);
+	// console.log('this is datapost', data.post);
 	return (
 		<>
 			<Head>
@@ -70,49 +76,50 @@ export default function PostPage({ data, posts }) {
 								alt=""
 							/>
 						</picture>
-						<h1 className={styles.titlePublicationPage}>
-							{data.post.title}
-						</h1>
-						<div className={styles.subtitlePublicationPage}>
+
+						<div className={styles.actionContainerPublicationPage}>
+							<h1 className={styles.titlePublicationPage}>
+								{data.post.title}
+							</h1>
+							<Button
+								text="Ajouter au panier"
+								className={styles.buttonCardPublicationPage}
+								onClick={() =>
+									addBook(
+										data.post.apiStripePriceID,
+										data.post.featuredImage.node.sourceUrl,
+										data.post.title,
+										data.post.apiStripePrice
+									)
+								}
+								name={data.post.name}
+							/>
 							<div className={styles.infoPublicationPage}>
 								{data.post.categories.nodes[0].name && (
-									<div
-										className={styles.tagPublicationPage}
-										// text={
-										// 	data.post.categories.nodes[0].name
-										// }
-										// color={'#FFD31D'}
-										// textColor={'black'}
-									>
+									<div className={styles.tagPublicationPage}>
 										{data.post.categories.nodes[0].name}
 									</div>
 								)}
 								<DateCard date={data.post.date} />
 							</div>
-							<div
-								className={
-									styles.actionContainerPublicationPage
-								}
-							>
-								<div
-									className={
-										styles.priceQuantityContainerPublicationPage
-									}
-								>
-									<span
-										className={styles.pricePublicationPage}
-									>
-										Prix: {data.post.apiStripePrice} euros
-									</span>
-									<Button
-										text="Ajouter au panier"
-										// className={styles.buttonCardPublication}
-										// onClick={addBook}
-										name={data.post.name}
-									/>
-								</div>
+							<div className={styles.cartContainer}>
+								<span className={styles.pricePublicationPage}>
+									Prix: {data.post.apiStripePrice} euros
+								</span>
+								<CartButton
+									className={styles.cartButtonPublicationPage}
+									products={cartList.reduce(function (
+										acc,
+										obj
+									) {
+										return acc + obj.quantity;
+									},
+									0)}
+								/>
 							</div>
 						</div>
+
+						<div className={styles.subtitlePublicationPage}></div>
 
 						<div className={styles.contentPublicationPage}>
 							{parsing(data.post.content)}
