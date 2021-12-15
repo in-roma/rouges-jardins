@@ -39,7 +39,7 @@
 
 @media screen and (max-width: 1040px) {
     .contentHome {
-    grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     // Posts
     .contentHome article:nth-child(3) {

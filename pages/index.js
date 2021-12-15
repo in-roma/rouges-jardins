@@ -53,7 +53,7 @@ export default function Home({ posts, podcasts, publications }) {
 				<title>Rouges Jardins</title>
 				<meta
 					name="viewport"
-					content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
+					content="width=device-width, initial-scale=1.0, maximum-scale=5.0,user-scalable=5"
 				/>
 				<meta
 					name="description"
@@ -144,10 +144,6 @@ export default function Home({ posts, podcasts, publications }) {
 								  )
 								: parsing(podcasts.posts.edges[0].node.excerpt)
 						}
-						// imageUrl={
-						// 	podcasts.posts.edges[0].node.featuredImage.node
-						// 		.sourceUrl
-						// }
 						imageUrl={
 							podcasts.posts.edges[0].node.featuredImage.node
 								.sourceUrl
