@@ -56,7 +56,8 @@
     display: none;
 }
 
-.iconSearchMobileBlogSearch, .iconSearchMobileBlogClose  {
+.iconSearchMobileBlogSearch,
+.iconSearchMobileBlogClose {
     display: none;
 }
 
@@ -128,17 +129,34 @@
     .containerSectionBar {
         grid-column: 1/2;
     }
-}
-
-@media screen and (max-width: 440px) {
-    .containerSectionBar {
-        grid-column: 1/2;
-    }
     .titleSectionBar {
         font-size: 1.6rem;
     }
     .linkSectionBar {
+        font-size: 1.1rem;
+    }
+}
+@media screen and (max-width: 460px) {
+    .containerSectionBar {
+        grid-column: 1/2;
+    }
+    .titleSectionBar {
+        font-size: 1.5rem;
+    }
+    .linkSectionBar {
         font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .containerSectionBar {
+        grid-column: 1/2;
+    }
+    .titleSectionBar {
+        font-size: 1.4rem;
+    }
+    .linkSectionBar {
+        font-size: 0.9rem;
     }
 }
 @media screen and (max-width: 340px) {

@@ -1,5 +1,3 @@
-import { useState, useContext, useEffect } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 
@@ -7,28 +5,22 @@ import Image from 'next/image';
 import Tag from './tag';
 import DateCard from './dateCard';
 import Button from '../microComponents/button';
-import Quantity from './quantity.js';
 
-// Styling
+// Styles
 import styles from '../../styles/components/microComponents/CardPublication.module.scss';
 
 export default function CardPublication({
 	name,
 	title,
-	text,
 	imageUrl,
-	imageAltText,
 	date,
 	category,
 	colorTag,
 	textColor,
-	cardLargeType,
 	slug,
 	type,
 	price,
 	addBook,
-	removeBook,
-	quantity,
 	altText,
 }) {
 	const router = useRouter();

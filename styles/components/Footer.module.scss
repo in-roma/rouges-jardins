@@ -17,18 +17,23 @@
 }
 
 .footerLogoContainer {
+    height: 3rem;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .footerLogo {
     font-size: 1.5rem;
+    line-height: 1.5rem;
     font-weight: 600;
     color: white;
 }
 
 .footerBy {
     font-size: 1.2rem;
+    line-height: 1.2rem;
     font-weight: 400;
     color: #adadad;
 }
@@ -55,6 +60,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    justify-content: center;
     span {
         color: #adadad;
         font-size: 1.1rem;
@@ -87,11 +93,20 @@
     .footerContent {
         width: 58.2rem;
     }
+    .footerLogoContainer {
+        height: 2.8rem;
+    }
     .footerLogo {
         font-size: 1.3rem;
     }
     .footerBy {
         font-size: 1.1rem;
+    }
+    .footerMentions {
+        span {
+            font-size: 0.8rem;
+            font-weight: 400;
+        }
     }
 }
 
@@ -115,7 +130,7 @@
 
 @media screen and (max-width: 400px) {
     .footerContent {
-width: 32rem;
+        width: 32rem;
     }
     .footerLogo {
         font-size: 1.1rem;
@@ -123,16 +138,16 @@ width: 32rem;
     .footerBy {
         font-size: 0.9rem;
     }
-    .footerMentions {
-        span {
-            font-size: 0.8rem;
-            font-weight: 400;
-        }
-    }
 }
 
 @media screen and (max-width: 340px) {
     .footerContent {
         width: 28rem;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .footerContent {
+        width: 26rem;
     }
 }

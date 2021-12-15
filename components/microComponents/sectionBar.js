@@ -82,27 +82,15 @@ export default function SectionBar({
 						</Link>
 					)}
 				</div>
-
-				{/* <div className={styles.searchMobile} value={value}>
-					{search && searchMobileActive && (
-						<Search autofocusSet={true} />
-					)}
-				</div> */}
-
 				{search && searchMobileActive ? (
 					<div className={styles.searchInputMobileContainerBlog}>
 						<Search
-							// value={searchValue}
-							// onChangeInput={onChangeInput}
-							// onSubmitSearch={searchPosts}
+							search={search}
+							onChangeInput={onChangeInput}
+							onSubmitSearch={onSubmitSearch}
+							value={value}
 							autofocusSet={true}
 						/>
-						{/* <div
-							className={styles.iconSearchMobileBlogClose}
-							onClick={() => setSearchMobileActive(false)}
-						>
-							<Image src={crossIcon} alt="close icon" />
-						</div> */}
 					</div>
 				) : null}
 			</section>

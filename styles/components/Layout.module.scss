@@ -51,12 +51,18 @@
 
 @media screen and (max-width: 400px) {
     .contentLayout {
-width: 32rem;
+        width: 32rem;
     }
 }
 
 @media screen and (max-width: 340px) {
     .contentLayout {
         width: 28rem;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .contentLayout {
+        width: 26rem;
     }
 }

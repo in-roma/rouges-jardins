@@ -1,8 +1,8 @@
-.cardSmallVertical{
- position: relative;   
- width: 28rem;
- height: 36.8rem;
- cursor: pointer;
+.cardSmallVertical {
+    position: relative;
+    width: 28rem;
+    height: 36.8rem;
+    cursor: pointer;
 }
 
 .pictureCardVertical {
@@ -13,8 +13,8 @@
 .titleCardSmallVertical {
     width: 100%;
     height: 3.2rem;
-    font-family: 'lora', serif;
-    font-size: 1.9rem;
+    font-family: "lora", serif;
+    font-size: 1.8rem;
     font-weight: 600;
     color: black;
     margin-top: 1.2rem;
@@ -23,52 +23,44 @@
     margin-bottom: 2.8rem;
 }
 
-
 @media screen and (max-width: 1040px) {
-    .cardSmallVertical{
-        position: relative;   
+    .cardSmallVertical {
+        position: relative;
         width: 28rem;
         height: 36.8rem;
-       }
+    }
 
-    .pictureCardVertical{
+    .pictureCardVertical {
         width: 28rem;
         height: 28.5rem;
     }
     .titleCardSmallVertical {
         height: 3.2rem;
-        font-size: 1.9rem;
+        font-size: 1.7rem;
     }
-
 }
 
 @media screen and (max-width: 740px) {
-    .cardSmallVertical{
-        position: relative;   
+    .cardSmallVertical {
+        position: relative;
         width: 27.2rem;
         height: 35.7rem;
-       }
+    }
 
-    .pictureCardVertical{
+    .pictureCardVertical {
         width: 27.2rem;
         height: 27.7rem;
     }
-    .titleCardSmallVertical {
-        height: 3.2rem;
-        font-size: 1.9rem;
-    }
-
 }
 
-
 @media screen and (max-width: 640px) {
-    .cardSmallVertical{
-        position: relative;   
+    .cardSmallVertical {
+        position: relative;
         width: 22rem;
         height: 28.9rem;
-       }
+    }
 
-    .pictureCardVertical{
+    .pictureCardVertical {
         width: 22rem;
         height: 22.47rem;
     }
@@ -76,78 +68,83 @@
         height: 3.2rem;
         font-size: 1.6rem;
     }
-
 }
 
-
 @media screen and (max-width: 540px) {
-    .cardSmallVertical{
-        position: relative;   
+    .cardSmallVertical {
+        position: relative;
         width: 42.2rem;
         height: 54.4rem;
-       }
+        h2 {
+            margin-top: 1.8rem;
+        }
+    }
 
-    .pictureCardVertical{
+    .pictureCardVertical {
         width: 42.2rem;
         height: 43.1rem;
     }
     .titleCardSmallVertical {
         height: 3.2rem;
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
-
 }
 
 @media screen and (max-width: 460px) {
-    .cardSmallVertical{
-        position: relative;   
+    .cardSmallVertical {
+        position: relative;
         width: 36rem;
-        height: 46.4rem;
-       }
+        height: 48.4rem;
+    }
 
-    .pictureCardVertical{
+    .pictureCardVertical {
         width: 36rem;
         height: 39.5rem;
     }
     .titleCardSmallVertical {
-        height: 3.2rem;
-        font-size: 2.2rem;
+        font-size: 1.6rem;
     }
-
 }
 
 @media screen and (max-width: 400px) {
-    .cardSmallVertical{
-        position: relative;   
-width: 32rem;
-        height: 38.6rem;
-       }
+    .cardSmallVertical {
+        position: relative;
+        width: 32rem;
+        height: 42.6rem;
+    }
 
-    .pictureCardVertical{
-width: 32rem;
+    .pictureCardVertical {
+        width: 32rem;
         height: 32.9rem;
     }
     .titleCardSmallVertical {
-        height: 3.2rem;
-        font-size: 1.6rem;
+        height: 2.1rem;
     }
-
 }
 
 @media screen and (max-width: 340px) {
-    .cardSmallVertical{
-        position: relative;   
+    .cardSmallVertical {
+        position: relative;
         width: 28rem;
-        height: 36rem;
-       }
+        height: 39rem;
+    }
 
-    .pictureCardVertical{
+    .pictureCardVertical {
         width: 28rem;
         height: 30.7rem;
     }
-    .titleCardSmallVertical {
-        height: 4.2rem;
-        font-size: 1.6rem;
+}
+
+@media screen and (max-width: 300px) {
+    .cardSmallVertical {
+        position: relative;
+        width: 26rem;
+        height: 33.4rem;
     }
 
+    .pictureCardVertical {
+        width: 26rem;
+        height: 28.5rem;
+    }
 }
+

@@ -21,7 +21,7 @@ import CardMedium from '../components/microComponents/cardMedium';
 import CardSmall from '../components/microComponents/cardSmall';
 import CardSmallVertical from '../components/microComponents/cardSmallVertical';
 
-// Styling
+// Styles
 import styles from '../styles/Home.module.scss';
 
 export default function Home({ posts, podcasts, publications }) {
@@ -96,7 +96,6 @@ export default function Home({ posts, podcasts, publications }) {
 							posts.edges[0].node.featuredImage.node.mediaDetails
 								.sizes[3].sourceUrl
 						}
-						// imageUrl={posts.edges[0].node.featuredImage.node.sourceUrl}
 						imageAltText={'test'}
 						date={posts.edges[0].node.date}
 						category={posts.edges[0].node.categories.nodes[0].name}

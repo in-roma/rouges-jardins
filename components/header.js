@@ -5,28 +5,11 @@ import styles from '../styles/components/Header.module.scss';
 import Media from 'react-media';
 
 //Components & elements
-import searchPic from '../public/search.svg';
-import crossPic from '../public/cross.svg';
 import burger from '../public/burger.svg';
 import burgerActive from '../public/active-burger.svg';
 
 export default function Header() {
-	const [searchStatus, setSearchStatus] = useState(false);
 	const [burgerMenu, setBurgerMenu] = useState(false);
-
-	const activateSearch = () => {
-		if (!searchStatus) {
-			setSearchStatus(true);
-		}
-		if (searchStatus) {
-			setSearchStatus(false);
-		}
-	};
-	const deactivateSearch = () => {
-		if (searchStatus) {
-			setSearchStatus(false);
-		}
-	};
 
 	const openBurgerMenu = () => {
 		if (!burgerMenu) {
@@ -47,11 +30,6 @@ export default function Header() {
 					<span className={styles.by}>par Guy Grandjean</span>
 				</div>
 				<nav className={styles.nav}>
-					<div
-						className={styles.searchButton}
-						style={{ width: searchStatus && '14rem' }}
-					></div>
-
 					<div className={styles.burger} onClick={openBurgerMenu}>
 						{burgerMenu ? (
 							<Image src={burgerActive} alt="burger icon" />

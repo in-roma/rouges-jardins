@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 // Component
@@ -11,9 +10,7 @@ import styles from '../../styles/components/microComponents/CardSmallVertical.mo
 
 export default function CardSmallVertical({
 	title,
-	text,
 	imageUrl,
-	imageAltText,
 	date,
 	category,
 	colorTag,

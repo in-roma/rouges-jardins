@@ -1,8 +1,8 @@
-.cardSmall{
- position: relative;   
- width: 28rem;
- height: 24.8rem;
- cursor: pointer;
+.cardSmall {
+    position: relative;
+    width: 28rem;
+    height: 24.8rem;
+    cursor: pointer;
 }
 
 .pictureCardSmall {
@@ -10,11 +10,10 @@
     height: 16.8rem;
 }
 
-
 .titleCardSmall {
     width: 100%;
     height: 3.2rem;
-    font-family: 'lora', serif;
+    font-family: "lora", serif;
     font-size: 1.7rem;
     font-weight: 600;
     color: black;
@@ -23,10 +22,8 @@
     margin-bottom: 2.8rem;
 }
 
-
 @media screen and (max-width: 1040px) {
-
-    .cardSmall{
+    .cardSmall {
         width: 32rem;
         height: 29.6rem;
     }
@@ -43,8 +40,7 @@
 }
 
 @media screen and (max-width: 740px) {
-
-    .cardSmall{
+    .cardSmall {
         width: 27.2rem;
         height: 25.1rem;
     }
@@ -60,10 +56,8 @@
     }
 }
 
-
 @media screen and (max-width: 640px) {
-
-    .cardSmall{
+    .cardSmall {
         width: 22rem;
         height: 19.5rem;
     }
@@ -79,8 +73,7 @@
 }
 
 @media screen and (max-width: 540px) {
-
-    .cardSmall{
+    .cardSmall {
         width: 42.2rem;
         height: 37.4rem;
     }
@@ -91,13 +84,12 @@
     }
 
     .titleCardSmall {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
 }
 
 @media screen and (max-width: 460px) {
-
-    .cardSmall{
+    .cardSmall {
         width: 36rem;
         height: 31.9rem;
     }
@@ -112,14 +104,13 @@
     }
 }
 @media screen and (max-width: 400px) {
-
-    .cardSmall{
-width: 32rem;
+    .cardSmall {
+        width: 32rem;
         height: 26.5rem;
     }
 
     .pictureCardSmall {
-width: 32rem;
+        width: 32rem;
         height: 18rem;
     }
 
@@ -129,8 +120,7 @@ width: 32rem;
 }
 
 @media screen and (max-width: 340px) {
-
-    .cardSmall{
+    .cardSmall {
         width: 28rem;
         height: 24.7rem;
     }
