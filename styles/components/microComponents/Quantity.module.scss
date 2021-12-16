@@ -1,5 +1,5 @@
 .quantityContainer {
-    width: 6.2rem;
+    width: auto;
     height: 2rem;
     display: flex;
     flex-flow: row nowrap;
@@ -20,7 +20,7 @@
     border: none;
     cursor: pointer;
     margin: 0;
-    padding: 0;
+    padding: 1.4rem 1.7rem;
 }
 
 .quantityValue {
@@ -29,3 +29,27 @@
     line-height: 1.4rem;
     color: black;
 }
+
+@media screen and(max-width: 460px) {
+    .quantityButton {
+        font-size: 1.2rem;
+        padding: 1rem 1.2rem;
+    }
+
+    .quantityValue {
+        font-size: 1.2rem;
+    }
+}
+
+
+@media screen and(max-width: 400px) {
+    .quantityButton {
+        font-size: 1.2rem;
+        padding: 1rem 0.6rem;
+    }
+
+    .quantityValue {
+        font-size: 1.2rem;
+    }
+}
+

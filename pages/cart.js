@@ -147,18 +147,30 @@ export default function Cart() {
 										{parseInt(el.price) *
 											parseInt(el.quantity)}
 									</span>
-									<Image
-										className={styles.iconDeleteCArt}
-										src={crossIcon}
-										alt="cross icon"
-										onClick={deleteBook}
-										name={el.id}
-									/>
+									<div
+										className={
+											styles.iconDeleteCartContainer
+										}
+										style={{
+											display: 'block',
+											position: 'relative',
+										}}
+									>
+										<Image
+											className={styles.iconDeleteCart}
+											src={crossIcon}
+											alt="cross icon"
+											layout="fill"
+											objectFit="cover"
+											name={el.id}
+											onClick={deleteBook}
+										/>
+									</div>
 								</>
 							))}
 						</table>
 						<table className={styles.tableCartfooter}>
-							<span className={styles.SumTableCart}>
+							<span className={styles.sumTableCart}>
 								Quantity
 							</span>
 							<span className={styles.sumValueTableCart}>
