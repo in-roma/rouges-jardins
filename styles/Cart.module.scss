@@ -174,7 +174,7 @@
             font-weight: 400;
             font-style: italic;
             justify-self: center;
-            text-align: center;
+            text-align: end;
             margin-top: 0.8rem;
         }
     }
@@ -297,13 +297,13 @@
         }
     }
     .tableCart {
-        grid-template-columns: 6rem 1fr 5rem 8rem 3rem 2rem;
+        grid-template-columns: 6rem 1fr 5rem 8rem 4rem 1.4rem;
         span {
             font-size: 1.1rem;
         }
     }
     .tableCartfooter {
-        grid-template-columns: 6rem 1fr 5rem 8rem 3rem 2rem;
+        grid-template-columns: 6rem 1fr 5rem 8rem 4rem 1.4rem;
         span {
             font-size: 1.1rem;
         }
@@ -333,7 +333,7 @@
         width: 32rem;
     }
     .tableCart {
-        grid-template-columns: 6rem 1fr 3rem 6rem 2rem 2rem;
+        grid-template-columns: 6rem 1fr 3rem 6rem 4rem 1rem;
         margin-bottom: 1.2rem;
         column-gap: 0.4rem;
         span {
@@ -341,7 +341,7 @@
         }
     }
     .tableCartfooter {
-        grid-template-columns: 6rem 1fr 3rem 6rem 2rem 2rem;
+        grid-template-columns: 6rem 1fr 3rem 6rem 4rem 1rem;
         span {
             font-size: 1rem;
         }

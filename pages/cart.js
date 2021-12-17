@@ -171,7 +171,7 @@ export default function Cart() {
 						</table>
 						<table className={styles.tableCartfooter}>
 							<span className={styles.sumTableCart}>
-								Quantity
+								Quantité
 							</span>
 							<span className={styles.sumValueTableCart}>
 								{cartList.reduce(function (acc, obj) {
