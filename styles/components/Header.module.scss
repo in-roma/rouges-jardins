@@ -5,7 +5,7 @@
     background-color: black;
     display: flex;
     justify-content: center;
-    opacity: 0.9;
+    opacity: 0.98;
     z-index: 6;
 }
 
@@ -72,11 +72,17 @@
     top: 7.2rem;
     right: 0;
     z-index: 5;
-    background-color: #efefef;
+    background-color: black;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
+    box-shadow:
+    2.1px 2.2px 7.1px rgba(0, 0, 0, 0.031),
+    5.4px 5.5px 17.9px rgba(0, 0, 0, 0.044),
+    11px 11.2px 36.5px rgba(0, 0, 0, 0.056),
+    22.6px 23px 75.2px rgba(0, 0, 0, 0.069),
+    62px 63px 206px rgba(0, 0, 0, 0.1);
     li {
         width: 14rem;
         display: flex;
@@ -87,13 +93,14 @@
     .navItemMobile {
         line-height: 4.8rem;
         text-decoration: none;
-        color: black;
+        color: white;
         margin: 0 2.4rem;
         &:hover {
             text-decoration: underline;
         }
     }
 }
+
 
 .navItem {
     font-size: 1.3rem;
