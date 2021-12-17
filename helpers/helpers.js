@@ -16,6 +16,7 @@ const parsingContainerMethod = {
 				attribs.class.includes('sqs-image-shape-container-element')) ||
 			attribs.class === 'wp-block-image size-large' ||
 			attribs.class === 'wp-block-image size-full' ||
+			attribs.class === 'wp-block-image is-resized' ||
 			attribs.class === 'wp-block-image'
 		) {
 			return (
