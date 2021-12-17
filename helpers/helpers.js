@@ -7,7 +7,7 @@ import parse, {
 import Image from 'next/image';
 
 const parsingContainerMethod = {
-	replace: ({ attribs, children, name }) => {
+	replace: ({ name, attribs, children }) => {
 		if (!attribs) {
 			return;
 		}
@@ -15,7 +15,8 @@ const parsingContainerMethod = {
 			(attribs.class &&
 				attribs.class.includes('sqs-image-shape-container-element')) ||
 			attribs.class === 'wp-block-image size-large' ||
-			attribs.class === 'wp-block-image size-full'
+			attribs.class === 'wp-block-image size-full' ||
+			attribs.class === 'wp-block-image'
 		) {
 			return (
 				<div className="container-img-content-page">
@@ -27,8 +28,10 @@ const parsingContainerMethod = {
 			return <></>;
 		}
 		if (
-			(attribs.class && attribs.class.includes('wp-image')) ||
-			(attribs.class && attribs.class.includes('thumb-image'))
+			name &&
+			name === 'img'
+			// (attribs.class && attribs.class.includes('wp-image')) ||
+			// (attribs.class && attribs.class.includes('thumb-image'))
 		) {
 			return (
 				<div className="wrapper-img-content-page">
