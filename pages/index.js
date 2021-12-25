@@ -51,7 +51,7 @@ export default function Home({ posts, podcasts, publications }) {
 		<>
 			<Head>
 				<title>Rouges Jardins</title>
-				<link
+				{/* <link
 					rel="preload"
 					href="/fonts/Lora/static/Lora-SemiBold.ttf"
 					as="font"
@@ -86,7 +86,7 @@ export default function Home({ posts, podcasts, publications }) {
 					href="/fonts/Poppins/Poppins-Bold.ttf"
 					as="font"
 					crossOrigin=""
-				/>
+				/> */}
 				<meta
 					name="viewport"
 					content="width=device-width, initial-scale=1.0, maximum-scale=5.0,user-scalable=5"
