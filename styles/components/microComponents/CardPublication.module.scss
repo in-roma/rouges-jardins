@@ -1,5 +1,5 @@
 .cardPublication {
-    position: relative;   
+    position: relative;
     width: 58.2rem;
     height: 26.4rem;
     cursor: pointer;
@@ -7,7 +7,7 @@
     flex-flow: row nowrap;
 }
 
-.textContainerCardPublication{
+.textContainerCardPublication {
     width: 36.2rem;
     height: 26.4rem;
     display: flex;
@@ -15,13 +15,12 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-left: 1.8rem;
-} 
-
+}
 
 .titleCardPublication {
     width: 100%;
     height: 6rem;
-    font-family: 'lora', serif;
+    font-family: "lora", serif;
     font-size: 2rem;
     font-weight: 600;
     color: black;
@@ -30,15 +29,13 @@
     &:hover {
         text-decoration: underline;
     }
-
 }
-.pictureCardPublication{
+.pictureCardPublication {
     width: 28rem;
     height: 26.4rem;
-    
 }
 
-.textCardPublication  {
+.textCardPublication {
     width: 100%;
     height: auto;
     font-size: 1.4rem;
@@ -46,7 +43,7 @@
     font-weight: 200;
     color: #434343;
     margin-top: 1.2rem;
-    margin-bottom: 1.2rem;   
+    margin-bottom: 1.2rem;
 }
 
 .actionContainerPublication {
@@ -68,14 +65,12 @@
 }
 
 .pricePublication {
-    font-size:1.2rem;
+    font-size: 1.2rem;
     line-height: 1.2rem;
     margin-right: 2.4rem;
 }
 
 .buttonCardPublication {
-
-
 }
 
 @media screen and (max-width: 1240px) {
@@ -84,13 +79,13 @@
         height: 40rem;
         flex-flow: column;
     }
-    
-    .textContainerCardPublication{
+
+    .textContainerCardPublication {
         width: 28rem;
         height: 6rem;
         margin: 0;
-    } 
-    .titleCardPublication{
+    }
+    .titleCardPublication {
         font-size: 1.8rem;
         margin: 0.6rem 0;
     }
@@ -104,31 +99,31 @@
         width: 22rem;
         height: 31.4rem;
     }
-    .pictureCardPublication{
+    .pictureCardPublication {
         width: 22rem;
         height: 20.7rem;
     }
-    .textContainerCardPublication{
+    .textContainerCardPublication {
         width: 22rem;
         margin: 0;
     }
-    .textCardPublication{
+    .textCardPublication {
         margin: 0.6rem 0;
     }
 
     .pricePublication {
-        font-size:1.1rem;
-        line-height: 1.1rem;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
         margin-right: 1.2rem;
     }
-    .titleCardPublication{
+    .titleCardPublication {
         font-size: 1.7rem;
         height: 6rem;
         margin: 0.6rem 0;
     }
-    
+
     .buttonCardPublication {
-        font-size: 1.0rem;
+        font-size: 1.2rem;
     }
 }
 
@@ -137,38 +132,27 @@
         width: 100%;
         height: 42rem;
     }
-    .pictureCardPublication{
+    .pictureCardPublication {
         width: 100%;
         height: 36rem;
     }
-    .textContainerCardPublication{
-        width:100%;
+    .textContainerCardPublication {
+        width: 100%;
         height: 12rem;
         margin: 0;
     }
-    .titleCardPublication{
+    .titleCardPublication {
         height: 3rem;
         font-size: 2rem;
         margin: 0.6rem 0;
     }
-    .textCardPublication{
+    .textCardPublication {
         margin: 0.6rem 0;
-    }
-
-    .pricePublication {
-        font-size:1.1rem;
-        line-height: 1.1rem;
-        margin-right: 1.2rem;
-    }
-    
-    .buttonCardPublication {
-        font-size: 1.0rem;
     }
 }
 
-
 @media screen and (max-width: 400px) {
-    .titleCardPublication{
+    .titleCardPublication {
         height: 6rem;
         font-size: 1.8rem;
         margin: 0.6rem 0;
