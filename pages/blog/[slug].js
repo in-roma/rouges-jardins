@@ -31,11 +31,11 @@ export default function PostPage({ data, posts }) {
 				<title>{data.post.title}</title>
 				<meta
 					name="viewport"
-					content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
+					content="width=device-width, initial-scale=1.0, maximum-scale=5.0,user-scalable=5"
 				/>
 				<meta
 					name="description"
-					content={`Article '${data.post.title}' - ${data.post.categories.nodes[0].name}`}
+					content={`Par Guy Grandjean - ${data.post.title} - ${data.post.categories.nodes[0].name}`}
 				/>
 				<meta name="robots" />
 				<meta name="googlebot" />

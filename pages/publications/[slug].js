@@ -38,8 +38,8 @@ export default function PostPage({ data, posts }) {
 					content="initial-scale=1.0, width=device-width"
 				/>
 				<meta
-					name="description"
-					content={`Livre '${data.post.title}' - ${data.post.categories.nodes[0].name}`}
+					name="viewport"
+					content="width=device-width, initial-scale=1.0, maximum-scale=5.0,user-scalable=5"
 				/>
 				<meta name="robots" />
 				<meta name="googlebot" />

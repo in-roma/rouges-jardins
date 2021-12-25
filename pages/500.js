@@ -13,7 +13,7 @@ export default function Custom500() {
 				<title>Problème serveur - erreur 500</title>
 				<meta
 					name="viewport"
-					content="initial-scale=1.0, width=device-width"
+					content="width=device-width, initial-scale=1.0, maximum-scale=5.0,user-scalable=5"
 				/>
 				<meta
 					name="description"

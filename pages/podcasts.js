@@ -89,10 +89,9 @@ export default function Podcast({ posts }) {
 		<>
 			<Head>
 				<title>Podcasts</title>
-
 				<meta
 					name="viewport"
-					content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
+					content="width=device-width, initial-scale=1.0, maximum-scale=5.0,user-scalable=5"
 				/>
 				<meta name="description" content="Section Podcasts" />
 				<meta name="robots" />
