@@ -14,13 +14,13 @@ class MyDocument extends Document {
 						href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
 						rel="stylesheet"
 					/> */}
-					<link
+					{/* <link
 						rel="preload"
 						href="/fonts/Lora/static/Lora-SemiBold.ttf"
 						as="font"
 						crossOrigin=""
-					/>
-					<link
+					/> */}
+					{/* <link
 						rel="preload"
 						href="/fonts/Lora/static/Lora-Bold.ttf"
 						as="font"
@@ -61,7 +61,7 @@ class MyDocument extends Document {
 						href="/fonts/Poppins/Poppins-Bold.ttf"
 						as="font"
 						crossOrigin=""
-					/>
+					/> */}
 					<link
 						rel="apple-touch-icon"
 						sizes="180x180"

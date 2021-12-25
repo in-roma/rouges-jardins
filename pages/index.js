@@ -51,6 +51,42 @@ export default function Home({ posts, podcasts, publications }) {
 		<>
 			<Head>
 				<title>Rouges Jardins</title>
+				<link
+					rel="preload"
+					href="/fonts/Lora/static/Lora-SemiBold.ttf"
+					as="font"
+					crossOrigin=""
+				/>
+				<link
+					rel="preload"
+					href="/fonts/Poppins/Poppins-Light.ttf"
+					as="font"
+					crossOrigin=""
+				/>
+				<link
+					rel="preload"
+					href="/fonts/Poppins/Poppins-Regular.ttf"
+					as="font"
+					crossOrigin=""
+				/>
+				<link
+					rel="preload"
+					href="/fonts/Poppins/Poppins-Medium.ttf"
+					as="font"
+					crossOrigin=""
+				/>
+				<link
+					rel="preload"
+					href="/fonts/Poppins/Poppins-SemiBold.ttf"
+					as="font"
+					crossOrigin=""
+				/>
+				<link
+					rel="preload"
+					href="/fonts/Poppins/Poppins-Bold.ttf"
+					as="font"
+					crossOrigin=""
+				/>
 				<meta
 					name="viewport"
 					content="width=device-width, initial-scale=1.0, maximum-scale=5.0,user-scalable=5"
