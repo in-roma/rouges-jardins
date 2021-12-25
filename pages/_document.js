@@ -10,9 +10,57 @@ class MyDocument extends Document {
 		return (
 			<Html lang="fr">
 				<Head>
-					<link
+					{/* <link
 						href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
 						rel="stylesheet"
+					/> */}
+					<link
+						rel="preload"
+						href="/fonts/Lora/static/Lora-SemiBold.ttf"
+						as="font"
+						crossOrigin=""
+					/>
+					<link
+						rel="preload"
+						href="/fonts/Lora/static/Lora-Bold.ttf"
+						as="font"
+						crossOrigin=""
+					/>
+					<link
+						rel="preload"
+						href="/fonts/Poppins/Poppins-ExtraLight.ttf"
+						as="font"
+						crossOrigin=""
+					/>
+					<link
+						rel="preload"
+						href="/fonts/Poppins/Poppins-Light.ttf"
+						as="font"
+						crossOrigin=""
+					/>
+					<link
+						rel="preload"
+						href="/fonts/Poppins/Poppins-Regular.ttf"
+						as="font"
+						crossOrigin=""
+					/>
+					<link
+						rel="preload"
+						href="/fonts/Poppins/Poppins-Medium.ttf"
+						as="font"
+						crossOrigin=""
+					/>
+					<link
+						rel="preload"
+						href="/fonts/Poppins/Poppins-SemiBold.ttf"
+						as="font"
+						crossOrigin=""
+					/>
+					<link
+						rel="preload"
+						href="/fonts/Poppins/Poppins-Bold.ttf"
+						as="font"
+						crossOrigin=""
 					/>
 					<link
 						rel="apple-touch-icon"
