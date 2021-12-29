@@ -9,7 +9,7 @@ const Sitemap = () => {};
 export async function getServerSideProps({ res }) {
 	const baseUrl = {
 		development: 'http://localhost:3000',
-		production: 'https://rouges-jardins-8yzlk.ondigitalocean.app/',
+		production: 'https://rouges-jardins-8yzlk.ondigitalocean.app',
 	}[process.env.NODE_ENV];
 
 	// Static pages

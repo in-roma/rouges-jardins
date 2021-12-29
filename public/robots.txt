@@ -1,7 +1,4 @@
-User-agent: *
-Disallow: /cart/
-Disallow: /success/
-Disallow: /404/
-Disallow: /500/
+User-Agent: *
+Allow: /
 
-Sitemap: rouges-jardins.com/sitemap.xml 
+Sitemap: https://rouges-jardins.com/sitemap.xml 
