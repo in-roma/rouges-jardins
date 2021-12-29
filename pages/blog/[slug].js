@@ -89,13 +89,13 @@ export default function PostPage({ data, posts }) {
 							{parsing(data.post.content)}
 						</div>
 					</div>
-					<More
+					{/* <More
 						dataMore={posts.posts.edges}
 						slug={'/blog'}
 						linkText="Voir tout"
 						colorCard="Black"
 						textColorCard="white"
-					/>
+					/> */}
 				</article>
 			</Layout>
 		</>
