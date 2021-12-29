@@ -202,18 +202,20 @@ export default function Blog({ posts, categories }) {
 							/>
 						</div>
 					) : null}
-					{!searchMobileActive && searchActive && (
-						<div className={styles.searchBarBlog}>
-							<h2>
-								{`${chroniques.length} résultat${
-									chroniques.length > 1 ? 's' : ''
-								} pour  "${enteredKeyWord}" `}
-							</h2>
-							<button onClick={resetSearch}>
-								Annuler Recherche
-							</button>
-						</div>
-					)}
+					{!searchMobileActive &&
+						searchActive &&
+						enteredKeyWord.length > 0 && (
+							<div className={styles.searchBarBlog}>
+								<h2>
+									{`${chroniques.length} résultat${
+										chroniques.length > 1 ? 's' : ''
+									} pour  "${enteredKeyWord}" `}
+								</h2>
+								<button onClick={resetSearch}>
+									Annuler Recherche
+								</button>
+							</div>
+						)}
 					{isRefreshing && (
 						<div className={styles.containerLoaderBlog}>
 							<div className={styles.loader}>
@@ -226,7 +228,7 @@ export default function Blog({ posts, categories }) {
 					{
 						<div
 							className={styles.contentBlog}
-							style={searchActive ? { marginTop: '12rem' } : {}}
+							style={searchActive ? { marginTop: '14rem' } : {}}
 						>
 							{!isRefreshing &&
 								chroniques.map((el) => (

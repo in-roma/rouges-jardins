@@ -139,18 +139,20 @@ export default function Podcast({ posts }) {
 							/>
 						</div>
 					) : null}
-					{!searchMobileActive && searchActive && (
-						<div className={styles.searchBarPodcast}>
-							<h2>
-								{`${podcasts.length} résultat${
-									podcasts.length > 1 ? 's' : ''
-								} pour  "${enteredKeyWord}" `}
-							</h2>
-							<button onClick={resetSearch}>
-								Annuler Recherche
-							</button>
-						</div>
-					)}
+					{!searchMobileActive &&
+						searchActive &&
+						enteredKeyWord.length > 0 && (
+							<div className={styles.searchBarPodcast}>
+								<h2>
+									{`${podcasts.length} résultat${
+										podcasts.length > 1 ? 's' : ''
+									} pour  "${enteredKeyWord}" `}
+								</h2>
+								<button onClick={resetSearch}>
+									Annuler Recherche
+								</button>
+							</div>
+						)}
 					{isRefreshing && (
 						<div className={styles.containerLoaderPodcast}>
 							<div className={styles.loader}>
@@ -162,7 +164,7 @@ export default function Podcast({ posts }) {
 
 					<div
 						className={styles.contentPodcasts}
-						style={searchActive ? { marginTop: '12rem' } : {}}
+						style={searchActive ? { marginTop: '14rem' } : {}}
 					>
 						{!isRefreshing &&
 							podcasts.map((el) => (

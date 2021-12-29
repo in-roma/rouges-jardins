@@ -1,6 +1,4 @@
 import Image from 'next/image';
-import { useState } from 'react';
-import Media from 'react-media';
 
 // Components
 import styles from '../../styles/components/microComponents/Search.module.scss';
@@ -14,7 +12,7 @@ export default function Search({
 }) {
 	return (
 		<form className={styles.formSearch}>
-			<label>
+			<label htmlFor="inputSearch">
 				<Image
 					className={styles.iconSearch}
 					src={searchPicBlack}
@@ -24,6 +22,7 @@ export default function Search({
 
 			{autofocusSet ? (
 				<input
+					id="inputSearch"
 					className={styles.inputSearch}
 					placeholder="Entrez votre recherche"
 					maxLength="40"
@@ -33,6 +32,7 @@ export default function Search({
 				></input>
 			) : (
 				<input
+					id="inputSearch"
 					className={styles.inputSearch}
 					placeholder="Entrez votre recherche"
 					maxLength="40"

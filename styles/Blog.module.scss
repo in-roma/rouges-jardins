@@ -29,6 +29,11 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: center;
+    h1 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.8rem;
+    }
 }
 
 .contentBlog {
@@ -227,6 +232,9 @@
     .contentBlog {
         grid-template-columns: 1fr;
     }
+    .containerBlogHeaderFilter h1 {
+        font-size: 1.6rem;
+    }
 }
 
 @media screen and (max-width: 460px) {
@@ -235,13 +243,19 @@
     .containerLoaderBlog {
         width: 36rem;
     }
+    .containerBlogHeaderFilter h1 {
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 400px) {
     .navBarBlog,
     .searchBarBlog,
     .containerLoaderBlog {
-width: 32rem;
+        width: 32rem;
+    }
+    .containerBlogHeaderFilter h1 {
+        font-size: 1.4rem;
     }
 }
 
@@ -262,7 +276,7 @@ width: 32rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  
+
     .loaderIcon {
         border: 2.2px solid hsla(0, 0%, 0%, 0.3);
         border-top-color: hsla(0, 0%, 0%, 1);
@@ -277,10 +291,10 @@ width: 32rem;
         font-weight: 400;
         margin-top: 0.8rem;
     }
-  }
-  
-  @keyframes spin {
+}
+
+@keyframes spin {
     to {
         transform: rotate(360deg);
     }
-  }
+}

@@ -85,7 +85,7 @@ export default function Cart() {
 				<div className={styles.containerCart}>
 					<div className={styles.contentCart}>
 						<section className={styles.navBarCart}>
-							<h2>Panier</h2>
+							<h1>Panier</h1>
 							<Link href="/publications">
 								<a>Retour</a>
 							</Link>

@@ -21,6 +21,11 @@
     background-color: white;
     opacity: 0.9;
     z-index: 5;
+    h1 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1.8rem;
+    }
 }
 
 .contentPublications {
@@ -54,7 +59,7 @@
 
 @media screen and (max-width: 740px) {
     .contentPublications {
-       column-gap: 2rem;
+        column-gap: 2rem;
     }
     .navBarPublications {
         width: 58.2rem;
@@ -73,18 +78,27 @@
     }
     .navBarPublications {
         width: 42.2rem;
+        h1 {
+            font-size: 1.6rem;
+        }
     }
 }
 
 @media screen and (max-width: 460px) {
     .navBarPublications {
         width: 36rem;
+        h1 {
+            font-size: 1.6rem;
+        }
     }
 }
 
 @media screen and (max-width: 400px) {
     .navBarPublications {
-width: 32rem;
+        width: 32rem;
+        h1 {
+            font-size: 1.4rem;
+        }
     }
 }
 

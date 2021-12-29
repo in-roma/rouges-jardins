@@ -28,8 +28,8 @@
     background-color: white;
     opacity: 0.9;
     z-index: 5;
-    h2 {
-        font-size: 2rem;
+    h1 {
+        font-size: 1.8rem;
     }
     a {
         font-weight: 500;
@@ -295,6 +295,9 @@
         a {
             font-size: 1rem;
         }
+        h1 {
+            font-size: 1.6rem;
+        }
     }
     .tableCart {
         grid-template-columns: 6rem 1fr 5rem 8rem 4rem 1.4rem;
@@ -316,21 +319,23 @@
     .contentBlog {
         grid-template-columns: 1fr;
     }
-    // .pictureCardCart {
-    //     width: 6rem;
-    //     height: 7.22rem;
-    // }
 }
 
 @media screen and (max-width: 460px) {
     .navBarCart {
         width: 36rem;
+        h1 {
+            font-size: 1.5rem;
+        }
     }
 }
 
 @media screen and (max-width: 400px) {
     .navBarCart {
         width: 32rem;
+        h1 {
+            font-size: 1.4rem;
+        }
     }
     .tableCart {
         grid-template-columns: 6rem 1fr 3rem 6rem 4rem 1rem;
