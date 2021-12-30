@@ -24,7 +24,7 @@ export default function Publications({ posts }) {
 
 	return (
 		<>
-			<Head>
+			<Head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: https://ogp.me/ns/website#">
 				<title>Publications</title>
 
 				<meta
@@ -34,6 +34,25 @@ export default function Publications({ posts }) {
 				<meta name="description" content="Section Publications" />
 				<meta name="robots" />
 				<meta name="googlebot" />
+				<meta property="og:type" content="website" />
+				<meta
+					property="og:title"
+					content="Publications - Rouges jardins"
+				/>
+				<meta
+					property="og:description"
+					content="Section publications"
+				/>
+				<meta
+					property="og:image"
+					content="http://www.jcou8054.odns.fr/wp-content/uploads/2015/10/SINGE-SANS-NEZ-scaled.jpg"
+				></meta>
+				<meta
+					property="og:url"
+					content="https://www.rouges-jardins.com/publications"
+				/>
+				<meta property="og:site_name" content="Rouges jardins" />
+				<meta property="og:locale" content="fr_FR" />
 			</Head>
 			<Layout>
 				<div className={styles.containerPublications}>

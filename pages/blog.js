@@ -146,7 +146,7 @@ export default function Blog({ posts, categories }) {
 
 	return (
 		<>
-			<Head>
+			<Head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: https://ogp.me/ns/website#">
 				<title>Chroniques</title>
 
 				<meta
@@ -156,6 +156,22 @@ export default function Blog({ posts, categories }) {
 				<meta name="description" content="Section chroniques" />
 				<meta name="robots" />
 				<meta name="googlebot" />
+				<meta property="og:type" content="website" />
+				<meta
+					property="og:title"
+					content="Chroniques - Rouges jardins"
+				/>
+				<meta property="og:description" content="Section chroniques" />
+				<meta
+					property="og:image"
+					content="http://www.jcou8054.odns.fr/wp-content/uploads/2015/10/SINGE-SANS-NEZ-scaled.jpg"
+				></meta>
+				<meta
+					property="og:url"
+					content="https://www.rouges-jardins.com"
+				/>
+				<meta property="og:site_name" content="Rouges jardins" />
+				<meta property="og:locale" content="fr_FR" />
 			</Head>
 			<Layout>
 				<div className={styles.containerBlog}>

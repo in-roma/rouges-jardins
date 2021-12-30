@@ -31,16 +31,32 @@ export default function PostPage({ data, posts }) {
 	// console.log('this is datapost', data.post);
 	return (
 		<>
-			<Head>
+			<Head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# book: https://ogp.me/ns/book#">
 				<title>{data.post.title}</title>
-				<meta
-					name="viewport"
-					content="width=device-width, initial-scale=1.0, maximum-scale=5.0,user-scalable=5"
-				/>
 				<meta
 					name="description"
 					content={`${data.post.title} Par Guy Grandjean `}
 				/>
+				<meta property="og:title" content={`${data.post.title}`} />
+				<meta property="og:type" content="book" />
+				<meta property="book:author" content="Guy Grandjean" />
+				<meta property="book:release_date" content={data.post.date} />
+				<meta
+					property="og:url"
+					content={`https://rouges-jardins.com/blog/${data.post.slug}`}
+				/>
+				<meta
+					property="og:image"
+					content={data.post.featuredImage.node.sourceUrl}
+				/>
+				<meta property="og:site_name" content="Rouges jardins" />
+				<meta property="og:locale" content="fr_FR" />
+
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1.0, maximum-scale=5.0,user-scalable=5"
+				/>
+
 				<meta name="robots" />
 				<meta name="googlebot" />
 			</Head>

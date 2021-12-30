@@ -10,7 +10,7 @@ import styles from '../styles/About.module.scss';
 export default function About() {
 	return (
 		<>
-			<Head>
+			<Head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: https://ogp.me/ns/website#">
 				<title>À propos</title>
 
 				<meta
@@ -20,6 +20,19 @@ export default function About() {
 				<meta name="description" content="Section Guy Grandjean" />
 				<meta name="robots" />
 				<meta name="googlebot" />
+				<meta property="og:type" content="website" />
+				<meta property="og:title" content="À propos - Guy Grandjean" />
+				<meta property="og:description" content="Section à propos" />
+				<meta
+					property="og:image"
+					content="http://www.jcou8054.odns.fr/wp-content/uploads/2021/11/DSC_3695-1.jpeg"
+				></meta>
+				<meta
+					property="og:url"
+					content="https://www.rouges-jardins.com/about"
+				/>
+				<meta property="og:site_name" content="Rouges jardins" />
+				<meta property="og:locale" content="fr_FR" />
 			</Head>
 			<Layout>
 				<section className={styles.containerAbout}>

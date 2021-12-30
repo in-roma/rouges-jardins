@@ -49,7 +49,7 @@ export default function Home({ posts, podcasts, publications }) {
 
 	return (
 		<>
-			<Head>
+			<Head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: https://ogp.me/ns/website#">
 				<title>Rouges jardins</title>
 				<meta
 					name="viewport"
@@ -61,6 +61,22 @@ export default function Home({ posts, podcasts, publications }) {
 				/>
 				<meta name="robots" />
 				<meta name="googlebot" />
+				<meta property="og:type" content="website" />
+				<meta property="og:title" content="Home - Rouges jardins" />
+				<meta
+					property="og:description"
+					content="Chroniques sur le monde vivant - Blog par Guy Grandjean"
+				/>
+				<meta
+					property="og:image"
+					content="http://www.jcou8054.odns.fr/wp-content/uploads/2015/10/SINGE-SANS-NEZ-scaled.jpg"
+				></meta>
+				<meta
+					property="og:url"
+					content="https://www.rouges-jardins.com"
+				/>
+				<meta property="og:site_name" content="Rouges jardins" />
+				<meta property="og:locale" content="fr_FR" />
 			</Head>
 			<Layout>
 				<div className={styles.contentHome}>

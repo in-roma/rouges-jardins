@@ -20,16 +20,34 @@ export default function PostPage({ data, posts }) {
 
 	return (
 		<>
-			<Head>
+			<Head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 				<title>{data.post.title}</title>
-				<meta
-					name="viewport"
-					content="width=device-width, initial-scale=1.0, maximum-scale=5.0,user-scalable=5"
-				/>
 				<meta
 					name="description"
 					content={`Podcast '${data.post.title}' - ${data.post.categories.nodes[0].name}`}
 				/>
+				<meta property="og:title" content={`${data.post.title}`} />
+				<meta property="og:type" content="article" />
+				<meta property="article:author" content="Guy Grandjean" />
+				<meta
+					property="article:published_time"
+					content={data.post.date}
+				/>
+				<meta
+					property="og:url"
+					content={`https://rouges-jardins.com/blog/${data.post.slug}`}
+				/>
+				<meta
+					property="og:image"
+					content={data.post.featuredImage.node.sourceUrl}
+				/>
+				<meta property="og:site_name" content="Rouges jardins" />
+				<meta property="og:locale" content="fr_FR" />
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1.0, maximum-scale=5.0,user-scalable=5"
+				/>
+
 				<meta name="robots" />
 				<meta name="googlebot" />
 			</Head>
