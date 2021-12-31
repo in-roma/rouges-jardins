@@ -40,6 +40,7 @@ class MyDocument extends Document {
 					<meta name="msapplication-TileColor" content="#da532c" />
 					<meta name="theme-color" content="#ffffff" />
 					<script
+						nonce="plausible"
 						defer
 						data-domain="rouges-jardins-8yzlk.ondigitalocean.app"
 						src="https://plausible.io/js/plausible.js"

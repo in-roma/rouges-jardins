@@ -33,7 +33,7 @@ const securityHeaders = [
 	{
 		key: 'Content-Security-Policy',
 		value:
-			"default-src 'self'; style-src 'self'; img-src 'self' https://*.jcou8054.odns.fr https://*.stripe.com; font-src 'self' https://*.fonts.gstatic.com; script-src 'self'; connect-src 'self' https://*.checkout.stripe.com  https://*.plausible.io; frame-src https://*.youtube.com https://*.spotify.com https://*.open.spotify.com; object-src 'none', base-uri 'self'",
+			"default-src 'self'; style-src 'self'; img-src 'self' https://*.jcou8054.odns.fr https://*.stripe.com; font-src 'self' https://*.fonts.gstatic.com; script-src 'self' 'nonce-plausible'; connect-src 'self' https://*.checkout.stripe.com  https://*.plausible.io; frame-src https://*.youtube.com https://*.spotify.com https://*.open.spotify.com; object-src 'none', base-uri 'self'",
 	},
 ];
 
