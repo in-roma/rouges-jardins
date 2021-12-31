@@ -30,11 +30,11 @@ const securityHeaders = [
 		key: 'Permissions-Policy',
 		value: 'geolocation=*',
 	},
-	// {
-	// 	key: 'Content-Security-Policy',
-	// 	value:
-	// 		"default-src 'self'; style-src 'self' fonts.googleapis.com; img-src 'self' jcou8054.odns.fr *.jcou8054.odns.fr; font-src 'self' fonts.gstatic.com *.fonts.gstatic.com",
-	// },
+	{
+		key: 'Content-Security-Policy',
+		value:
+			"default-src 'self'; style-src 'self'; img-src 'self' https://*.jcou8054.odns.fr https://*.stripe.com; font-src 'self' https://*.fonts.gstatic.com; script-src 'self' https://*.checkout.stripe.com  https://*.plausible.io; connect-src 'self' https://*.checkout.stripe.com  https://*.plausible.io; frame-src https://*.youtube.com https://*.spotify.com https://*.open.spotify.com; object-src 'none'",
+	},
 ];
 
 module.exports = withSass({

@@ -168,7 +168,7 @@ export default function Blog({ posts, categories }) {
 				></meta>
 				<meta
 					property="og:url"
-					content="https://www.rouges-jardins.com"
+					content="https://www.rouges-jardins.com/chroniques"
 				/>
 				<meta property="og:site_name" content="Rouges jardins" />
 				<meta property="og:locale" content="fr_FR" />
