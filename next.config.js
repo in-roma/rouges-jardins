@@ -33,7 +33,7 @@ const securityHeaders = [
 	{
 		key: 'Content-Security-Policy',
 		value:
-			"default-src 'self'; script-src 'report-sample' 'self' https://js.stripe.com/v3 https://plausible.io/js/plausible.js; style-src 'report-sample' 'self'; object-src 'none'; base-uri 'self'; connect-src 'self' https://plausible.io/; font-src 'self' https://fonts.gstatic.com; frame-src 'self' https://js.stripe.com https://open.spotify.com; img-src 'self' data:; manifest-src 'self'; media-src 'self'; report-uri https://61d18c08adaa4253cc595a4b.endpoint.csper.io/?v=0; worker-src 'none';",
+			"frame-ancestors 'self';block-all-mixed-content;default-src 'self';script-src 'self' 'report-sample' https://checkout.stripe.com https://js.stripe.com https://plausible.io;style-src 'self' 'report-sample' 'unsafe-inline' checkout.stripe.com fonts.googleapis.com;object-src 'none';frame-src 'self' *.stripe.network *.stripe.com;child-src 'self';img-src 'self' data: *.stripe.com fonts.gstatic.com;font-src 'self' fonts.googleapis.com fonts.gstatic.com;connect-src 'self' *.stripe.com fonts.googleapis.com fonts.gstatic.com plausible.io;manifest-src 'self';base-uri 'self';form-action 'self';media-src 'self';prefetch-src 'self';worker-src 'self';report-uri https://gate.rapidsec.net/g/r/csp/89b487cf-0948-4e3a-b850-1bcae687c77f/-1/1/3?sdkv=-1.-1.-1_unknown&sct=d6038784-8f22-4e32-85b8-94727502c7a2&dpos=report;",
 	},
 ];
 
