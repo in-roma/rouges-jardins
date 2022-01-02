@@ -33,7 +33,7 @@ const securityHeaders = [
 	{
 		key: 'Content-Security-Policy',
 		value:
-			"default-src 'self'; script-src 'report-sample' 'self' https://js.stripe.com/v3 https://plausible.io/js/plausible.js; style-src 'report-sample' 'self'; object-src 'none'; base-uri 'self'; connect-src 'self' https://plausible.io; font-src 'self' https://fonts.gstatic.com; frame-src 'self' https://js.stripe.com https://open.spotify.com; img-src 'self' data:; manifest-src 'self'; media-src 'self'; report-uri https://61d18c08adaa4253cc595a4b.endpoint.csper.io/?v=0; worker-src 'none';",
+			"default-src 'self'; script-src 'report-sample' 'self' https://js.stripe.com/v3 'nonce-plausible'; style-src 'report-sample' 'self'; object-src 'none'; base-uri 'self'; connect-src 'self' 'nonce-plausible'; font-src 'self' https://fonts.gstatic.com; frame-src 'self' https://js.stripe.com https://open.spotify.com; img-src 'self' data:; manifest-src 'self'; media-src 'self'; report-uri https://61d18c08adaa4253cc595a4b.endpoint.csper.io/?v=0; worker-src 'none';",
 	},
 ];
 
