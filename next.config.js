@@ -30,11 +30,11 @@ const securityHeaders = [
 		key: 'Permissions-Policy',
 		value: 'geolocation=*',
 	},
-	// {
-	// 	key: 'Content-Security-Policy',
-	// 	value:
-	// 		"default-src 'self'; style-src 'self'; img-src 'self' https://*.jcou8054.odns.fr https://*.stripe.com; font-src 'self' https://*.fonts.gstatic.com; script-src 'self' 'nonce-plausible' 'unsafe-inline'; connect-src 'self' https://*.checkout.stripe.com  https://*.plausible.io; frame-src https://*.youtube.com https://*.spotify.com https://*.open.spotify.com; object-src 'none', base-uri 'self'",
-	// },
+	{
+		key: 'Content-Security-Policy',
+		value:
+			"default-src 'self'; script-src 'report-sample' 'self' https://js.stripe.com/v3 https://plausible.io/js/plausible.js; style-src 'report-sample' 'self'; object-src 'none'; base-uri 'self'; connect-src 'self' https://plausible.io; font-src 'self' https://fonts.gstatic.com; frame-src 'self' https://js.stripe.com https://open.spotify.com; img-src 'self' data:; manifest-src 'self'; media-src 'self'; report-uri https://61d18c08adaa4253cc595a4b.endpoint.csper.io/?v=0; worker-src 'none';",
+	},
 ];
 
 module.exports = withSass({
