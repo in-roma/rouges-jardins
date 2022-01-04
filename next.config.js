@@ -33,7 +33,7 @@ const securityHeaders = [
 	{
 		key: 'Content-Security-Policy',
 		value:
-			"frame-ancestors 'self';block-all-mixed-content;default-src 'self';script-src 'self' 'report-sample' *.stripe.com https://plausible.io;style-src 'self' 'report-sample' 'unsafe-inline' checkout.stripe.com fonts.googleapis.com;object-src 'none';frame-src 'self' *.stripe.network *.stripe.com;child-src 'self';img-src 'self' data: *.stripe.com fonts.gstatic.com;font-src 'self' fonts.googleapis.com fonts.gstatic.com;connect-src 'self' *.stripe.com fonts.googleapis.com fonts.gstatic.com plausible.io;manifest-src 'self';base-uri 'self';form-action 'self';media-src 'self';prefetch-src 'self';worker-src 'self';",
+			"frame-ancestors 'self';block-all-mixed-content;default-src 'self';script-src 'self' 'report-sample' https://checkout.stripe.com https://plausible.io;style-src 'self' 'report-sample' 'unsafe-inline' fonts.googleapis.com;object-src 'none';frame-src 'self' https://checkout.stripe.com;child-src 'self';img-src 'self' data: https://*.stripe.com fonts.gstatic.com;font-src 'self' fonts.googleapis.com fonts.gstatic.com;connect-src 'self' https://checkout.stripe.com fonts.googleapis.com fonts.gstatic.com plausible.io;manifest-src 'self';base-uri 'self';form-action 'self';media-src 'self';prefetch-src 'self';worker-src 'self';",
 	},
 ];
 
