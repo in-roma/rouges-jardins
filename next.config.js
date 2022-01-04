@@ -33,7 +33,7 @@ const securityHeaders = [
 	{
 		key: 'Content-Security-Policy',
 		value:
-			"frame-ancestors 'self';block-all-mixed-content;default-src 'self';script-src 'self' 'report-sample' https://checkout.stripe.com https://plausible.io;style-src 'self' 'report-sample' 'unsafe-inline' fonts.googleapis.com;object-src 'none';frame-src 'self' https://checkout.stripe.com;child-src 'self';img-src 'self' data: https://*.stripe.com fonts.gstatic.com;font-src 'self' fonts.googleapis.com fonts.gstatic.com;connect-src 'self' https://checkout.stripe.com fonts.googleapis.com fonts.gstatic.com plausible.io;manifest-src 'self';base-uri 'self';form-action 'self';media-src 'self';prefetch-src 'self';worker-src 'self';",
+			"default-src 'self'; script-src 'report-sample' 'self' https://js.stripe.com/v3 https://plausible.io/js/plausible.js; style-src 'report-sample' 'self'; object-src 'none'; base-uri 'self'; connect-src 'self' https://plausible.io; font-src 'self' https://fonts.gstatic.com; frame-src 'self' https://js.stripe.com; img-src 'self' data:; manifest-src 'self'; media-src 'self'; report-uri https://61d48af4adaa4253cc595c5a.endpoint.csper.io/?v=0; worker-src 'none';",
 	},
 ];
 
