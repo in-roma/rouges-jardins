@@ -80,8 +80,8 @@ export default function About() {
 						</picture>
 						<p className={styles.textAbout}>
 							Il exerce pendant 32 ans. Féru de bactériologie, il
-							s'efforce tout au long des ces années de faire vivre
-							un laboratoire à l&#39;excellence médicale. Au
+							s&#39;efforce tout au long des ces années de faire
+							vivre un laboratoire à l&#39;excellence médicale. Au
 							quotidien, il affectionne particulièrement les
 							prises de sang, moment de partage.
 						</p>
