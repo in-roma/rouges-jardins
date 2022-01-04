@@ -44,9 +44,9 @@ export default function About() {
 							<strong>
 								Guy est né en 1951 dans la région parisienne.
 							</strong>
-							&nbsp;L’été, il passe ses vacances à Scaër en
+							&nbsp;L&#39été, il passe ses vacances à Scaër en
 							Bretagne où il travaille dans la ferme familiale.
-							C’est au travers de cette confrontation avec une
+							C&#39est au travers de cette confrontation avec une
 							campagne “brute” que naît sa fascination pour la
 							nature.
 						</p>
@@ -55,10 +55,10 @@ export default function About() {
 							Après un cycle universitaire en biologie, il quitte
 							paris et part vivre dans la région nantaise. Pendant
 							un temps il est professeur de travaux manuels puis
-							reprend ses études sur le tard, d’abord pharma, puis
-							internat de biologie. Il ouvre en 1989 un
-							laboratoire d’analyses médicales dans la commune du
-							Loroux Bottereaux.
+							reprend ses études sur le tard, d&#39abord pharma,
+							puis internat de biologie. Il ouvre en 1989 un
+							laboratoire d&#39analyses médicales dans la commune
+							du Loroux Bottereaux.
 						</p>
 						<picture
 							className={styles.pictureAbout}
@@ -81,19 +81,19 @@ export default function About() {
 						<p className={styles.textAbout}>
 							Il exerce pendant 32 ans. Féru de bactériologie, il
 							s'efforce tout au long des ces années de faire vivre
-							un laboratoire à l’excellence médicale. Au
+							un laboratoire à l&#39excellence médicale. Au
 							quotidien, il affectionne particulièrement les
 							prises de sang, moment de partage.
 						</p>
 						<p className={styles.textAbout}>
 							Parallèlement à ses activités professionnelles, il
-							écrit des chroniques sur les relations entre l’homme
-							et la nature, d’abord dans les 1990 sous la forme
-							d’un fanzine informel envoyé par courrier à ses
-							proches, plus tard avec sa première publication en
-							2004&nbsp;
-							<em>NZO ou les grimoires d’un vieux singe</em>. Elle
-							sera suivie d’autres livres dont&nbsp;
+							écrit des chroniques sur les relations entre
+							l&#39homme et la nature, d&#39abord dans les 1990
+							sous la forme d&#39un fanzine informel envoyé par
+							courrier à ses proches, plus tard avec sa première
+							publication en 2004&nbsp;
+							<em>NZO ou les grimoires d&#39un vieux singe</em>.
+							Elle sera suivie d&#39autres livres dont&nbsp;
 							<em>De nature Clandestine</em> en 2015, une
 							collaboration avec la plasticienne&nbsp;
 							<a
@@ -115,7 +115,7 @@ export default function About() {
 							</a>
 						</p>
 						<p className={styles.textAbout}>
-							Aujourd’hui Guy est un jeune retraité, continue à
+							Aujourd&#39hui Guy est un jeune retraité, continue à
 							partager ses histoires...
 						</p>
 						<p className={styles.emailTextAbout}>
