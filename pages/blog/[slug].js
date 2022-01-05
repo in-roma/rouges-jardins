@@ -143,6 +143,6 @@ export async function getStaticProps({ params: slug }) {
 			data,
 			posts,
 		},
-		revalidate: 5,
+		revalidate: 15,
 	};
 }
