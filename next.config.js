@@ -30,11 +30,11 @@ const securityHeaders = [
 		key: 'Permissions-Policy',
 		value: 'geolocation=*',
 	},
-	{
-		key: 'Content-Security-Policy',
-		value:
-			"frame-ancestors 'self';block-all-mixed-content;default-src 'self';script-src 'self' 'report-sample' https://checkout.stripe.com https://js.stripe.com https://plausible.io;style-src 'self' 'report-sample' 'unsafe-inline' checkout.stripe.com;object-src 'none';frame-src 'self' *.stripe.network *.stripe.com;child-src 'self';img-src 'self' *.jcou8054.odns.fr data: *.stripe.com;font-src 'self' https://fonts.gstatic.com;connect-src 'self' *.stripe.com plausible.io;manifest-src 'self';base-uri 'self';form-action 'self';media-src 'self';prefetch-src 'self';worker-src 'self';",
-	},
+	// {
+	// 	key: 'Content-Security-Policy',
+	// 	value:
+	// 		"frame-ancestors 'self';block-all-mixed-content;default-src 'self';script-src 'self' 'report-sample' https://checkout.stripe.com https://js.stripe.com https://plausible.io;style-src 'self' 'report-sample' 'unsafe-inline' fonts.googleapis.com checkout.stripe.com;object-src 'none';frame-src 'self' *.stripe.network *.stripe.com;child-src 'self';img-src 'self' fonts.gstatic.com *.jcou8054.odns.fr data: *.stripe.com;font-src 'self' fonts.googleapis.com  https://fonts.gstatic.com;connect-src  fonts.googleapis.com fonts.gstatic.com 'self' *.stripe.com plausible.io;manifest-src 'self';base-uri 'self';form-action 'self';media-src 'self';prefetch-src 'self';worker-src 'self';",
+	// },
 ];
 
 module.exports = withSass({
